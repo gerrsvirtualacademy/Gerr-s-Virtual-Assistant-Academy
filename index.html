@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Gerr's Virtual Academy | From Zero to VA Hero</title>
+  <meta name="description" content="Build the practical skills, confidence, and foundation you need to start your Virtual Assistant career with Gerr's Virtual Academy. Over 3,000+ graduates across 18 batches.">
+  <meta name="keywords" content="Virtual Assistant Training Philippines, Social Media Management Training Philippines, Become a VA Philippines, Work From Home VA, GVA, Coach Gerr">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gerr's Virtual Academy | From Zero to VA Hero">
+  <meta property="og:description" content="Premier online training for aspiring Virtual Assistants and Social Media Managers in the Philippines.">
+
+  <!-- Google Fonts: Playfair Display + Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN SYSTEM & ROOT VARIABLES
+       ========================================================================== */
+    :root {
+      /* Palette: Modern Feminine Editorial */
+      --pastel-blue: #D8E8F5;
+      --pastel-blue-dark: #A9CDE8;
+      --pastel-pink: #FBE4E8;
+      --pastel-lavender: #E8E3F5;
+      --soft-peach: #FFF0E6;
+      --mint-accent: #E1F5EC;
+      
+      --brand-primary: #3B729E;
+      --brand-dark: #1E384D;
+      --brand-accent: #D96B82;
+      
+      --bg-main: #FAFCFE;
+      --card-bg: #FFFFFF;
+      --text-main: #2C3E50;
+      --text-muted: #627282;
+      --text-light: #8C9CAE;
+      
+      --border-light: #EBF2F8;
+      --shadow-soft: 0 10px 30px rgba(59, 114, 158, 0.08);
+      --shadow-hover: 0 18px 40px rgba(59, 114, 158, 0.15);
+      
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-pill: 999px;
+      
+      --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* Reset & General Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Playfair Display', serif;
+      color: var(--brand-dark);
+      line-height: 1.3;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-smooth);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Utility Helpers */
+    .text-center { text-align: center; }
+    .badge-pill {
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      background: var(--pastel-pink);
+      color: var(--brand-accent);
+      margin-bottom: 1rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 2rem;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-primary {
+      background-color: var(--brand-primary);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--brand-dark);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: var(--pastel-blue);
+      color: var(--brand-dark);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--pastel-blue-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: var(--brand-primary);
+      color: var(--brand-primary);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--brand-primary);
+      color: #FFFFFF;
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* ==========================================================================
+       2. HEADER & NAVIGATION
+       ========================================================================== */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(250, 252, 254, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+    }
+
+    .brand-logo span.logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pastel-blue), var(--pastel-pink));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-primary);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav.main-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    nav.main-nav a.nav-link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-main);
+      position: relative;
+    }
+
+    nav.main-nav a.nav-link:hover,
+    nav.main-nav a.nav-link.active {
+      color: var(--brand-primary);
+    }
+
+    nav.main-nav a.nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--brand-primary);
+      border-radius: var(--radius-pill);
+    }
+
+    .mobile-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--brand-dark);
+    }
+
+    /* ==========================================================================
+       3. PAGE VIEWS SYSTEM
+       ========================================================================== */
+    .page-view {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    .page-view.active-view {
+      display: block;
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       4. HERO SECTION (HOME)
+       ========================================================================== */
+    .hero {
+      padding: 6rem 0 4rem 0;
+      background: radial-gradient(circle at 10% 20%, var(--pastel-blue) 0%, var(--bg-main) 70%);
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content p.hero-sub {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 540px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-light);
+    }
+
+    .stat-item h4 {
+      font-size: 1.8rem;
+      color: var(--brand-primary);
+    }
+
+    .stat-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .hero-image-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-lavender));
+      padding: 1rem;
+    }
+
+    .hero-image-card img {
+      border-radius: var(--radius-md);
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+    }
+
+    .floating-card {
+      position: absolute;
+      bottom: 2rem;
+      left: -1.5rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 1.2rem 1.8rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-light);
+    }
+
+    .floating-card strong {
+      display: block;
+      color: var(--brand-dark);
+      font-size: 1rem;
+    }
+
+    .floating-card span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       5. FEATURE & CARD GRIDS
+       ========================================================================== */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      padding: 2.2rem;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition-smooth);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--pastel-blue-dark);
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: var(--pastel-blue);
+      color: var(--brand-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================================================
+       6. PROGRAM SPECIFIC PAGES & CURRICULUM
+       ========================================================================== */
+    .program-hero {
+      background: linear-gradient(135deg, var(--pastel-blue), var(--pastel-lavender));
+      padding: 5rem 0;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+
+    .curriculum-accordion {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .accordion-item {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1px solid var(--border-light);
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      padding: 1.4rem 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--brand-dark);
+    }
+
+    .accordion-body {
+      padding: 0 1.8rem 1.4rem 1.8rem;
+      display: none;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-light);
+      padding-top: 1rem;
+    }
+
+    .accordion-item.active .accordion-body {
+      display: block;
+    }
+
+    /* ==========================================================================
+       7. TESTIMONIALS & SUCCESS STORIES
+       ========================================================================== */
+    .story-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .story-img {
+      height: 240px;
+      width: 100%;
+      object-fit: cover;
+      background: var(--pastel-pink);
+    }
+
+    .story-content {
+      padding: 1.8rem;
+    }
+
+    .story-author {
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin-top: 1rem;
+    }
+
+    .story-role {
+      font-size: 0.85rem;
+      color: var(--brand-primary);
+    }
+
+    /* ==========================================================================
+       8. REGISTRATION & MODAL FORM
+       ========================================================================== */
+    .registration-form-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      box-shadow: var(--shadow-hover);
+      border: 1px solid var(--border-light);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--brand-dark);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1.2rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: var(--bg-main);
+      transition: var(--transition-smooth);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--brand-primary);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 4px rgba(59, 114, 158, 0.1);
+    }
+
+    /* Modal Styling */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(30, 56, 77, 0.6);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .modal-backdrop.show {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      max-width: 600px;
+      width: 100%;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: var(--shadow-hover);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text-light);
+    }
+
+    /* ==========================================================================
+       9. FOOTER
+       ========================================================================== */
+    footer.site-footer {
+      background: var(--brand-dark);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 5rem 0 2rem 0;
+      margin-top: 5rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--pastel-blue);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-content p.hero-sub { margin: 0 auto 2rem auto; }
+      .hero-cta { justify-content: center; }
+      .floating-card { display: none; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav.main-nav { display: none; }
+      .mobile-toggle { display: block; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER / NAVIGATION
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#" onclick="switchView('home')" class="brand-logo">
+          <span class="logo-icon">G</span>
+          Gerr's Virtual Academy
+        </a>
+
+        <nav class="main-nav">
+          <a href="#" onclick="switchView('home')" class="nav-link active" id="nav-home">Home</a>
+          <a href="#" onclick="switchView('va-training')" class="nav-link" id="nav-va-training">VA Training</a>
+          <a href="#" onclick="switchView('smm-bootcamp')" class="nav-link" id="nav-smm-bootcamp">SMM Bootcamp</a>
+          <a href="#" onclick="switchView('programs')" class="nav-link" id="nav-programs">Programs</a>
+          <a href="#" onclick="switchView('success-stories')" class="nav-link" id="nav-success-stories">Success Stories</a>
+          <a href="#" onclick="switchView('about')" class="nav-link" id="nav-about">About</a>
+          <a href="#" onclick="switchView('resources')" class="nav-link" id="nav-resources">Resources</a>
+          <a href="#" onclick="switchView('contact')" class="nav-link" id="nav-contact">Contact</a>
+          <a href="#" onclick="switchView('register')" class="btn btn-primary btn-sm">Register Now</a>
+        </nav>
+
+        <div class="mobile-toggle" onclick="alert('Navigation menu for mobile views.')">☰</div>
+      </div>
+    </div>
+  </header>
+
+  <main id="app-content">
+
+    <!-- ==========================================================================
+         VIEW 1: HOME PAGE
+         ========================================================================== -->
+    <div id="view-home" class="page-view active-view">
+      
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-content">
+              <span class="badge-pill">Batch 13 & 14 Openings</span>
+              <h1>From Zero to VA Hero.</h1>
+              <p class="hero-sub">Build the practical skills, confidence, and career-ready foundation you need to start your Virtual Assistant journey with guidance from Coach Gerr.</p>
+              
+              <div class="hero-cta">
+                <button onclick="switchView('register')" class="btn btn-primary">Start Your GVA Journey</button>
+                <button onclick="switchView('programs')" class="btn btn-secondary">Explore Our Programs</button>
+              </div>
+
+              <div class="stats-bar">
+                <div class="stat-item">
+                  <h4>3,000+</h4>
+                  <p>Graduates</p>
+                </div>
+                <div class="stat-item">
+                  <h4>18</h4>
+                  <p>Batches Trained</p>
+                </div>
+                <div class="stat-item">
+                  <h4>100%</h4>
+                  <p>Beginner Friendly</p>
+                </div>
+                <div class="stat-item">
+                  <h4>Global</h4>
+                  <p>Career Focus</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-image-card">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Virtual Assistant working comfortably from home">
+              <div class="floating-card">
+                <strong>Empowering Digital Talent</strong>
+                <span>Supporting career shifters & parents nationwide</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose GVA -->
+      <section>
+        <div class="container">
+          <div class="section-header">
+            <span class="badge-pill">The GVA Difference</span>
+            <h2>Why Aspiring VAs Choose GVA</h2>
+            <p>We are dedicated to turning zero experience into real career confidence through practical, structured, and compassionate training.</p>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <div class="card-icon">🌱</div>
+              <h3>100% Beginner Friendly</h3>
+              <p>No prior technical background or corporate VA experience needed. We teach every tool, strategy, and workflow step by step from the ground up.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🛠️</div>
+              <h3>Hands-On & Practical</h3>
+              <p>Learn by doing real-world client tasks. Build live output for your personal portfolio during the course so you are ready to apply.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🤝</div>
+              <h3>Supportive Mentorship</h3>
+              <p>Train directly with Coach Gerr and join a warm community of fellow students who uplift, encourage, and guide each other throughout the journey.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Programs Preview -->
+      <section style="background: var(--pastel-blue); padding: 5rem 0;">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge-pill">Core Training</span>
+            <h2>Our Specialized Programs</h2>
+            <p>Designed for complete beginners who want structured, actionable skills to launch their online careers.</p>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <span class="badge-pill" style="background: var(--pastel-pink); color: var(--brand-accent);">Most Popular</span>
+              <h3>Virtual Assistant Training</h3>
+              <p>A complete foundational course covering administrative support, inbox/calendar management, client communications, essential tools, and job hunting strategy.</p>
+              <br>
+              <button onclick="switchView('va-training')" class="btn btn-outline" style="width: 100%;">View VA Curriculum</button>
+            </div>
+
+            <div class="card">
+              <span class="badge-pill" style="background: var(--mint-accent); color: #2E7D32;">High Demand</span>
+              <h3>Social Media Management Bootcamp</h3>
+              <p>Learn how to manage brand accounts, design visual content, schedule posts, write compelling captions, and report basic analytics to prospective clients.</p>
+              <br>
+              <button onclick="switchView('smm-bootcamp')" class="btn btn-outline" style="width: 100%;">View SMM Curriculum</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Meet Coach Gerr -->
+      <section>
+        <div class="container">
+          <div class="grid-2" style="align-items: center;">
+            <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-hover);">
+              <img src="https://images.unsplash.com/photo-1580894732413-a92362f61e86?auto=format&fit=crop&w=800&q=80" alt="Coach Gerr - Founder of GVA">
+            </div>
+            <div>
+              <span class="badge-pill">Meet Your Mentor</span>
+              <h2>Guided by Coach Gerr</h2>
+              <p style="margin-bottom: 1.2rem; color: var(--text-muted);">Nearly seven years ago, Coach Gerr transitioned from a government role into full-time Virtual Assistance. After successfully establishing her own remote career, she founded Gerr’s Virtual Academy to teach others how to break free from traditional constraints.</p>
+              <p style="margin-bottom: 1.8rem; color: var(--text-muted);">Having trained over 3,000+ students across 18 batches, her mission remains unchanged: helping aspiring VAs go <em>From Zero to VA Hero</em> with empathy, clarity, and practical skill development.</p>
+              <button onclick="switchView('about')" class="btn btn-secondary">Read Full Story</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Registration Banner CTA -->
+      <section style="background: linear-gradient(135deg, var(--brand-primary), var(--brand-dark)); color: #FFFFFF; text-align: center; border-radius: var(--radius-lg); margin: 3rem auto; max-width: 1100px;">
+        <div style="padding: 4rem 2rem;">
+          <h2 style="color: #FFFFFF; font-size: 2.8rem; margin-bottom: 1rem;">Ready to Take Your First Step?</h2>
+          <p style="max-width: 600px; margin: 0 auto 2rem auto; color: rgba(255,255,255,0.85);">Slots for upcoming batches are filled on a first-come, first-served basis. Secure your spot in the next GVA cohort today.</p>
+          <button onclick="switchView('register')" class="btn" style="background: var(--pastel-pink); color: var(--brand-dark);">Register for Next Batch</button>
+        </div>
+      </section>
+
+    </div>
+
+
+    <!-- ==========================================================================
+         VIEW 2: VIRTUAL ASSISTANT TRAINING PAGE
+         ========================================================================== -->
+    <div id="view-va-training" class="page-view">
+      <div class="program-hero text-center">
+        <div class="container">
+          <span class="badge-pill">Primary Flagship Program</span>
+          <h1 style="font-size: 3rem; margin-bottom: 1rem;">Virtual Assistant Training Philippines</h1>
+          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">A structured, step-by-step training program designed to take complete beginners from zero experience to confident, work-ready Virtual Assistants.</p>
+          <button onclick="switchView('register')" class="btn btn-primary">Enroll in VA Training</button>
+        </div>
+      </div>
+
+      <section>
+        <div class="container">
+          <div class="grid-2">
+            <div>
+              <h2>Who This Training Is For</h2>
+              <br>
+              <ul style="list-style: none;">
+                <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem; align-items: flex-start;">
+                  <span style="color: var(--brand-primary); font-weight: bold;">✓</span>
+                  <span><strong>Complete Beginners:</strong> Individuals with no prior online work experience seeking structured guidance.</span>
+                </li>
+                <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem; align-items: flex-start;">
+                  <span style="color: var(--brand-primary); font-weight: bold;">✓</span>
+                  <span><strong>Career Shifters:</strong> Corporate workers looking for flexible remote career paths.</span>
+                </li>
+                <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem; align-items: flex-start;">
+                  <span style="color: var(--brand-primary); font-weight: bold;">✓</span>
+                  <span><strong>Stay-at-Home Parents:</strong> Parents who want to earn remotely while staying close to family.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2>Key Inclusions</h2>
+              <br>
+              <div class="card" style="background: var(--bg-main);">
+                <p>🔹 <strong>Live & Recorded Interactive Sessions</strong></p>
+                <p>🔹 <strong>Hands-on Portfolio Task Exercises</strong></p>
+                <p>🔹 <strong>Downloadable VA Templates & Client Scripts</strong></p>
+                <p>🔹 <strong>Official GVA Certificate of Completion</strong></p>
+                <p>🔹 <strong>Lifetime Access to GVA Alumni Community</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Curriculum Accordion -->
+      <section style="background: var(--pastel-blue); padding: 5rem 0;">
+        <div class="container">
+          <div class="section-header">
+            <h2>Course Curriculum</h2>
+            <p>Every module is designed to give you practical, job-ready outputs.</p>
+          </div>
+
+          <div class="curriculum-accordion">
+            <div class="accordion-item active">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Module 1: Foundations of Virtual Assistance & Professional Mindset</span>
+                <span>▼</span>
+              </div>
+              <div class="accordion-body">
+                <p>Understanding the VA landscape, identifying your service offerings, setting up your home workspace, and adopting a professional client-service mindset.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Module 2: Essential Administrative & Executive Workflows</span>
+                <span>▼</span>
+              </div>
+              <div class="accordion-body">
+                <p>Mastering Google Workspace, Microsoft 365, advanced email filtering, Google Calendar scheduling, travel planning, and basic data entry protocols.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Module 3: Project Management & Communication Tools</span>
+                <span>▼</span>
+              </div>
+              <div class="accordion-body">
+                <p>Hands-on practice with Asana, Trello, Notion, Slack, Zoom, and Loom to handle team coordination and async task updates effectively.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Module 4: Resume, Portfolio & Client Outreach Strategy</span>
+                <span>▼</span>
+              </div>
+              <div class="accordion-body">
+                <p>Building a client-attracting resume, designing your digital portfolio, creating Upwork/OLJ profiles, and writing personalized application proposals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==========================================================================
+         VIEW 3: SOCIAL MEDIA MANAGEMENT BOOTCAMP PAGE
+         ========================================================================== -->
+    <div id="view-smm-bootcamp" class="page-view">
+      <div class="program-hero text-center" style="background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-lavender));">
+        <div class="container">
+          <span class="badge-pill" style="background: #FFFFFF;">Specialized Skill Upgrade</span>
+          <h1 style="font-size: 3rem; margin-bottom: 1rem;">Social Media Management Training Philippines</h1>
+          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">Learn how to plan, design, schedule, and execute social media content strategies for brands and small businesses.</p>
+          <button onclick="switchView('register')" class="btn btn-primary">Enroll in SMM Bootcamp</button>
+        </div>
+      </div>
+
+      <section>
+        <div class="container">
+          <div class="section-header">
+            <h2>What You Will Master</h2>
+            <p>Go beyond posting pictures—learn actionable strategy and visual branding.</p>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <h3>Content Strategy</h3>
+              <p>Learn how to build content pillars, map out monthly calendars, and align posts with marketing goals.</p>
+            </div>
+            <div class="card">
+              <h3>Canva Visual Design</h3>
+              <p>Create clean, professional, branded visual assets, Reels, carousel posts, and brand kits effortlessly.</p>
+            </div>
+            <div class="card">
+              <h3>Scheduling & Analytics</h3>
+              <p>Use Meta Business Suite, Buffer, and Metricool to schedule content and report growth insights to clients.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==========================================================================
+         VIEW 4: ALL PROGRAMS DIRECTORY PAGE
+         ========================================================================== -->
+    <div id="view-programs" class="page-view">
+      <section class="container" style="padding-top: 4rem;">
+        <div class="section-header">
+          <span class="badge-pill">GVA Program Directory</span>
+          <h2>Explore Our Training Programs</h2>
+          <p>Find the right path to kickstart or elevate your remote career.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-icon">💼</div>
+            <h3>Virtual Assistant Training</h3>
+            <p style="margin-bottom: 1.5rem;">The complete foundational blueprint for beginners. Covers admin support, client communication, digital tools, portfolio creation, and job application strategies.</p>
+            <button onclick="switchView('va-training')" class="btn btn-secondary">Learn More</button>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📱</div>
+            <h3>Social Media Management Bootcamp</h3>
+            <p style="margin-bottom: 1.5rem;">A practical course focused on graphic design, content calendar planning, social media strategy, tool scheduling, and client account reporting.</p>
+            <button onclick="switchView('smm-bootcamp')" class="btn btn-secondary">Learn More</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==========================================================================
+         VIEW 5: SUCCESS STORIES PAGE
+         ========================================================================== -->
+    <div id="view-success-stories" class="page-view">
+      <section class="container" style="padding-top: 4rem;">
+        <div class="section-header">
+          <span class="badge-pill">GVA Alumni Journey</span>
+          <h2>Real Student Transformations</h2>
+          <p>Read inspiring stories from our real graduates who built their confidence and started their remote careers with GVA.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="story-card">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate">
+            <div class="story-content">
+              <p style="font-style: italic; font-size: 0.9rem;">"GVA gave me the exact step-by-step guidance I needed. I had zero experience, but Coach Gerr made everything clear and achievable."</p>
+              <div class="story-author">Batch 11 Alumni</div>
+              <div class="story-role">General Virtual Assistant</div>
+            </div>
+          </div>
+
+          <div class="story-card">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate">
+            <div class="story-content">
+              <p style="font-style: italic; font-size: 0.9rem;">"The portfolio tasks were the best part! Having real outputs ready allowed me to feel confident during client interviews."</p>
+              <div class="story-author">Batch 12 Alumni</div>
+              <div class="story-role">Social Media Specialist</div>
+            </div>
+          </div>
+
+          <div class="story-card">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate">
+            <div class="story-content">
+              <p style="font-style: italic; font-size: 0.9rem;">"Coach Gerr is such a compassionate mentor. The community support doesn't end when the training batch finishes."</p>
+              <div class="story-author">Batch 10 Alumni</div>
+              <div class="story-role">Executive VA</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==========================================================================
+         VIEW 6: ABOUT GVA PAGE
+         ========================================================================== -->
+    <div id="view-about" class="page-view">
+      <section class="container" style="padding-top: 4rem;">
+        <div class="section-header">
+          <span class="badge-pill">Our Story & Mission</span>
+          <h2>About Gerr's Virtual Academy</h2>
+          <p>Dedicated to helping aspiring VAs go from zero to hero through structured training, authentic community, and empathetic mentorship.</p>
+        </div>
+
+        <div class="grid-2" style="align-items: center; margin-bottom: 4rem;">
+          <div>
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">The GVA Mission</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Gerr’s Virtual Academy was born out of a passion to make digital careers accessible to every aspiring professional, parent, and career shifter in the Philippines.</p>
+            <p style="color: var(--text-muted);">We believe that with the right tools, practical exercises, and supportive guidance, anyone can overcome the fear of starting anew and build a thriving virtual career.</p>
+          </div>
+          <div class="card" style="background: var(--pastel-blue);">
+            <h3>GVA Philosophy</h3>
+            <br>
+            <p>✨ <strong>Empathy First:</strong> We guide every student with patience and warmth.</p>
+
+            <p>✨ <strong>Practical Focus:</strong> Theory is good, but real-world practice creates confidence.</p>
+
+            <p>✨ <strong>Community Support:</strong> We grow together, learn together, and celebrate wins together.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==========================================================================
+         VIEW 7: RESOURCES PAGE
+         ========================================================================== -->
+    <div id="view-resources" class="page-view">
+      <section class="container" style="padding-top: 4rem;">
+        <div class="section-header">
+          <span class="badge-pill">Free Beginner Learning Hub</span>
+          <h2>Virtual Assistance Guides & Articles</h2>
+          <p>Helpful resources to kickstart your research into the remote working world.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 3rem; background: linear-gradient(135deg, var(--pastel-blue), var(--card-bg));">
+          <span class="badge-pill">Featured Guide</span>
+          <h3 style="font-size: 1.8rem; margin-bottom: 0.8rem;">How to Become a Virtual Assistant in the Philippines: Complete Beginner's Guide</h3>
+          <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Learn what equipment you need, the most in-demand skills clients look for today, and how to structure your initial learning roadmap from scratch.</p>
+          <button onclick="alert('Full guide article view.')" class="btn btn-primary">Read Guide</button>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==========================================================================
+         VIEW 8: REGISTER PAGE
+         ========================================================================== -->
+    <div id="view-register" class="page-view">
+      <section class="container" style="padding-top: 3rem;">
+        <div class="section-header">
+          <span class="badge-pill">Take the First Step</span>
+          <h2>Register for an Upcoming Batch</h2>
+          <p>Fill out the registration form below to reserve your slot in our upcoming training programs.</p>
+        </div>
+
+        <div class="registration-form-card">
+          <form onsubmit="handleRegistration(event)">
+            <div class="form-group">
+              <label for="reg-program">Select Program *</label>
+              <select id="reg-program" required>
+                <option value="">-- Choose Course --</option>
+                <option value="Virtual Assistant Training">Virtual Assistant Training</option>
+                <option value="Social Media Management Bootcamp">Social Media Management Bootcamp</option>
+                <option value="Both Programs (Bundle)">Both Programs (Special Bundle)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-name">Full Name *</label>
+              <input type="text" id="reg-name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-email">Email Address *</label>
+              <input type="email" id="reg-email" placeholder="name@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-phone">Contact / Phone Number *</label>
+              <input type="tel" id="reg-phone" placeholder="e.g. 09171234567" required>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-notes">Questions or Additional Notes (Optional)</label>
+              <textarea id="reg-notes" rows="3" placeholder="Tell us about your background or ask any questions..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Complete Registration</button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ==========================================================================
+         VIEW 9: CONTACT PAGE
+         ========================================================================== -->
+    <div id="view-contact" class="page-view">
+      <section class="container" style="padding-top: 4rem;">
+        <div class="section-header">
+          <span class="badge-pill">Get in Touch</span>
+          <h2>Contact Gerr's Virtual Academy</h2>
+          <p>Have questions about upcoming batches, schedule details, or program fit? We are here to help!</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Direct Contact Details</h3>
+            <br>
+            <p>📧 <strong>Email Us:</strong><br>
+            <a href="mailto:info@gerrsvirtualacademy.com" style="color: var(--brand-primary);">info@gerrsvirtualacademy.com</a></p>
+            <br>
+            <p>🌐 <strong>Official Facebook Community:</strong><br>
+            Gerr's Virtual Academy Student Portal</p>
+            <br>
+            <p>⏰ <strong>Support Hours:</strong><br>
+            Monday – Friday | 9:00 AM – 6:00 PM PST</p>
+          </div>
+
+          <div class="card">
+            <h3>Send a Direct Inquiry</h3>
+            <form onsubmit="alert('Thank you for reaching out! We will reply via email shortly.'); return false;">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" required placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" required placeholder="Your email">
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea rows="3" required placeholder="How can we help you?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="color: #FFFFFF; margin-bottom: 1rem;">
+            <span class="logo-icon" style="background: var(--pastel-pink); color: var(--brand-dark);">G</span>
+            GVA
+          </div>
+          <p>Gerr's Virtual Academy is dedicated to providing high-quality, practical online training for aspiring Virtual Assistants and digital professionals.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="switchView('home')">Home</a></li>
+            <li><a href="#" onclick="switchView('va-training')">VA Training</a></li>
+            <li><a href="#" onclick="switchView('smm-bootcamp')">SMM Bootcamp</a></li>
+            <li><a href="#" onclick="switchView('programs')">Programs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Academy</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="switchView('success-stories')">Success Stories</a></li>
+            <li><a href="#" onclick="switchView('about')">About Coach Gerr</a></li>
+            <li><a href="#" onclick="switchView('resources')">Resources</a></li>
+            <li><a href="#" onclick="switchView('contact')">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Stay Connected</h4>
+          <p style="margin-bottom: 1rem;">Have questions before enrolling?</p>
+          <p>Email: <a href="mailto:info@gerrsvirtualacademy.com" style="color: var(--pastel-blue);">info@gerrsvirtualacademy.com</a></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Gerr's Virtual Academy (GVA). All rights reserved. | From Zero to VA Hero.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==========================================================================
+       JAVASCRIPT FOR SPA ROUTING & INTERACTION
+       ========================================================================== -->
+  <script>
+    // SPA View Switcher
+    function switchView(viewId) {
+      // Hide all page views
+      const views = document.querySelectorAll('.page-view');
+      views.forEach(view => view.classList.remove('active-view'));
+
+      // Remove active class from nav links
+      const navLinks = document.querySelectorAll('nav.main-nav a.nav-link');
+      navLinks.forEach(link => link.classList.remove('active'));
+
+      // Show targeted view
+      const targetView = document.getElementById('view-' + viewId);
+      if (targetView) {
+        targetView.classList.add('active-view');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Highlight corresponding nav link
+      const targetNavLink = document.getElementById('nav-' + viewId);
+      if (targetNavLink) {
+        targetNavLink.classList.add('active');
+      }
+    }
+
+    // Accordion Toggle Function
+    function toggleAccordion(headerElem) {
+      const item = headerElem.parentElement;
+      item.classList.toggle('active');
+    }
+
+    // Handle Registration Submit
+    function handleRegistration(e) {
+      e.preventDefault();
+      const program = document.getElementById('reg-program').value;
+      const name = document.getElementById('reg-name').value;
+      
+      alert(`Thank you for registering, ${name}! Your slot request for "${program}" has been received. We have sent next steps to your email.`);
+      switchView('home');
+    }
+  </script>
+</body>
+</html>
