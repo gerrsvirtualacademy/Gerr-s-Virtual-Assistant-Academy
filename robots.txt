@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gerrsvirtualacademy.github.io/Gerr-s-Virtual-Assistant-Academy/sitemap.xml
