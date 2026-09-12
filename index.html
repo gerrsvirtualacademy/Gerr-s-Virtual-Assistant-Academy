@@ -672,7 +672,7 @@
           <a href="#" onclick="switchView('success-stories'); toggleMobileMenu();" class="nav-link" id="nav-success-stories">Success Stories</a>
           <a href="#" onclick="switchView('about'); toggleMobileMenu();" class="nav-link" id="nav-about">About</a>
           <a href="#" onclick="switchView('resources'); toggleMobileMenu();" class="nav-link" id="nav-resources">Resources</a>
-          <a href="#" onclick="switchView('contact'); toggleMobileMenu();" class="nav-link" id="nav-contact">Contact</a>
+          <a href="#" onclick="switchView('contact'); toggleMobileMenu();" class="nav-link" id="nav-contact">Contact & Inquiries</a>
           <a href="#" onclick="switchView('register'); toggleMobileMenu();" class="btn btn-primary btn-sm" style="width: auto;">Register Now</a>
         </nav>
       </div>
@@ -794,8 +794,8 @@
             <div>
               <span class="badge-pill">Meet Your Mentor</span>
               <h2>Guided by Coach Gerr</h2>
-              <p style="margin-bottom: 1.2rem; color: var(--text-muted);">Nearly seven years ago, Coach Gerr transitioned from a government role into full-time Virtual Assistance. After successfully establishing her own remote career, she founded Gerr’s Virtual Academy to teach others how to break free from traditional constraints.</p>
-              <p style="margin-bottom: 1.8rem; color: var(--text-muted);">Having trained over 3,000+ students, her mission remains unchanged: helping aspiring VAs go <em>From Zero to VA Hero</em> with empathy, clarity, and practical skill development.</p>
+              <p style="margin-bottom: 1.2rem; color: var(--text-muted);">Coach Gerr is a Virtual Assistant Mentor and the founder of Gerr’s Virtual Academy, where she helps aspiring and beginner VAs learn practical skills, understand the tools used in real VA work, and build the confidence to start their careers.</p>
+              <p style="margin-bottom: 1.8rem; color: var(--text-muted);">With a hands-on and beginner-friendly approach, Coach Gerr believes that becoming a VA shouldn’t feel overwhelming. Her goal is to make learning simple, practical, and applicable—so students don’t just learn, but know how to actually use what they’ve learned.</p>
               <button onclick="switchView('about')" class="btn btn-secondary">Read Full Story</button>
             </div>
           </div>
@@ -1024,22 +1024,34 @@
     <div id="view-about" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
-          <span class="badge-pill">Our Story & Mission</span>
-          <h2>About Gerr's Virtual Academy</h2>
-          <p>Empowering aspiring Virtual Assistants with practical training, real supports, and real opportunities.</p>
+          <span class="badge-pill">Our Story & Mentor</span>
+          <h2>Meet Coach Gerr</h2>
+          <p>Empowering aspiring Virtual Assistants with practical training, real support, and real opportunities.</p>
         </div>
 
         <div class="grid-2" style="align-items: center; margin-bottom: 4rem;">
+          <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-hover);">
+            <img src="https://images.unsplash.com/photo-1580894732413-a92362f61e86?auto=format&fit=crop&w=800&q=80" alt="Coach Gerr - Founder of GVA">
+          </div>
           <div>
-            <h3 style="font-size: 2rem; margin-bottom: 1rem;">The GVA Mission</h3>
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Virtual Assistant Mentor & Founder</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Coach Gerr is a Virtual Assistant Mentor and the founder of Gerr’s Virtual Academy, where she helps aspiring and beginner VAs learn practical skills, understand the tools used in real VA work, and build the confidence to start their careers.</p>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">With a hands-on and beginner-friendly approach, Coach Gerr believes that becoming a VA shouldn’t feel overwhelming. Her goal is to make learning simple, practical, and applicable—so students don’t just learn, but know how to actually use what they’ve learned.</p>
+            <p style="color: var(--navy); font-weight: 600; margin-bottom: 1.5rem;">Ready to start your VA journey? Learn with Coach Gerr and take your first step toward becoming a confident, work-ready Virtual Assistant.</p>
+            <button onclick="switchView('register')" class="btn btn-primary">Start Your GVA Journey</button>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 4rem;">
+          <div class="card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">The GVA Mission</h3>
             <p style="color: var(--text-muted); margin-bottom: 1rem;">Gerr’s Virtual Academy was born out of a passion to make digital careers accessible to every aspiring professional, parent, and career shifter in the Philippines.</p>
             <p style="color: var(--text-muted);">We believe that with the right tools, practical exercises, and supportive guidance, anyone can overcome the fear of starting anew and build a thriving virtual career.</p>
           </div>
           <div class="card" style="background: var(--pale-blue);">
-            <h3>GVA Philosophy</h3>
-            <br>
-            <p>✨ <strong>Supportive & Friendly:</strong> We guide every student with patience and warmth.</p>
-            <p>✨ <strong>Practical Focus:</strong> Theory is good, but real-world practice creates confidence.</p>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">GVA Philosophy</h3>
+            <p style="margin-bottom: 0.8rem;">✨ <strong>Supportive & Friendly:</strong> We guide every student with patience and warmth.</p>
+            <p style="margin-bottom: 0.8rem;">✨ <strong>Practical Focus:</strong> Theory is good, but real-world practice creates confidence.</p>
             <p>✨ <strong>Growth Focused:</strong> We grow together, learn together, and celebrate wins together.</p>
           </div>
         </div>
@@ -1111,18 +1123,42 @@
       </section>
     </div>
 
-    <!-- VIEW 9: CONTACT PAGE -->
+    <!-- VIEW 9: CONTACT & INQUIRIES PAGE -->
     <div id="view-contact" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
           <span class="badge-pill">Get in Touch</span>
-          <h2>Contact Gerr's Virtual Academy</h2>
-          <p>Have general questions about upcoming schedule details or program fit? Reach out to us directly through any of our official channels below!</p>
+          <h2>Contact & Inquiries</h2>
+          <p>Have questions about our courses, schedules, or 1:1 bookings? Send us a message or reach out through our official channels below!</p>
         </div>
 
         <div class="grid-2">
+          <!-- Inquiry Form Section -->
+          <div class="registration-form-card" style="margin: 0; max-width: none;">
+            <h3 style="margin-bottom: 1.5rem; color: var(--navy);">Send Us an Inquiry</h3>
+            <form action="https://formspree.io/f/mwlkzjzg" method="POST">
+              <div class="form-group">
+                <label for="inquiry-name">Full Name *</label>
+                <input type="text" id="inquiry-name" name="Full Name" placeholder="Enter your full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="inquiry-email">Email Address *</label>
+                <input type="email" id="inquiry-email" name="Email Address" placeholder="name@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="inquiry-message">Your Message / Inquiry *</label>
+                <textarea id="inquiry-message" name="Inquiry Message" rows="4" placeholder="How can we help you?" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+            </form>
+          </div>
+
+          <!-- Direct Channels & Booking Info -->
           <div class="card">
-            <h3>Direct Contact Channels</h3>
+            <h3>Direct Channels & 1:1 Bookings</h3>
             <br>
             <p>📧 <strong>Email Us Directly:</strong><br>
             <a href="mailto:info@gerrsvirtualacademy.com" style="color: var(--royal-blue); font-weight: 500;">info@gerrsvirtualacademy.com</a></p>
@@ -1130,21 +1166,11 @@
             <p>🌐 <strong>Official Facebook Page:</strong><br>
             <a href="https://www.facebook.com/GerrsVirtualAcademy" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 500;">facebook.com/GerrsVirtualAcademy</a></p>
             <br>
-            <p>🎵 <strong>TikTok:</strong><br>
-            <a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 500;">@coach_gerr</a></p>
-            <br>
-            <p>📸 <strong>Instagram:</strong><br>
-            <a href="https://www.instagram.com/coach_gerr/" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 500;">@coach_gerr</a></p>
+            <p>📅 <strong>1:1 Consultation & Strategy Calls:</strong><br>
+            Book a personalized 1:1 session with us directly via our Google Calendar appointment schedule.</p>
             <br>
             <p>⏰ <strong>Support Hours:</strong><br>
             Monday – Friday | 9:00 AM – 6:00 PM PST</p>
-          </div>
-
-          <div class="card" style="background: linear-gradient(135deg, var(--pale-blue), var(--white));">
-            <h3>Ready to Enroll?</h3>
-            <br>
-            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">To secure your slot for our upcoming training sessions at ₱599 per course, please proceed directly to our online registration portal.</p>
-            <button onclick="switchView('register')" class="btn btn-primary" style="width: 100%;">Go to Registration Form</button>
           </div>
         </div>
       </section>
@@ -1179,7 +1205,7 @@
             <li><a href="#" onclick="switchView('success-stories')">Success Stories</a></li>
             <li><a href="#" onclick="switchView('about')">About Coach Gerr</a></li>
             <li><a href="#" onclick="switchView('resources')">Resources</a></li>
-            <li><a href="#" onclick="switchView('contact')">Contact</a></li>
+            <li><a href="#" onclick="switchView('contact')">Contact & Inquiries</a></li>
           </ul>
         </div>
 
@@ -1237,7 +1263,7 @@
         'about': "About Coach Gerr & GVA Mission",
         'resources': "Free Beginner VA Guides & Resources | GVA",
         'register': "Register for Training | Gerr's Virtual Academy",
-        'contact': "Contact & Support | Gerr's Virtual Academy"
+        'contact': "Contact & Inquiries | Gerr's Virtual Academy"
       };
 
       if (titles[viewId]) {
