@@ -1317,19 +1317,36 @@
     <div id="view-portal" class="page-view">
       <section class="container" style="padding-top: 4rem; max-width: 800px;">
         
-        <!-- Login Gate -->
-        <div id="portal-login-card" class="registration-form-card">
-          <span class="badge-pill">Secure Student Area</span>
-          <h2>GVA Student Portal</h2>
-          <p style="margin-bottom: 2rem; color: var(--text-muted);">Enter your Batch Access Code provided in your welcome email to view your replays, resources, and certificate requests.</p>
+        <!-- Enhanced Login Gate with Clear Instructions -->
+        <div id="portal-login-card" class="registration-form-card" style="border: 2px solid var(--pale-blue);">
+          <div style="text-align: center; margin-bottom: 2rem;">
+            <span class="badge-pill">🔒 Secure Student Area</span>
+            <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: var(--navy);">GVA Student Portal</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">Access your exclusive training replays, resource folders, portfolio tasks, and certificate requests.</p>
+          </div>
+
+          <!-- Instructions Box -->
+          <div style="background: var(--pale-blue); padding: 1.4rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
+            <strong style="display: block; margin-bottom: 0.5rem; font-size: 0.95rem;">💡 How to log in:</strong>
+            <ol style="padding-left: 1.2rem; color: var(--text-muted); line-height: 1.6;">
+              <li>Check your <strong>Welcome / Onboarding Email</strong> sent immediately after enrollment.</li>
+              <li>Locate your unique Batch Access Code (e.g., <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">GVA-BATCH18</code>).</li>
+              <li>Enter your code below and click <strong>Enter Portal</strong> to access your specific cohort dashboard.</li>
+            </ol>
+          </div>
           
           <div class="form-group">
             <label for="batch-code">Batch Access Code *</label>
-            <input type="password" id="batch-code" placeholder="e.g. GVA-BATCH13" required>
+            <input type="password" id="batch-code" placeholder="e.g. GVA-BATCH18" required style="text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">
           </div>
           
-          <button onclick="verifyBatchCode()" class="btn btn-primary" style="width: 100%;">Enter Portal</button>
-          <p id="login-error" style="color: #E11D48; font-size: 0.85rem; margin-top: 1rem; display: none; text-align: center;">Invalid access code. Please check your welcome email.</p>
+          <button onclick="verifyBatchCode()" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Enter Portal →</button>
+          
+          <p id="login-error" style="color: #E11D48; font-size: 0.85rem; margin-bottom: 1rem; display: none; text-align: center; font-weight: 500;">⚠️ Invalid access code. Please check your welcome email or contact support.</p>
+
+          <div style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 1.2rem; margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+            Lost your code or having trouble logging in? <a href="#" onclick="switchView('contact')" style="color: var(--royal-blue); font-weight: 600;">Contact Coach Gerr Support</a>
+          </div>
         </div>
 
         <!-- Dynamic Portal Dashboard (Populated by JavaScript) -->
@@ -1470,7 +1487,7 @@
       }
     }
 
-    // Batch Code Verification Logic for the Student Portal
+    // Batch Code Verification Logic for Student Portals (Batches 12 to 18+)
     function verifyBatchCode() {
       const inputCode = document.getElementById('batch-code').value.trim().toUpperCase();
       const errorMsg = document.getElementById('login-error');
@@ -1491,6 +1508,46 @@
           resources: "https://drive.google.com/drive/folders/batch13-resources",
           activities: "https://forms.gle/batch13-activities",
           certificate: "https://forms.gle/batch13-certificate"
+        },
+        "GVA-BATCH14": {
+          title: "Batch 14 Student Hub",
+          subtitle: "Welcome to your live training dashboard!",
+          replays: "https://drive.google.com/drive/folders/batch14-replays",
+          resources: "https://drive.google.com/drive/folders/batch14-resources",
+          activities: "https://forms.gle/batch14-activities",
+          certificate: "https://forms.gle/batch14-certificate"
+        },
+        "GVA-BATCH15": {
+          title: "Batch 15 Student Hub",
+          subtitle: "Welcome to your live training dashboard!",
+          replays: "https://drive.google.com/drive/folders/batch15-replays",
+          resources: "https://drive.google.com/drive/folders/batch15-resources",
+          activities: "https://forms.gle/batch15-activities",
+          certificate: "https://forms.gle/batch15-certificate"
+        },
+        "GVA-BATCH16": {
+          title: "Batch 16 Student Hub",
+          subtitle: "Welcome to your live training dashboard!",
+          replays: "https://drive.google.com/drive/folders/batch16-replays",
+          resources: "https://drive.google.com/drive/folders/batch16-resources",
+          activities: "https://forms.gle/batch16-activities",
+          certificate: "https://forms.gle/batch16-certificate"
+        },
+        "GVA-BATCH17": {
+          title: "Batch 17 Student Hub",
+          subtitle: "Welcome to your live training dashboard!",
+          replays: "https://drive.google.com/drive/folders/batch17-replays",
+          resources: "https://drive.google.com/drive/folders/batch17-resources",
+          activities: "https://forms.gle/batch17-activities",
+          certificate: "https://forms.gle/batch17-certificate"
+        },
+        "GVA-BATCH18": {
+          title: "Batch 18 Student Hub",
+          subtitle: "Welcome to your live training dashboard!",
+          replays: "https://drive.google.com/drive/folders/batch18-replays",
+          resources: "https://drive.google.com/drive/folders/batch18-resources",
+          activities: "https://forms.gle/batch18-activities",
+          certificate: "https://forms.gle/batch18-certificate"
         }
       };
 
@@ -1511,14 +1568,18 @@
       }
     }
 
-    // Load Default Home View on Start, only switch to portal if hash is precisely #portal
-    window.addEventListener('DOMContentLoaded', () => {
+    // Router Helper to handle hash changes
+    function handleRouting() {
       if (window.location.hash === '#portal') {
         switchView('portal');
       } else {
         switchView('home');
       }
-    });
+    }
+
+    // Listen for initial page load and hash changes
+    window.addEventListener('DOMContentLoaded', handleRouting);
+    window.addEventListener('hashchange', handleRouting);
 
     function toggleAccordion(headerEntry) {
       const item = headerEntry.parentElement;
