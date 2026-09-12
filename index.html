@@ -1330,14 +1330,14 @@
             <strong style="display: block; margin-bottom: 0.5rem; font-size: 0.95rem;">💡 How to log in:</strong>
             <ol style="padding-left: 1.2rem; color: var(--text-muted); line-height: 1.6;">
               <li>Check your <strong>Welcome / Onboarding Email</strong> sent immediately after enrollment & payment verification.</li>
-              <li>Locate your unique Batch Access Code (e.g., <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">GVA-BATCH18</code>).</li>
+              <li>Locate your unique Batch Access Code (e.g., <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">GVA-BATCH31</code>).</li>
               <li>Enter your code below and click <strong>Enter Portal</strong> to access your specific cohort dashboard.</li>
             </ol>
           </div>
           
           <div class="form-group">
             <label for="batch-code">Batch Access Code *</label>
-            <input type="password" id="batch-code" placeholder="e.g. GVA-BATCH18" required style="text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">
+            <input type="password" id="batch-code" placeholder="e.g. GVA-BATCH31" required style="text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">
           </div>
           
           <button onclick="verifyBatchCode()" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Enter Portal →</button>
@@ -1373,18 +1373,26 @@
             </div>
           </div>
 
-          <!-- Built-in Formspree Activity Submission Form -->
+          <!-- DIRECT STUDENT SUBMISSIONS HUB (Wired to Formspree xnpqkqqd across all batches) -->
           <div class="registration-form-card" style="margin-bottom: 2.5rem; max-width: none;">
             <span class="badge-pill" style="background: var(--pale-blue); color: var(--navy);">Direct Submission Hub</span>
             <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit Your Output / Portfolio Task</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.8rem;">Select your specific task or output below and submit your Google Drive, Canva, or portfolio link directly to Coach Gerr.</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.8rem;">Select your task, link your Discord handle, and submit your Google Drive, Canva, or portfolio link directly to Coach Gerr.</p>
             
             <form action="https://formspree.io/f/xnpqkqqd" method="POST">
+              <!-- Automatically stamps the student's batch code across any batch (12 through 50+) -->
               <input type="hidden" id="submission-batch-field" name="Batch Code" value="">
 
-              <div class="form-group">
-                <label for="sub-name">Your Full Name *</label>
-                <input type="text" id="sub-name" name="Student Name" placeholder="Enter your full name" required>
+              <div class="grid-2" style="gap: 1rem; margin-bottom: 0;">
+                <div class="form-group">
+                  <label for="sub-name">Your Full Name *</label>
+                  <input type="text" id="sub-name" name="Student Name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="sub-discord">Discord Handle / Username *</label>
+                  <input type="text" id="sub-discord" name="Discord Handle" placeholder="e.g. @dianacorazon" required>
+                </div>
               </div>
 
               <div class="form-group">
@@ -1528,155 +1536,27 @@
       }
     }
 
-    // Batch Code Verification Logic for Student Portals (Batches 12 through 30)
+    // Fully Dynamic Batch Code Verification Logic (Works for ANY batch number automatically)
     function verifyBatchCode() {
       const inputCode = document.getElementById('batch-code').value.trim().toUpperCase();
       const errorMsg = document.getElementById('login-error');
       
-      const batchData = {
-        "GVA-BATCH12": {
-          title: "Batch 12 Student Hub",
-          subtitle: "Access your Batch 12 replays, resources, and submissions below.",
-          replays: "https://drive.google.com/drive/folders/batch12-replays",
-          resources: "https://drive.google.com/drive/folders/batch12-resources",
-          certificate: "https://forms.gle/batch12-certificate"
-        },
-        "GVA-BATCH13": {
-          title: "Batch 13 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch13-replays",
-          resources: "https://drive.google.com/drive/folders/batch13-resources",
-          certificate: "https://forms.gle/batch13-certificate"
-        },
-        "GVA-BATCH14": {
-          title: "Batch 14 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch14-replays",
-          resources: "https://drive.google.com/drive/folders/batch14-resources",
-          certificate: "https://forms.gle/batch14-certificate"
-        },
-        "GVA-BATCH15": {
-          title: "Batch 15 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch15-replays",
-          resources: "https://drive.google.com/drive/folders/batch15-resources",
-          certificate: "https://forms.gle/batch15-certificate"
-        },
-        "GVA-BATCH16": {
-          title: "Batch 16 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch16-replays",
-          resources: "https://drive.google.com/drive/folders/batch16-resources",
-          certificate: "https://forms.gle/batch16-certificate"
-        },
-        "GVA-BATCH17": {
-          title: "Batch 17 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch17-replays",
-          resources: "https://drive.google.com/drive/folders/batch17-resources",
-          certificate: "https://forms.gle/batch17-certificate"
-        },
-        "GVA-BATCH18": {
-          title: "Batch 18 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch18-replays",
-          resources: "https://drive.google.com/drive/folders/batch18-resources",
-          certificate: "https://forms.gle/q7mHTKXTZ3XfaLNXA"
-        },
-        "GVA-BATCH19": {
-          title: "Batch 19 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch19-replays",
-          resources: "https://drive.google.com/drive/folders/batch19-resources",
-          certificate: "https://forms.gle/batch19-certificate"
-        },
-        "GVA-BATCH20": {
-          title: "Batch 20 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch20-replays",
-          resources: "https://drive.google.com/drive/folders/batch20-resources",
-          certificate: "https://forms.gle/batch20-certificate"
-        },
-        "GVA-BATCH21": {
-          title: "Batch 21 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch21-replays",
-          resources: "https://drive.google.com/drive/folders/batch21-resources",
-          certificate: "https://forms.gle/batch21-certificate"
-        },
-        "GVA-BATCH22": {
-          title: "Batch 22 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch22-replays",
-          resources: "https://drive.google.com/drive/folders/batch22-resources",
-          certificate: "https://forms.gle/batch22-certificate"
-        },
-        "GVA-BATCH23": {
-          title: "Batch 23 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch23-replays",
-          resources: "https://drive.google.com/drive/folders/batch23-resources",
-          certificate: "https://forms.gle/batch23-certificate"
-        },
-        "GVA-BATCH24": {
-          title: "Batch 24 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch24-replays",
-          resources: "https://drive.google.com/drive/folders/batch24-resources",
-          certificate: "https://forms.gle/batch24-certificate"
-        },
-        "GVA-BATCH25": {
-          title: "Batch 25 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch25-replays",
-          resources: "https://drive.google.com/drive/folders/batch25-resources",
-          certificate: "https://forms.gle/batch25-certificate"
-        },
-        "GVA-BATCH26": {
-          title: "Batch 26 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch26-replays",
-          resources: "https://drive.google.com/drive/folders/batch26-resources",
-          certificate: "https://forms.gle/batch26-certificate"
-        },
-        "GVA-BATCH27": {
-          title: "Batch 27 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch27-replays",
-          resources: "https://drive.google.com/drive/folders/batch27-resources",
-          certificate: "https://forms.gle/batch27-certificate"
-        },
-        "GVA-BATCH28": {
-          title: "Batch 28 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch28-replays",
-          resources: "https://drive.google.com/drive/folders/batch28-resources",
-          certificate: "https://forms.gle/batch28-certificate"
-        },
-        "GVA-BATCH29": {
-          title: "Batch 29 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch29-replays",
-          resources: "https://drive.google.com/drive/folders/batch29-resources",
-          certificate: "https://forms.gle/batch29-certificate"
-        },
-        "GVA-BATCH30": {
-          title: "Batch 30 Student Hub",
-          subtitle: "Welcome to your live training dashboard!",
-          replays: "https://drive.google.com/drive/folders/batch30-replays",
-          resources: "https://drive.google.com/drive/folders/batch30-resources",
-          certificate: "https://forms.gle/batch30-certificate"
-        }
-      };
+      const batchRegex = /^GVA-BATCH\d+$/i;
 
-      if (batchData[inputCode]) {
-        const data = batchData[inputCode];
+      if (batchRegex.test(inputCode)) {
+        const batchNum = inputCode.replace('GVA-BATCH', '');
         
-        document.getElementById('dash-title').innerText = data.title;
-        document.getElementById('dash-subtitle').innerText = data.subtitle;
-        document.getElementById('dash-replays-btn').href = data.replays;
-        document.getElementById('dash-resources-btn').href = data.resources;
-        document.getElementById('dash-cert-btn').href = data.certificate;
+        const dynamicTitle = `Batch ${batchNum} Student Hub`;
+        const dynamicSubtitle = `Welcome to your live training dashboard for Batch ${batchNum}! Access your resources and submit tasks below.`;
+        
+        document.getElementById('dash-title').innerText = dynamicTitle;
+        document.getElementById('dash-subtitle').innerText = dynamicSubtitle;
+        
+        document.getElementById('dash-replays-btn').href = `https://drive.google.com/drive/folders/gva-batch${batchNum}-replays`;
+        document.getElementById('dash-resources-btn').href = `https://drive.google.com/drive/folders/gva-batch${batchNum}-resources`;
+        document.getElementById('dash-cert-btn').href = `https://forms.gle/gva-certificate-request`;
+        
+        // Dynamically stamps the batch code into the Formspree submission form for ALL batches
         document.getElementById('submission-batch-field').value = inputCode;
 
         document.getElementById('portal-login-card').style.display = 'none';
