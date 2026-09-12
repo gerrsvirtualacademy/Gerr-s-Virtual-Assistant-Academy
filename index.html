@@ -7,7 +7,7 @@
   <!-- Primary SEO Meta Tags -->
   <title>Gerr's Virtual Academy | From Zero to VA Hero</title>
   <meta name="title" content="Gerr's Virtual Academy | From Zero to VA Hero">
-  <meta name="description" content="Empowering aspiring Virtual Assistants with practical training, real supports, and real opportunities in the Philippines. Learn in-demand skills and launch your remote career.">
+  <meta name="description" content="Empowering aspiring Virtual Assistants with practical training, real support, and real opportunities in the Philippines. Learn in-demand skills and launch your remote career.">
   <meta name="keywords" content="Virtual Assistant Training Philippines, Social Media Management Training Philippines, Become a VA Philippines, Work From Home VA, GVA, Coach Gerr, Freelance VA Course">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Gerr's Virtual Academy">
@@ -27,7 +27,7 @@
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://gerrsvirtualacademy.com/">
   <meta property="twitter:title" content="Gerr's Virtual Academy | From Zero to VA Hero">
-  <meta property="twitter:description" content="Empowering aspiring Virtual Assistants with practical training, real supports, and real opportunities.">
+  <meta property="twitter:description" content="Empowering aspiring Virtual Assistants with practical training, real support, and real opportunities.">
   <meta property="twitter:image" content="https://gerrsvirtualacademy.com/logo.png">
 
   <!-- JSON-LD Structured Data for Google Search -->
@@ -38,7 +38,7 @@
     "name": "Gerr's Virtual Academy",
     "url": "https://gerrsvirtualacademy.com/",
     "logo": "https://gerrsvirtualacademy.com/logo.png",
-    "description": "Empowering aspiring Virtual Assistants with practical training, real supports, and real opportunities.",
+    "description": "Empowering aspiring Virtual Assistants with practical training, real support, and real opportunities.",
     "sameAs": [
       "https://www.facebook.com/GerrsVirtualAcademy",
       "https://www.tiktok.com/@coach_gerr",
@@ -54,13 +54,14 @@
 
   <style>
     /* ==========================================================================
-       1. OFFICIAL GVA BRAND SYSTEM
+       1. OFFICIAL GVA BRAND SYSTEM & HARMONIZED ACCENTS
        ========================================================================== */
     :root {
       /* Official Color Palette */
-      --navy: #0B2D6B;         /* Primary */
-      --royal-blue: #2563EB;   /* Secondary */
+      --navy: #0B2D6B;         /* Primary Base */
+      --royal-blue: #2563EB;   /* Secondary Base */
       --sky-blue: #7DB3FF;     /* Accent */
+      --cyan-highlight: #0284C7; /* Modern Hover/Text Highlight */
       --soft-pink: #FFD6E7;    /* Accent */
       --light-yellow: #FFF4D6; /* Accent */
       --pale-blue: #EAF4FF;    /* Background */
@@ -71,14 +72,15 @@
       --border-light: #E2E8F0;
       
       --shadow-soft: 0 10px 30px rgba(11, 45, 107, 0.08);
-      --shadow-hover: 0 18px 40px rgba(11, 45, 107, 0.15);
+      --shadow-hover: 0 20px 45px rgba(11, 45, 107, 0.15);
+      --shadow-card: 0 4px 20px rgba(37, 99, 235, 0.06);
       
       --radius-sm: 8px;
       --radius-md: 16px;
       --radius-lg: 24px;
       --radius-pill: 999px;
       
-      --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     /* Reset & General Styles */
@@ -111,10 +113,20 @@
       color: var(--royal-blue);
     }
 
+    /* Link Hover Styles */
     a {
       text-decoration: none;
       color: inherit;
       transition: var(--transition-smooth);
+    }
+
+    p a, li a, .card a {
+      color: var(--royal-blue);
+      position: relative;
+    }
+
+    p a:hover, li a:hover {
+      color: var(--cyan-highlight);
     }
 
     img {
@@ -138,19 +150,20 @@
       font-weight: 600;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      background: var(--soft-pink);
+      background: linear-gradient(135deg, var(--soft-pink), var(--pale-blue));
       color: var(--navy);
       margin-bottom: 1rem;
+      box-shadow: 0 2px 10px rgba(255, 214, 231, 0.4);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.95rem 2rem;
+      padding: 0.85rem 1.75rem;
       border-radius: var(--radius-pill);
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       cursor: pointer;
       border: 2px solid transparent;
       transition: var(--transition-smooth);
@@ -159,14 +172,14 @@
     }
 
     .btn-primary {
-      background-color: var(--navy);
+      background: linear-gradient(135deg, var(--navy), var(--royal-blue));
       color: var(--white);
     }
 
     .btn-primary:hover {
-      background-color: var(--royal-blue);
+      background: linear-gradient(135deg, var(--royal-blue), var(--cyan-highlight));
       box-shadow: var(--shadow-hover);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
     .btn-secondary {
@@ -177,7 +190,9 @@
 
     .btn-secondary:hover {
       background-color: var(--pale-blue);
-      transform: translateY(-2px);
+      color: var(--cyan-highlight);
+      border-color: var(--cyan-highlight);
+      transform: translateY(-3px);
     }
 
     section {
@@ -201,15 +216,16 @@
     }
 
     /* ==========================================================================
-       2. HEADER & NAVIGATION
+       2. HEADER & NAVIGATION (Optimized spacing to prevent overlapping)
        ========================================================================== */
     header.site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--pale-blue);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(234, 244, 255, 0.8);
+      box-shadow: 0 4px 20px rgba(11, 45, 107, 0.03);
     }
 
     .nav-wrapper {
@@ -220,37 +236,50 @@
     }
 
     .brand-logo img {
-      height: 48px;
+      height: 44px;
       width: auto;
+      transition: var(--transition-smooth);
+    }
+
+    .brand-logo img:hover {
+      transform: scale(1.03);
     }
 
     nav.main-nav {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.1rem;
     }
 
     nav.main-nav a.nav-link {
-      font-size: 0.9rem;
+      font-size: 0.82rem;
       font-weight: 500;
       color: var(--navy);
       position: relative;
+      padding: 0.2rem 0;
+      white-space: nowrap;
     }
 
     nav.main-nav a.nav-link:hover,
     nav.main-nav a.nav-link.active {
-      color: var(--royal-blue);
+      color: var(--cyan-highlight);
     }
 
-    nav.main-nav a.nav-link.active::after {
+    nav.main-nav a.nav-link::after {
       content: '';
       position: absolute;
-      bottom: -6px;
+      bottom: -4px;
       left: 0;
-      width: 100%;
+      width: 0%;
       height: 2px;
-      background: var(--royal-blue);
+      background: var(--cyan-highlight);
       border-radius: var(--radius-pill);
+      transition: var(--transition-smooth);
+    }
+
+    nav.main-nav a.nav-link:hover::after,
+    nav.main-nav a.nav-link.active::after {
+      width: 100%;
     }
 
     .mobile-toggle {
@@ -258,20 +287,27 @@
       font-size: 1.8rem;
       cursor: pointer;
       color: var(--navy);
+      transition: var(--transition-smooth);
+    }
+
+    .mobile-toggle:hover {
+      color: var(--cyan-highlight);
     }
 
     /* ==========================================================================
-       3. PAGE VIEWS SYSTEM
+       3. PAGE VIEWS SYSTEM & ANIMATIONS
        ========================================================================== */
     .page-view {
       display: none;
       opacity: 0;
-      transition: opacity 0.4s ease-in-out;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
     .page-view.active-view {
       display: block;
       opacity: 1;
+      transform: translateY(0);
     }
 
     /* ==========================================================================
@@ -279,8 +315,9 @@
        ========================================================================== */
     .hero {
       padding: 5rem 0 4rem 0;
-      background: linear-gradient(135deg, var(--pale-blue) 0%, var(--white) 100%);
+      background: radial-gradient(circle at top right, var(--pale-blue) 0%, var(--white) 70%);
       position: relative;
+      overflow: hidden;
     }
 
     .hero-grid {
@@ -293,6 +330,7 @@
     .hero-content h1 {
       font-size: 3.5rem;
       margin-bottom: 1.2rem;
+      letter-spacing: -0.02em;
     }
 
     .hero-content p.hero-sub {
@@ -318,6 +356,11 @@
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-soft);
       border: 1px solid var(--pale-blue);
+      transition: var(--transition-smooth);
+    }
+
+    .stats-bar:hover {
+      box-shadow: var(--shadow-hover);
     }
 
     .stat-item h4 {
@@ -337,6 +380,11 @@
       box-shadow: var(--shadow-hover);
       background: linear-gradient(135deg, var(--soft-pink), var(--light-yellow));
       padding: 1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .hero-image-card:hover {
+      transform: translateY(-5px);
     }
 
     .hero-image-card img {
@@ -344,6 +392,11 @@
       width: 100%;
       height: 440px;
       object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-image-card:hover img {
+      transform: scale(1.02);
     }
 
     .floating-card {
@@ -351,11 +404,17 @@
       bottom: 2rem;
       left: -1.5rem;
       background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(12px);
       padding: 1.2rem 1.8rem;
       border-radius: var(--radius-md);
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow-hover);
       border: 1px solid var(--sky-blue);
+      animation: floatBadge 4s ease-in-out infinite;
+    }
+
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
     .floating-card strong {
@@ -389,14 +448,32 @@
       border-radius: var(--radius-md);
       padding: 2.2rem;
       border: 1px solid var(--pale-blue);
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--royal-blue), var(--cyan-highlight));
+      opacity: 0;
       transition: var(--transition-smooth);
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
       box-shadow: var(--shadow-hover);
       border-color: var(--sky-blue);
+    }
+
+    .card:hover::before {
+      opacity: 1;
     }
 
     .card-icon {
@@ -410,6 +487,13 @@
       justify-content: center;
       font-size: 1.5rem;
       margin-bottom: 1.2rem;
+      transition: var(--transition-smooth);
+    }
+
+    .card:hover .card-icon {
+      background: var(--royal-blue);
+      color: var(--white);
+      transform: rotate(6deg) scale(1.05);
     }
 
     .card h3 {
@@ -423,7 +507,7 @@
     }
 
     /* ==========================================================================
-       6. PROGRAM SPECIFIC PAGES
+       6. PROGRAM SPECIFIC PAGES & ACCORDIONS
        ========================================================================== */
     .program-hero {
       background: linear-gradient(135deg, var(--pale-blue), var(--light-yellow));
@@ -442,6 +526,12 @@
       margin-bottom: 1rem;
       border: 1px solid var(--pale-blue);
       overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition-smooth);
+    }
+
+    .accordion-item:hover {
+      border-color: var(--sky-blue);
     }
 
     .accordion-header {
@@ -453,6 +543,12 @@
       font-weight: 600;
       font-size: 1.05rem;
       color: var(--navy);
+      transition: var(--transition-smooth);
+    }
+
+    .accordion-header:hover {
+      color: var(--cyan-highlight);
+      background: rgba(234, 244, 255, 0.4);
     }
 
     .accordion-body {
@@ -461,6 +557,12 @@
       color: var(--text-muted);
       border-top: 1px solid var(--pale-blue);
       padding-top: 1rem;
+      animation: fadeInAccordion 0.3s ease-in-out;
+    }
+
+    @keyframes fadeInAccordion {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .accordion-item.active .accordion-body {
@@ -475,7 +577,13 @@
       border-radius: var(--radius-md);
       overflow: hidden;
       border: 1px solid var(--pale-blue);
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-smooth);
+    }
+
+    .story-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
     }
 
     .story-img {
@@ -483,6 +591,11 @@
       width: 100%;
       object-fit: cover;
       background: var(--soft-pink);
+      transition: transform 0.5s ease;
+    }
+
+    .story-card:hover .story-img {
+      transform: scale(1.03);
     }
 
     .story-content {
@@ -497,11 +610,11 @@
 
     .story-role {
       font-size: 0.85rem;
-      color: var(--royal-blue);
+      color: var(--cyan-highlight);
     }
 
     /* ==========================================================================
-       8. REGISTRATION FORM
+       8. REGISTRATION & INQUIRY FORMS
        ========================================================================== */
     .registration-form-card {
       background: var(--white);
@@ -511,6 +624,7 @@
       border: 1px solid var(--pale-blue);
       max-width: 700px;
       margin: 0 auto;
+      transition: var(--transition-smooth);
     }
 
     .form-group {
@@ -542,9 +656,9 @@
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--royal-blue);
+      border-color: var(--cyan-highlight);
       background: var(--white);
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+      box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12);
     }
 
     /* ==========================================================================
@@ -555,6 +669,7 @@
       color: rgba(255, 255, 255, 0.8);
       padding: 4rem 0 2rem 0;
       margin-top: 5rem;
+      border-top: 4px solid var(--cyan-highlight);
     }
 
     .footer-grid {
@@ -590,6 +705,7 @@
 
     .footer-links a:hover {
       color: var(--sky-blue);
+      padding-left: 4px;
     }
 
     .footer-bottom {
@@ -600,20 +716,13 @@
       color: rgba(255, 255, 255, 0.5);
     }
 
-    /* Mobile Breakpoints */
-    @media (max-width: 992px) {
+    /* Responsive Breakpoint expanded up to 1024px to ensure navigation never crowds or overlaps */
+    @media (max-width: 1024px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; }
       .hero-content p.hero-sub { margin: 0 auto 2rem auto; }
       .hero-cta { justify-content: center; }
       .floating-card { display: none; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 768px) {
-      section { padding: 3.5rem 0; }
-      .section-header h2 { font-size: 2rem; }
-      .hero-content h1 { font-size: 2.3rem; }
-      .hero-image-card img { height: 320px; }
 
       .mobile-toggle { display: block; }
       nav.main-nav { 
@@ -632,7 +741,7 @@
         z-index: 1001;
       }
       nav.main-nav.mobile-active { right: 0; }
-      nav.main-nav a.nav-link { font-size: 1.1rem; width: 100%; }
+      nav.main-nav a.nav-link { font-size: 1.1rem; width: 100%; padding: 0.5rem 0; }
       .nav-close-btn {
         display: block;
         position: absolute;
@@ -642,6 +751,13 @@
         cursor: pointer;
         color: var(--navy);
       }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 3.5rem 0; }
+      .section-header h2 { font-size: 2rem; }
+      .hero-content h1 { font-size: 2.3rem; }
+      .hero-image-card img { height: 320px; }
 
       .stats-bar { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
       .grid-2 { grid-template-columns: 1fr; }
@@ -672,8 +788,8 @@
           <a href="#" onclick="switchView('success-stories'); toggleMobileMenu();" class="nav-link" id="nav-success-stories">Success Stories</a>
           <a href="#" onclick="switchView('about'); toggleMobileMenu();" class="nav-link" id="nav-about">About</a>
           <a href="#" onclick="switchView('resources'); toggleMobileMenu();" class="nav-link" id="nav-resources">Resources</a>
-          <a href="#" onclick="switchView('contact'); toggleMobileMenu();" class="nav-link" id="nav-contact">Contact & Inquiries</a>
-          <a href="#" onclick="switchView('register'); toggleMobileMenu();" class="btn btn-primary btn-sm" style="width: auto;">Register Now</a>
+          <a href="#" onclick="switchView('contact'); toggleMobileMenu();" class="nav-link" id="nav-contact">Contact</a>
+          <a href="#" onclick="switchView('register'); toggleMobileMenu();" class="btn btn-primary btn-sm" style="width: auto; padding: 0.5rem 1.2rem; font-size: 0.85rem;">Register Now</a>
         </nav>
       </div>
     </div>
@@ -730,7 +846,7 @@
           <div class="section-header">
             <span class="badge-pill">The GVA Difference</span>
             <h2>Why Aspiring VAs Choose GVA</h2>
-            <p>Empowering aspiring Virtual Assistants with practical training, real supports, and real opportunities.</p>
+            <p>Empowering aspiring Virtual Assistants with practical training, real support, and real opportunities.</p>
           </div>
 
           <div class="grid-3">
@@ -741,8 +857,8 @@
             </div>
             <div class="card">
               <div class="card-icon">💼</div>
-              <h3>Hands-On & Practical</h3>
-              <p>Learn by doing real-world client tasks. Build live output for your personal portfolio during the course.</p>
+              <h3>Student Portal & Portfolio</h3>
+              <p>Get exclusive access to your very own student portal packed with interactive activities and resources to build your professional portfolio.</p>
             </div>
             <div class="card">
               <div class="card-icon">💙</div>
@@ -767,7 +883,7 @@
               <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Most Popular</span>
               <h3>Virtual Assistant Training</h3>
               <p style="font-size: 1.5rem; font-weight: 700; color: var(--royal-blue); margin: 0.5rem 0 1rem 0;">₱599</p>
-              <p>A complete foundational course covering administrative support, inbox/calendar management, client communications, essential tools, and job hunting strategy.</p>
+              <p>An intensive 3-day live training covering inbox, calendar, and travel management, data entry, client communication, and student portal access.</p>
               <br>
               <button onclick="switchView('va-training')" class="btn btn-secondary" style="width: 100%;">View VA Curriculum</button>
             </div>
@@ -776,7 +892,7 @@
               <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">High Demand</span>
               <h3>Social Media Management Bootcamp</h3>
               <p style="font-size: 1.5rem; font-weight: 700; color: var(--royal-blue); margin: 0.5rem 0 1rem 0;">₱599</p>
-              <p>Learn how to manage brand accounts, design visual content, schedule posts, write compelling captions, and report basic analytics to prospective clients.</p>
+              <p>Master visual content design, content pillars, and scheduling while building your portfolio through student portal resources with potential client matching opportunities.</p>
               <br>
               <button onclick="switchView('smm-bootcamp')" class="btn btn-secondary" style="width: 100%;">View SMM Curriculum</button>
             </div>
@@ -794,8 +910,8 @@
             <div>
               <span class="badge-pill">Meet Your Mentor</span>
               <h2>Guided by Coach Gerr</h2>
-              <p style="margin-bottom: 1.2rem; color: var(--text-muted);">Coach Gerr is a Virtual Assistant Mentor and the founder of Gerr’s Virtual Academy, where she helps aspiring and beginner VAs learn practical skills, understand the tools used in real VA work, and build the confidence to start their careers.</p>
-              <p style="margin-bottom: 1.8rem; color: var(--text-muted);">With a hands-on and beginner-friendly approach, Coach Gerr believes that becoming a VA shouldn’t feel overwhelming. Her goal is to make learning simple, practical, and applicable—so students don’t just learn, but know how to actually use what they’ve learned.</p>
+              <p style="margin-bottom: 1.2rem; color: var(--text-muted);">Almost 7 years ago, Coach Gerr took a leap of faith, transitioning away from her secure government job to become a full-time Virtual Assistant. Her primary goal was simple yet profound: to reclaim her time and spend more meaningful moments with her family and her dog—and she has never looked back since.</p>
+              <p style="margin-bottom: 1.8rem; color: var(--text-muted);">Through Gerr’s Virtual Academy, she has helped a vast majority of her students achieve remarkable remote career success. However, growth is a partnership: while Coach Gerr provides the blueprint and handles your crucial first steps, your long-term success ultimately relies on your own drive, grit, and dedication.</p>
               <button onclick="switchView('about')" class="btn btn-secondary">Read Full Story</button>
             </div>
           </div>
@@ -803,7 +919,7 @@
       </section>
 
       <!-- Registration Banner CTA -->
-      <section style="background: linear-gradient(135deg, var(--navy), var(--royal-blue)); color: var(--white); text-align: center; border-radius: var(--radius-lg); margin: 3rem auto; max-width: 1100px;">
+      <section style="background: linear-gradient(135deg, var(--navy), var(--royal-blue)); color: var(--white); text-align: center; border-radius: var(--radius-lg); margin: 3rem auto; max-width: 1100px; box-shadow: var(--shadow-hover);">
         <div style="padding: 4rem 1.5rem;">
           <h2 style="color: var(--white); font-size: 2.5rem; margin-bottom: 1rem;">Ready to Take Your First Step?</h2>
           <p style="max-width: 600px; margin: 0 auto 2rem auto; color: rgba(255,255,255,0.85);">Slots for upcoming cohorts are filled on a first-come, first-served basis. Secure your spot in the next GVA training today for only ₱599 per course.</p>
@@ -820,7 +936,7 @@
           <span class="badge-pill">Primary Flagship Program</span>
           <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">Virtual Assistant Training Philippines</h1>
           <p style="font-size: 1.8rem; font-weight: 700; color: var(--royal-blue); margin-bottom: 1rem;">₱599</p>
-          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">A structured, step-by-step training program designed to take complete beginners from zero experience to confident, work-ready Virtual Assistants.</p>
+          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">An intensive 3-day live training program where Coach Gerr tackles inbox management, calendar management, travel management, data entry, and more to take complete beginners from zero experience to confident, work-ready Virtual Assistants.</p>
           <button onclick="switchView('register')" class="btn btn-primary">Enroll in VA Training (₱599)</button>
         </div>
       </div>
@@ -833,15 +949,15 @@
               <br>
               <ul style="list-style: none;">
                 <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem; align-items: flex-start;">
-                  <span style="color: var(--royal-blue); font-weight: bold;">✓</span>
+                  <span style="color: var(--cyan-highlight); font-weight: bold;">✓</span>
                   <span><strong>Complete Beginners:</strong> Individuals with no prior online work experience seeking structured guidance.</span>
                 </li>
                 <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem; align-items: flex-start;">
-                  <span style="color: var(--royal-blue); font-weight: bold;">✓</span>
+                  <span style="color: var(--cyan-highlight); font-weight: bold;">✓</span>
                   <span><strong>Career Shifters:</strong> Corporate workers looking for flexible remote career paths.</span>
                 </li>
                 <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem; align-items: flex-start;">
-                  <span style="color: var(--royal-blue); font-weight: bold;">✓</span>
+                  <span style="color: var(--cyan-highlight); font-weight: bold;">✓</span>
                   <span><strong>Stay-at-Home Parents:</strong> Parents who want to earn remotely while staying close to family.</span>
                 </li>
               </ul>
@@ -851,9 +967,9 @@
               <h2>Key Inclusions</h2>
               <br>
               <div class="card" style="background: var(--pale-blue);">
-                <p>🔹 <strong>Live & Recorded Interactive Sessions</strong></p>
-                <p>🔹 <strong>Hands-on Portfolio Task Exercises</strong></p>
-                <p>🔹 <strong>Downloadable VA Templates & Client Scripts</strong></p>
+                <p>🔹 <strong>3-Day Live Interactive Training</strong></p>
+                <p>🔹 <strong>Exclusive Student Portal Access (Activities & Resources)</strong></p>
+                <p>🔹 <strong>Portfolio Building Modules & Task Guides</strong></p>
                 <p>🔹 <strong>Official GVA Certificate of Completion</strong></p>
                 <p>🔹 <strong>Lifetime Access to GVA Alumni Community</strong></p>
               </div>
@@ -872,7 +988,7 @@
           <div class="curriculum-accordion">
             <div class="accordion-item active">
               <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>Module 1: Foundations of Virtual Assistance & Professional Mindset</span>
+                <span>Module 1: Foundations & Professional Mindset</span>
                 <span>▼</span>
               </div>
               <div class="accordion-body">
@@ -882,11 +998,11 @@
 
             <div class="accordion-item">
               <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>Module 2: Essential Administrative & Executive Workflows</span>
+                <span>Module 2: Inbox, Calendar & Travel Management</span>
                 <span>▼</span>
               </div>
               <div class="accordion-body">
-                <p>Mastering Google Workspace, Microsoft 365, advanced email filtering, Google Calendar scheduling, travel planning, and basic data entry protocols.</p>
+                <p>Mastering advanced email filtering, Google Calendar scheduling, travel itineraries planning, and efficient data entry protocols taught live by Coach Gerr.</p>
               </div>
             </div>
 
@@ -906,7 +1022,7 @@
                 <span>▼</span>
               </div>
               <div class="accordion-body">
-                <p>Building a client-attracting resume, designing your digital portfolio, creating Upwork/OLJ profiles, and writing personalized application proposals.</p>
+                <p>Building a client-attracting resume, designing your digital portfolio utilizing portal resources, creating Upwork/OLJ profiles, and writing personalized application proposals.</p>
               </div>
             </div>
           </div>
@@ -921,30 +1037,43 @@
           <span class="badge-pill" style="background: var(--white);">Specialized Skill Upgrade</span>
           <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">Social Media Management Training Philippines</h1>
           <p style="font-size: 1.8rem; font-weight: 700; color: var(--royal-blue); margin-bottom: 1rem;">₱599</p>
-          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">Learn how to plan, design, schedule, and execute social media content strategies for brands and small businesses.</p>
+          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">Learn social media strategies, build your portfolio with student portal resources, and get the opportunity to be matched with a real client!</p>
           <button onclick="switchView('register')" class="btn btn-primary">Enroll in SMM Bootcamp (₱599)</button>
         </div>
       </div>
 
       <section>
         <div class="container">
-          <div class="section-header">
-            <h2>What You Will Master</h2>
-            <p>Go beyond posting pictures—learn actionable strategy and visual branding.</p>
-          </div>
+          <div class="grid-2">
+            <div>
+              <h2>What You Will Master</h2>
+              <br>
+              <div class="grid-3" style="grid-template-columns: 1fr; gap: 1.2rem;">
+                <div class="card" style="padding: 1.5rem;">
+                  <h3>Content Strategy</h3>
+                  <p>Learn how to build content pillars, map out monthly calendars, and align posts with marketing goals.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                  <h3>Canva Visual Design</h3>
+                  <p>Create clean, professional, branded visual assets, Reels, carousel posts, and brand kits effortlessly.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                  <h3>Scheduling & Analytics</h3>
+                  <p>Use Meta Business Suite, Buffer, and Metricool to schedule content and report growth insights to clients.</p>
+                </div>
+              </div>
+            </div>
 
-          <div class="grid-3">
-            <div class="card">
-              <h3>Content Strategy</h3>
-              <p>Learn how to build content pillars, map out monthly calendars, and align posts with marketing goals.</p>
-            </div>
-            <div class="card">
-              <h3>Canva Visual Design</h3>
-              <p>Create clean, professional, branded visual assets, Reels, carousel posts, and brand kits effortlessly.</p>
-            </div>
-            <div class="card">
-              <h3>Scheduling & Analytics</h3>
-              <p>Use Meta Business Suite, Buffer, and Metricool to schedule content and report growth insights to clients.</p>
+            <div>
+              <h2>Key Inclusions & Opportunities</h2>
+              <br>
+              <div class="card" style="background: var(--pale-blue);">
+                <p>🔹 <strong>Exclusive Student Portal Access (Activities & Resources)</strong></p>
+                <p>🔹 <strong>Hands-on SMM Portfolio Building Tasks</strong></p>
+                <p>🔹 <strong>Possible Client Matching Opportunities as You Build Your Portfolio</strong></p>
+                <p>🔹 <strong>Official GVA Certificate of Completion</strong></p>
+                <p>🔹 <strong>Lifetime Access to GVA Alumni Community</strong></p>
+              </div>
             </div>
           </div>
         </div>
@@ -957,7 +1086,7 @@
         <div class="section-header">
           <span class="badge-pill">GVA Program Directory</span>
           <h2>Explore Our Training Programs</h2>
-          <p>Find the right path to kickstart or elevate your remote career. All individual programs are available at <strong>₱599 each</strong>.</p>
+          <p>Find the right path to kickstart or elevate your remote career. All individual programs include full student portal access at <strong>₱599 each</strong>.</p>
         </div>
 
         <div class="grid-2">
@@ -965,7 +1094,7 @@
             <div class="card-icon">💼</div>
             <h3>Virtual Assistant Training</h3>
             <p style="font-size: 1.4rem; font-weight: 700; color: var(--royal-blue); margin: 0.3rem 0 1rem 0;">₱599</p>
-            <p style="margin-bottom: 1.5rem;">The complete foundational blueprint for beginners. Covers admin support, client communication, digital tools, portfolio creation, and job application strategies.</p>
+            <p style="margin-bottom: 1.5rem;">An intensive 3-day live training covering inbox, calendar, and travel management, student portal resources for portfolio building, and job application strategies.</p>
             <button onclick="switchView('va-training')" class="btn btn-secondary">Learn More</button>
           </div>
 
@@ -973,7 +1102,7 @@
             <div class="card-icon">📱</div>
             <h3>Social Media Management Bootcamp</h3>
             <p style="font-size: 1.4rem; font-weight: 700; color: var(--royal-blue); margin: 0.3rem 0 1rem 0;">₱599</p>
-            <p style="margin-bottom: 1.5rem;">A practical course focused on graphic design, content calendar planning, social media strategy, tool scheduling, and client account reporting.</p>
+            <p style="margin-bottom: 1.5rem;">A practical course focused on graphic design, content strategy, student portal portfolio tasks, and potential matching with clients as you build your portfolio.</p>
             <button onclick="switchView('smm-bootcamp')" class="btn btn-secondary">Learn More</button>
           </div>
         </div>
@@ -1002,7 +1131,7 @@
           <div class="story-card">
             <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate">
             <div class="story-content">
-              <p style="font-style: italic; font-size: 0.9rem;">"The portfolio tasks were the best part! Having real outputs ready allowed me to feel confident during client interviews."</p>
+              <p style="font-style: italic; font-size: 0.9rem;">"The portfolio tasks and portal activities were the best part! Having real outputs ready allowed me to feel confident during client interviews."</p>
               <div class="story-author">GVA Alumni</div>
               <div class="story-role">Social Media Specialist</div>
             </div>
@@ -1035,8 +1164,8 @@
           </div>
           <div>
             <h3 style="font-size: 2rem; margin-bottom: 1rem;">Virtual Assistant Mentor & Founder</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Coach Gerr is a Virtual Assistant Mentor and the founder of Gerr’s Virtual Academy, where she helps aspiring and beginner VAs learn practical skills, understand the tools used in real VA work, and build the confidence to start their careers.</p>
-            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">With a hands-on and beginner-friendly approach, Coach Gerr believes that becoming a VA shouldn’t feel overwhelming. Her goal is to make learning simple, practical, and applicable—so students don’t just learn, but know how to actually use what they’ve learned.</p>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Almost 7 years ago, Coach Gerr made a life-changing decision to leave her stable career as a government worker. Her main dream was simple: to gain schedule flexibility and spend more quality time with her family and her beloved dog. Taking that leap into the remote work space opened doors she never imagined, and she hasn't looked back ever since.</p>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Today, a vast majority of her students go on to find incredible success after going through her live academy training. However, Coach Gerr believes in keeping it real: while she is fully committed to holding your hand through your crucial first steps as a newbie Virtual Assistant, your long-term success is ultimately driven by your own grit, accountability, and hustle.</p>
             <p style="color: var(--navy); font-weight: 600; margin-bottom: 1.5rem;">Ready to start your VA journey? Learn with Coach Gerr and take your first step toward becoming a confident, work-ready Virtual Assistant.</p>
             <button onclick="switchView('register')" class="btn btn-primary">Start Your GVA Journey</button>
           </div>
@@ -1082,7 +1211,7 @@
         <div class="section-header">
           <span class="badge-pill">Take the First Step</span>
           <h2>Register for an Upcoming Batch</h2>
-          <p>Each individual training program is priced at <strong>₱599</strong>. Fill out the official registration form below to reserve your slot.</p>
+          <p>Each individual training program includes exclusive student portal access for <strong>₱599</strong>. Fill out the official registration form below to reserve your slot.</p>
         </div>
 
         <div class="registration-form-card">
@@ -1138,16 +1267,16 @@
             <h3>Direct Channels & Social Media</h3>
             <br>
             <p>📧 <strong>Email Us Directly:</strong><br>
-            <a href="mailto:info@gerrsvirtualacademy.com" style="color: var(--royal-blue); font-weight: 500;">info@gerrsvirtualacademy.com</a></p>
+            <a href="mailto:info@gerrsvirtualacademy.com">info@gerrsvirtualacademy.com</a></p>
             <br>
             <p>🌐 <strong>Official Facebook Page:</strong><br>
-            <a href="https://www.facebook.com/GerrsVirtualAcademy" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 500;">facebook.com/GerrsVirtualAcademy</a></p>
+            <a href="https://www.facebook.com/GerrsVirtualAcademy" target="_blank" rel="noopener noreferrer">facebook.com/GerrsVirtualAcademy</a></p>
             <br>
             <p>🎵 <strong>TikTok:</strong><br>
-            <a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 500;">@coach_gerr</a></p>
+            <a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer">@coach_gerr</a></p>
             <br>
             <p>📸 <strong>Instagram:</strong><br>
-            <a href="https://www.instagram.com/coach_gerr/" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 500;">@coach_gerr</a></p>
+            <a href="https://www.instagram.com/coach_gerr/" target="_blank" rel="noopener noreferrer">@coach_gerr</a></p>
             <br>
             <p>⏰ <strong>Support Hours:</strong><br>
             Monday – Friday | 9:00 AM – 6:00 PM PST</p>
@@ -1237,7 +1366,7 @@
       nav.classList.toggle('mobile-active');
     }
 
-    // Dynamic Title & View Switcher
+    // Dynamic Title & View Switcher with Smooth Fade
     function switchView(viewId) {
       const views = document.querySelectorAll('.page-view');
       views.forEach(view => view.classList.remove('active-view'));
