@@ -787,7 +787,6 @@
           <a href="#" onclick="switchView('programs'); toggleMobileMenu();" class="nav-link" id="nav-programs">Programs</a>
           <a href="#" onclick="switchView('success-stories'); toggleMobileMenu();" class="nav-link" id="nav-success-stories">Success Stories</a>
           <a href="#" onclick="switchView('about'); toggleMobileMenu();" class="nav-link" id="nav-about">About</a>
-          <a href="#" onclick="switchView('resources'); toggleMobileMenu();" class="nav-link" id="nav-resources">Resources</a>
           <a href="#" onclick="switchView('contact'); toggleMobileMenu();" class="nav-link" id="nav-contact">Contact</a>
           <a href="#" onclick="switchView('register'); toggleMobileMenu();" class="btn btn-primary btn-sm" style="width: auto; padding: 0.5rem 1.2rem; font-size: 0.85rem;">Register Now</a>
         </nav>
@@ -1187,25 +1186,7 @@
       </section>
     </div>
 
-    <!-- VIEW 7: RESOURCES PAGE -->
-    <div id="view-resources" class="page-view">
-      <section class="container" style="padding-top: 4rem;">
-        <div class="section-header">
-          <span class="badge-pill">Free Beginner Learning Hub</span>
-          <h2>Virtual Assistance Guides & Articles</h2>
-          <p>Helpful resources to kickstart your research into the remote working world.</p>
-        </div>
-
-        <div class="card" style="margin-bottom: 3rem; background: linear-gradient(135deg, var(--pale-blue), var(--white));">
-          <span class="badge-pill">Featured Guide</span>
-          <h3 style="font-size: 1.8rem; margin-bottom: 0.8rem;">How to Become a Virtual Assistant in the Philippines: Complete Beginner's Guide</h3>
-          <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Learn what equipment you need, the most in-demand skills clients look for today, and how to structure your initial learning roadmap from scratch.</p>
-          <button onclick="alert('Full guide article view.')" class="btn btn-primary">Read Guide</button>
-        </div>
-      </section>
-    </div>
-
-    <!-- VIEW 8: REGISTER PAGE -->
+    <!-- VIEW 7: REGISTER PAGE -->
     <div id="view-register" class="page-view">
       <section class="container" style="padding-top: 3rem;">
         <div class="section-header">
@@ -1252,7 +1233,7 @@
       </section>
     </div>
 
-    <!-- VIEW 9: CONTACT & INQUIRIES PAGE -->
+    <!-- VIEW 8: CONTACT & INQUIRIES PAGE -->
     <div id="view-contact" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
@@ -1313,16 +1294,16 @@
       </section>
     </div>
 
-    <!-- VIEW 10: HIDDEN STUDENT PORTAL (Accessed via direct hash link #portal) -->
+    <!-- VIEW 9: HIDDEN STUDENT PORTAL (Accessed via direct hash link #portal) -->
     <div id="view-portal" class="page-view">
-      <section class="container" style="padding-top: 4rem; max-width: 900px;">
+      <section class="container" style="padding-top: 4rem; max-width: 950px;">
         
         <!-- Enhanced Login Gate with Clear Instructions -->
         <div id="portal-login-card" class="registration-form-card" style="border: 2px solid var(--pale-blue);">
           <div style="text-align: center; margin-bottom: 2rem;">
             <span class="badge-pill">🔒 Secure Student Area</span>
             <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: var(--navy);">GVA Student Portal</h2>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">Access your exclusive training replays, resource folders, portfolio tasks, and certificate requests.</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">Access your exclusive training replays, activity guides, resources, and submit your portfolio tasks.</p>
           </div>
 
           <!-- Instructions Box -->
@@ -1330,14 +1311,15 @@
             <strong style="display: block; margin-bottom: 0.5rem; font-size: 0.95rem;">💡 How to log in:</strong>
             <ol style="padding-left: 1.2rem; color: var(--text-muted); line-height: 1.6;">
               <li>Check your <strong>Welcome / Onboarding Email</strong> sent immediately after enrollment & payment verification.</li>
-              <li>Locate your unique Batch Access Code (e.g., <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">GVA-BATCH31</code>).</li>
+              <li>Locate your unique Batch Access Code (e.g., <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">GVA-BATCH18-HARBOR</code>).</li>
               <li>Enter your code below and click <strong>Enter Portal</strong> to access your specific cohort dashboard.</li>
             </ol>
           </div>
           
           <div class="form-group">
             <label for="batch-code">Batch Access Code *</label>
-            <input type="password" id="batch-code" placeholder="e.g. GVA-BATCH31" required style="text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">
+            <!-- Uncensored type="text" so students can clearly see what they are typing -->
+            <input type="text" id="batch-code" placeholder="e.g. GVA-BATCH18-HARBOR" required style="text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">
           </div>
           
           <button onclick="verifyBatchCode()" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Enter Portal →</button>
@@ -1357,19 +1339,51 @@
             <p id="dash-subtitle"></p>
           </div>
 
-          <div class="grid-2" style="margin-bottom: 2.5rem;">
-            <div class="card">
-              <h3>🎥 Training Replays</h3>
-              <p>Catch up on recorded live sessions and workshops.</p>
-              <br>
-              <a id="dash-replays-btn" href="#" target="_blank" class="btn btn-secondary" style="width: 100%;">Watch Replays</a>
+          <!-- Training Activities & Task Guides Section -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Hands-on Practice</span>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📋 Training Activities & Task Guides</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Access your step-by-step activity instructions and templates below:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+              <a href="https://docs.google.com/document/d/1CuGt1XTDHkj9ugekN-lC8XDTbsbB2yAAfc6H7Np416k/edit?tab=t.olh4o7z9rgy#heading=h.uovl0c4rroid" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📥 Inbox Management Guide</a>
+              
+              <a href="https://docs.google.com/spreadsheets/d/1lZPyHEYBN96Z7tMapYdqbm-QEE1dF1Qg3EW2HWeTZso/edit?gid=0#gid=0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">✈️ Travel Management Sheet</a>
+              
+              <a href="https://docs.google.com/document/d/1gPUQh0dEEinDLNzA2_KM0eLa6xiHazYWBTEU2dsbS9c/edit?tab=t.0#heading=h.eq0jyjd1p1sh" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📞 Travel Preference Call Guide</a>
+              
+              <a href="https://docs.google.com/document/d/1OpKJex61dK-Fd9z6ZkN9_1X54KD4fg_MA_kP1ZUWy-M/edit?tab=t.0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📊 Data Entry Activity</a>
+              
+              <a href="https://docs.google.com/document/d/18FN2DJTkgas_k7y_mMrVF2Hzr2JmPc4xNoTxdneZ0EA/edit?tab=t.0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📅 Calendar Management Guide</a>
+              
+              <a href="https://docs.google.com/document/d/1AxZwplsjApCQzW_v-zT0sbls3JcAjW9oRzrYnxOWccw/edit?tab=t.0#heading=h.bxpebesg9t5z" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📁 Google Drive Management</a>
+              
+              <a href="https://docs.google.com/document/d/1X93RNzdBEVq0rOHrlb2w13hvfE015NhMWZNd7gf20JY/edit?tab=t.0#heading=h.e3u4xv698tno" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🤝 PM Mock Client Task</a>
+              
+              <a href="https://docs.google.com/document/d/11LxbLjmk65bWokDvQZpxgppx3jK18dge97_ENjCjXNo/edit?tab=t.0#heading=h.55yqh3o5j6jf" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">✅ Project Management Asana</a>
             </div>
+          </div>
 
-            <div class="card">
-              <h3>📚 Batch Resources</h3>
-              <p>Download your templates, task guides, and worksheets.</p>
-              <br>
-              <a id="dash-resources-btn" href="#" target="_blank" class="btn btn-secondary" style="width: 100%;">Open Resources</a>
+          <!-- Essential Resources Section -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Student Library</span>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📚 Essential Resources & Templates</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Download your official guides, sample portfolios, and job hunting tools:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+              <a href="https://drive.google.com/file/d/1v9tOVAuAy_bRd4J1HrfpKp4Sp8zhYdcd/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📄 GVA Training PDF</a>
+              
+              <a href="https://docs.google.com/document/d/1xvqqnYN9betGxlmhfNTFF3XkX8NclSZPPypKIadVhP4/edit?tab=t.0#heading=h.ba818ji0wqs6" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📝 2026 ATS Friendly Resume</a>
+              
+              <a href="https://drive.google.com/file/d/1NU5E0cJUf0fVK09tBmS7Uo97A7Q6jFuV/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">💼 Sample Portfolio</a>
+              
+              <a href="https://docs.google.com/document/d/1cDhlUugXY5KLtsqetD47KtqbUy5jSoSZF_2SkLuH-bk/edit?tab=t.ga1krvh78px9#heading=h.vsb1zp5xsi22" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🚀 Application Process Guide</a>
+              
+              <a href="https://docs.google.com/document/d/1vkTHCcyO_-OaJj2YHyGyaz3B-D3o8hkrRVc8XQ-PM_4/edit?tab=t.0#heading=h.nf0gyg7znxal" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🤖 ChatGPT Tips & Prompts</a>
+              
+              <a href="https://docs.google.com/spreadsheets/d/1van5IIjqiur6BOL_Z4iaQHduyE6UWRBF98SFmhypeRs/edit?gid=0#gid=0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🌐 Where to Apply Directory</a>
+              
+              <a href="https://docs.google.com/document/d/1wczofM0KQFkP6GnhKyd3EtPEfJ4kQp9G0Ajb11nCjO0/edit?tab=t.0#heading=h.2gmowrlsqpke" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📓 Notion Productivity Guide</a>
             </div>
           </div>
 
@@ -1377,10 +1391,16 @@
           <div class="registration-form-card" style="margin-bottom: 2.5rem; max-width: none;">
             <span class="badge-pill" style="background: var(--pale-blue); color: var(--navy);">Direct Submission Hub</span>
             <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit Your Output / Portfolio Task</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.8rem;">Select your task, link your Discord handle, and submit your Google Drive, Canva, or portfolio link directly to Coach Gerr.</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Select your task, link your Discord handle, and submit your Google Drive, Canva, or portfolio link directly to Coach Gerr.</p>
             
+            <!-- Mandatory Reminders Box for Link Permissions and Patience -->
+            <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.2rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
+              <p style="margin-bottom: 0.6rem;">⚠️ <strong>Link Access Reminder:</strong> Please make sure your link is set to <strong>"Anyone with the link can view"</strong> so we can check your work without permission roadblocks.</p>
+              <p style="margin-bottom: 0;">⏳ <strong>Please Be Patient:</strong> Coach Gerr and the team review each and every activity carefully. It will take some time to go through all submissions. Thank you for your cooperation!</p>
+            </div>
+
             <form action="https://formspree.io/f/xnpqkqqd" method="POST">
-              <!-- Automatically stamps the student's batch code across any batch (12 through 50+) -->
+              <!-- Automatically stamps the student's batch code across any batch (18 through 50+) -->
               <input type="hidden" id="submission-batch-field" name="Batch Code" value="">
 
               <div class="grid-2" style="gap: 1rem; margin-bottom: 0;">
@@ -1404,12 +1424,14 @@
                 <label for="sub-task">Task / Output Selection *</label>
                 <select id="sub-task" name="Task Selection" required>
                   <option value="">-- Choose Task / Output --</option>
-                  <option value="Project Management">Project Management</option>
-                  <option value="Google Drive Management">Google Drive Management</option>
-                  <option value="Calendar Management">Calendar Management</option>
-                  <option value="Data Entry">Data Entry</option>
+                  <option value="Inbox Management">Inbox Management</option>
                   <option value="Travel Management">Travel Management</option>
-                  <option value="Mock Client Task">Mock Client Task</option>
+                  <option value="Travel Preference Call Guide">Travel Preference Call Guide</option>
+                  <option value="Data Entry">Data Entry</option>
+                  <option value="Calendar Management">Calendar Management</option>
+                  <option value="Google Drive Management">Google Drive Management</option>
+                  <option value="Project Management Mock Client Task">Project Management Mock Client Task</option>
+                  <option value="Project Management Asana">Project Management Asana</option>
                   <option value="Resume">Resume</option>
                   <option value="Portfolio">Portfolio</option>
                 </select>
@@ -1433,7 +1455,7 @@
           <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
             <h3>🎓 Certificate Request</h3>
             <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Ready to claim your certificate? Submit your final portfolio requirements for your batch.</p>
-            <a id="dash-cert-btn" href="#" target="_blank" class="btn btn-primary">Request Certificate →</a>
+            <a id="dash-cert-btn" href="https://forms.gle/q7mHTKXTZ3XfaLNXA" target="_blank" class="btn btn-primary">Request Certificate →</a>
           </div>
         </div>
 
@@ -1468,7 +1490,6 @@
           <ul class="footer-links">
             <li><a href="#" onclick="switchView('success-stories')">Success Stories</a></li>
             <li><a href="#" onclick="switchView('about')">About Coach Gerr</a></li>
-            <li><a href="#" onclick="switchView('resources')">Resources</a></li>
             <li><a href="#" onclick="switchView('contact')">Contact</a></li>
           </ul>
         </div>
@@ -1525,7 +1546,6 @@
         'programs': "Training Programs Directory | Gerr's Virtual Academy",
         'success-stories': "Graduate Success Stories & Testimonials | GVA",
         'about': "About Coach Gerr & GVA Mission",
-        'resources': "Free Beginner VA Guides & Resources | GVA",
         'register': "Register for Training | Gerr's Virtual Academy",
         'contact': "Contact & Inquiries | Gerr's Virtual Academy",
         'portal': "Secure Student Portal | Gerr's Virtual Academy"
@@ -1536,27 +1556,65 @@
       }
     }
 
-    // Fully Dynamic Batch Code Verification Logic (Works for ANY batch number automatically)
+    // Dynamic Batch Code Verification Logic (Supports Batches 18 through 50 with exact random words or general batch patterns)
     function verifyBatchCode() {
       const inputCode = document.getElementById('batch-code').value.trim().toUpperCase();
       const errorMsg = document.getElementById('login-error');
       
-      const batchRegex = /^GVA-BATCH\d+$/i;
+      // Official Random-Word Batch Codes Map (Batches 18 to 50)
+      const officialBatchCodes = {
+        "GVA-BATCH18-HARBOR": "18",
+        "GVA-BATCH19-CASCADE": "19",
+        "GVA-BATCH20-SOLSTICE": "20",
+        "GVA-BATCH21-COMPASS": "21",
+        "GVA-BATCH22-ECHO": "22",
+        "GVA-BATCH23-MEADOW": "23",
+        "GVA-BATCH24-HORIZON": "24",
+        "GVA-BATCH25-NEPTUNE": "25",
+        "GVA-BATCH26-MOSAIC": "26",
+        "GVA-BATCH27-FALCON": "27",
+        "GVA-BATCH28-TIDES": "28",
+        "GVA-BATCH29-VALIANT": "29",
+        "GVA-BATCH30-QUARTZ": "30",
+        "GVA-BATCH31-NIMBUS": "31",
+        "GVA-BATCH32-BEACON": "32",
+        "GVA-BATCH33-TUNDRA": "33",
+        "GVA-BATCH34-ZEPHYR": "34",
+        "GVA-BATCH35-VELOCITY": "35",
+        "GVA-BATCH36-SAGA": "36",
+        "GVA-BATCH37-GLACIER": "37",
+        "GVA-BATCH38-PULSE": "38",
+        "GVA-BATCH39-KINETIC": "39",
+        "GVA-BATCH40-APEX": "40",
+        "GVA-BATCH41-LUMEN": "41",
+        "GVA-BATCH42-ORBIT": "42",
+        "GVA-BATCH43-TITAN": "43",
+        "GVA-BATCH44-STRATA": "44",
+        "GVA-BATCH45-NOVA": "45",
+        "GVA-BATCH46-STELLAR": "46",
+        "GVA-BATCH47-INFINITY": "47",
+        "GVA-BATCH48-SYNERGY": "48",
+        "GVA-BATCH49-QUANTUM": "49",
+        "GVA-BATCH50-VALOR": "50"
+      };
 
-      if (batchRegex.test(inputCode)) {
-        const batchNum = inputCode.replace('GVA-BATCH', '');
+      let batchNum = "";
+
+      if (officialBatchCodes[inputCode]) {
+        batchNum = officialBatchCodes[inputCode];
+      } else if (/^GVA-BATCH\d+$/i.test(inputCode)) {
+        batchNum = inputCode.replace('GVA-BATCH', '');
+      }
+
+      if (batchNum !== "") {
+        errorMsg.style.display = 'none';
         
         const dynamicTitle = `Batch ${batchNum} Student Hub`;
-        const dynamicSubtitle = `Welcome to your live training dashboard for Batch ${batchNum}! Access your resources and submit tasks below.`;
+        const dynamicSubtitle = `Welcome to your live training dashboard for Batch ${batchNum}! Access your task guides, resources, and submit your outputs below.`;
         
         document.getElementById('dash-title').innerText = dynamicTitle;
         document.getElementById('dash-subtitle').innerText = dynamicSubtitle;
         
-        document.getElementById('dash-replays-btn').href = `https://drive.google.com/drive/folders/gva-batch${batchNum}-replays`;
-        document.getElementById('dash-resources-btn').href = `https://drive.google.com/drive/folders/gva-batch${batchNum}-resources`;
-        document.getElementById('dash-cert-btn').href = `https://forms.gle/gva-certificate-request`;
-        
-        // Dynamically stamps the batch code into the Formspree submission form for ALL batches
         document.getElementById('submission-batch-field').value = inputCode;
 
         document.getElementById('portal-login-card').style.display = 'none';
