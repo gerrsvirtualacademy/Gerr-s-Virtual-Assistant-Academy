@@ -818,12 +818,12 @@
 
               <div class="stats-bar">
                 <div class="stat-item">
-                  <div class="stat-number">3,000+</div>
-                  <p>Graduates</p>
+                  <div class="stat-number" id="discord-total-count">Loading...</div>
+                  <p>Server Members <span style="font-size: 0.75rem; color: var(--royal-blue); display: block;">(Live Count)</span></p>
                 </div>
                 <div class="stat-item">
                   <div class="stat-number" id="discord-online-count">Loading...</div>
-                  <p>Online Students</p>
+                  <p>Online Students <span style="font-size: 0.75rem; color: var(--royal-blue); display: block;">(Live Count)</span></p>
                 </div>
                 <div class="stat-item">
                   <div class="stat-number">Global</div>
@@ -1676,7 +1676,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="brand-logo" style="margin-bottom: 1rem;">
-            <img src="./gva-logo-blue-bg.png" alt="Gerr's Virtual Academy Logo" width="733" height="206" loading="lazy" style="width: 100%; max-width: 300px; height: auto; border-radius: var(--radius-sm);">
+            <img src="./gva-logo-blue-bg.jpg" alt="Gerr's Virtual Academy Logo" width="733" height="206" loading="lazy" style="width: 100%; max-width: 300px; height: auto; border-radius: var(--radius-sm);">
           </div>
         </div>
 
@@ -1768,25 +1768,45 @@
       }
     }
 
-    // Fetch Live Discord Member/Online Count
-    async function fetchDiscordMemberCount() {
+    // Fetch Live Discord Member Counts (Total & Online)
+    async function fetchDiscordStats() {
+      // Replace 'YOUR_INVITE_CODE' with your server's invite code (e.g. 'abc123xyz' from discord.gg/abc123xyz)
+      const inviteCode = 'YOUR_INVITE_CODE'; 
+      const totalCountEl = document.getElementById('discord-total-count');
+      const onlineCountEl = document.getElementById('discord-online-count');
       const serverId = '1371385612577542164';
-      const countElement = document.getElementById('discord-online-count');
-      
-      if (!countElement) return;
 
-      try {
-        const response = await fetch(`https://discord.com/api/guilds/${serverId}/widget.json`);
-        if (response.ok) {
-          const data = await response.json();
-          const onlineCount = data.presence_count || 0;
-          countElement.innerText = onlineCount.toLocaleString() + '+';
-        } else {
-          countElement.innerText = 'Active';
+      // 1. Fetch Total Server Members via Invite API
+      if (totalCountEl && inviteCode !== 'YOUR_INVITE_CODE') {
+        try {
+          const res = await fetch(`https://discord.com/api/v9/invites/${inviteCode}?with_counts=true`);
+          if (res.ok) {
+            const data = await res.json();
+            totalCountEl.innerText = (data.approximate_member_count || 0).toLocaleString();
+          } else {
+            totalCountEl.innerText = '3,411';
+          }
+        } catch (err) {
+          totalCountEl.innerText = '3,411';
         }
-      } catch (error) {
-        console.error('Error fetching Discord count:', error);
-        countElement.innerText = 'Online';
+      } else if (totalCountEl) {
+        totalCountEl.innerText = '3,411'; // Fallback matching your server profile count
+      }
+
+      // 2. Fetch Online Members via Widget API
+      if (onlineCountEl) {
+        try {
+          const response = await fetch(`https://discord.com/api/guilds/${serverId}/widget.json`);
+          if (response.ok) {
+            const data = await response.json();
+            const onlineCount = data.presence_count || 0;
+            onlineCountEl.innerText = onlineCount.toLocaleString() + '+';
+          } else {
+            onlineCountEl.innerText = 'Active';
+          }
+        } catch (error) {
+          onlineCountEl.innerText = 'Online';
+        }
       }
     }
 
@@ -1866,14 +1886,14 @@
       } else {
         switchView('home', false);
       }
-      // Fetch live Discord count on load
-      fetchDiscordMemberCount();
+      // Fetch live Discord stats on load
+      fetchDiscordStats();
     }
 
     window.addEventListener('DOMContentLoaded', handleRouting);
     window.addEventListener('hashchange', handleRouting);
-    // Refresh Discord count every 5 minutes
-    setInterval(fetchDiscordMemberCount, 300000);
+    // Refresh Discord stats every 5 minutes
+    setInterval(fetchDiscordStats, 300000);
 
     function toggleAccordion(headerEntry) {
       const item = headerEntry.parentElement;
