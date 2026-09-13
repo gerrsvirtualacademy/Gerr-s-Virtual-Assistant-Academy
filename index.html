@@ -57,14 +57,15 @@
        1. OFFICIAL GVA BLUE BRAND SYSTEM & STYLING
        ========================================================================== */
     :root {
-      --navy: #0B2D6B;
-      --royal-blue: #2563EB;
-      --sky-blue: #7DB3FF;
-      --cyan-highlight: #0284C7;
-      --soft-pink: #FFD6E7;
-      --light-yellow: #FFF4D6;
-      --pale-blue: #EAF4FF;
-      --white: #FFFFFF;
+      /* Official Color Palette */
+      --navy: #0B2D6B;         /* Primary Base */
+      --royal-blue: #2563EB;   /* Secondary Base */
+      --sky-blue: #7DB3FF;     /* Accent */
+      --cyan-highlight: #0284C7; /* Modern Hover/Text Highlight */
+      --soft-pink: #FFD6E7;    /* Accent */
+      --light-yellow: #FFF4D6; /* Accent */
+      --pale-blue: #EAF4FF;    /* Background */
+      --white: #FFFFFF;        /* Background */
       
       --text-main: #1E293B;
       --text-muted: #64748B;
@@ -82,172 +83,687 @@
       --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background-color: var(--white); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
+    /* Reset & General Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    h1, h2, h3, h4, .font-serif { font-family: 'Playfair Display', serif; color: var(--navy); line-height: 1.3; }
-    .font-handwritten { font-family: 'Caveat', cursive; color: var(--royal-blue); }
+    html {
+      scroll-behavior: smooth;
+    }
 
-    a { text-decoration: none; color: inherit; transition: var(--transition-smooth); }
-    p a, li a, .card a { color: var(--royal-blue); position: relative; }
-    p a:hover, li a:hover { color: var(--cyan-highlight); }
-    img { max-width: 100%; height: auto; display: block; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--white);
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Playfair Display', serif;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .font-handwritten {
+      font-family: 'Caveat', cursive;
+      color: var(--royal-blue);
+    }
+
+    /* Link Hover Styles */
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-smooth);
+    }
+
+    p a, li a, .card a {
+      color: var(--royal-blue);
+      position: relative;
+    }
+
+    p a:hover, li a:hover {
+      color: var(--cyan-highlight);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
     .badge-pill {
-      display: inline-block; padding: 0.4rem 1.2rem; border-radius: var(--radius-pill);
-      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
-      background: linear-gradient(135deg, var(--soft-pink), var(--pale-blue)); color: var(--navy);
-      margin-bottom: 1rem; box-shadow: 0 2px 10px rgba(255, 214, 231, 0.4);
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--soft-pink), var(--pale-blue));
+      color: var(--navy);
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 10px rgba(255, 214, 231, 0.4);
     }
 
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.75rem;
-      border-radius: var(--radius-pill); font-weight: 600; font-size: 0.9rem; cursor: pointer;
-      border: 2px solid transparent; transition: var(--transition-smooth); box-shadow: 0 4px 15px rgba(11, 45, 107, 0.1); text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 15px rgba(11, 45, 107, 0.1);
+      text-align: center;
     }
-    .btn-primary { background: linear-gradient(135deg, var(--navy), var(--royal-blue)); color: var(--white); }
-    .btn-primary:hover { background: linear-gradient(135deg, var(--royal-blue), var(--cyan-highlight)); box-shadow: var(--shadow-hover); transform: translateY(-3px); }
-    .btn-secondary { background-color: var(--white); color: var(--royal-blue); border-color: var(--royal-blue); }
-    .btn-secondary:hover { background-color: var(--pale-blue); color: var(--cyan-highlight); border-color: var(--cyan-highlight); transform: translateY(-3px); }
 
-    section { padding: 5rem 0; }
-    .section-header { text-align: center; max-width: 700px; margin: 0 auto 3.5rem auto; }
-    .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .section-header p { color: var(--text-muted); font-size: 1.1rem; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--navy), var(--royal-blue));
+      color: var(--white);
+    }
 
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--royal-blue), var(--cyan-highlight));
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background-color: var(--white);
+      color: var(--royal-blue);
+      border-color: var(--royal-blue);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--pale-blue);
+      color: var(--cyan-highlight);
+      border-color: var(--cyan-highlight);
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* ==========================================================================
+       2. HEADER & NAVIGATION
+       ========================================================================== */
     header.site-header {
-      position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(16px); border-bottom: 1px solid rgba(234, 244, 255, 0.8); box-shadow: 0 4px 20px rgba(11, 45, 107, 0.03);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(234, 244, 255, 0.8);
+      box-shadow: 0 4px 20px rgba(11, 45, 107, 0.03);
     }
-    .nav-wrapper { display: flex; align-items: center; justify-content: space-between; height: 80px; }
-    .brand-logo img { height: 44px; width: auto; transition: var(--transition-smooth); }
-    .brand-logo img:hover { transform: scale(1.03); }
 
-    nav.main-nav { display: flex; align-items: center; gap: 1.1rem; }
-    nav.main-nav a.nav-link { font-size: 0.82rem; font-weight: 500; color: var(--navy); position: relative; padding: 0.2rem 0; white-space: nowrap; }
-    nav.main-nav a.nav-link:hover, nav.main-nav a.nav-link.active { color: var(--cyan-highlight); }
-    nav.main-nav a.nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0%; height: 2px; background: var(--cyan-highlight); border-radius: var(--radius-pill); transition: var(--transition-smooth); }
-    nav.main-nav a.nav-link:hover::after, nav.main-nav a.nav-link.active::after { width: 100%; }
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
 
-    .mobile-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: var(--navy); transition: var(--transition-smooth); }
-    .mobile-toggle:hover { color: var(--cyan-highlight); }
+    .brand-logo img {
+      height: 44px;
+      width: auto;
+      transition: var(--transition-smooth);
+    }
 
-    .page-view { display: none; opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .page-view.active-view { display: block; opacity: 1; transform: translateY(0); }
+    .brand-logo img:hover {
+      transform: scale(1.03);
+    }
 
-    .hero { padding: 5rem 0 4rem 0; background: radial-gradient(circle at top right, var(--pale-blue) 0%, var(--white) 70%); position: relative; overflow: hidden; }
-    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; }
-    .hero-content h1 { font-size: 3.5rem; margin-bottom: 1.2rem; letter-spacing: -0.02em; }
-    .hero-content p.hero-sub { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 540px; }
-    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    nav.main-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+
+    nav.main-nav a.nav-link {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--navy);
+      position: relative;
+      padding: 0.2rem 0;
+      white-space: nowrap;
+    }
+
+    nav.main-nav a.nav-link:hover,
+    nav.main-nav a.nav-link.active {
+      color: var(--cyan-highlight);
+    }
+
+    nav.main-nav a.nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--cyan-highlight);
+      border-radius: var(--radius-pill);
+      transition: var(--transition-smooth);
+    }
+
+    nav.main-nav a.nav-link:hover::after,
+    nav.main-nav a.nav-link.active::after {
+      width: 100%;
+    }
+
+    .mobile-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--navy);
+      transition: var(--transition-smooth);
+    }
+
+    .mobile-toggle:hover {
+      color: var(--cyan-highlight);
+    }
+
+    /* ==========================================================================
+       3. PAGE VIEWS SYSTEM & ANIMATIONS
+       ========================================================================== */
+    .page-view {
+      display: none;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .page-view.active-view {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       4. HERO SECTION
+       ========================================================================== */
+    .hero {
+      padding: 5rem 0 4rem 0;
+      background: radial-gradient(circle at top right, var(--pale-blue) 0%, var(--white) 70%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-content p.hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 540px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
 
     .stats-bar {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding: 1.8rem;
-      background: var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-soft); border: 1px solid var(--pale-blue);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding: 1.8rem;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--pale-blue);
+      transition: var(--transition-smooth);
     }
-    .stat-item h4 { font-size: 1.8rem; color: var(--royal-blue); }
-    .stat-item p { font-size: 0.85rem; color: var(--text-muted); }
+
+    .stats-bar:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    .stat-item h4 {
+      font-size: 1.8rem;
+      color: var(--royal-blue);
+    }
+
+    .stat-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
 
     .hero-image-card {
-      position: relative; border-radius: var(--radius-lg); overflow: hidden;
-      box-shadow: var(--shadow-hover); background: linear-gradient(135deg, var(--soft-pink), var(--light-yellow)); padding: 1rem;
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      background: linear-gradient(135deg, var(--soft-pink), var(--light-yellow));
+      padding: 1rem;
+      transition: var(--transition-smooth);
     }
-    .hero-image-card img { border-radius: var(--radius-md); width: 100%; height: 440px; object-fit: cover; }
+
+    .hero-image-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .hero-image-card img {
+      border-radius: var(--radius-md);
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-image-card:hover img {
+      transform: scale(1.02);
+    }
 
     .floating-card {
-      position: absolute; bottom: 2rem; left: -1.5rem; background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px); padding: 1.2rem 1.8rem; border-radius: var(--radius-md); box-shadow: var(--shadow-hover); border: 1px solid var(--sky-blue);
+      position: absolute;
+      bottom: 2rem;
+      left: -1.5rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 1.2rem 1.8rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-hover);
+      border: 1px solid var(--sky-blue);
+      animation: floatBadge 4s ease-in-out infinite;
     }
 
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .floating-card strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .floating-card span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       5. FEATURE & CARD GRIDS
+       ========================================================================== */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
 
     .card {
-      background: var(--white); border-radius: var(--radius-md); padding: 2.2rem;
-      border: 1px solid var(--pale-blue); box-shadow: var(--shadow-card); transition: var(--transition-smooth); position: relative; overflow: hidden;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 2.2rem;
+      border: 1px solid var(--pale-blue);
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
     }
-    .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--sky-blue); }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--royal-blue), var(--cyan-highlight));
+      opacity: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--sky-blue);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
 
     .card-icon {
-      width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--pale-blue);
-      color: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.2rem;
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: var(--pale-blue);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      transition: var(--transition-smooth);
     }
 
-    .program-hero { background: linear-gradient(135deg, var(--pale-blue), var(--light-yellow)); padding: 4rem 0; border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
-    .curriculum-accordion { max-width: 850px; margin: 0 auto; }
-    .accordion-item { background: var(--white); border-radius: var(--radius-md); margin-bottom: 1rem; border: 1px solid var(--pale-blue); overflow: hidden; box-shadow: var(--shadow-soft); }
-    .accordion-header { padding: 1.4rem 1.8rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-weight: 600; font-size: 1.05rem; color: var(--navy); }
-    .accordion-body { padding: 0 1.8rem 1.4rem 1.8rem; display: none; color: var(--text-muted); border-top: 1px solid var(--pale-blue); padding-top: 1rem; }
-    .accordion-item.active .accordion-body { display: block; }
-
-    /* Zoomable Sample Client Profiles & Lightbox Modal */
-    .zoomable-card { cursor: pointer; transition: var(--transition-smooth); }
-    .zoomable-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--cyan-highlight); }
-
-    .profile-modal-overlay {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(11, 45, 107, 0.85); backdrop-filter: blur(10px); display: none;
-      align-items: center; justify-content: center; z-index: 2000; padding: 2rem;
-    }
-    .profile-modal-content {
-      background: var(--white); border-radius: var(--radius-lg); max-width: 900px;
-      width: 100%; padding: 3rem 2.5rem; position: relative; box-shadow: var(--shadow-hover);
-      max-height: 90vh; overflow-y: auto; animation: zoomInModal 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    @keyframes zoomInModal {
-      from { opacity: 0; transform: scale(0.95) translateY(10px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    .profile-modal-close {
-      position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.5rem; cursor: pointer;
-      color: var(--navy); background: var(--pale-blue); width: 44px; height: 44px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center; transition: var(--transition-smooth);
-    }
-    .profile-modal-close:hover { background: var(--royal-blue); color: var(--white); }
-
-    .story-card { background: var(--white); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--pale-blue); box-shadow: var(--shadow-card); }
-    .story-img { height: 240px; width: 100%; object-fit: cover; background: var(--soft-pink); }
-    .story-content { padding: 1.8rem; }
-    .story-author { font-weight: 700; color: var(--navy); margin-top: 1rem; }
-    .story-role { font-size: 0.85rem; color: var(--cyan-highlight); }
-
-    .registration-form-card { background: var(--white); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-hover); border: 1px solid var(--pale-blue); max-width: 700px; margin: 0 auto; }
-    .form-group { margin-bottom: 1.5rem; }
-    .form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--navy); }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 0.85rem 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);
-      font-family: inherit; font-size: 0.95rem; background: var(--pale-blue); transition: var(--transition-smooth);
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      outline: none; border-color: var(--cyan-highlight); background: var(--white); box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12);
+    .card:hover .card-icon {
+      background: var(--royal-blue);
+      color: var(--white);
+      transform: rotate(6deg) scale(1.05);
     }
 
-    footer.site-footer { background: var(--navy); color: rgba(255, 255, 255, 0.8); padding: 4rem 0 2rem 0; margin-top: 5rem; border-top: 4px solid var(--cyan-highlight); }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem; margin-bottom: 3.5rem; }
-    .footer-col h4 { color: var(--white); font-size: 1.1rem; margin-bottom: 1.2rem; }
-    .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 0.7rem; }
-    .footer-links a { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; }
-    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); }
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
 
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================================================
+       6. PROGRAM SPECIFIC PAGES & ACCORDIONS
+       ========================================================================== */
+    .program-hero {
+      background: linear-gradient(135deg, var(--pale-blue), var(--light-yellow));
+      padding: 4rem 0;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+
+    .curriculum-accordion {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .accordion-item {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1px solid var(--pale-blue);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition-smooth);
+    }
+
+    .accordion-item:hover {
+      border-color: var(--sky-blue);
+    }
+
+    .accordion-header {
+      padding: 1.4rem 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--navy);
+      transition: var(--transition-smooth);
+    }
+
+    .accordion-header:hover {
+      color: var(--cyan-highlight);
+      background: rgba(234, 244, 255, 0.4);
+    }
+
+    .accordion-body {
+      padding: 0 1.8rem 1.4rem 1.8rem;
+      display: none;
+      color: var(--text-muted);
+      border-top: 1px solid var(--pale-blue);
+      padding-top: 1rem;
+      animation: fadeInAccordion 0.3s ease-in-out;
+    }
+
+    @keyframes fadeInAccordion {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .accordion-item.active .accordion-body {
+      display: block;
+    }
+
+    /* ==========================================================================
+       7. TESTIMONIALS
+       ========================================================================== */
+    .story-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--pale-blue);
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-smooth);
+    }
+
+    .story-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .story-img {
+      height: 240px;
+      width: 100%;
+      object-fit: cover;
+      background: var(--soft-pink);
+      transition: transform 0.5s ease;
+    }
+
+    .story-card:hover .story-img {
+      transform: scale(1.03);
+    }
+
+    .story-content {
+      padding: 1.8rem;
+    }
+
+    .story-author {
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 1rem;
+    }
+
+    .story-role {
+      font-size: 0.85rem;
+      color: var(--cyan-highlight);
+    }
+
+    /* ==========================================================================
+       8. REGISTRATION & INQUIRY FORMS
+       ========================================================================== */
+    .registration-form-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-hover);
+      border: 1px solid var(--pale-blue);
+      max-width: 700px;
+      margin: 0 auto;
+      transition: var(--transition-smooth);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1.2rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: var(--pale-blue);
+      transition: var(--transition-smooth);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--cyan-highlight);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12);
+    }
+
+    /* ==========================================================================
+       9. FOOTER
+       ========================================================================== */
+    footer.site-footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 4rem 0 2rem 0;
+      margin-top: 5rem;
+      border-top: 4px solid var(--cyan-highlight);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--sky-blue);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Responsive Breakpoints */
     @media (max-width: 1024px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; }
       .hero-content p.hero-sub { margin: 0 auto 2rem auto; }
       .hero-cta { justify-content: center; }
       .floating-card { display: none; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
+
       .mobile-toggle { display: block; }
       nav.main-nav { 
-        position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px; height: 100vh;
-        background: var(--white); flex-direction: column; align-items: flex-start; padding: 5rem 2rem 2rem 2rem;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.15); transition: right 0.3s ease-in-out; z-index: 1001;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5rem 2rem 2rem 2rem;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+        transition: right 0.3s ease-in-out;
+        z-index: 1001;
       }
       nav.main-nav.mobile-active { right: 0; }
       nav.main-nav a.nav-link { font-size: 1.1rem; width: 100%; padding: 0.5rem 0; }
-      .nav-close-btn { display: block; position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; color: var(--navy); }
+      .nav-close-btn {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--navy);
+      }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 3.5rem 0; }
+      .section-header h2 { font-size: 2rem; }
+      .hero-content h1 { font-size: 2.3rem; }
+      .hero-image-card img { height: 320px; }
+
+      .stats-bar { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .registration-form-card { padding: 1.8rem 1.2rem; }
+      .btn { width: 100%; }
     }
   </style>
 </head>
@@ -269,6 +785,7 @@
           <a href="#" onclick="switchView('va-training'); toggleMobileMenu();" class="nav-link" id="nav-va-training">VA Training</a>
           <a href="#" onclick="switchView('smm-bootcamp'); toggleMobileMenu();" class="nav-link" id="nav-smm-bootcamp">SMM Bootcamp</a>
           <a href="#" onclick="switchView('programs'); toggleMobileMenu();" class="nav-link" id="nav-programs">Programs</a>
+          <a href="#" onclick="switchView('client-profiles'); toggleMobileMenu();" class="nav-link" id="nav-client-profiles">Client Profiles</a>
           <a href="#" onclick="switchView('success-stories'); toggleMobileMenu();" class="nav-link" id="nav-success-stories">Success Stories</a>
           <a href="#" onclick="switchView('about'); toggleMobileMenu();" class="nav-link" id="nav-about">About</a>
           <a href="#" onclick="switchView('contact'); toggleMobileMenu();" class="nav-link" id="nav-contact">Contact</a>
@@ -282,6 +799,7 @@
 
     <!-- VIEW 1: HOME PAGE -->
     <div id="view-home" class="page-view active-view">
+      
       <section class="hero">
         <div class="container">
           <div class="hero-grid">
@@ -296,9 +814,18 @@
               </div>
 
               <div class="stats-bar">
-                <div class="stat-item"><h4>3,000+</h4><p>Graduates</p></div>
-                <div class="stat-item"><h4>100%</h4><p>Beginner Friendly</p></div>
-                <div class="stat-item"><h4>Global</h4><p>Opportunities</p></div>
+                <div class="stat-item">
+                  <h4>3,000+</h4>
+                  <p>Graduates</p>
+                </div>
+                <div class="stat-item">
+                  <h4>100%</h4>
+                  <p>Beginner Friendly</p>
+                </div>
+                <div class="stat-item">
+                  <h4>Global</h4>
+                  <p>Opportunities</p>
+                </div>
               </div>
             </div>
 
@@ -313,6 +840,7 @@
         </div>
       </section>
 
+      <!-- Why Choose GVA -->
       <section>
         <div class="container">
           <div class="section-header">
@@ -322,12 +850,83 @@
           </div>
 
           <div class="grid-3">
-            <div class="card"><div class="card-icon">🎓</div><h3>100% Beginner Friendly</h3><p>No prior technical background or corporate VA experience needed. We teach every tool and workflow step by step.</p></div>
-            <div class="card"><div class="card-icon">💼</div><h3>Student Portal & Portfolio</h3><p>Get exclusive access to your very own student portal packed with interactive activities and resources to build your professional portfolio.</p></div>
-            <div class="card"><div class="card-icon">💙</div><h3>Supportive Community</h3><p>Train directly with Coach Gerr and join a warm community of fellow students who uplift and encourage each other.</p></div>
+            <div class="card">
+              <div class="card-icon">🎓</div>
+              <h3>100% Beginner Friendly</h3>
+              <p>No prior technical background or corporate VA experience needed. We teach every tool and workflow step by step.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">💼</div>
+              <h3>Student Portal & Portfolio</h3>
+              <p>Get exclusive access to your very own student portal packed with interactive activities and resources to build your professional portfolio.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">💙</div>
+              <h3>Supportive Community</h3>
+              <p>Train directly with Coach Gerr and join a warm community of fellow students who uplift and encourage each other.</p>
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- Featured Programs Preview -->
+      <section style="background: var(--pale-blue); padding: 5rem 0;">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge-pill">Core Training</span>
+            <h2>Our Specialized Programs</h2>
+            <p>Designed for complete beginners who want structured, actionable skills to launch their online careers.</p>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Most Popular</span>
+              <h3>Virtual Assistant Training</h3>
+              <p style="font-size: 1.5rem; font-weight: 700; color: var(--royal-blue); margin: 0.5rem 0 1rem 0;">₱599</p>
+              <p>An intensive 3-day live training covering inbox, calendar, and travel management, data entry, client communication, and student portal access.</p>
+              <br>
+              <button onclick="switchView('va-training')" class="btn btn-secondary" style="width: 100%;">View VA Curriculum</button>
+            </div>
+
+            <div class="card">
+              <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">High Demand</span>
+              <h3>Social Media Management Bootcamp</h3>
+              <p style="font-size: 1.5rem; font-weight: 700; color: var(--royal-blue); margin: 0.5rem 0 1rem 0;">₱999</p>
+              <p>Master visual content design, content pillars, AI prompts for content creation, templates, and portfolio building with potential client matching opportunities.</p>
+              <br>
+              <button onclick="switchView('smm-bootcamp')" class="btn btn-secondary" style="width: 100%;">View SMM Curriculum</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Meet Coach Gerr -->
+      <section>
+        <div class="container">
+          <div class="grid-2" style="align-items: center;">
+            <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-hover);">
+              <img src="./coach-gerr.jpg" alt="Coach Gerr - Founder of GVA">
+            </div>
+            <div>
+              <span class="badge-pill">Meet Your Mentor</span>
+              <h2>Guided by Coach Gerr</h2>
+              <p style="margin-bottom: 1.2rem; color: var(--text-muted);">Almost 7 years ago, Coach Gerr took a leap of faith, transitioning away from her secure government job to become a full-time Virtual Assistant. Her primary goal was simple yet profound: to reclaim her time and spend more meaningful moments with her family and her dog—and she has never looked back since.</p>
+              <p style="margin-bottom: 1.8rem; color: var(--text-muted);">Through Gerr’s Virtual Academy, she has helped a vast majority of her students achieve remarkable remote career success. However, growth is a partnership: while Coach Gerr provides the blueprint and handles your crucial first steps, your long-term success ultimately relies on your own drive, grit, and dedication.</p>
+              <button onclick="switchView('about')" class="btn btn-secondary">Read Full Story</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Registration Banner CTA -->
+      <section style="background: linear-gradient(135deg, var(--navy), var(--royal-blue)); color: var(--white); text-align: center; border-radius: var(--radius-lg); margin: 3rem auto; max-width: 1100px; box-shadow: var(--shadow-hover);">
+        <div style="padding: 4rem 1.5rem;">
+          <h2 style="color: var(--white); font-size: 2.5rem; margin-bottom: 1rem;">Ready to Take Your First Step?</h2>
+          <p style="max-width: 600px; margin: 0 auto 2rem auto; color: rgba(255,255,255,0.85);">Slots for upcoming cohorts are filled on a first-come, first-served basis. Secure your spot in the next GVA training today.</p>
+          <button onclick="switchView('register')" class="btn" style="background: var(--soft-pink); color: var(--navy);">Register for Next Batch</button>
+        </div>
+      </section>
+
     </div>
 
     <!-- VIEW 2: VIRTUAL ASSISTANT TRAINING PAGE -->
@@ -341,6 +940,94 @@
           <button onclick="switchView('register')" class="btn btn-primary">Enroll in VA Training (₱599)</button>
         </div>
       </div>
+
+      <section>
+        <div class="container">
+          <div class="grid-2">
+            <div>
+              <h2>Who This Training Is For</h2>
+              <br>
+              <ul style="list-style: none;">
+                <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem; align-items: flex-start;">
+                  <span style="color: var(--cyan-highlight); font-weight: bold;">✓</span>
+                  <span><strong>Complete Beginners:</strong> Individuals with no prior online work experience seeking structured guidance.</span>
+                </li>
+                <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem; align-items: flex-start;">
+                  <span style="color: var(--cyan-highlight); font-weight: bold;">✓</span>
+                  <span><strong>Career Shifters:</strong> Corporate workers looking for flexible remote career paths.</span>
+                </li>
+                <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem; align-items: flex-start;">
+                  <span style="color: var(--cyan-highlight); font-weight: bold;">✓</span>
+                  <span><strong>Stay-at-Home Parents:</strong> Parents who want to earn remotely while staying close to family.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2>Key Inclusions</h2>
+              <br>
+              <div class="card" style="background: var(--pale-blue);">
+                <p>🔹 <strong>3-Day Live Interactive Training</strong></p>
+                <p>🔹 <strong>Exclusive Student Portal Access (Hands-on Activities & Resource Library)</strong></p>
+                <p>🔹 <strong>Portfolio Building Modules & Task Guides (Inbox, Travel, Data Entry, Calendar, Drive, Asana)</strong></p>
+                <p>🔹 <strong>Official GVA Certificate of Completion</strong></p>
+                <p>🔹 <strong>Lifetime Access to GVA Alumni Community</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background: var(--pale-blue); padding: 5rem 0;">
+        <div class="container">
+          <div class="section-header">
+            <h2>Course Curriculum & Portal Workflows</h2>
+            <p>Every module is backed by real student portal resources and practical output tasks.</p>
+          </div>
+
+          <div class="curriculum-accordion">
+            <div class="accordion-item active">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Module 1: Foundations & Professional Mindset</span>
+                <span>▼</span>
+              </div>
+              <div class="accordion-body">
+                <p>Understanding the VA landscape, setting up your home workspace, utilizing the GVA Training PDF, and adopting a professional client-service mindset.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Module 2: Core Admin Tasks (Inbox, Calendar & Travel Management)</span>
+                <span>▼</span>
+              </div>
+              <div class="accordion-body">
+                <p>Hands-on mastery of Inbox Management, Google Calendar scheduling, Travel Management sheets, and Travel Preference Call Guides taught live by Coach Gerr.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Module 3: File Organization & Project Management (Data Entry, Drive & Asana)</span>
+                <span>▼</span>
+              </div>
+              <div class="accordion-body">
+                <p>Practical execution of Data Entry activities, Google Drive folder hierarchies, Project Management Asana boards, and PM Mock Client tasks.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Module 4: Job Hunting, ATS Resume & Portfolio Strategy</span>
+                <span>▼</span>
+              </div>
+              <div class="accordion-body">
+                <p>Crafting your 2026 ATS-friendly resume, structuring sample portfolios, following the application process guide, leveraging ChatGPT prompt tips, and navigating the Where to Apply directory.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- VIEW 3: SMM BOOTCAMP PAGE -->
@@ -350,13 +1037,50 @@
           <span class="badge-pill" style="background: var(--white);">Specialized Skill Upgrade</span>
           <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">Social Media Management Training Philippines</h1>
           <p style="font-size: 1.8rem; font-weight: 700; color: var(--royal-blue); margin-bottom: 1rem;">₱999</p>
-          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">Master social media strategies, content pillars, AI prompts, templates, and portfolio building to secure remote client opportunities!</p>
+          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">Master social media strategies, utilize AI prompts for content creation, apply social media templates, follow SMM output video guides, and work with client profile samples to secure remote opportunities!</p>
           <button onclick="switchView('register')" class="btn btn-primary">Enroll in SMM Bootcamp (₱999)</button>
         </div>
       </div>
+
+      <section>
+        <div class="container">
+          <div class="grid-2">
+            <div>
+              <h2>What You Will Master</h2>
+              <br>
+              <div class="grid-3" style="grid-template-columns: 1fr; gap: 1.2rem;">
+                <div class="card" style="padding: 1.5rem;">
+                  <h3>SMM Course Guide & Strategy</h3>
+                  <p>Follow the comprehensive SMM course guide to build content pillars, calendars, and campaign plans.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                  <h3>AI Prompts & Templates</h3>
+                  <p>Leverage specialized AI content creation prompts and ready-to-use social media templates to fast-track your execution.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                  <h3>Outputs & Client Profiles</h3>
+                  <p>Practice with output guides, video walkthroughs, and real client profile samples to build a standout portfolio.</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h2>Key Inclusions & Portal Access</h2>
+              <br>
+              <div class="card" style="background: var(--pale-blue);">
+                <p>🔹 <strong>Dedicated SMM Bootcamp Student Portal</strong></p>
+                <p>🔹 <strong>SMM Course Guides & Social Media Templates</strong></p>
+                <p>🔹 <strong>AI Content Creation Prompts & Video Guides</strong></p>
+                <p>🔹 <strong>Real Client Profile Samples for Portfolio Building</strong></p>
+                <p>🔹 <strong>Official GVA Certificate of Completion & Community Access</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <!-- VIEW 4: PROGRAMS -->
+    <!-- VIEW 4: ALL PROGRAMS -->
     <div id="view-programs" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
@@ -364,6 +1088,7 @@
           <h2>Explore Our Training Programs</h2>
           <p>Find the right path to kickstart or elevate your remote career. All programs include secure student portal access.</p>
         </div>
+
         <div class="grid-2">
           <div class="card">
             <div class="card-icon">💼</div>
@@ -372,18 +1097,146 @@
             <p style="margin-bottom: 1.5rem;">An intensive 3-day live training covering inbox, calendar, and travel management, student portal resources for portfolio building, and job application strategies.</p>
             <button onclick="switchView('va-training')" class="btn btn-secondary">Learn More</button>
           </div>
+
           <div class="card">
             <div class="card-icon">📱</div>
             <h3>Social Media Management Bootcamp</h3>
             <p style="font-size: 1.4rem; font-weight: 700; color: var(--royal-blue); margin: 0.3rem 0 1rem 0;">₱999</p>
-            <p style="margin-bottom: 1.5rem;">A practical course focused on SMM course guides, AI content prompts, social media templates, and output video guides.</p>
+            <p style="margin-bottom: 1.5rem;">A practical course focused on SMM course guides, AI content prompts, social media templates, output video guides, and client profile samples.</p>
             <button onclick="switchView('smm-bootcamp')" class="btn btn-secondary">Learn More</button>
           </div>
         </div>
       </section>
     </div>
 
-    <!-- VIEW 5: SUCCESS STORIES -->
+    <!-- VIEW 5: CLIENT PROFILES LIBRARY (NEW) -->
+    <div id="view-client-profiles" class="page-view">
+      <div class="program-hero text-center" style="background: linear-gradient(135deg, var(--light-yellow), var(--pale-blue));">
+        <div class="container">
+          <span class="badge-pill" style="background: var(--white);">Portfolio & Practice Library</span>
+          <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">Sample Client Profiles</h1>
+          <p style="max-width: 700px; margin: 0 auto; color: var(--text-muted);">Explore our library of realistic sample client personas across diverse industries. Use these profiles to practice your VA tasks, social media content creation, and portfolio case studies!</p>
+        </div>
+      </div>
+
+      <section class="container" style="padding-top: 3.5rem;">
+        <div class="grid-2">
+          
+          <!-- Profile 1: Travel Agency -->
+          <div class="card">
+            <div class="card-icon">✈️</div>
+            <h3>Wanderlust Adventures</h3>
+            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Travel & Tourism Agency</p>
+            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Millennial travelers, digital nomads, and families seeking curated local and international tour packages.</p>
+            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Adventurous, inspiring, professional, and welcoming.</p>
+            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Itinerary scheduling, travel preference calls, booking inquiries, and destination showcase posts.</p>
+            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
+          </div>
+
+          <!-- Profile 2: Clothing Boutique -->
+          <div class="card">
+            <div class="card-icon">👗</div>
+            <h3>Chic & Co. Apparel</h3>
+            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Fashion & Retail E-Commerce</p>
+            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Young professionals and trend-conscious women looking for stylish, everyday minimalist wear.</p>
+            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Chic, modern, elegant, and engaging.</p>
+            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Instagram/TikTok content pillars, Canva social media templates, and customer DM inquiry management.</p>
+            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
+          </div>
+
+          <!-- Profile 3: Fitness Center -->
+          <div class="card">
+            <div class="card-icon">💪</div>
+            <h3>Apex Elite Gym & Fitness</h3>
+            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Health & Wellness</p>
+            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Fitness enthusiasts, beginners wanting strength training, and local community members.</p>
+            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Energetic, motivational, bold, and disciplined.</p>
+            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Class scheduling in Google Calendar, workout challenge graphics, and membership data entry.</p>
+            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
+          </div>
+
+          <!-- Profile 4: Accounting Firm -->
+          <div class="card">
+            <div class="card-icon">📊</div>
+            <h3>PrimeLedger Solutions</h3>
+            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Financial & Corporate Services</p>
+            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Small-to-medium business owners and freelancers needing bookkeeping and tax filing help.</p>
+            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Trustworthy, authoritative, detail-oriented, and professional.</p>
+            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Spreadsheet data entry, client onboarding inbox triage, and Google Drive folder organization.</p>
+            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
+          </div>
+
+          <!-- Profile 5: Veterinary Clinic -->
+          <div class="card">
+            <div class="card-icon">🐾</div>
+            <h3>Paws & Claws Vet Clinic</h3>
+            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Animal Care & Veterinary Services</p>
+            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Pet owners, cat and dog parents seeking compassionate veterinary care and grooming.</p>
+            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Warm, compassionate, reassuring, and friendly.</p>
+            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Appointment booking calendar management, pet care tips content, and client reminder emails.</p>
+            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
+          </div>
+
+          <!-- Profile 6: Airbnb Rental -->
+          <div class="card">
+            <div class="card-icon">🏡</div>
+            <h3>CozyNest Tagaytay Staycation</h3>
+            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Hospitality & Short-Term Rentals</p>
+            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Couples, families, and weekend travelers looking for a relaxing highland getaway.</p>
+            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Cozy, inviting, luxurious yet relaxed.</p>
+            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Guest check-in coordination, Airbnb inbox management, and cleaning checklist spreadsheets.</p>
+            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
+          </div>
+
+          <!-- Profile 7: Real Estate -->
+          <div class="card">
+            <div class="card-icon">🏢</div>
+            <h3>PrimeHorizon Properties</h3>
+            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Real Estate Brokerage</p>
+            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Homebuyers, property investors, and renters searching for condominiums and residential lots.</p>
+            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Professional, ambitious, sleek, and reliable.</p>
+            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Property listing data entry, client viewing schedules, and lead follow-up email templates.</p>
+            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
+          </div>
+
+          <!-- Profile 8: Beauty Studio -->
+          <div class="card">
+            <div class="card-icon">✨</div>
+            <h3>Lumiere Glow Bar</h3>
+            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Beauty, Skincare & Aesthetics</p>
+            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Skincare enthusiasts, brides-to-be, and individuals looking for facial and wellness treatments.</p>
+            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Aesthetic, glowing, luxurious, and uplifting.</p>
+            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Instagram aesthetic content calendar, before-and-after reels organization, and client booking notes.</p>
+            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
+          </div>
+
+          <!-- Profile 9: Dental Clinic -->
+          <div class="card">
+            <div class="card-icon">😁</div>
+            <h3>SmileCraft Dental Studio</h3>
+            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Healthcare & Dental Care</p>
+            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Families and patients seeking orthodontic, cosmetic, and general dental treatments.</p>
+            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Clean, professional, reassuring, and hygienic.</p>
+            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Patient appointment scheduling, dental hygiene educational posts, and inquiry sorting.</p>
+            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
+          </div>
+
+          <!-- Profile 10: Coffee Shop -->
+          <div class="card">
+            <div class="card-icon">☕</div>
+            <h3>Brewed Awakening Cafe</h3>
+            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Food & Beverage / F&B</p>
+            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Coffee lovers, students, and remote workers looking for cozy study and hangout spots.</p>
+            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Cozy, aromatic, energetic, and community-driven.</p>
+            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Menu pricing data entry, seasonal promo campaign planning, and social media post scheduling.</p>
+            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- VIEW 6: SUCCESS STORIES -->
     <div id="view-success-stories" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
@@ -391,6 +1244,7 @@
           <h2>Real Student Transformations</h2>
           <p>Read inspiring stories from our real graduates who built their confidence and started their remote careers with GVA.</p>
         </div>
+
         <div class="grid-3">
           <div class="story-card">
             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate">
@@ -400,6 +1254,7 @@
               <div class="story-role">General Virtual Assistant</div>
             </div>
           </div>
+
           <div class="story-card">
             <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate">
             <div class="story-content">
@@ -408,6 +1263,7 @@
               <div class="story-role">Social Media Specialist</div>
             </div>
           </div>
+
           <div class="story-card">
             <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate">
             <div class="story-content">
@@ -420,7 +1276,7 @@
       </section>
     </div>
 
-    <!-- VIEW 6: ABOUT PAGE -->
+    <!-- VIEW 7: ABOUT PAGE -->
     <div id="view-about" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
@@ -428,20 +1284,37 @@
           <h2>Meet Coach Gerr</h2>
           <p>Empowering aspiring Virtual Assistants with practical training, real support, and real opportunities.</p>
         </div>
+
         <div class="grid-2" style="align-items: center; margin-bottom: 4rem;">
           <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-hover);">
             <img src="./coach-gerr.jpg" alt="Coach Gerr - Founder of GVA">
           </div>
           <div>
             <h3 style="font-size: 2rem; margin-bottom: 1rem;">Virtual Assistant Mentor & Founder</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Almost 7 years ago, Coach Gerr made a life-changing decision to leave her stable career as a government worker. Her main dream was simple: to gain schedule flexibility and spend more quality time with her family and her beloved dog.</p>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Almost 7 years ago, Coach Gerr made a life-changing decision to leave her stable career as a government worker. Her main dream was simple: to gain schedule flexibility and spend more quality time with her family and her beloved dog. Taking that leap into the remote work space opened doors she never imagined, and she hasn't looked back ever since.</p>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Today, a vast majority of her students go on to find incredible success after going through her live academy training. However, Coach Gerr believes in keeping it real: while she is fully committed to holding your hand through your crucial first steps as a newbie Virtual Assistant, your long-term success is ultimately driven by your own grit, accountability, and hustle.</p>
+            <p style="color: var(--navy); font-weight: 600; margin-bottom: 1.5rem;">Ready to start your VA journey? Learn with Coach Gerr and take your first step toward becoming a confident, work-ready Virtual Assistant.</p>
             <button onclick="switchView('register')" class="btn btn-primary">Start Your GVA Journey</button>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 4rem;">
+          <div class="card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">The GVA Mission</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Gerr’s Virtual Academy was born out of a passion to make digital careers accessible to every aspiring professional, parent, and career shifter in the Philippines.</p>
+            <p style="color: var(--text-muted);">We believe that with the right tools, practical exercises, and supportive guidance, anyone can overcome the fear of starting anew and build a thriving virtual career.</p>
+          </div>
+          <div class="card" style="background: var(--pale-blue);">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">GVA Philosophy</h3>
+            <p style="margin-bottom: 0.8rem;">✨ <strong>Supportive & Friendly:</strong> We guide every student with patience and warmth.</p>
+            <p style="margin-bottom: 0.8rem;">✨ <strong>Practical Focus:</strong> Theory is good, but real-world practice creates confidence.</p>
+            <p>✨ <strong>Growth Focused:</strong> We grow together, learn together, and celebrate wins together.</p>
           </div>
         </div>
       </section>
     </div>
 
-    <!-- VIEW 7: REGISTER PAGE -->
+    <!-- VIEW 8: REGISTER PAGE -->
     <div id="view-register" class="page-view">
       <section class="container" style="padding-top: 3rem;">
         <div class="section-header">
@@ -449,6 +1322,7 @@
           <h2>Register for an Upcoming Batch</h2>
           <p>Fill out the official registration form below to reserve your slot and receive your student portal access.</p>
         </div>
+
         <div class="registration-form-card">
           <form action="https://formspree.io/f/mwlkzjzg" method="POST">
             <div class="form-group">
@@ -460,58 +1334,99 @@
                 <option value="Both Programs Bundle - ₱1,598">Both Programs Bundle (Special) - ₱1,598</option>
               </select>
             </div>
+
             <div class="form-group">
               <label for="reg-name">Full Name *</label>
               <input type="text" id="reg-name" name="Full Name" placeholder="Enter your full name" required>
             </div>
+
             <div class="form-group">
               <label for="reg-email">Email Address *</label>
               <input type="email" id="reg-email" name="Email Address" placeholder="name@example.com" required>
             </div>
+
             <div class="form-group">
               <label for="reg-phone">Contact / Phone Number *</label>
               <input type="tel" id="reg-phone" name="Phone Number" placeholder="e.g. 09171234567" required>
             </div>
+
+            <div class="form-group">
+              <label for="reg-notes">Questions or Additional Notes (Optional)</label>
+              <textarea id="reg-notes" name="Additional Notes" rows="3" placeholder="Tell us about your background or ask any questions..."></textarea>
+            </div>
+
             <button type="submit" class="btn btn-primary" style="width: 100%;">Complete Registration</button>
           </form>
         </div>
       </section>
     </div>
 
-    <!-- VIEW 8: CONTACT PAGE -->
+    <!-- VIEW 9: CONTACT & INQUIRIES PAGE -->
     <div id="view-contact" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
           <span class="badge-pill">Get in Touch</span>
           <h2>Contact & Inquiries</h2>
-          <p>Have questions about our courses or schedules? Send us a message below!</p>
+          <p>Have questions about our courses or schedules? Send us a message or reach out through our official channels below!</p>
         </div>
-        <div class="registration-form-card" style="max-width: none;">
-          <h3 style="margin-bottom: 1.5rem; color: var(--navy);">Send Us an Inquiry</h3>
-          <form action="https://formspree.io/f/mwlkzjzg" method="POST">
-            <div class="form-group">
-              <label for="inquiry-name">Full Name *</label>
-              <input type="text" id="inquiry-name" name="Full Name" placeholder="Enter your full name" required>
-            </div>
-            <div class="form-group">
-              <label for="inquiry-email">Email Address *</label>
-              <input type="email" id="inquiry-email" name="Email Address" placeholder="name@example.com" required>
-            </div>
-            <div class="form-group">
-              <label for="inquiry-message">Your Message / Inquiry *</label>
-              <textarea id="inquiry-message" name="Inquiry Message" rows="4" placeholder="How can we help you?" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
-          </form>
+
+        <div class="grid-2">
+          <!-- Direct Channels & Social Media Links (Left Side with Icons) -->
+          <div class="card">
+            <h3>Direct Channels & Social Media</h3>
+            <br>
+            <p style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+              <img src="./gmail-icon.png" alt="Gmail" style="width: 24px; height: 24px; object-fit: contain;">
+              <span><strong>Email Us Directly:</strong><br><a href="mailto:info@gerrsvirtualacademy.com">info@gerrsvirtualacademy.com</a></span>
+            </p>
+            <p style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+              <img src="./facebook-icon.png" alt="Facebook" style="width: 24px; height: 24px; object-fit: contain;">
+              <span><strong>Official Facebook Page:</strong><br><a href="https://www.facebook.com/GerrsVirtualAcademy" target="_blank" rel="noopener noreferrer">facebook.com/GerrsVirtualAcademy</a></span>
+            </p>
+            <p style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+              <img src="./tiktok-icon.png" alt="TikTok" style="width: 24px; height: 24px; object-fit: contain;">
+              <span><strong>TikTok:</strong><br><a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer">@coach_gerr</a></span>
+            </p>
+            <p style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+              <img src="./instagram-icon.png" alt="Instagram" style="width: 24px; height: 24px; object-fit: contain;">
+              <span><strong>Instagram:</strong><br><a href="https://www.instagram.com/coach_gerr/" target="_blank" rel="noopener noreferrer">@coach_gerr</a></span>
+            </p>
+            <br>
+            <p>⏰ <strong>Support Hours:</strong><br>
+            Monday – Friday | 9:00 AM – 6:00 PM PST</p>
+          </div>
+
+          <!-- Inquiry Form Section (Right Side) -->
+          <div class="registration-form-card" style="margin: 0; max-width: none;">
+            <h3 style="margin-bottom: 1.5rem; color: var(--navy);">Send Us an Inquiry</h3>
+            <form action="https://formspree.io/f/mwlkzjzg" method="POST">
+              <div class="form-group">
+                <label for="inquiry-name">Full Name *</label>
+                <input type="text" id="inquiry-name" name="Full Name" placeholder="Enter your full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="inquiry-email">Email Address *</label>
+                <input type="email" id="inquiry-email" name="Email Address" placeholder="name@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="inquiry-message">Your Message / Inquiry *</label>
+                <textarea id="inquiry-message" name="Inquiry Message" rows="4" placeholder="How can we help you?" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+            </form>
+          </div>
         </div>
       </section>
     </div>
 
-    <!-- VIEW 9: HIDDEN STUDENT PORTAL -->
+    <!-- VIEW 10: HIDDEN STUDENT PORTAL -->
     <div id="view-portal" class="page-view">
       <section class="container" style="padding-top: 4rem; max-width: 950px;">
         
-        <!-- Login Gate -->
+        <!-- Enhanced Login Gate with Clear Instructions -->
         <div id="portal-login-card" class="registration-form-card" style="border: 2px solid var(--pale-blue);">
           <div style="text-align: center; margin-bottom: 2rem;">
             <span class="badge-pill">🔒 Secure Student Area</span>
@@ -519,6 +1434,7 @@
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">Access your exclusive training replays, activity guides, resources, and submit your portfolio tasks.</p>
           </div>
 
+          <!-- Instructions Box -->
           <div style="background: var(--pale-blue); padding: 1.4rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
             <strong style="display: block; margin-bottom: 0.5rem; font-size: 0.95rem;">💡 How to log in:</strong>
             <ol style="padding-left: 1.2rem; color: var(--text-muted); line-height: 1.6;">
@@ -534,7 +1450,12 @@
           </div>
           
           <button onclick="verifyBatchCode()" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Enter Portal →</button>
+          
           <p id="login-error" style="color: #E11D48; font-size: 0.85rem; margin-bottom: 1rem; display: none; text-align: center; font-weight: 500;">⚠️ Invalid access code. Please check your welcome email or contact support.</p>
+
+          <div style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 1.2rem; margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+            Lost your code or having trouble logging in? <a href="#" onclick="switchView('contact')" style="color: var(--royal-blue); font-weight: 600;">Contact Coach Gerr Support</a>
+          </div>
         </div>
 
         <!-- VA Portal Dashboard -->
@@ -545,12 +1466,125 @@
             <p id="dash-subtitle"></p>
           </div>
 
-          <!-- Google Calendar 1-on-1 Appointment Booking for VA Students -->
-          <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(11, 45, 107, 0.08); border: 1px solid #E2E8F0; background: #FFFFFF; margin-bottom: 2rem;">
-            <div style="background: #0B2D6B; color: #FFFFFF; padding: 1.2rem 1.8rem; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600;">
-              📅 Book a 1-on-1 Schedule with Coach Gerr
+          <!-- Quick Access to Client Profiles Library -->
+          <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--white), var(--pale-blue)); border: 1px solid var(--sky-blue);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Practice Hub</span>
+                <h3 style="margin-bottom: 0.3rem;">🏢 Sample Client Profiles Library</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Explore 10+ realistic client personas (Travel, E-Commerce, Real Estate, Clinics, and more) to practice your tasks and build case studies.</p>
+              </div>
+              <button onclick="switchView('client-profiles')" class="btn btn-primary">Browse Client Profiles →</button>
             </div>
-            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2lcB-al3RVDNeRESRwzaMvo95nIAsVdAtF88JZhdi-RtgJnnutPoHqx5KD6cf1IE4q9YhYItJA?gv=true" style="border: 0; width: 100%; height: 700px; display: block;" frameborder="0"></iframe>
+          </div>
+
+          <!-- Training Activities & Task Guides Section -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Hands-on Practice</span>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📋 Training Activities & Task Guides</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Access your step-by-step activity instructions and templates below:</p>
+            
+            <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.1rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; font-size: 0.88rem; color: var(--navy);">
+              <p style="margin-bottom: 0.5rem;">⚠️ <strong>Important Reminder:</strong> Please make sure to <strong>make a copy</strong> of all Google Docs and Spreadsheets to your own Google Drive rather than requesting editor access.</p>
+              <p style="margin-bottom: 0;">⏳ Please also be patient while Coach Gerr and the team carefully review each activity—it will take some time to go through all submissions. Thank you!</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+              <a href="https://docs.google.com/document/d/1CuGt1XTDHkj9ugekN-lC8XDTbsbB2yAAfc6H7Np416k/edit?tab=t.olh4o7z9rgy#heading=h.uovl0c4rroid" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📥 Inbox Management Guide</a>
+              <a href="https://docs.google.com/spreadsheets/d/1lZPyHEYBN96Z7tMapYdqbm-QEE1dF1Qg3EW2HWeTZso/edit?gid=0#gid=0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">✈️ Travel Management Sheet</a>
+              <a href="https://docs.google.com/document/d/1gPUQh0dEEinDLNzA2_KM0eLa6xiHazYWBTEU2dsbS9c/edit?tab=t.0#heading=h.eq0jyjd1p1sh" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📞 Travel Preference Call Guide</a>
+              <a href="https://docs.google.com/document/d/1OpKJex61dK-Fd9z6ZkN9_1X54KD4fg_MA_kP1ZUWy-M/edit?tab=t.0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📊 Data Entry Activity</a>
+              <a href="https://docs.google.com/document/d/18FN2DJTkgas_k7y_mMrVF2Hzr2JmPc4xNoTxdneZ0EA/edit?tab=t.0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📅 Calendar Management Guide</a>
+              <a href="https://docs.google.com/document/d/1AxZwplsjApCQzW_v-zT0sbls3JcAjW9oRzrYnxOWccw/edit?tab=t.0#heading=h.bxpebesg9t5z" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📁 Google Drive Management</a>
+              <a href="https://docs.google.com/document/d/1X93RNzdBEVq0rOHrlb2w13hvfE015NhMWZNd7gf20JY/edit?tab=t.0#heading=h.e3u4xv698tno" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🤝 PM Mock Client Task</a>
+              <a href="https://docs.google.com/document/d/11LxbLjmk65bWokDvQZpxgppx3jK18dge97_ENjCjXNo/edit?tab=t.0#heading=h.55yqh3o5j6jf" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">✅ Project Management Asana</a>
+            </div>
+          </div>
+
+          <!-- Essential Resources Section -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Student Library</span>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📚 Essential Resources & Templates</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Download your official guides, sample portfolios, and job hunting tools:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+              <a href="https://drive.google.com/file/d/1v9tOVAuAy_bRd4J1HrfpKp4Sp8zhYdcd/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📄 GVA Training PDF</a>
+              <a href="https://docs.google.com/document/d/1xvqqnYN9betGxlmhfNTFF3XkX8NclSZPPypKIadVhP4/edit?tab=t.0#heading=h.ba818ji0wqs6" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📝 2026 ATS Friendly Resume</a>
+              <a href="https://drive.google.com/file/d/1NU5E0cJUf0fVK09tBmS7Uo97A7Q6jFuV/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">💼 Sample Portfolio</a>
+              <a href="https://docs.google.com/document/d/1cDhlUugXY5KLtsqetD47KtqbUy5jSoSZF_2SkLuH-bk/edit?tab=t.ga1krvh78px9#heading=h.vsb1zp5xsi22" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🚀 Application Process Guide</a>
+              <a href="https://docs.google.com/document/d/1vkTHCcyO_-OaJj2YHyGyaz3B-D3o8hkrRVc8XQ-PM_4/edit?tab=t.0#heading=h.nf0gyg7znxal" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🤖 ChatGPT Tips & Prompts</a>
+              <a href="https://docs.google.com/spreadsheets/d/1van5IIjqiur6BOL_Z4iaQHduyE6UWRBF98SFmhypeRs/edit?gid=0#gid=0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🌐 Where to Apply Directory</a>
+              <a href="https://docs.google.com/document/d/1wczofM0KQFkP6GnhKyd3EtPEfJ4kQp9G0Ajb11nCjO0/edit?tab=t.0#heading=h.2gmowrlsqpke" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📓 Notion Productivity Guide</a>
+            </div>
+          </div>
+
+          <!-- DIRECT STUDENT SUBMISSIONS HUB -->
+          <div class="registration-form-card" style="margin-bottom: 2.5rem; max-width: none;">
+            <span class="badge-pill" style="background: var(--pale-blue); color: var(--navy);">Direct Submission Hub</span>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit Your Output / Portfolio Task</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Select your task, link your Discord handle, and submit your Google Drive, Canva, or portfolio link directly to Coach Gerr.</p>
+            
+            <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.2rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
+              <p style="margin-bottom: 0.6rem;">⚠️ <strong>Link Access Reminder:</strong> Please make sure your link is set to <strong>"Anyone with the link can view"</strong> so we can check your work without permission roadblocks.</p>
+              <p style="margin-bottom: 0;">⏳ <strong>Please Be Patient:</strong> Coach Gerr and the team review each activity carefully. It will take some time to go through all submissions. Thank you!</p>
+            </div>
+
+            <form action="https://formspree.io/f/xnpqkqqd" method="POST">
+              <input type="hidden" id="submission-batch-field" name="Batch Code" value="">
+
+              <div class="grid-2" style="gap: 1rem; margin-bottom: 0;">
+                <div class="form-group">
+                  <label for="sub-name">Your Full Name *</label>
+                  <input type="text" id="sub-name" name="Student Name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="sub-discord">Discord Handle / Username *</label>
+                  <input type="text" id="sub-discord" name="Discord Handle" placeholder="e.g. @dianacorazon" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="sub-email">Your Email Address *</label>
+                <input type="email" id="sub-email" name="Student Email" placeholder="name@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="sub-task">Task / Output Selection *</label>
+                <select id="sub-task" name="Task Selection" required>
+                  <option value="">-- Choose Task / Output --</option>
+                  <option value="Inbox Management">Inbox Management</option>
+                  <option value="Travel Management">Travel Management</option>
+                  <option value="Travel Preference Call Guide">Travel Preference Call Guide</option>
+                  <option value="Data Entry">Data Entry</option>
+                  <option value="Calendar Management">Calendar Management</option>
+                  <option value="Google Drive Management">Google Drive Management</option>
+                  <option value="Project Management Mock Client Task">Project Management Mock Client Task</option>
+                  <option value="Project Management Asana">Project Management Asana</option>
+                  <option value="Resume">Resume</option>
+                  <option value="Portfolio">Portfolio</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sub-link">Output Link (Google Drive / Canva / Portfolio URL) *</label>
+                <input type="url" id="sub-link" name="Output Link" placeholder="https://..." required>
+              </div>
+
+              <div class="form-group">
+                <label for="sub-notes">Additional Notes or Comments (Optional)</label>
+                <textarea id="sub-notes" name="Student Notes" rows="3" placeholder="Any details you'd like to share about your output..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Output to Coach Gerr</button>
+            </form>
+          </div>
+
+          <!-- Certificate Request Card -->
+          <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
+            <h3>🎓 Certificate Request</h3>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Ready to claim your certificate? Submit your final portfolio requirements for your batch.</p>
+            <a id="dash-cert-btn" href="https://forms.gle/q7mHTKXTZ3XfaLNXA" target="_blank" class="btn btn-primary">Request Certificate →</a>
           </div>
         </div>
 
@@ -562,7 +1596,19 @@
             <p id="smm-dash-subtitle"></p>
           </div>
 
-          <!-- SMM Activities & Video Guides -->
+          <!-- Quick Access to Client Profiles Library for SMM -->
+          <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--white), var(--pale-blue)); border: 1px solid var(--sky-blue);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Practice Hub</span>
+                <h3 style="margin-bottom: 0.3rem;">🏢 Sample Client Profiles Library</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Use these 10+ realistic client profiles to practice your social media content pillars, Canva templates, and client profile tasks.</p>
+              </div>
+              <button onclick="switchView('client-profiles')" class="btn btn-primary">Browse Client Profiles →</button>
+            </div>
+          </div>
+
+          <!-- SMM Activities & Video Guides Section -->
           <div class="card" style="margin-bottom: 2rem;">
             <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Hands-on Practice</span>
             <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📋 SMM Activities & Video Walkthroughs</h3>
@@ -583,7 +1629,7 @@
           <div class="card" style="margin-bottom: 2rem;">
             <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">SMM Student Library</span>
             <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📚 SMM Course Guides, Prompts & Templates</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Download your official SMM course materials, AI prompts, and templates:</p>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Download your official SMM course materials, AI prompts, templates, and client profile samples:</p>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
               <a href="https://docs.google.com/document/d/1-1ZFaizxIWTpWHtUeznZV-6gOkHUaRhqGMZZl7ENC-k/edit?tab=t.zbomw8m4k8zh" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📘 SMM Course Guide</a>
@@ -592,81 +1638,10 @@
             </div>
           </div>
 
-          <!-- Zoomable Sample Client Profiles Gallery Section -->
-          <div class="card" style="margin-bottom: 2rem;">
-            <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Interactive Branding Library</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">🔍 Sample Client Profiles (Click to Zoom)</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Click any card to zoom in and inspect the official sample client profile:</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem;">
-              
-              <div class="card zoomable-card" style="padding: 1.5rem; background: var(--pale-blue);" onclick="openClientProfile('WanderMore Travel & Tours', 'wandermore.png', 'Travel Agency - Local Tours, International Packages, Visa Assistance.')">
-                <h4>✈️ WanderMore Travel & Tours</h4>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0;">Industry: Travel Agency</p>
-                <span style="font-size: 0.78rem; color: var(--royal-blue); font-weight: 600;">🔍 Click to Zoom Image →</span>
-              </div>
-
-              <div class="card zoomable-card" style="padding: 1.5rem; background: var(--pale-blue);" onclick="openClientProfile('Urban Threads Boutique', 'urban-threads.png', 'Clothing Brand - Casual Wear, Dresses, Accessories.')">
-                <h4>👗 Urban Threads Boutique</h4>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0;">Industry: Clothing Brand</p>
-                <span style="font-size: 0.78rem; color: var(--royal-blue); font-weight: 600;">🔍 Click to Zoom Image →</span>
-              </div>
-
-              <div class="card zoomable-card" style="padding: 1.5rem; background: var(--pale-blue);" onclick="openClientProfile('FitNation', 'fitnation.png', 'Fitness Center - Gym Membership, Personal Training, Group Classes.')">
-                <h4>💪 FitNation</h4>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0;">Industry: Fitness Center</p>
-                <span style="font-size: 0.78rem; color: var(--royal-blue); font-weight: 600;">🔍 Click to Zoom Image →</span>
-              </div>
-
-              <div class="card zoomable-card" style="padding: 1.5rem; background: var(--pale-blue);" onclick="openClientProfile('GreenLeaf Accounting Solutions', 'greenleaf.png', 'Accounting Firm - Bookkeeping, Payroll, Tax Filing, Registration.')">
-                <h4>📊 GreenLeaf Accounting Solutions</h4>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0;">Industry: Accounting Firm</p>
-                <span style="font-size: 0.78rem; color: var(--royal-blue); font-weight: 600;">🔍 Click to Zoom Image →</span>
-              </div>
-
-              <div class="card zoomable-card" style="padding: 1.5rem; background: var(--pale-blue);" onclick="openClientProfile('Happy Paws Veterinary Clinic', 'happy-paws.png', 'Veterinary Clinic - Vaccination, Grooming, Surgery, Consultation.')">
-                <h4>🐾 Happy Paws Veterinary Clinic</h4>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0;">Industry: Veterinary Clinic</p>
-                <span style="font-size: 0.78rem; color: var(--royal-blue); font-weight: 600;">🔍 Click to Zoom Image →</span>
-              </div>
-
-              <div class="card zoomable-card" style="padding: 1.5rem; background: var(--pale-blue);" onclick="openClientProfile('Casa Amihan Staycation', 'casa-amihan.png', 'Airbnb Vacation Rental - Daily/Weekly Stays & Workcation Packages.')">
-                <h4>🏡 Casa Amihan Staycation</h4>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0;">Industry: Airbnb Rental</p>
-                <span style="font-size: 0.78rem; color: var(--royal-blue); font-weight: 600;">🔍 Click to Zoom Image →</span>
-              </div>
-
-              <div class="card zoomable-card" style="padding: 1.5rem; background: var(--pale-blue);" onclick="openClientProfile('Skyline Realty Group', 'skyline.png', 'Real Estate - House & Lot, Condominiums, Investment Properties.')">
-                <h4>🏢 Skyline Realty Group</h4>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0;">Industry: Real Estate</p>
-                <span style="font-size: 0.78rem; color: var(--royal-blue); font-weight: 600;">🔍 Click to Zoom Image →</span>
-              </div>
-
-              <div class="card zoomable-card" style="padding: 1.5rem; background: var(--pale-blue);" onclick="openClientProfile('Luxe Glow Beauty Studio', 'luxe-glow.png', 'Beauty Salon - Eyelash Extensions, Nails, Hair Color, Facials.')">
-                <h4>✨ Luxe Glow Beauty Studio</h4>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0;">Industry: Beauty Salon</p>
-                <span style="font-size: 0.78rem; color: var(--royal-blue); font-weight: 600;">🔍 Click to Zoom Image →</span>
-              </div>
-
-              <div class="card zoomable-card" style="padding: 1.5rem; background: var(--pale-blue);" onclick="openClientProfile('SmileCraft Dental Clinic', 'smilecraft.png', 'Dental Clinic - Teeth Cleaning, Braces, Whitening, Veneers.')">
-                <h4>🦷 SmileCraft Dental Clinic</h4>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0;">Industry: Dental Clinic</p>
-                <span style="font-size: 0.78rem; color: var(--royal-blue); font-weight: 600;">🔍 Click to Zoom Image →</span>
-              </div>
-
-              <div class="card zoomable-card" style="padding: 1.5rem; background: var(--pale-blue);" onclick="openClientProfile('Brew Haven Café', 'brew-haven.png', 'Coffee Shop - Specialty Coffee, Brunch, Pastries, Free WiFi.')">
-                <h4>☕ Brew Haven Café</h4>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.4rem 0;">Industry: Coffee Shop</p>
-                <span style="font-size: 0.78rem; color: var(--royal-blue); font-weight: 600;">🔍 Click to Zoom Image →</span>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- SMM Submission Hub -->
+          <!-- SMM STUDENT SUBMISSIONS HUB -->
           <div class="registration-form-card" style="margin-bottom: 2.5rem; max-width: none;">
             <span class="badge-pill" style="background: var(--pale-blue); color: var(--navy);">SMM Submission Hub</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit Your SMM Output Task</h3>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit Your SMM Output / Client Profile Task</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Select your task, link your Discord handle, and submit your Canva, Google Drive, or portfolio link directly to Coach Gerr.</p>
             
             <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.2rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
@@ -682,6 +1657,7 @@
                   <label for="smm-sub-name">Your Full Name *</label>
                   <input type="text" id="smm-sub-name" name="Student Name" placeholder="Enter your full name" required>
                 </div>
+
                 <div class="form-group">
                   <label for="smm-sub-discord">Discord Handle / Username *</label>
                   <input type="text" id="smm-sub-discord" name="Discord Handle" placeholder="e.g. @dianacorazon" required>
@@ -719,14 +1695,6 @@
             </form>
           </div>
 
-          <!-- Google Calendar 1-on-1 Appointment Booking for SMM Students -->
-          <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(11, 45, 107, 0.08); border: 1px solid #E2E8F0; background: #FFFFFF; margin-bottom: 2rem;">
-            <div style="background: #0B2D6B; color: #FFFFFF; padding: 1.2rem 1.8rem; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600;">
-              📅 Book a 1-on-1 Schedule with Coach Gerr
-            </div>
-            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2lcB-al3RVDNeRESRwzaMvo95nIAsVdAtF88JZhdi-RtgJnnutPoHqx5KD6cf1IE4q9YhYItJA?gv=true" style="border: 0; width: 100%; height: 700px; display: block;" frameborder="0"></iframe>
-          </div>
-
           <!-- SMM Certificate Request Card -->
           <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
             <h3>🎓 SMM Certificate Request</h3>
@@ -740,21 +1708,6 @@
 
   </main>
 
-  <!-- ZOOMABLE LIGHTBOX MODAL -->
-  <div id="client-profile-modal" class="profile-modal-overlay" onclick="outsideCloseModal(event)">
-    <div class="profile-modal-content">
-      <div class="profile-modal-close" onclick="closeClientProfile()">✕</div>
-      <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Sample Client Profile View</span>
-      <h2 id="modal-title" style="font-size: 1.8rem; margin-bottom: 0.3rem; color: var(--navy);"></h2>
-      <p id="modal-subtitle" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem; font-style: italic;"></p>
-      
-      <!-- Zoomed Image Display -->
-      <div style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-hover); background: #000;">
-        <img id="modal-img" src="" alt="Zoomed Client Profile" style="width: 100%; height: auto; display: block;">
-      </div>
-    </div>
-  </div>
-
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
@@ -765,6 +1718,7 @@
           </div>
           <p>Gerr's Virtual Academy is dedicated to providing high-quality, practical online training for aspiring Virtual Assistants and digital professionals.</p>
         </div>
+
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul class="footer-links">
@@ -772,8 +1726,10 @@
             <li><a href="#" onclick="switchView('va-training')">VA Training</a></li>
             <li><a href="#" onclick="switchView('smm-bootcamp')">SMM Bootcamp</a></li>
             <li><a href="#" onclick="switchView('programs')">Programs</a></li>
+            <li><a href="#" onclick="switchView('client-profiles')">Client Profiles</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
           <h4>Academy</h4>
           <ul class="footer-links">
@@ -782,15 +1738,19 @@
             <li><a href="#" onclick="switchView('contact')">Contact</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
           <h4>Social Media</h4>
           <ul class="footer-links">
-            <li><a href="https://www.facebook.com/GerrsVirtualAcademy" target="_blank" rel="noopener noreferrer">Facebook Page</a></li>
-            <li><a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer">TikTok (@coach_gerr)</a></li>
-            <li><a href="https://www.instagram.com/coach_gerr/" target="_blank" rel="noopener noreferrer">Instagram (@coach_gerr)</a></li>
+            <li><a href="https://www.facebook.com/GerrsVirtualAcademy" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;"><img src="./facebook-icon.png" alt="Facebook" style="width: 18px; height: 18px; object-fit: contain;"> Facebook Page</a></li>
+            <li><a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;"><img src="./tiktok-icon.png" alt="TikTok" style="width: 18px; height: 18px; object-fit: contain;"> TikTok (@coach_gerr)</a></li>
+            <li><a href="https://www.instagram.com/coach_gerr/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;"><img src="./instagram-icon.png" alt="Instagram" style="width: 18px; height: 18px; object-fit: contain;"> Instagram (@coach_gerr)</a></li>
           </ul>
+          <br>
+          <p style="display: flex; align-items: center; gap: 8px;"><img src="./gmail-icon.png" alt="Gmail" style="width: 18px; height: 18px; object-fit: contain;"> Email: <a href="mailto:info@gerrsvirtualacademy.com" style="color: var(--sky-blue);">info@gerrsvirtualacademy.com</a></p>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>&copy; 2026 Gerr's Virtual Academy (GVA). All rights reserved. | From Zero to VA Hero.</p>
       </div>
@@ -800,40 +1760,108 @@
   <!-- JAVASCRIPT -->
   <script>
     function toggleMobileMenu() {
-      document.getElementById('mainNav').classList.toggle('mobile-active');
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('mobile-active');
     }
 
+    // Dynamic Title & View Switcher with Smooth Fade
     function switchView(viewId) {
-      document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active-view'));
-      document.querySelectorAll('nav.main-nav a.nav-link').forEach(l => l.classList.remove('active'));
+      const views = document.querySelectorAll('.page-view');
+      views.forEach(view => view.classList.remove('active-view'));
 
-      const target = document.getElementById('view-' + viewId);
-      if (target) {
-        target.classList.add('active-view');
+      const navLinks = document.querySelectorAll('nav.main-nav a.nav-link');
+      navLinks.forEach(link => link.classList.remove('active'));
+
+      const targetView = document.getElementById('view-' + viewId);
+      if (targetView) {
+        targetView.classList.add('active-view');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
-      const navLink = document.getElementById('nav-' + viewId);
-      if (navLink) {
-        navLink.classList.add('active');
+      const targetNavLink = document.getElementById('nav-' + viewId);
+      if (targetNavLink) {
+        targetNavLink.classList.add('active');
+      }
+
+      // Dynamic Browser Title Switcher
+      const titles = {
+        'home': "Gerr's Virtual Academy | From Zero to VA Hero",
+        'va-training': "Virtual Assistant Training Philippines | Gerr's Virtual Academy",
+        'smm-bootcamp': "Social Media Management Bootcamp | Gerr's Virtual Academy",
+        'programs': "Training Programs Directory | Gerr's Virtual Academy",
+        'client-profiles': "Sample Client Profiles & Practice Library | GVA",
+        'success-stories': "Graduate Success Stories & Testimonials | GVA",
+        'about': "About Coach Gerr & GVA Mission",
+        'register': "Register for Training | Gerr's Virtual Academy",
+        'contact': "Contact & Inquiries | Gerr's Virtual Academy",
+        'portal': "Secure Student Portal | Gerr's Virtual Academy"
+      };
+
+      if (titles[viewId]) {
+        document.title = titles[viewId];
       }
     }
 
+    // Dynamic Batch Code Verification Logic
     function verifyBatchCode() {
       const inputCode = document.getElementById('batch-code').value.trim().toUpperCase();
       const errorMsg = document.getElementById('login-error');
       
+      const officialVaBatchCodes = {
+        "GVA-BATCH18-HARBOR": "18", "GVA-BATCH19-CASCADE": "19", "GVA-BATCH20-SOLSTICE": "20",
+        "GVA-BATCH21-COMPASS": "21", "GVA-BATCH22-ECHO": "22", "GVA-BATCH23-MEADOW": "23",
+        "GVA-BATCH24-HORIZON": "24", "GVA-BATCH25-NEPTUNE": "25", "GVA-BATCH26-MOSAIC": "26",
+        "GVA-BATCH27-FALCON": "27", "GVA-BATCH28-TIDES": "28", "GVA-BATCH29-VALIANT": "29",
+        "GVA-BATCH30-QUARTZ": "30", "GVA-BATCH31-NIMBUS": "31", "GVA-BATCH32-BEACON": "32",
+        "GVA-BATCH33-TUNDRA": "33", "GVA-BATCH34-ZEPHYR": "34", "GVA-BATCH35-VELOCITY": "35",
+        "GVA-BATCH36-SAGA": "36", "GVA-BATCH37-GLACIER": "37", "GVA-BATCH38-PULSE": "38",
+        "GVA-BATCH39-KINETIC": "39", "GVA-BATCH40-APEX": "40", "GVA-BATCH41-LUMEN": "41",
+        "GVA-BATCH42-ORBIT": "42", "GVA-BATCH43-TITAN": "43", "GVA-BATCH44-STRATA": "44",
+        "GVA-BATCH45-NOVA": "45", "GVA-BATCH46-STELLAR": "46", "GVA-BATCH47-INFINITY": "47",
+        "GVA-BATCH48-SYNERGY": "48", "GVA-BATCH49-QUANTUM": "49", "GVA-BATCH50-VALOR": "50"
+      };
+
+      const officialSmmBatchCodes = {
+        "SMM-BATCH3-VERTEX": "3", "SMM-BATCH4-PULSE": "4", "SMM-BATCH5-NEXUS": "5",
+        "SMM-BATCH6-STRIDE": "6", "SMM-BATCH7-BLAZE": "7", "SMM-BATCH8-VISTA": "8",
+        "SMM-BATCH9-ORBIT": "9", "SMM-BATCH10-ZENITH": "10", "SMM-BATCH11-KINETIC": "11",
+        "SMM-BATCH12-FLARE": "12", "SMM-BATCH13-SHIELD": "13", "SMM-BATCH14-ECHO": "14",
+        "SMM-BATCH15-PIONEER": "15", "SMM-BATCH16-SUMMIT": "16", "SMM-BATCH17-HARBOR": "17",
+        "SMM-BATCH18-CASCADE": "18", "SMM-BATCH19-SOLSTICE": "19", "SMM-BATCH20-VALOR": "20"
+      };
+
       document.getElementById('portal-login-card').style.display = 'none';
 
-      if (inputCode.startsWith('SMM-') || inputCode.includes('SMM')) {
-        document.getElementById('smm-dash-title').innerText = `SMM Bootcamp Student Hub (${inputCode})`;
-        document.getElementById('smm-dash-subtitle').innerText = `Welcome to your SMM dashboard! Access your resources, submission hub, and client profile zoom gallery below.`;
+      if (officialVaBatchCodes[inputCode]) {
+        let batchNum = officialVaBatchCodes[inputCode];
+        errorMsg.style.display = 'none';
+        
+        document.getElementById('dash-title').innerText = `Batch ${batchNum} VA Student Hub`;
+        document.getElementById('dash-subtitle').innerText = `Welcome to your live VA training dashboard for Batch ${batchNum}! Access your task guides, resources, and submit your outputs below.`;
+        document.getElementById('submission-batch-field').value = inputCode;
+
+        document.getElementById('portal-dashboard').style.display = 'block';
+        document.getElementById('smm-portal-dashboard').style.display = 'none';
+
+      } else if (officialSmmBatchCodes[inputCode] || inputCode.startsWith('SMM-')) {
+        let batchNum = officialSmmBatchCodes[inputCode] || inputCode.replace(/[^0-9]/g, '');
+        errorMsg.style.display = 'none';
+
+        document.getElementById('smm-dash-title').innerText = `Batch ${batchNum} SMM Bootcamp Hub`;
+        document.getElementById('smm-dash-subtitle').innerText = `Welcome to your Social Media Management bootcamp dashboard for Batch ${batchNum}! Access your course guides, AI prompts, templates, and client profile tasks below.`;
         document.getElementById('smm-submission-batch-field').value = inputCode;
+
         document.getElementById('portal-dashboard').style.display = 'none';
         document.getElementById('smm-portal-dashboard').style.display = 'block';
-      } else if (inputCode.startsWith('GVA-') || inputCode.includes('BATCH')) {
-        document.getElementById('dash-title').innerText = `VA Student Hub (${inputCode})`;
-        document.getElementById('dash-subtitle').innerText = `Welcome to your live VA training dashboard!`;
+
+      } else if (/^GVA-BATCH\d+$/i.test(inputCode)) {
+        let batchNum = inputCode.replace('GVA-BATCH', '');
+        errorMsg.style.display = 'none';
+
+        document.getElementById('dash-title').innerText = `Batch ${batchNum} VA Student Hub`;
+        document.getElementById('dash-subtitle').innerText = `Welcome to your live VA training dashboard for Batch ${batchNum}! Access your task guides, resources, and submit your outputs below.`;
+        document.getElementById('submission-batch-field').value = inputCode;
+
         document.getElementById('portal-dashboard').style.display = 'block';
         document.getElementById('smm-portal-dashboard').style.display = 'none';
       } else {
@@ -842,27 +1870,11 @@
       }
     }
 
-    // Zoomable Lightbox Modal Functions
-    function openClientProfile(title, imageSrc, subtitle) {
-      document.getElementById('modal-title').innerText = title;
-      document.getElementById('modal-subtitle').innerText = subtitle;
-      document.getElementById('modal-img').src = imageSrc;
-      document.getElementById('client-profile-modal').style.display = 'flex';
-    }
-
-    function closeClientProfile() {
-      document.getElementById('client-profile-modal').style.display = 'none';
-    }
-
-    function outsideCloseModal(event) {
-      if (event.target === document.getElementById('client-profile-modal')) {
-        closeClientProfile();
-      }
-    }
-
     function handleRouting() {
       if (window.location.hash === '#portal') {
         switchView('portal');
+      } else if (window.location.hash === '#client-profiles') {
+        switchView('client-profiles');
       } else {
         switchView('home');
       }
@@ -870,6 +1882,11 @@
 
     window.addEventListener('DOMContentLoaded', handleRouting);
     window.addEventListener('hashchange', handleRouting);
+
+    function toggleAccordion(headerEntry) {
+      const item = headerEntry.parentElement;
+      item.classList.toggle('active');
+    }
   </script>
 </body>
 </html>
