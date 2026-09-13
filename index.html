@@ -252,7 +252,7 @@
     }
 
     nav.main-nav a.nav-link {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 500;
       color: var(--navy);
       position: relative;
@@ -785,7 +785,6 @@
           <a href="#" onclick="switchView('va-training'); toggleMobileMenu();" class="nav-link" id="nav-va-training">VA Training</a>
           <a href="#" onclick="switchView('smm-bootcamp'); toggleMobileMenu();" class="nav-link" id="nav-smm-bootcamp">SMM Bootcamp</a>
           <a href="#" onclick="switchView('programs'); toggleMobileMenu();" class="nav-link" id="nav-programs">Programs</a>
-          <a href="#" onclick="switchView('client-profiles'); toggleMobileMenu();" class="nav-link" id="nav-client-profiles">Client Profiles</a>
           <a href="#" onclick="switchView('success-stories'); toggleMobileMenu();" class="nav-link" id="nav-success-stories">Success Stories</a>
           <a href="#" onclick="switchView('about'); toggleMobileMenu();" class="nav-link" id="nav-about">About</a>
           <a href="#" onclick="switchView('contact'); toggleMobileMenu();" class="nav-link" id="nav-contact">Contact</a>
@@ -1109,134 +1108,7 @@
       </section>
     </div>
 
-    <!-- VIEW 5: CLIENT PROFILES LIBRARY (NEW) -->
-    <div id="view-client-profiles" class="page-view">
-      <div class="program-hero text-center" style="background: linear-gradient(135deg, var(--light-yellow), var(--pale-blue));">
-        <div class="container">
-          <span class="badge-pill" style="background: var(--white);">Portfolio & Practice Library</span>
-          <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">Sample Client Profiles</h1>
-          <p style="max-width: 700px; margin: 0 auto; color: var(--text-muted);">Explore our library of realistic sample client personas across diverse industries. Use these profiles to practice your VA tasks, social media content creation, and portfolio case studies!</p>
-        </div>
-      </div>
-
-      <section class="container" style="padding-top: 3.5rem;">
-        <div class="grid-2">
-          
-          <!-- Profile 1: Travel Agency -->
-          <div class="card">
-            <div class="card-icon">✈️</div>
-            <h3>Wanderlust Adventures</h3>
-            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Travel & Tourism Agency</p>
-            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Millennial travelers, digital nomads, and families seeking curated local and international tour packages.</p>
-            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Adventurous, inspiring, professional, and welcoming.</p>
-            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Itinerary scheduling, travel preference calls, booking inquiries, and destination showcase posts.</p>
-            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
-          </div>
-
-          <!-- Profile 2: Clothing Boutique -->
-          <div class="card">
-            <div class="card-icon">👗</div>
-            <h3>Chic & Co. Apparel</h3>
-            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Fashion & Retail E-Commerce</p>
-            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Young professionals and trend-conscious women looking for stylish, everyday minimalist wear.</p>
-            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Chic, modern, elegant, and engaging.</p>
-            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Instagram/TikTok content pillars, Canva social media templates, and customer DM inquiry management.</p>
-            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
-          </div>
-
-          <!-- Profile 3: Fitness Center -->
-          <div class="card">
-            <div class="card-icon">💪</div>
-            <h3>Apex Elite Gym & Fitness</h3>
-            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Health & Wellness</p>
-            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Fitness enthusiasts, beginners wanting strength training, and local community members.</p>
-            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Energetic, motivational, bold, and disciplined.</p>
-            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Class scheduling in Google Calendar, workout challenge graphics, and membership data entry.</p>
-            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
-          </div>
-
-          <!-- Profile 4: Accounting Firm -->
-          <div class="card">
-            <div class="card-icon">📊</div>
-            <h3>PrimeLedger Solutions</h3>
-            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Financial & Corporate Services</p>
-            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Small-to-medium business owners and freelancers needing bookkeeping and tax filing help.</p>
-            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Trustworthy, authoritative, detail-oriented, and professional.</p>
-            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Spreadsheet data entry, client onboarding inbox triage, and Google Drive folder organization.</p>
-            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
-          </div>
-
-          <!-- Profile 5: Veterinary Clinic -->
-          <div class="card">
-            <div class="card-icon">🐾</div>
-            <h3>Paws & Claws Vet Clinic</h3>
-            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Animal Care & Veterinary Services</p>
-            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Pet owners, cat and dog parents seeking compassionate veterinary care and grooming.</p>
-            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Warm, compassionate, reassuring, and friendly.</p>
-            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Appointment booking calendar management, pet care tips content, and client reminder emails.</p>
-            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
-          </div>
-
-          <!-- Profile 6: Airbnb Rental -->
-          <div class="card">
-            <div class="card-icon">🏡</div>
-            <h3>CozyNest Tagaytay Staycation</h3>
-            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Hospitality & Short-Term Rentals</p>
-            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Couples, families, and weekend travelers looking for a relaxing highland getaway.</p>
-            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Cozy, inviting, luxurious yet relaxed.</p>
-            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Guest check-in coordination, Airbnb inbox management, and cleaning checklist spreadsheets.</p>
-            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
-          </div>
-
-          <!-- Profile 7: Real Estate -->
-          <div class="card">
-            <div class="card-icon">🏢</div>
-            <h3>PrimeHorizon Properties</h3>
-            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Real Estate Brokerage</p>
-            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Homebuyers, property investors, and renters searching for condominiums and residential lots.</p>
-            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Professional, ambitious, sleek, and reliable.</p>
-            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Property listing data entry, client viewing schedules, and lead follow-up email templates.</p>
-            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
-          </div>
-
-          <!-- Profile 8: Beauty Studio -->
-          <div class="card">
-            <div class="card-icon">✨</div>
-            <h3>Lumiere Glow Bar</h3>
-            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Beauty, Skincare & Aesthetics</p>
-            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Skincare enthusiasts, brides-to-be, and individuals looking for facial and wellness treatments.</p>
-            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Aesthetic, glowing, luxurious, and uplifting.</p>
-            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Instagram aesthetic content calendar, before-and-after reels organization, and client booking notes.</p>
-            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
-          </div>
-
-          <!-- Profile 9: Dental Clinic -->
-          <div class="card">
-            <div class="card-icon">😁</div>
-            <h3>SmileCraft Dental Studio</h3>
-            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Healthcare & Dental Care</p>
-            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Families and patients seeking orthodontic, cosmetic, and general dental treatments.</p>
-            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Clean, professional, reassuring, and hygienic.</p>
-            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Patient appointment scheduling, dental hygiene educational posts, and inquiry sorting.</p>
-            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
-          </div>
-
-          <!-- Profile 10: Coffee Shop -->
-          <div class="card">
-            <div class="card-icon">☕</div>
-            <h3>Brewed Awakening Cafe</h3>
-            <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Food & Beverage / F&B</p>
-            <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Coffee lovers, students, and remote workers looking for cozy study and hangout spots.</p>
-            <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Cozy, aromatic, energetic, and community-driven.</p>
-            <p style="margin-bottom: 1.2rem;"><strong>Practice Focus:</strong> Menu pricing data entry, seasonal promo campaign planning, and social media post scheduling.</p>
-            <button onclick="switchView('portal')" class="btn btn-secondary" style="width: 100%;">Access Student Portal Tasks →</button>
-          </div>
-
-        </div>
-      </section>
-    </div>
-
-    <!-- VIEW 6: SUCCESS STORIES -->
+    <!-- VIEW 5: SUCCESS STORIES -->
     <div id="view-success-stories" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
@@ -1276,7 +1148,7 @@
       </section>
     </div>
 
-    <!-- VIEW 7: ABOUT PAGE -->
+    <!-- VIEW 6: ABOUT PAGE -->
     <div id="view-about" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
@@ -1314,7 +1186,7 @@
       </section>
     </div>
 
-    <!-- VIEW 8: REGISTER PAGE -->
+    <!-- VIEW 7: REGISTER PAGE -->
     <div id="view-register" class="page-view">
       <section class="container" style="padding-top: 3rem;">
         <div class="section-header">
@@ -1361,7 +1233,7 @@
       </section>
     </div>
 
-    <!-- VIEW 9: CONTACT & INQUIRIES PAGE -->
+    <!-- VIEW 8: CONTACT & INQUIRIES PAGE -->
     <div id="view-contact" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
@@ -1422,7 +1294,7 @@
       </section>
     </div>
 
-    <!-- VIEW 10: HIDDEN STUDENT PORTAL -->
+    <!-- VIEW 9: HIDDEN STUDENT PORTAL -->
     <div id="view-portal" class="page-view">
       <section class="container" style="padding-top: 4rem; max-width: 950px;">
         
@@ -1466,18 +1338,6 @@
             <p id="dash-subtitle"></p>
           </div>
 
-          <!-- Quick Access to Client Profiles Library -->
-          <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--white), var(--pale-blue)); border: 1px solid var(--sky-blue);">
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-              <div>
-                <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Practice Hub</span>
-                <h3 style="margin-bottom: 0.3rem;">🏢 Sample Client Profiles Library</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Explore 10+ realistic client personas (Travel, E-Commerce, Real Estate, Clinics, and more) to practice your tasks and build case studies.</p>
-              </div>
-              <button onclick="switchView('client-profiles')" class="btn btn-primary">Browse Client Profiles →</button>
-            </div>
-          </div>
-
           <!-- Training Activities & Task Guides Section -->
           <div class="card" style="margin-bottom: 2rem;">
             <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Hands-on Practice</span>
@@ -1515,6 +1375,17 @@
               <a href="https://docs.google.com/document/d/1vkTHCcyO_-OaJj2YHyGyaz3B-D3o8hkrRVc8XQ-PM_4/edit?tab=t.0#heading=h.nf0gyg7znxal" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🤖 ChatGPT Tips & Prompts</a>
               <a href="https://docs.google.com/spreadsheets/d/1van5IIjqiur6BOL_Z4iaQHduyE6UWRBF98SFmhypeRs/edit?gid=0#gid=0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🌐 Where to Apply Directory</a>
               <a href="https://docs.google.com/document/d/1wczofM0KQFkP6GnhKyd3EtPEfJ4kQp9G0Ajb11nCjO0/edit?tab=t.0#heading=h.2gmowrlsqpke" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📓 Notion Productivity Guide</a>
+            </div>
+          </div>
+
+          <!-- EMBEDDED GOOGLE CALENDAR 1-ON-1 BOOKING -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Coaching & Consultations</span>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📅 Book a 1-on-1 Session with Coach Gerr</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Select an available time slot below to schedule your 1-on-1 coaching or portfolio review session:</p>
+            <div style="position: relative; width: 100%; height: 600px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--pale-blue);">
+              <!-- Replace the src URL below with your Google Calendar Appointment Schedule / Booking embed link -->
+              <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2... (Insert your Google Calendar booking embed link here)" style="border: 0; width: 100%; height: 100%;" frameborder="0"></iframe>
             </div>
           </div>
 
@@ -1596,18 +1467,6 @@
             <p id="smm-dash-subtitle"></p>
           </div>
 
-          <!-- Quick Access to Client Profiles Library for SMM -->
-          <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--white), var(--pale-blue)); border: 1px solid var(--sky-blue);">
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-              <div>
-                <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Practice Hub</span>
-                <h3 style="margin-bottom: 0.3rem;">🏢 Sample Client Profiles Library</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Use these 10+ realistic client profiles to practice your social media content pillars, Canva templates, and client profile tasks.</p>
-              </div>
-              <button onclick="switchView('client-profiles')" class="btn btn-primary">Browse Client Profiles →</button>
-            </div>
-          </div>
-
           <!-- SMM Activities & Video Guides Section -->
           <div class="card" style="margin-bottom: 2rem;">
             <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Hands-on Practice</span>
@@ -1635,6 +1494,130 @@
               <a href="https://docs.google.com/document/d/1-1ZFaizxIWTpWHtUeznZV-6gOkHUaRhqGMZZl7ENC-k/edit?tab=t.zbomw8m4k8zh" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📘 SMM Course Guide</a>
               <a href="https://docs.google.com/document/d/1k8FjylVEKf9sIY5xzRhwobRs0kRSILN3bZSaMTzzteE/edit?tab=t.0#heading=h.hl65v4elbdto" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🤖 AI Prompt for Content Creation</a>
               <a href="https://docs.google.com/spreadsheets/d/1HkqRGhg4W_PY3zZbxRB-jNCv-TveBQbebePE3hwzTMs/edit?gid=807567529#gid=807567529" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📊 Social Media Template</a>
+            </div>
+          </div>
+
+          <!-- ========================================== -->
+          <!-- CLIENT PROFILES LIBRARY (STRICTLY FOR SMM PORTAL) -->
+          <!-- ========================================== -->
+          <div class="card" style="margin-bottom: 2rem; background: var(--pale-blue); border: 1px solid var(--sky-blue);">
+            <span class="badge-pill" style="background: var(--white); color: var(--navy);">SMM Practice Hub</span>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">🏢 Sample Client Profiles Library</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">Explore our library of realistic sample client personas across diverse industries. Use these profiles to practice your social media content pillars, Canva templates, and portfolio case studies!</p>
+
+            <div class="grid-2">
+              
+              <!-- Profile 1: Travel Agency -->
+              <div class="card" style="background: var(--white);">
+                <div class="card-icon">✈️</div>
+                <h3>Wanderlust Adventures</h3>
+                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Travel & Tourism Agency</p>
+                <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Millennial travelers, digital nomads, and families seeking curated local and international tour packages.</p>
+                <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Adventurous, inspiring, professional, and welcoming.</p>
+                <p style="margin-bottom: 0;"><strong>Practice Focus:</strong> Itinerary scheduling, travel preference calls, booking inquiries, and destination showcase posts.</p>
+              </div>
+
+              <!-- Profile 2: Clothing Boutique -->
+              <div class="card" style="background: var(--white);">
+                <div class="card-icon">👗</div>
+                <h3>Chic & Co. Apparel</h3>
+                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Fashion & Retail E-Commerce</p>
+                <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Young professionals and trend-conscious women looking for stylish, everyday minimalist wear.</p>
+                <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Chic, modern, elegant, and engaging.</p>
+                <p style="margin-bottom: 0;"><strong>Practice Focus:</strong> Instagram/TikTok content pillars, Canva social media templates, and customer DM inquiry management.</p>
+              </div>
+
+              <!-- Profile 3: Fitness Center -->
+              <div class="card" style="background: var(--white);">
+                <div class="card-icon">💪</div>
+                <h3>Apex Elite Gym & Fitness</h3>
+                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Health & Wellness</p>
+                <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Fitness enthusiasts, beginners wanting strength training, and local community members.</p>
+                <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Energetic, motivational, bold, and disciplined.</p>
+                <p style="margin-bottom: 0;"><strong>Practice Focus:</strong> Class scheduling in Google Calendar, workout challenge graphics, and membership data entry.</p>
+              </div>
+
+              <!-- Profile 4: Accounting Firm -->
+              <div class="card" style="background: var(--white);">
+                <div class="card-icon">📊</div>
+                <h3>PrimeLedger Solutions</h3>
+                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Financial & Corporate Services</p>
+                <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Small-to-medium business owners and freelancers needing bookkeeping and tax filing help.</p>
+                <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Trustworthy, authoritative, detail-oriented, and professional.</p>
+                <p style="margin-bottom: 0;"><strong>Practice Focus:</strong> Spreadsheet data entry, client onboarding inbox triage, and Google Drive folder organization.</p>
+              </div>
+
+              <!-- Profile 5: Veterinary Clinic -->
+              <div class="card" style="background: var(--white);">
+                <div class="card-icon">🐾</div>
+                <h3>Paws & Claws Vet Clinic</h3>
+                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Animal Care & Veterinary Services</p>
+                <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Pet owners, cat and dog parents seeking compassionate veterinary care and grooming.</p>
+                <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Warm, compassionate, reassuring, and friendly.</p>
+                <p style="margin-bottom: 0;"><strong>Practice Focus:</strong> Appointment booking calendar management, pet care tips content, and client reminder emails.</p>
+              </div>
+
+              <!-- Profile 6: Airbnb Rental -->
+              <div class="card" style="background: var(--white);">
+                <div class="card-icon">🏡</div>
+                <h3>CozyNest Tagaytay Staycation</h3>
+                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Hospitality & Short-Term Rentals</p>
+                <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Couples, families, and weekend travelers looking for a relaxing highland getaway.</p>
+                <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Cozy, inviting, luxurious yet relaxed.</p>
+                <p style="margin-bottom: 0;"><strong>Practice Focus:</strong> Guest check-in coordination, Airbnb inbox management, and cleaning checklist spreadsheets.</p>
+              </div>
+
+              <!-- Profile 7: Real Estate -->
+              <div class="card" style="background: var(--white);">
+                <div class="card-icon">🏢</div>
+                <h3>PrimeHorizon Properties</h3>
+                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Real Estate Brokerage</p>
+                <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Homebuyers, property investors, and renters searching for condominiums and residential lots.</p>
+                <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Professional, ambitious, sleek, and reliable.</p>
+                <p style="margin-bottom: 0;"><strong>Practice Focus:</strong> Property listing data entry, client viewing schedules, and lead follow-up email templates.</p>
+              </div>
+
+              <!-- Profile 8: Beauty Studio -->
+              <div class="card" style="background: var(--white);">
+                <div class="card-icon">✨</div>
+                <h3>Lumiere Glow Bar</h3>
+                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Beauty, Skincare & Aesthetics</p>
+                <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Skincare enthusiasts, brides-to-be, and individuals looking for facial and wellness treatments.</p>
+                <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Aesthetic, glowing, luxurious, and uplifting.</p>
+                <p style="margin-bottom: 0;"><strong>Practice Focus:</strong> Instagram aesthetic content calendar, before-and-after reels organization, and client booking notes.</p>
+              </div>
+
+              <!-- Profile 9: Dental Clinic -->
+              <div class="card" style="background: var(--white);">
+                <div class="card-icon">😁</div>
+                <h3>SmileCraft Dental Studio</h3>
+                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Healthcare & Dental Care</p>
+                <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Families and patients seeking orthodontic, cosmetic, and general dental treatments.</p>
+                <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Clean, professional, reassuring, and hygienic.</p>
+                <p style="margin-bottom: 0;"><strong>Practice Focus:</strong> Patient appointment scheduling, dental hygiene educational posts, and inquiry sorting.</p>
+              </div>
+
+              <!-- Profile 10: Coffee Shop -->
+              <div class="card" style="background: var(--white);">
+                <div class="card-icon">☕</div>
+                <h3>Brewed Awakening Cafe</h3>
+                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.8rem;">Industry: Food & Beverage / F&B</p>
+                <p style="margin-bottom: 1rem;"><strong>Target Audience:</strong> Coffee lovers, students, and remote workers looking for cozy study and hangout spots.</p>
+                <p style="margin-bottom: 1rem;"><strong>Brand Tone:</strong> Cozy, aromatic, energetic, and community-driven.</p>
+                <p style="margin-bottom: 0;"><strong>Practice Focus:</strong> Menu pricing data entry, seasonal promo campaign planning, and social media post scheduling.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- EMBEDDED GOOGLE CALENDAR 1-ON-1 BOOKING FOR SMM -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Coaching & Consultations</span>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📅 Book a 1-on-1 Session with Coach Gerr</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Select an available time slot below to schedule your 1-on-1 coaching or SMM portfolio review session:</p>
+            <div style="position: relative; width: 100%; height: 600px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--pale-blue);">
+              <!-- Replace the src URL below with your Google Calendar Appointment Schedule / Booking embed link -->
+              <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2... (Insert your Google Calendar booking embed link here)" style="border: 0; width: 100%; height: 100%;" frameborder="0"></iframe>
             </div>
           </div>
 
@@ -1726,7 +1709,6 @@
             <li><a href="#" onclick="switchView('va-training')">VA Training</a></li>
             <li><a href="#" onclick="switchView('smm-bootcamp')">SMM Bootcamp</a></li>
             <li><a href="#" onclick="switchView('programs')">Programs</a></li>
-            <li><a href="#" onclick="switchView('client-profiles')">Client Profiles</a></li>
           </ul>
         </div>
 
@@ -1789,7 +1771,6 @@
         'va-training': "Virtual Assistant Training Philippines | Gerr's Virtual Academy",
         'smm-bootcamp': "Social Media Management Bootcamp | Gerr's Virtual Academy",
         'programs': "Training Programs Directory | Gerr's Virtual Academy",
-        'client-profiles': "Sample Client Profiles & Practice Library | GVA",
         'success-stories': "Graduate Success Stories & Testimonials | GVA",
         'about': "About Coach Gerr & GVA Mission",
         'register': "Register for Training | Gerr's Virtual Academy",
@@ -1848,7 +1829,7 @@
         errorMsg.style.display = 'none';
 
         document.getElementById('smm-dash-title').innerText = `Batch ${batchNum} SMM Bootcamp Hub`;
-        document.getElementById('smm-dash-subtitle').innerText = `Welcome to your Social Media Management bootcamp dashboard for Batch ${batchNum}! Access your course guides, AI prompts, templates, and client profile tasks below.`;
+        document.getElementById('smm-dash-subtitle').innerText = `Welcome to your Social Media Management bootcamp dashboard for Batch ${batchNum}! Access your course guides, AI prompts, templates, and client profile practice library below.`;
         document.getElementById('smm-submission-batch-field').value = inputCode;
 
         document.getElementById('portal-dashboard').style.display = 'none';
@@ -1873,8 +1854,6 @@
     function handleRouting() {
       if (window.location.hash === '#portal') {
         switchView('portal');
-      } else if (window.location.hash === '#client-profiles') {
-        switchView('client-profiles');
       } else {
         switchView('home');
       }
