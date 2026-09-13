@@ -68,8 +68,8 @@
       --white: #FFFFFF;        /* Background */
       
       --text-main: #1E293B;
-      --text-muted: #64748B;
-      --border-light: #E2E8F0;
+      --text-muted: #475569;   /* High contrast accessibility update */
+      --border-light: #CBD5E1; /* High contrast accessibility update */
       
       --shadow-soft: 0 10px 30px rgba(11, 45, 107, 0.08);
       --shadow-hover: 0 20px 45px rgba(11, 45, 107, 0.15);
@@ -363,8 +363,10 @@
       box-shadow: var(--shadow-hover);
     }
 
-    .stat-item h4 {
+    .stat-number {
       font-size: 1.8rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
       color: var(--royal-blue);
     }
 
@@ -662,11 +664,11 @@
     }
 
     /* ==========================================================================
-       9. FOOTER
+       9. FOOTER (High Contrast Accessibility Updates)
        ========================================================================== */
     footer.site-footer {
       background: var(--navy);
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.92);
       padding: 4rem 0 2rem 0;
       margin-top: 5rem;
       border-top: 4px solid var(--cyan-highlight);
@@ -679,15 +681,17 @@
       margin-bottom: 3.5rem;
     }
 
-    .footer-col h4 {
+    .footer-heading {
+      font-family: 'Playfair Display', serif;
       color: var(--white);
       font-size: 1.1rem;
+      font-weight: 600;
       margin-bottom: 1.2rem;
     }
 
     .footer-col p {
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.85);
     }
 
     .footer-links {
@@ -699,7 +703,7 @@
     }
 
     .footer-links a {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.85);
       font-size: 0.9rem;
     }
 
@@ -709,11 +713,11 @@
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
       padding-top: 2rem;
       text-align: center;
       font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.8);
     }
 
     /* Responsive Breakpoints */
@@ -814,15 +818,15 @@
 
               <div class="stats-bar">
                 <div class="stat-item">
-                  <h4>3,000+</h4>
+                  <div class="stat-number">3,000+</div>
                   <p>Graduates</p>
                 </div>
                 <div class="stat-item">
-                  <h4>100%</h4>
+                  <div class="stat-number">100%</div>
                   <p>Beginner Friendly</p>
                 </div>
                 <div class="stat-item">
-                  <h4>Global</h4>
+                  <div class="stat-number">Global</div>
                   <p>Opportunities</p>
                 </div>
               </div>
@@ -1666,12 +1670,12 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="brand-logo" style="margin-bottom: 1rem;">
-            <img src="./gva-logo-blue-bg.png" alt="Gerr's Virtual Academy Logo and Mission" style="width: 100%; max-width: 300px; height: auto; border-radius: var(--radius-sm);">
+            <img src="./gva-logo-blue-bg.jpg" alt="Gerr's Virtual Academy Logo" style="width: 100%; max-width: 300px; height: auto; border-radius: var(--radius-sm);">
           </div>
         </div>
 
         <div class="footer-col">
-          <h4>Navigation</h4>
+          <div class="footer-heading">Navigation</div>
           <ul class="footer-links">
             <li><a href="#" onclick="switchView('home')">Home</a></li>
             <li><a href="#" onclick="switchView('va-training')">VA Training</a></li>
@@ -1681,7 +1685,7 @@
         </div>
 
         <div class="footer-col">
-          <h4>Academy</h4>
+          <div class="footer-heading">Academy</div>
           <ul class="footer-links">
             <li><a href="#" onclick="switchView('success-stories')">Success Stories</a></li>
             <li><a href="#" onclick="switchView('about')">About Coach Gerr</a></li>
@@ -1690,7 +1694,7 @@
         </div>
 
         <div class="footer-col">
-          <h4>Social Media</h4>
+          <div class="footer-heading">Social Media</div>
           <ul class="footer-links">
             <li><a href="https://www.facebook.com/GerrsVirtualAcademy" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;"><img src="./facebook-icon.png" alt="Facebook" style="width: 18px; height: 18px; object-fit: contain;"> Facebook Page</a></li>
             <li><a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;"><img src="./tiktok-icon.png" alt="TikTok" style="width: 18px; height: 18px; object-fit: contain;"> TikTok (@coach_gerr)</a></li>
