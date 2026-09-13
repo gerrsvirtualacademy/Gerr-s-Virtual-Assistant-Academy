@@ -1830,6 +1830,13 @@
         document.getElementById('smm-dash-subtitle').innerText = `Welcome to your Social Media Management bootcamp dashboard for Batch ${batchNum}! Access your course guides, AI prompts, templates, and client profile practice library below.`;
         document.getElementById('smm-submission-batch-field').value = inputCode;
 
+        // Specific certificate link assignment ONLY for SMM Bootcamp Batch 3
+        if (batchNum === "3" || inputCode === "SMM-BATCH3-VERTEX") {
+          document.getElementById('smm-dash-cert-btn').href = "https://forms.gle/KdSerJVrBp1ZL1v29";
+        } else {
+          document.getElementById('smm-dash-cert-btn').href = "https://forms.gle/q7mHTKXTZ3XfaLNXA";
+        }
+
         document.getElementById('portal-dashboard').style.display = 'none';
         document.getElementById('smm-portal-dashboard').style.display = 'block';
 
