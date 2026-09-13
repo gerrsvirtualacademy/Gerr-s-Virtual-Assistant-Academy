@@ -337,6 +337,7 @@
           <span class="badge-pill">Primary Flagship Program</span>
           <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">Virtual Assistant Training Philippines</h1>
           <p style="font-size: 1.8rem; font-weight: 700; color: var(--royal-blue); margin-bottom: 1rem;">₱599</p>
+          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">An intensive 3-day live training program where Coach Gerr tackles inbox, calendar, and travel management, data entry, Google Drive organization, and project management.</p>
           <button onclick="switchView('register')" class="btn btn-primary">Enroll in VA Training (₱599)</button>
         </div>
       </div>
@@ -349,21 +350,162 @@
           <span class="badge-pill" style="background: var(--white);">Specialized Skill Upgrade</span>
           <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">Social Media Management Training Philippines</h1>
           <p style="font-size: 1.8rem; font-weight: 700; color: var(--royal-blue); margin-bottom: 1rem;">₱999</p>
+          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">Master social media strategies, AI prompts, templates, video guides, and explore sample client profiles with interactive zoom preview!</p>
           <button onclick="switchView('register')" class="btn btn-primary">Enroll in SMM Bootcamp (₱999)</button>
         </div>
       </div>
     </div>
 
-    <!-- VIEW 4: ALL PROGRAMS -->
-    <div id="view-programs" class="page-view"></div>
+    <!-- VIEW 4: PROGRAMS -->
+    <div id="view-programs" class="page-view">
+      <section class="container" style="padding-top: 4rem;">
+        <div class="section-header">
+          <span class="badge-pill">GVA Program Directory</span>
+          <h2>Explore Our Training Programs</h2>
+          <p>Find the right path to kickstart or elevate your remote career. All programs include secure student portal access.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-icon">💼</div>
+            <h3>Virtual Assistant Training</h3>
+            <p style="font-size: 1.4rem; font-weight: 700; color: var(--royal-blue); margin: 0.3rem 0 1rem 0;">₱599</p>
+            <p style="margin-bottom: 1.5rem;">An intensive 3-day live training covering inbox, calendar, and travel management, student portal resources for portfolio building, and job application strategies.</p>
+            <button onclick="switchView('va-training')" class="btn btn-secondary">Learn More</button>
+          </div>
+          <div class="card">
+            <div class="card-icon">📱</div>
+            <h3>Social Media Management Bootcamp</h3>
+            <p style="font-size: 1.4rem; font-weight: 700; color: var(--royal-blue); margin: 0.3rem 0 1rem 0;">₱999</p>
+            <p style="margin-bottom: 1.5rem;">A practical course focused on SMM course guides, AI content prompts, social media templates, output video guides, and zoomable sample client profiles.</p>
+            <button onclick="switchView('smm-bootcamp')" class="btn btn-secondary">Learn More</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <!-- VIEW 5: SUCCESS STORIES -->
-    <div id="view-success-stories" class="page-view"></div>
+    <div id="view-success-stories" class="page-view">
+      <section class="container" style="padding-top: 4rem;">
+        <div class="section-header">
+          <span class="badge-pill">GVA Alumni Journey</span>
+          <h2>Real Student Transformations</h2>
+          <p>Read inspiring stories from our real graduates who built their confidence and started their remote careers with GVA.</p>
+        </div>
+        <div class="grid-3">
+          <div class="story-card">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate">
+            <div class="story-content">
+              <p style="font-style: italic; font-size: 0.9rem;">"GVA gave me the exact step-by-step guidance I needed. I had zero experience, but Coach Gerr made everything clear and achievable."</p>
+              <div class="story-author">GVA Alumni</div>
+              <div class="story-role">General Virtual Assistant</div>
+            </div>
+          </div>
+          <div class="story-card">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate">
+            <div class="story-content">
+              <p style="font-style: italic; font-size: 0.9rem;">"The portfolio tasks and portal activities were the best part! Having real outputs ready allowed me to feel confident during client interviews."</p>
+              <div class="story-author">GVA Alumni</div>
+              <div class="story-role">Social Media Specialist</div>
+            </div>
+          </div>
+          <div class="story-card">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate">
+            <div class="story-content">
+              <p style="font-style: italic; font-size: 0.9rem;">"Coach Gerr is such a compassionate mentor. The community support doesn't end when the training finishes."</p>
+              <div class="story-author">GVA Alumni</div>
+              <div class="story-role">Executive VA</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <!-- VIEW 6: ABOUT PAGE -->
-    <div id="view-about" class="page-view"></div>
+    <div id="view-about" class="page-view">
+      <section class="container" style="padding-top: 4rem;">
+        <div class="section-header">
+          <span class="badge-pill">Our Story & Mentor</span>
+          <h2>Meet Coach Gerr</h2>
+          <p>Empowering aspiring Virtual Assistants with practical training, real support, and real opportunities.</p>
+        </div>
+        <div class="grid-2" style="align-items: center; margin-bottom: 4rem;">
+          <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-hover);">
+            <img src="./coach-gerr.jpg" alt="Coach Gerr - Founder of GVA">
+          </div>
+          <div>
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Virtual Assistant Mentor & Founder</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.2rem;">Almost 7 years ago, Coach Gerr made a life-changing decision to leave her stable career as a government worker. Her main dream was simple: to gain schedule flexibility and spend more quality time with her family and her beloved dog.</p>
+            <button onclick="switchView('register')" class="btn btn-primary">Start Your GVA Journey</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <!-- VIEW 7: REGISTER PAGE -->
-    <div id="view-register" class="page-view"></div>
+    <div id="view-register" class="page-view">
+      <section class="container" style="padding-top: 3rem;">
+        <div class="section-header">
+          <span class="badge-pill">Take the First Step</span>
+          <h2>Register for an Upcoming Batch</h2>
+          <p>Fill out the official registration form below to reserve your slot and receive your student portal access.</p>
+        </div>
+        <div class="registration-form-card">
+          <form action="https://formspree.io/f/mwlkzjzg" method="POST">
+            <div class="form-group">
+              <label for="reg-program">Select Program *</label>
+              <select id="reg-program" name="Selected Program" required>
+                <option value="">-- Choose Course --</option>
+                <option value="Virtual Assistant Training - ₱599">Virtual Assistant Training - ₱599</option>
+                <option value="Social Media Management Bootcamp - ₱999">Social Media Management Bootcamp - ₱999</option>
+                <option value="Both Programs Bundle - ₱1,598">Both Programs Bundle (Special) - ₱1,598</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="reg-name">Full Name *</label>
+              <input type="text" id="reg-name" name="Full Name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="reg-email">Email Address *</label>
+              <input type="email" id="reg-email" name="Email Address" placeholder="name@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="reg-phone">Contact / Phone Number *</label>
+              <input type="tel" id="reg-phone" name="Phone Number" placeholder="e.g. 09171234567" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Complete Registration</button>
+          </form>
+        </div>
+      </section>
+    </div>
+
     <!-- VIEW 8: CONTACT PAGE -->
-    <div id="view-contact" class="page-view"></div>
+    <div id="view-contact" class="page-view">
+      <section class="container" style="padding-top: 4rem;">
+        <div class="section-header">
+          <span class="badge-pill">Get in Touch</span>
+          <h2>Contact & Inquiries</h2>
+          <p>Have questions about our courses or schedules? Send us a message below!</p>
+        </div>
+        <div class="registration-form-card" style="max-width: none;">
+          <h3 style="margin-bottom: 1.5rem; color: var(--navy);">Send Us an Inquiry</h3>
+          <form action="https://formspree.io/f/mwlkzjzg" method="POST">
+            <div class="form-group">
+              <label for="inquiry-name">Full Name *</label>
+              <input type="text" id="inquiry-name" name="Full Name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="inquiry-email">Email Address *</label>
+              <input type="email" id="inquiry-email" name="Email Address" placeholder="name@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="inquiry-message">Your Message / Inquiry *</label>
+              <textarea id="inquiry-message" name="Inquiry Message" rows="4" placeholder="How can we help you?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+          </form>
+        </div>
+      </section>
+    </div>
 
     <!-- VIEW 9: HIDDEN STUDENT PORTAL -->
     <div id="view-portal" class="page-view">
@@ -600,8 +742,41 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <img src="./logo.png" alt="GVA Logo" style="height: 48px; width: auto; filter: brightness(0) invert(1);">
+          </div>
+          <p>Gerr's Virtual Academy is dedicated to providing high-quality, practical online training for aspiring Virtual Assistants and digital professionals.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="switchView('home')">Home</a></li>
+            <li><a href="#" onclick="switchView('va-training')">VA Training</a></li>
+            <li><a href="#" onclick="switchView('smm-bootcamp')">SMM Bootcamp</a></li>
+            <li><a href="#" onclick="switchView('programs')">Programs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Academy</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="switchView('success-stories')">Success Stories</a></li>
+            <li><a href="#" onclick="switchView('about')">About Coach Gerr</a></li>
+            <li><a href="#" onclick="switchView('contact')">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Social Media</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.facebook.com/GerrsVirtualAcademy" target="_blank" rel="noopener noreferrer">Facebook Page</a></li>
+            <li><a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer">TikTok (@coach_gerr)</a></li>
+            <li><a href="https://www.instagram.com/coach_gerr/" target="_blank" rel="noopener noreferrer">Instagram (@coach_gerr)</a></li>
+          </ul>
+        </div>
+      </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Gerr's Virtual Academy (GVA). All rights reserved.</p>
+        <p>&copy; 2026 Gerr's Virtual Academy (GVA). All rights reserved. | From Zero to VA Hero.</p>
       </div>
     </div>
   </footer>
@@ -620,6 +795,11 @@
       if (target) {
         target.classList.add('active-view');
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      const navLink = document.getElementById('nav-' + viewId);
+      if (navLink) {
+        navLink.classList.add('active');
       }
     }
 
