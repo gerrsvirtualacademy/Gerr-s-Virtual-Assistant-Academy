@@ -822,8 +822,8 @@
                   <p>Graduates</p>
                 </div>
                 <div class="stat-item">
-                  <div class="stat-number">100%</div>
-                  <p>Beginner Friendly</p>
+                  <div class="stat-number" id="discord-online-count">Loading...</div>
+                  <p>Online Students</p>
                 </div>
                 <div class="stat-item">
                   <div class="stat-number">Global</div>
@@ -1768,6 +1768,28 @@
       }
     }
 
+    // Fetch Live Discord Member/Online Count
+    async function fetchDiscordMemberCount() {
+      const serverId = '1371385612577542164';
+      const countElement = document.getElementById('discord-online-count');
+      
+      if (!countElement) return;
+
+      try {
+        const response = await fetch(`https://discord.com/api/guilds/${serverId}/widget.json`);
+        if (response.ok) {
+          const data = await response.json();
+          const onlineCount = data.presence_count || 0;
+          countElement.innerText = onlineCount.toLocaleString() + '+';
+        } else {
+          countElement.innerText = 'Active';
+        }
+      } catch (error) {
+        console.error('Error fetching Discord count:', error);
+        countElement.innerText = 'Online';
+      }
+    }
+
     // Dynamic Batch Code Verification Logic
     function verifyBatchCode() {
       const inputCode = document.getElementById('batch-code').value.trim().toUpperCase();
@@ -1844,10 +1866,14 @@
       } else {
         switchView('home', false);
       }
+      // Fetch live Discord count on load
+      fetchDiscordMemberCount();
     }
 
     window.addEventListener('DOMContentLoaded', handleRouting);
     window.addEventListener('hashchange', handleRouting);
+    // Refresh Discord count every 5 minutes
+    setInterval(fetchDiscordMemberCount, 300000);
 
     function toggleAccordion(headerEntry) {
       const item = headerEntry.parentElement;
