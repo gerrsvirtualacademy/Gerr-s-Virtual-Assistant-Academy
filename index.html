@@ -173,13 +173,14 @@
 
     .btn-primary {
       background: linear-gradient(135deg, var(--navy), var(--royal-blue));
-      color: var(--white);
+      color: var(--white); /* High contrast white text */
     }
 
     .btn-primary:hover {
       background: linear-gradient(135deg, var(--royal-blue), var(--cyan-highlight));
       box-shadow: var(--shadow-hover);
       transform: translateY(-3px);
+      color: var(--white);
     }
 
     .btn-secondary {
@@ -216,7 +217,7 @@
     }
 
     /* ==========================================================================
-       2. HEADER & NAVIGATION (Bigger & Prominent)
+       2. HEADER & NAVIGATION
        ========================================================================== */
     header.site-header {
       position: sticky;
@@ -572,47 +573,163 @@
     }
 
     /* ==========================================================================
-       7. TESTIMONIALS
+       7. ENHANCED SUCCESS STORIES & MAGAZINE-STYLE ARTICLE STYLING
        ========================================================================== */
     .story-card {
       background: var(--white);
       border-radius: var(--radius-md);
-      overflow: hidden;
+      padding: 2.2rem;
       border: 1px solid var(--pale-blue);
       box-shadow: var(--shadow-card);
       transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-card::after {
+      content: '“';
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--pale-blue);
+      z-index: 0;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .story-card > * {
+      position: relative;
+      z-index: 1;
     }
 
     .story-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
       box-shadow: var(--shadow-hover);
+      border-color: var(--sky-blue);
     }
 
-    .story-img {
-      height: 240px;
-      width: 100%;
-      object-fit: cover;
-      background: var(--soft-pink);
-      transition: transform 0.5s ease;
+    .story-author-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
     }
 
-    .story-card:hover .story-img {
-      transform: scale(1.03);
-    }
-
-    .story-content {
-      padding: 1.8rem;
-    }
-
-    .story-author {
+    .story-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--royal-blue));
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: 700;
+      font-size: 1.1rem;
+      font-family: 'Playfair Display', serif;
+      box-shadow: 0 4px 12px rgba(11, 45, 107, 0.15);
+      flex-shrink: 0;
+    }
+
+    .story-author-info h4 {
+      font-size: 1.1rem;
       color: var(--navy);
-      margin-top: 1rem;
+      margin-bottom: 0.1rem;
     }
 
     .story-role {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 600;
       color: var(--cyan-highlight);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .story-text-preview {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .read-article-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--royal-blue);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: auto;
+      transition: var(--transition-smooth);
+    }
+
+    .story-card:hover .read-article-link {
+      color: var(--cyan-highlight);
+      gap: 12px;
+    }
+
+    .article-hero-header {
+      background: linear-gradient(135deg, var(--pale-blue), var(--white));
+      padding: 3rem 2rem;
+      border-radius: var(--radius-lg);
+      margin-bottom: 2.5rem;
+      border: 1px solid var(--sky-blue);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    .article-pull-quote {
+      border-left: 4px solid var(--royal-blue);
+      background: var(--pale-blue);
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--navy);
+      box-shadow: var(--shadow-soft);
+      line-height: 1.6;
+    }
+
+    .article-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin: 2.5rem 0;
+    }
+
+    .article-stat-box {
+      background: var(--white);
+      border: 1px solid var(--sky-blue);
+      padding: 1.2rem;
+      border-radius: var(--radius-md);
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+
+    .article-stat-box strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--royal-blue);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.2rem;
+    }
+
+    .article-stat-box span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
     /* ==========================================================================
@@ -664,7 +781,7 @@
     }
 
     /* ==========================================================================
-       9. FOOTER (High Contrast Accessibility Updates)
+       9. FOOTER
        ========================================================================== */
     footer.site-footer {
       background: var(--navy);
@@ -811,7 +928,7 @@
               <h1>From Zero to VA Hero.</h1>
               <p class="hero-sub">Learn in-demand skills, build a flexible career, and join a supportive community that believes in you.</p>
               
-              <!-- Gorgeous & Bigger Batch 18 Countdown Banner -->
+              <!-- Batch 18 Countdown Banner -->
               <div style="background: linear-gradient(135deg, var(--pale-blue), var(--white)); padding: 1.6rem 1.8rem; border-radius: var(--radius-lg); margin-bottom: 2.2rem; border: 2px solid var(--sky-blue); box-shadow: var(--shadow-soft); text-align: center;">
                 <p style="font-weight: 700; color: var(--navy); margin-bottom: 1rem; font-size: 1.1rem; letter-spacing: 0.3px;">🔥 Batch 18 Live Training Starts In:</p>
                 <div id="countdown-timer" style="display: flex; justify-content: center; gap: 0.8rem; align-items: center;">
@@ -948,12 +1065,12 @@
         </div>
       </section>
 
-      <!-- Registration Banner CTA -->
+      <!-- Registration Banner CTA (Fixed with high-contrast .btn-primary and white text) -->
       <section style="background: linear-gradient(135deg, var(--navy), var(--royal-blue)); color: var(--white); text-align: center; border-radius: var(--radius-lg); margin: 3rem auto; max-width: 1100px; box-shadow: var(--shadow-hover);">
         <div style="padding: 4rem 1.5rem;">
           <h2 style="color: var(--white); font-size: 2.5rem; margin-bottom: 1rem;">Ready to Take Your First Step?</h2>
           <p style="max-width: 600px; margin: 0 auto 2rem auto; color: rgba(255,255,255,0.85);">Slots for upcoming cohorts are filled on a first-come, first-served basis. Secure your spot in Batch 18 today.</p>
-          <a href="#register" class="btn" style="background: var(--soft-pink); color: var(--navy);">Register for Batch 18</a>
+          <a href="#register" class="btn btn-primary" style="background: var(--white); color: var(--royal-blue);">Register for Batch 18</a>
         </div>
       </section>
 
@@ -1139,41 +1256,574 @@
       </section>
     </div>
 
-    <!-- VIEW 5: SUCCESS STORIES -->
+    <!-- VIEW 5: SUCCESS STORIES (CARDS LINKING TO MAGAZINE ARTICLE PAGES) -->
     <div id="view-success-stories" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
           <span class="badge-pill">GVA Alumni Journey</span>
           <h2>Real Student Transformations</h2>
-          <p>Read inspiring stories from our real graduates who built their confidence and started their remote careers with GVA.</p>
+          <p>Read inspiring success stories and original feedback from our graduates across various batches. Click on any card to explore their full immersive article.</p>
         </div>
 
         <div class="grid-3">
-          <div class="story-card">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate" width="600" height="240" loading="lazy">
-            <div class="story-content">
-              <p style="font-style: italic; font-size: 0.9rem;">"GVA gave me the exact step-by-step guidance I needed. I had zero experience, but Coach Gerr made everything clear and achievable."</p>
-              <div class="story-author">GVA Alumni</div>
-              <div class="story-role">General Virtual Assistant</div>
+          
+          <!-- Story 1: Judy Ann Froyo -->
+          <div class="story-card" onclick="switchView('story-judy')">
+            <div>
+              <div class="story-author-header">
+                <div class="story-avatar">JA</div>
+                <div class="story-author-info">
+                  <h4>Judy Ann F.</h4>
+                  <span class="story-role">Batch 5 • Digital Marketing VA</span>
+                </div>
+              </div>
+              <p class="story-text-preview">"After completing a 3-day training, I learned essential tools and built my resume and portfolio. During an assessment with Outsourced Doers, I discovered a passion for digital marketing and design..."</p>
             </div>
+            <span class="read-article-link">Read Full Article →</span>
           </div>
 
-          <div class="story-card">
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate" width="600" height="240" loading="lazy">
-            <div class="story-content">
-              <p style="font-style: italic; font-size: 0.9rem;">"The portfolio tasks and portal activities were the best part! Having real outputs ready allowed me to feel confident during client interviews."</p>
-              <div class="story-author">GVA Alumni</div>
-              <div class="story-role">Social Media Specialist</div>
+          <!-- Story 2: Kierza Garcia -->
+          <div class="story-card" onclick="switchView('story-kierza')">
+            <div>
+              <div class="story-author-header">
+                <div class="story-avatar">KG</div>
+                <div class="story-author-info">
+                  <h4>Kierza Garcia</h4>
+                  <span class="story-role">Batch 5 • Assistant Manager (Tours)</span>
+                </div>
+              </div>
+              <p class="story-text-preview">"My Virtual Assistant journey started with something I didn’t expect. One day, I was contacted on Upwork by a CEO who owns a travel and tours company based in Mexico..."</p>
             </div>
+            <span class="read-article-link">Read Full Article →</span>
           </div>
 
-          <div class="story-card">
-            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" class="story-img" alt="GVA Graduate" width="600" height="240" loading="lazy">
-            <div class="story-content">
-              <p style="font-style: italic; font-size: 0.9rem;">"Coach Gerr is such a compassionate mentor. The community support doesn't end when the training finishes."</p>
-              <div class="story-author">GVA Alumni</div>
-              <div class="story-role">Executive VA</div>
+          <!-- Story 3: Edward Franric Dino -->
+          <div class="story-card" onclick="switchView('story-edward')">
+            <div>
+              <div class="story-author-header">
+                <div class="story-avatar">EF</div>
+                <div class="story-author-info">
+                  <h4>Edward Franric D.</h4>
+                  <span class="story-role">Batch 10 • GVA Graduate</span>
+                </div>
+              </div>
+              <p class="story-text-preview">"Just finished my first-ever initial job interview with bruntwork. The recruiter said wait 1-2 weeks for the client's approval. Whatever the result will be, I'll consider it as a win..."</p>
             </div>
+            <span class="read-article-link">Read Full Article →</span>
+          </div>
+
+          <!-- Story 4: Angelika Volivas -->
+          <div class="story-card" onclick="switchView('story-angelika')">
+            <div>
+              <div class="story-author-header">
+                <div class="story-avatar">AV</div>
+                <div class="story-author-info">
+                  <h4>Angelika V.</h4>
+                  <span class="story-role">Batch 10 • Hired VA</span>
+                </div>
+              </div>
+              <p class="story-text-preview">"Hi @Coach Gerr and admins! Just wanted to share a quick win. After my previous client’s company closed, I was doom-scrolling on TikTok when I saw coach’s live offering VA Class Batch 10..."</p>
+            </div>
+            <span class="read-article-link">Read Full Article →</span>
+          </div>
+
+          <!-- Story 5: Maria Xhena Espiritu -->
+          <div class="story-card" onclick="switchView('story-maria')">
+            <div>
+              <div class="story-author-header">
+                <div class="story-avatar">MX</div>
+                <div class="story-author-info">
+                  <h4>Maria Xhena E.</h4>
+                  <span class="story-role">Batch 12 • Hired via Agency</span>
+                </div>
+              </div>
+              <p class="story-text-preview">"Hello sa inyong lahat! Good morning! I just wanted to share what happened this early morning. I’ve recently been hired through one of the agencies provided..."</p>
+            </div>
+            <span class="read-article-link">Read Full Article →</span>
+          </div>
+
+          <!-- Story 6: Jennifer Ganzon -->
+          <div class="story-card" onclick="switchView('story-jennifer')">
+            <div>
+              <div class="story-author-header">
+                <div class="story-avatar">JG</div>
+                <div class="story-author-info">
+                  <h4>Jennifer G.</h4>
+                  <span class="story-role">Batch 12 • Direct Client Assistant</span>
+                </div>
+              </div>
+              <p class="story-text-preview">"Meron pala neto dito sa discord hehe now ko lang nakita. Btw, thankyou ulit @Coach Gerr. Share ko lang po na-hired po ako as assistant direct client pa po ito..."</p>
+            </div>
+            <span class="read-article-link">Read Full Article →</span>
+          </div>
+
+          <!-- Story 7: J Franco Furio -->
+          <div class="story-card" onclick="switchView('story-jfranco')">
+            <div>
+              <div class="story-author-header">
+                <div class="story-avatar">JF</div>
+                <div class="story-author-info">
+                  <h4>J Franco F.</h4>
+                  <span class="story-role">Batch 12 • GVA Graduate</span>
+                </div>
+              </div>
+              <p class="story-text-preview">"Thank you @Coach Gerr. I’ve learned so much from you, not just the technical skills, but also the confidence and mindset needed to succeed in this field..."</p>
+            </div>
+            <span class="read-article-link">Read Full Article →</span>
+          </div>
+
+          <!-- Story 8: Diane -->
+          <div class="story-card" onclick="switchView('story-diane')">
+            <div>
+              <div class="story-author-header">
+                <div class="story-avatar">D</div>
+                <div class="story-author-info">
+                  <h4>Diane</h4>
+                  <span class="story-role">GVA Graduate • First Client Hired</span>
+                </div>
+              </div>
+              <p class="story-text-preview">"I am so grateful to have joined GVA. I honestly started with little to no knowledge about becoming a Virtual Assistant, specifically a General Virtual Assistant..."</p>
+            </div>
+            <span class="read-article-link">Read Full Article →</span>
+          </div>
+
+          <!-- Story 9: Katie -->
+          <div class="story-card" onclick="switchView('story-katie')">
+            <div>
+              <div class="story-author-header">
+                <div class="story-avatar">K</div>
+                <div class="story-author-info">
+                  <h4>Katie</h4>
+                  <span class="story-role">GVA Graduate • Successful VA</span>
+                </div>
+              </div>
+              <p class="story-text-preview">"Thank you so much to your academy, Ma'am! If it weren't for you, I wouldn't have learned so much. And thanks to Coach Ger's guidance and support..."</p>
+            </div>
+            <span class="read-article-link">Read Full Article →</span>
+          </div>
+
+          <!-- Story 10: Danielle Monique Satuito -->
+          <div class="story-card" onclick="switchView('story-danielle')">
+            <div>
+              <div class="story-author-header">
+                <div class="story-avatar">DS</div>
+                <div class="story-author-info">
+                  <h4>Danielle Monique S.</h4>
+                  <span class="story-role">Batch 12 • Assistant</span>
+                </div>
+              </div>
+              <p class="story-text-preview">"Hi coach gerr, gusto ko lang po mag bigay ng update hehe. Nahire po ako as assistant ni client and sobrang gamit na gamit ko po yung tinuro niyo..."</p>
+            </div>
+            <span class="read-article-link">Read Full Article →</span>
+          </div>
+
+          <!-- Story 11: Jennalyn Charcos -->
+          <div class="story-card" onclick="switchView('story-jennalyn')">
+            <div>
+              <div class="story-author-header">
+                <div class="story-avatar">JC</div>
+                <div class="story-author-info">
+                  <h4>Jennalyn C.</h4>
+                  <span class="story-role">Batch 11 • Direct Client VA</span>
+                </div>
+              </div>
+              <p class="story-text-preview">"Hello. Just landed a client. Filipino business owner dito sa Japan. Thank you, Coach Gerr, for the help!"</p>
+            </div>
+            <span class="read-article-link">Read Full Article →</span>
+          </div>
+
+          <!-- Story 12: Zerra Alesna -->
+          <div class="story-card" onclick="switchView('story-zerra')">
+            <div>
+              <div class="story-author-header">
+                <div class="story-avatar">ZA</div>
+                <div class="story-author-info">
+                  <h4>Zerra A.</h4>
+                  <span class="story-role">Batch 11 • Agency Hired VA</span>
+                </div>
+              </div>
+              <p class="story-text-preview">"Hello coach gerr, I just want to share a very good news! big help pala talaga na at least may certificate ka from legit workshop. Just landed to my first client..."</p>
+            </div>
+            <span class="read-article-link">Read Full Article →</span>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- DEDICATED MAGAZINE ARTICLE VIEWS            -->
+    <!-- ========================================== -->
+
+    <!-- Article 1: Judy Ann -->
+    <div id="view-story-judy" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 850px;">
+        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
+        
+        <div class="article-hero-header">
+          <span class="badge-pill">Batch 5 Success Story</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Judy Ann F.’s Remote Journey</h1>
+          <p style="color: var(--text-muted); font-size: 1rem;">Digital Marketing VA • GVA Graduate</p>
+        </div>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
+            "After completing a 3-day training, I learned essential tools and built my resume and portfolio. During an assessment with Outsourced Doers, I discovered a passion for digital marketing and design. Now stepping into a role where I can grow and thrive!"
+          </div>
+
+          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Inspired by Judy Ann's Growth?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
+            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Article 2: Kierza Garcia -->
+    <div id="view-story-kierza" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 850px;">
+        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
+        
+        <div class="article-hero-header">
+          <span class="badge-pill">Batch 5 Featured Success Story</span>
+          <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">Kierza Garcia’s VA Journey</h1>
+          <p style="color: var(--text-muted); font-size: 1rem;">Assistant Manager (Tours & Transportation) • Upwork Hired</p>
+          
+          <div class="article-stats-grid">
+            <div class="article-stat-box">
+              <strong>10 Years</strong>
+              <span>Travel & BPO Industry Experience</span>
+            </div>
+            <div class="article-stat-box">
+              <strong>Upwork</strong>
+              <span>Found Direct with Zero Connects</span>
+            </div>
+            <div class="article-stat-box">
+              <strong>Assistant Manager</strong>
+              <span>Current Leadership Role</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 3rem 2.5rem;">
+          <h3 style="font-family: 'Caveat', cursive; font-size: 1.8rem; color: var(--royal-blue); margin-bottom: 1.5rem;">Hello VA Friends, I want to share my VA Journey</h3>
+
+          <h2 style="font-size: 1.4rem; margin-bottom: 1rem;">My VA Journey</h2>
+
+          <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">
+            My Virtual Assistant journey started with something I didn’t expect. One day, I was contacted on Upwork by a CEO who owns a travel and tours company based in Mexico. Their tours are mostly for travelers coming from the United States and Canada. Even though my Upwork account was still new, and I hadn’t bought any connects to apply for jobs, they found me.
+          </p>
+
+          <div class="article-pull-quote">
+            "That moment was proof that having the right skills, clear communication, and the willingness to help can open doors."
+          </div>
+
+          <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">
+            I believe what caught their attention was my 10 years of experience in the travel and tourism industry. Over the years, I have worked as a travel agent, sales agent, and travel advisor, helping clients with tour offers, hotel reservations, car rentals, and other travel arrangements. I’ve also worked in the BPO industry, which trained me to handle customers with care, manage tasks efficiently, and work well under pressure. When the CEO reached out, I was confident in explaining how I could support their business and help them grow.
+          </p>
+
+          <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">
+            Now, I am working with their company as a Service and Business Assistant – Tours and Transportation (Assistant Manager). This is more than just a VA role — it’s about being part of their operations, supporting their tours, and making sure everything runs smoothly for their customers. My job involves combining my travel expertise with the tools and systems they use, and while I’m still learning about social media marketing (SMM) and other new tools, I have guidance from Coach Gerry and their team.
+          </p>
+
+          <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">
+            This opportunity has done more than just give me a client. It has also inspired me to plan for my own small business in the future — selling digital travel itineraries using Canva, focusing on destinations within the Philippines. I want to use my industry knowledge to create products that travelers will find helpful, while also growing my skills in design, marketing, and online sales.
+          </p>
+
+          <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">
+            I’m also excited for the upcoming funnel design course, which will help me create better marketing strategies for my client’s business. I believe that learning never stops, and each new skill I gain will not only benefit my client but also prepare me for future opportunities.
+          </p>
+
+          <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">
+            For me, this journey is not just about getting paid for my work. It’s about building trust, delivering results, and making my clients happy and satisfied. The real reward is knowing that they rely on me and value my contribution. I want to make sure they feel the same level of support from me as I feel from them.
+          </p>
+
+          <p style="margin-bottom: 2rem; color: var(--text-muted); line-height: 1.8;">
+            This is just the beginning. My journey as a VA will continue to grow, fueled by passion, hard work, and the goal of becoming better every day. If you’re starting your own VA career, my advice is to make your profile stand out on your chosen platform. Show clients not only your skills but also your personality, communication style, and genuine willingness to help. You never know — the right client might just find you, like mine they found me.
+          </p>
+
+          <div style="text-align: center; margin: 2.5rem 0;">
+            <a href="https://www.linkedin.com/in/kierza-garcia-9369b8240/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
+              🔗 Connect with Kierza on LinkedIn →
+            </a>
+            <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);">Thank you!</p>
+          </div>
+
+          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 3rem;">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Inspired by Kierza's Journey?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
+            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Article 3: Edward Franric Dino -->
+    <div id="view-story-edward" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 850px;">
+        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
+        
+        <div class="article-hero-header">
+          <span class="badge-pill">Batch 10 Success Story</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Edward Franric D.’s Journey</h1>
+          <p style="color: var(--text-muted); font-size: 1rem;">GVA Graduate • First Interview Milestone</p>
+        </div>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
+            "Just finished my first-ever initial job interview with bruntwork. The recruiter said wait 1-2 weeks for the client's approval. Whatever the result will be, I'll consider it as a win because of the experience Thank you @Coach Gerr and admins!"
+          </div>
+
+          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Take Your First Step?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
+            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Article 4: Angelika Volivas -->
+    <div id="view-story-angelika" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 850px;">
+        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
+        
+        <div class="article-hero-header">
+          <span class="badge-pill">Batch 10 Success Story</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Angelika V.’s Hired Story</h1>
+          <p style="color: var(--text-muted); font-size: 1.0rem;">From TikTok Scroll to Hired VA</p>
+        </div>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
+            "Hi @Coach Gerr and admins! Just wanted to share a quick win.
+
+            After my previous client’s company closed, I was doom-scrolling on TikTok when I saw coach’s live offering VA Class Batch 10, there were 2 slots left, so I grabbed the chance and enrolled. January came, the training started, and I got to work: updated my resume and portfolio, prepped for interviews, and sent 10 applications daily.
+
+            Some rejections, some didn’t respond but I kept pushing. Fast forward to today… I finally landed a client and will be starting today! 
+
+            Spreading some client dust to everyone 
+
+            To anyone struggling to land a client: keep learning, keep applying, and don’t let the rejections get you down. Your persistence will pay off, you just have to keep going!
+
+            Super thankful to @Coach Gerr and your team for all the support!"
+          </div>
+
+          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
+            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Article 5: Maria Xhena Espiritu -->
+    <div id="view-story-maria" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 850px;">
+        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
+        
+        <div class="article-hero-header">
+          <span class="badge-pill">Batch 12 Success Story</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Maria Xhena E.’s Success Story</h1>
+          <p style="color: var(--text-muted); font-size: 1.0rem;">Agency Hired VA • Persistence Pays Off</p>
+        </div>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
+            "Hello sa inyong lahat! Good morning! 
+
+            I just wanted to share what happened this early morning. I’ve recently been hired through one of the agencies provided. After going through multiple rejections and a period of waiting, this opportunity means a lot to me. The journey wasn’t always easy, but it taught me patience and perseverance. Thank you Coach Gerr @Coach Gerr and Admins, I truly appreciate all the lessons, trainings, and guidance that helped me grow and prepare for this moment. Thank you for the support and encouragement—it made a real difference, and I’m excited to take this next step forward. I’ll be starting my training next friday, so wish me luck!
+            It takes a lot of patience and prayers.
+
+            anyways, I’m from Batch 12. Good luck to each and everyone of us!!!"
+          </div>
+
+          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
+            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Article 6: Jennifer Ganzon -->
+    <div id="view-story-jennifer" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 850px;">
+        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
+        
+        <div class="article-hero-header">
+          <span class="badge-pill">Batch 12 Success Story</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Jennifer G.’s Success Story</h1>
+          <p style="color: var(--text-muted); font-size: 1.0rem;">Direct Client Assistant • GVA Graduate</p>
+        </div>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
+            "Meron pala neto dito sa discord hehe now ko lang nakita. Btw, thankyou ulit @Coach Gerr. 
+            Share ko lang po na-hired po ako as assistant direct client pa po ito hehe. Lahat ng tinuro ni coach ay nagagamit ko and tuwang tuwa yung client ko sa sample ko sa folder sa gdrive ginaya ko lang yung ginawa ni coach. Mababa lang offer at part time lang siya pero ginrab ko na for experience and mag tataas naman daw and lucky me kasi super bait ng client ko kahit barok english ko naiintindihan nya ko kahit Copy,Noted,Yes lang sagot ko sakanya masaya na siya basta nasesend ko mga kailangan nya gawin daily haha. Yun lang share ko lang and Client Dust Everyone! 
+
+            From batch 12"
+          </div>
+
+          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
+            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Article 7: J Franco Furio -->
+    <div id="view-story-jfranco" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 850px;">
+        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
+        
+        <div class="article-hero-header">
+          <span class="badge-pill">Batch 12 Success Story</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">J Franco F.’s Success Story</h1>
+          <p style="color: var(--text-muted); font-size: 1.0rem;">Mindset & Confidence in Remote Work</p>
+        </div>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
+            "Thank you @Coach Gerr. I’ve learned so much from you, not just the technical skills, but also the confidence and mindset needed to succeed in this field. It made a huge difference in my journey. Excited nako kase mag ttraining nako on May 11. Thank you po ulit yun lang. VA dust everyone.
+
+            From Batch 12"
+          </div>
+
+          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
+            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Article 8: Diane -->
+    <div id="view-story-diane" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 850px;">
+        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
+        
+        <div class="article-hero-header">
+          <span class="badge-pill">GVA Graduate Success Story</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Diane’s Success Story</h1>
+          <p style="color: var(--text-muted); font-size: 1.0rem;">First Client Hired Milestone</p>
+        </div>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
+            "I am so grateful to have joined GVA. I honestly started with little to no knowledge about becoming a Virtual Assistant, specifically a General Virtual Assistant. The training was very informative, and the guidance and support from the team were truly exceptional. Now, I've finally landed my first client! A part of me will always owe this achievement to GVA because this is where I started, and where I learned to believe that I could really do it. Thank you so much, Coach Gerr and the whole GVA fam, for believing in us and for giving us the knowledge, confidence, and encouragement to take that first step. I'm truly grateful to be part of this community! ❤️"
+          </div>
+
+          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
+            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Article 9: Katie -->
+    <div id="view-story-katie" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 850px;">
+        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
+        
+        <div class="article-hero-header">
+          <span class="badge-pill">GVA Graduate Success Story</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Katie’s Success Story</h1>
+          <p style="color: var(--text-muted); font-size: 1.0rem;">Successful VA Journey</p>
+        </div>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
+            "Thank you so much to your academy, Ma'am! If it weren't for you, I wouldn't have learned so much. And thanks to Coach Ger's guidance and support, I was able to handle my first client successfully. Hehe! I'm truly grateful for all the knowledge and learning you've shared with me. Thank you so much! ❤️ More clients to me hehhe"
+          </div>
+
+          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
+            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Article 10: Danielle Monique Satuito -->
+    <div id="view-story-danielle" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 850px;">
+        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
+        
+        <div class="article-hero-header">
+          <span class="badge-pill">Batch 12 Success Story</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Danielle Monique S.’s Success Story</h1>
+          <p style="color: var(--text-muted); font-size: 1.0rem;">Assistant Role Hired</p>
+        </div>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
+            "Hi coach gerr, gusto ko lang po mag bigay ng update hehe. Nahire po ako as assistant ni client and sobrang gamit na gamit ko po yung tinuro niyo. I'm from Batch 12 po 😊 Tuwang tuwa siya nung pinakita ko yung sample ng pag organize ng files sa gmail. Buti na lang recorded lahat kaya pinapanoud ko ulit siya now para marecall yung mga tinuro niyo. Thankyou coach 💋"
+          </div>
+
+          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
+            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Article 11: Jennalyn Charcos -->
+    <div id="view-story-jennalyn" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 850px;">
+        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
+        
+        <div class="article-hero-header">
+          <span class="badge-pill">Batch 11 Success Story</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Jennalyn C.’s Success Story</h1>
+          <p style="color: var(--text-muted); font-size: 1.0rem;">Direct Client VA</p>
+        </div>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
+            "Hello. Just landed a client. Filipino business owner dito sa Japan. Thank you, Coach Gerr, for the help!"
+          </div>
+
+          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
+            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Article 12: Zerra Alesna -->
+    <div id="view-story-zerra" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 850px;">
+        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
+        
+        <div class="article-hero-header">
+          <span class="badge-pill">Batch 11 Success Story</span>
+          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Zerra A.’s Success Story</h1>
+          <p style="color: var(--text-muted); font-size: 1.0rem;">Agency Hired VA • Certificate Power</p>
+        </div>
+
+        <div class="card" style="padding: 2.5rem;">
+          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
+            "Hello coach gerr, I just want to share a very good news! big help pala talaga na at least may certificate ka from legit workshop. Just landed to my first client po sa isang agency. Okay yung pay offer nila for begginers. Thanks po coach! God bless your Jobsearch everyone!"
+          </div>
+
+          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
+            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
+            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
           </div>
         </div>
       </section>
@@ -1513,9 +2163,7 @@
             </div>
           </div>
 
-          <!-- ========================================== -->
           <!-- CLIENT PROFILES LIBRARY (STRICTLY FOR SMM PORTAL) -->
-          <!-- ========================================== -->
           <div class="card" style="margin-bottom: 2rem; background: var(--pale-blue); border: 1px solid var(--sky-blue);">
             <span class="badge-pill" style="background: var(--white); color: var(--navy);">SMM Practice Hub</span>
             <h3 style="margin-bottom: 0.5rem; color: var(--navy);">🏢 Sample Client Profiles Library</h3>
@@ -1757,7 +2405,7 @@
 
       if (updateHash && window.location.hash !== '#' + targetId) {
         window.location.hash = targetId;
-        return; // Let the hashchange event trigger switchView
+        return;
       }
 
       const views = document.querySelectorAll('.page-view');
@@ -1777,13 +2425,24 @@
         targetNavLink.classList.add('active');
       }
 
-      // Dynamic Browser Title Switcher
       const titles = {
         'home': "Gerr's Virtual Academy | From Zero to VA Hero",
         'va-training': "Virtual Assistant Training Philippines | Gerr's Virtual Academy",
         'smm-bootcamp': "Social Media Management Bootcamp | Gerr's Virtual Academy",
         'programs': "Training Programs Directory | Gerr's Virtual Academy",
         'success-stories': "Graduate Success Stories & Testimonials | GVA",
+        'story-judy': "Judy Ann F.’s Success Story | GVA",
+        'story-kierza': "Kierza Garcia’s Success Story | GVA",
+        'story-edward': "Edward Franric D.’s Success Story | GVA",
+        'story-angelika': "Angelika V.’s Success Story | GVA",
+        'story-maria': "Maria Xhena E.’s Success Story | GVA",
+        'story-jennifer': "Jennifer G.’s Success Story | GVA",
+        'story-jfranco': "J Franco F.’s Success Story | GVA",
+        'story-diane': "Diane’s Success Story | GVA",
+        'story-katie': "Katie’s Success Story | GVA",
+        'story-danielle': "Danielle Monique S.’s Success Story | GVA",
+        'story-jennalyn': "Jennalyn C.’s Success Story | GVA",
+        'story-zerra': "Zerra A.’s Success Story | GVA",
         'about': "About Coach Gerr & GVA Mission",
         'register': "Register for Training | Gerr's Virtual Academy",
         'contact': "Contact & Inquiries | Gerr's Virtual Academy",
