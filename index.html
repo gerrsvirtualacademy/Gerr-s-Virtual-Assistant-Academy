@@ -173,7 +173,7 @@
 
     .btn-primary {
       background: linear-gradient(135deg, var(--navy), var(--royal-blue));
-      color: var(--white); /* High contrast white text */
+      color: var(--white);
     }
 
     .btn-primary:hover {
@@ -781,7 +781,90 @@
     }
 
     /* ==========================================================================
-       9. FOOTER
+       9. PAYMENT REDIRECT & CHECKOUT STYLING (WITH 10-MIN COUNTDOWN)
+       ========================================================================== */
+    .payment-container {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .timer-banner {
+      background: linear-gradient(135deg, #FFF4D6, #FFD6E7);
+      border: 2px solid #F59E0B;
+      border-radius: var(--radius-md);
+      padding: 1.2rem 1.8rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .timer-display {
+      font-size: 2.2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #B45309;
+      margin-top: 0.3rem;
+    }
+
+    .payment-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .pay-tab-btn {
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--sky-blue);
+      background: var(--white);
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--navy);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      text-align: center;
+    }
+
+    .pay-tab-btn.active-pay-tab {
+      background: var(--royal-blue);
+      color: var(--white);
+      border-color: var(--royal-blue);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .qr-card {
+      background: var(--pale-blue);
+      border: 1px solid var(--sky-blue);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .qr-image-wrapper {
+      width: 240px;
+      height: 240px;
+      background: var(--white);
+      margin: 0 auto 1.5rem auto;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--royal-blue);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      padding: 0.5rem;
+    }
+
+    .qr-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* ==========================================================================
+       10. FOOTER
        ========================================================================== */
     footer.site-footer {
       background: var(--navy);
@@ -885,6 +968,7 @@
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .registration-form-card { padding: 1.8rem 1.2rem; }
       .btn { width: 100%; }
+      .payment-tabs { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -1214,7 +1298,7 @@
       </section>
     </div>
 
-    <!-- VIEW 3: SMM BOOTCAMP PAGE (CLEAN SMM WORKSPACE COVER IMAGE) -->
+    <!-- VIEW 3: SMM BOOTCAMP PAGE -->
     <div id="view-smm-bootcamp" class="page-view">
       <div class="program-hero" style="background: linear-gradient(135deg, var(--soft-pink), var(--pale-blue));">
         <div class="container">
@@ -1541,383 +1625,19 @@
       </section>
     </div>
 
-    <!-- ========================================== -->
-    <!-- DEDICATED MAGAZINE ARTICLE VIEWS            -->
-    <!-- ========================================== -->
-
-    <!-- Article 1: Judy Ann -->
-    <div id="view-story-judy" class="page-view">
-      <section class="container" style="padding-top: 3rem; max-width: 850px;">
-        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
-        
-        <div class="article-hero-header">
-          <span class="badge-pill">Batch 5 Success Story</span>
-          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Judy Ann F.’s Remote Journey</h1>
-          <p style="color: var(--text-muted); font-size: 1rem;">Digital Marketing VA • GVA Graduate</p>
-        </div>
-
-        <div class="card" style="padding: 2.5rem;">
-          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
-            "After completing a 3-day training, I learned essential tools and built my resume and portfolio. During an assessment with Outsourced Doers, I discovered a passion for digital marketing and design. Now stepping into a role where I can grow and thrive!"
-          </div>
-
-          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Inspired by Judy Ann's Growth?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Article 2: Kierza Garcia -->
-    <div id="view-story-kierza" class="page-view">
-      <section class="container" style="padding-top: 3rem; max-width: 850px;">
-        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
-        
-        <div class="article-hero-header">
-          <span class="badge-pill">Batch 5 Featured Success Story</span>
-          <h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">Kierza Garcia’s VA Journey</h1>
-          <p style="color: var(--text-muted); font-size: 1rem;">Assistant Manager (Tours & Transportation) • Upwork Hired</p>
-          
-          <div class="article-stats-grid">
-            <div class="article-stat-box">
-              <strong>10 Years</strong>
-              <span>Travel & BPO Industry Experience</span>
-            </div>
-            <div class="article-stat-box">
-              <strong>Upwork</strong>
-              <span>Found Direct with Zero Connects</span>
-            </div>
-            <div class="article-stat-box">
-              <strong>Assistant Manager</strong>
-              <span>Current Leadership Role</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card" style="padding: 3rem 2.5rem;">
-          <h3 style="font-family: 'Caveat', cursive; font-size: 1.8rem; color: var(--royal-blue); margin-bottom: 1.5rem;">Hello VA Friends, I want to share my VA Journey</h3>
-
-          <h2 style="font-size: 1.4rem; margin-bottom: 1rem;">My VA Journey</h2>
-
-          <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">
-            My Virtual Assistant journey started with something I didn’t expect. One day, I was contacted on Upwork by a CEO who owns a travel and tours company based in Mexico. Their tours are mostly for travelers coming from the United States and Canada. Even though my Upwork account was still new, and I hadn’t bought any connects to apply for jobs, they found me.
-          </p>
-
-          <div class="article-pull-quote">
-            "That moment was proof that having the right skills, clear communication, and the willingness to help can open doors."
-          </div>
-
-          <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">
-            I believe what caught their attention was my 10 years of experience in the travel and tourism industry. Over the years, I have worked as a travel agent, sales agent, and travel advisor, helping clients with tour offers, hotel reservations, car rentals, and other travel arrangements. I’ve also worked in the BPO industry, which trained me to handle customers with care, manage tasks efficiently, and work well under pressure. When the CEO reached out, I was confident in explaining how I could support their business and help them grow.
-          </p>
-
-          <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">
-            Now, I am working with their company as a Service and Business Assistant – Tours and Transportation (Assistant Manager). This is more than just a VA role — it’s about being part of their operations, supporting their tours, and making sure everything runs smoothly for their customers. My job involves combining my travel expertise with the tools and systems they use, and while I’m still learning about social media marketing (SMM) and other new tools, I have guidance from Coach Gerry and their team.
-          </p>
-
-          <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">
-            This opportunity has done more than just give me a client. It has also inspired me to plan for my own small business in the future — selling digital travel itineraries using Canva, focusing on destinations within the Philippines. I want to use my industry knowledge to create products that travelers will find helpful, while also growing my skills in design, marketing, and online sales.
-          </p>
-
-          <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">
-            I’m also excited for the upcoming funnel design course, which will help me create better marketing strategies for my client’s business. I believe that learning never stops, and each new skill I gain will not only benefit my client but also prepare me for future opportunities.
-          </p>
-
-          <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">
-            For me, this journey is not just about getting paid for my work. It’s about building trust, delivering results, and making my clients happy and satisfied. The real reward is knowing that they rely on me and value my contribution. I want to make sure they feel the same level of support from me as I feel from them.
-          </p>
-
-          <p style="margin-bottom: 2rem; color: var(--text-muted); line-height: 1.8;">
-            This is just the beginning. My journey as a VA will continue to grow, fueled by passion, hard work, and the goal of becoming better every day. If you’re starting your own VA career, my advice is to make your profile stand out on your chosen platform. Show clients not only your skills but also your personality, communication style, and genuine willingness to help. You never know — the right client might just find you, like mine they found me.
-          </p>
-
-          <div style="text-align: center; margin: 2.5rem 0;">
-            <a href="https://www.linkedin.com/in/kierza-garcia-9369b8240/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
-              🔗 Connect with Kierza on LinkedIn →
-            </a>
-            <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);">Thank you!</p>
-          </div>
-
-          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 3rem;">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Inspired by Kierza's Journey?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Article 3: Edward Franric Dino -->
-    <div id="view-story-edward" class="page-view">
-      <section class="container" style="padding-top: 3rem; max-width: 850px;">
-        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
-        
-        <div class="article-hero-header">
-          <span class="badge-pill">Batch 10 Success Story</span>
-          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Edward Franric D.’s Journey</h1>
-          <p style="color: var(--text-muted); font-size: 1rem;">GVA Graduate • First Interview Milestone</p>
-        </div>
-
-        <div class="card" style="padding: 2.5rem;">
-          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
-            "Just finished my first-ever initial job interview with bruntwork. The recruiter said wait 1-2 weeks for the client's approval. Whatever the result will be, I'll consider it as a win because of the experience Thank you @Coach Gerr and admins!"
-          </div>
-
-          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Take Your First Step?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Article 4: Angelika Volivas -->
-    <div id="view-story-angelika" class="page-view">
-      <section class="container" style="padding-top: 3rem; max-width: 850px;">
-        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
-        
-        <div class="article-hero-header">
-          <span class="badge-pill">Batch 10 Success Story</span>
-          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Angelika V.’s Hired Story</h1>
-          <p style="color: var(--text-muted); font-size: 1.0rem;">From TikTok Scroll to Hired VA</p>
-        </div>
-
-        <div class="card" style="padding: 2.5rem;">
-          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
-            "Hi @Coach Gerr and admins! Just wanted to share a quick win.
-
-            After my previous client’s company closed, I was doom-scrolling on TikTok when I saw coach’s live offering VA Class Batch 10, there were 2 slots left, so I grabbed the chance and enrolled. January came, the training started, and I got to work: updated my resume and portfolio, prepped for interviews, and sent 10 applications daily.
-
-            Some rejections, some didn’t respond but I kept pushing. Fast forward to today… I finally landed a client and will be starting today! 
-
-            Spreading some client dust to everyone 
-
-            To anyone struggling to land a client: keep learning, keep applying, and don’t let the rejections get you down. Your persistence will pay off, you just have to keep going!
-
-            Super thankful to @Coach Gerr and your team for all the support!"
-          </div>
-
-          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Article 5: Maria Xhena Espiritu -->
-    <div id="view-story-maria" class="page-view">
-      <section class="container" style="padding-top: 3rem; max-width: 850px;">
-        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
-        
-        <div class="article-hero-header">
-          <span class="badge-pill">Batch 12 Success Story</span>
-          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Maria Xhena E.’s Success Story</h1>
-          <p style="color: var(--text-muted); font-size: 1.0rem;">Agency Hired VA • Persistence Pays Off</p>
-        </div>
-
-        <div class="card" style="padding: 2.5rem;">
-          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
-            "Hello sa inyong lahat! Good morning! 
-
-            I just wanted to share what happened this early morning. I’ve recently been hired through one of the agencies provided. After going through multiple rejections and a period of waiting, this opportunity means a lot to me. The journey wasn’t always easy, but it taught me patience and perseverance. Thank you Coach Gerr @Coach Gerr and Admins, I truly appreciate all the lessons, trainings, and guidance that helped me grow and prepare for this moment. Thank you for the support and encouragement—it made a real difference, and I’m excited to take this next step forward. I’ll be starting my training next friday, so wish me luck!
-            It takes a lot of patience and prayers.
-
-            anyways, I’m from Batch 12. Good luck to each and everyone of us!!!"
-          </div>
-
-          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Article 6: Jennifer Ganzon -->
-    <div id="view-story-jennifer" class="page-view">
-      <section class="container" style="padding-top: 3rem; max-width: 850px;">
-        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
-        
-        <div class="article-hero-header">
-          <span class="badge-pill">Batch 12 Success Story</span>
-          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Jennifer G.’s Success Story</h1>
-          <p style="color: var(--text-muted); font-size: 1.0rem;">Direct Client Assistant • GVA Graduate</p>
-        </div>
-
-        <div class="card" style="padding: 2.5rem;">
-          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
-            "Meron pala neto dito sa discord hehe now ko lang nakita. Btw, thankyou ulit @Coach Gerr. 
-            Share ko lang po na-hired po ako as assistant direct client pa po ito hehe. Lahat ng tinuro ni coach ay nagagamit ko and tuwang tuwa yung client ko sa sample ko sa folder sa gdrive ginaya ko lang yung ginawa ni coach. Mababa lang offer at part time lang siya pero ginrab ko na for experience and mag tataas naman daw and lucky me kasi super bait ng client ko kahit barok english ko naiintindihan nya ko kahit Copy,Noted,Yes lang sagot ko sakanya masaya na siya basta nasesend ko mga kailangan nya gawin daily haha. Yun lang share ko lang and Client Dust Everyone! 
-
-            From batch 12"
-          </div>
-
-          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Article 7: J Franco Furio -->
-    <div id="view-story-jfranco" class="page-view">
-      <section class="container" style="padding-top: 3rem; max-width: 850px;">
-        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
-        
-        <div class="article-hero-header">
-          <span class="badge-pill">Batch 12 Success Story</span>
-          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">J Franco F.’s Success Story</h1>
-          <p style="color: var(--text-muted); font-size: 1.0rem;">Mindset & Confidence in Remote Work</p>
-        </div>
-
-        <div class="card" style="padding: 2.5rem;">
-          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
-            "Thank you @Coach Gerr. I’ve learned so much from you, not just the technical skills, but also the confidence and mindset needed to succeed in this field. It made a huge difference in my journey. Excited nako kase mag ttraining nako on May 11. Thank you po ulit yun lang. VA dust everyone.
-
-            From Batch 12"
-          </div>
-
-          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Article 8: Diane -->
-    <div id="view-story-diane" class="page-view">
-      <section class="container" style="padding-top: 3rem; max-width: 850px;">
-        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
-        
-        <div class="article-hero-header">
-          <span class="badge-pill">GVA Graduate Success Story</span>
-          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Diane’s Success Story</h1>
-          <p style="color: var(--text-muted); font-size: 1.0rem;">First Client Hired Milestone</p>
-        </div>
-
-        <div class="card" style="padding: 2.5rem;">
-          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
-            "I am so grateful to have joined GVA. I honestly started with little to no knowledge about becoming a Virtual Assistant, specifically a General Virtual Assistant. The training was very informative, and the guidance and support from the team were truly exceptional. Now, I've finally landed my first client! A part of me will always owe this achievement to GVA because this is where I started, and where I learned to believe that I could really do it. Thank you so much, Coach Gerr and the whole GVA fam, for believing in us and for giving us the knowledge, confidence, and encouragement to take that first step. I'm truly grateful to be part of this community! ❤️"
-          </div>
-
-          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Article 9: Katie -->
-    <div id="view-story-katie" class="page-view">
-      <section class="container" style="padding-top: 3rem; max-width: 850px;">
-        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
-        
-        <div class="article-hero-header">
-          <span class="badge-pill">GVA Graduate Success Story</span>
-          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Katie’s Success Story</h1>
-          <p style="color: var(--text-muted); font-size: 1.0rem;">Successful VA Journey</p>
-        </div>
-
-        <div class="card" style="padding: 2.5rem;">
-          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
-            "Thank you so much to your academy, Ma'am! If it weren't for you, I wouldn't have learned so much. And thanks to Coach Ger's guidance and support, I was able to handle my first client successfully. Hehe! I'm truly grateful for all the knowledge and learning you've shared with me. Thank you so much! ❤️ More clients to me hehhe"
-          </div>
-
-          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Article 10: Danielle Monique Satuito -->
-    <div id="view-story-danielle" class="page-view">
-      <section class="container" style="padding-top: 3rem; max-width: 850px;">
-        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
-        
-        <div class="article-hero-header">
-          <span class="badge-pill">Batch 12 Success Story</span>
-          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Danielle Monique S.’s Success Story</h1>
-          <p style="color: var(--text-muted); font-size: 1.0rem;">Assistant Role Hired</p>
-        </div>
-
-        <div class="card" style="padding: 2.5rem;">
-          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
-            "Hi coach gerr, gusto ko lang po mag bigay ng update hehe. Nahire po ako as assistant ni client and sobrang gamit na gamit ko po yung tinuro niyo. I'm from Batch 12 po 😊 Tuwang tuwa siya nung pinakita ko yung sample ng pag organize ng files sa gmail. Buti na lang recorded lahat kaya pinapanoud ko ulit siya now para marecall yung mga tinuro niyo. Thankyou coach 💋"
-          </div>
-
-          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Article 11: Jennalyn Charcos -->
-    <div id="view-story-jennalyn" class="page-view">
-      <section class="container" style="padding-top: 3rem; max-width: 850px;">
-        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
-        
-        <div class="article-hero-header">
-          <span class="badge-pill">Batch 11 Success Story</span>
-          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Jennalyn C.’s Success Story</h1>
-          <p style="color: var(--text-muted); font-size: 1.0rem;">Direct Client VA</p>
-        </div>
-
-        <div class="card" style="padding: 2.5rem;">
-          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
-            "Hello. Just landed a client. Filipino business owner dito sa Japan. Thank you, Coach Gerr, for the help!"
-          </div>
-
-          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Article 12: Zerra Alesna -->
-    <div id="view-story-zerra" class="page-view">
-      <section class="container" style="padding-top: 3rem; max-width: 850px;">
-        <a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a>
-        
-        <div class="article-hero-header">
-          <span class="badge-pill">Batch 11 Success Story</span>
-          <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Zerra A.’s Success Story</h1>
-          <p style="color: var(--text-muted); font-size: 1.0rem;">Agency Hired VA • Certificate Power</p>
-        </div>
-
-        <div class="card" style="padding: 2.5rem;">
-          <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
-            "Hello coach gerr, I just want to share a very good news! big help pala talaga na at least may certificate ka from legit workshop. Just landed to my first client po sa isang agency. Okay yung pay offer nila for begginers. Thanks po coach! God bless your Jobsearch everyone!"
-          </div>
-
-          <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
-            <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
-          </div>
-        </div>
-      </section>
-    </div>
+    <!-- DEDICATED MAGAZINE ARTICLE VIEWS -->
+    <div id="view-story-judy" class="page-view"><section class="container" style="padding-top: 3rem; max-width: 850px;"><a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a><div class="article-hero-header"><span class="badge-pill">Batch 5 Success Story</span><h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Judy Ann F.’s Remote Journey</h1></div><div class="card" style="padding: 2.5rem;"><div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">"After completing a 3-day training, I learned essential tools and built my resume and portfolio..."</div><a href="#register" class="btn btn-primary">Register Now</a></div></section></div>
+    <div id="view-story-kierza" class="page-view"><section class="container" style="padding-top: 3rem; max-width: 850px;"><a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a><div class="article-hero-header"><span class="badge-pill">Batch 5 Featured Success Story</span><h1 style="font-size: 2.3rem; margin-bottom: 0.5rem;">Kierza Garcia’s VA Journey</h1></div><div class="card" style="padding: 3rem 2.5rem;"><p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8;">My Virtual Assistant journey started with something I didn’t expect...</p><a href="#register" class="btn btn-primary">Register Now</a></div></section></div>
+    <div id="view-story-edward" class="page-view"><section class="container" style="padding-top: 3rem; max-width: 850px;"><a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a><div class="article-hero-header"><span class="badge-pill">Batch 10 Success Story</span><h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Edward Franric D.’s Journey</h1></div><div class="card" style="padding: 2.5rem;"><div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">"Just finished my first-ever initial job interview with bruntwork..."</div><a href="#register" class="btn btn-primary">Register Now</a></div></section></div>
+    <div id="view-story-angelika" class="page-view"><section class="container" style="padding-top: 3rem; max-width: 850px;"><a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a><div class="article-hero-header"><span class="badge-pill">Batch 10 Success Story</span><h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Angelika V.’s Hired Story</h1></div><div class="card" style="padding: 2.5rem;"><div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">"After my previous client’s company closed, I saw coach’s live offering VA Class Batch 10..."</div><a href="#register" class="btn btn-primary">Register Now</a></div></section></div>
+    <div id="view-story-maria" class="page-view"><section class="container" style="padding-top: 3rem; max-width: 850px;"><a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a><div class="article-hero-header"><span class="badge-pill">Batch 12 Success Story</span><h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Maria Xhena E.’s Success Story</h1></div><div class="card" style="padding: 2.5rem;"><div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">"I’ve recently been hired through one of the agencies provided..."</div><a href="#register" class="btn btn-primary">Register Now</a></div></section></div>
+    <div id="view-story-jennifer" class="page-view"><section class="container" style="padding-top: 3rem; max-width: 850px;"><a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a><div class="article-hero-header"><span class="badge-pill">Batch 12 Success Story</span><h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Jennifer G.’s Success Story</h1></div><div class="card" style="padding: 2.5rem;"><div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">"Na-hired po ako as assistant direct client pa po ito hehe..."</div><a href="#register" class="btn btn-primary">Register Now</a></div></section></div>
+    <div id="view-story-jfranco" class="page-view"><section class="container" style="padding-top: 3rem; max-width: 850px;"><a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a><div class="article-hero-header"><span class="badge-pill">Batch 12 Success Story</span><h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">J Franco F.’s Success Story</h1></div><div class="card" style="padding: 2.5rem;"><div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">"I’ve learned so much from you, not just the technical skills, but also the confidence..."</div><a href="#register" class="btn btn-primary">Register Now</a></div></section></div>
+    <div id="view-story-diane" class="page-view"><section class="container" style="padding-top: 3rem; max-width: 850px;"><a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a><div class="article-hero-header"><span class="badge-pill">GVA Graduate Success Story</span><h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Diane’s Success Story</h1></div><div class="card" style="padding: 2.5rem;"><div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">"Now, I've finally landed my first client! Thank you so much, Coach Gerr..."</div><a href="#register" class="btn btn-primary">Register Now</a></div></section></div>
+    <div id="view-story-katie" class="page-view"><section class="container" style="padding-top: 3rem; max-width: 850px;"><a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a><div class="article-hero-header"><span class="badge-pill">GVA Graduate Success Story</span><h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Katie’s Success Story</h1></div><div class="card" style="padding: 2.5rem;"><div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">"Thanks to Coach Ger's guidance and support, I was able to handle my first client successfully."</div><a href="#register" class="btn btn-primary">Register Now</a></div></section></div>
+    <div id="view-story-danielle" class="page-view"><section class="container" style="padding-top: 3rem; max-width: 850px;"><a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a><div class="article-hero-header"><span class="badge-pill">Batch 12 Success Story</span><h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Danielle Monique S.’s Success Story</h1></div><div class="card" style="padding: 2.5rem;"><div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">"Nahire po ako as assistant ni client and sobrang gamit na gamit ko po yung tinuro niyo."</div><a href="#register" class="btn btn-primary">Register Now</a></div></section></div>
+    <div id="view-story-jennalyn" class="page-view"><section class="container" style="padding-top: 3rem; max-width: 850px;"><a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a><div class="article-hero-header"><span class="badge-pill">Batch 11 Success Story</span><h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Jennalyn C.’s Success Story</h1></div><div class="card" style="padding: 2.5rem;"><div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">"Hello. Just landed a client. Filipino business owner dito sa Japan..."</div><a href="#register" class="btn btn-primary">Register Now</a></div></section></div>
+    <div id="view-story-zerra" class="page-view"><section class="container" style="padding-top: 3rem; max-width: 850px;"><a href="#success-stories" class="btn btn-secondary" style="margin-bottom: 2rem;">← Back to Success Stories</a><div class="article-hero-header"><span class="badge-pill">Batch 11 Success Story</span><h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Zerra A.’s Success Story</h1></div><div class="card" style="padding: 2.5rem;"><div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">"Just landed to my first client po sa isang agency..."</div><a href="#register" class="btn btn-primary">Register Now</a></div></section></div>
 
     <!-- VIEW 6: ABOUT PAGE -->
     <div id="view-about" class="page-view">
@@ -1940,20 +1660,6 @@
             <a href="#register" class="btn btn-primary">Start Your GVA Journey</a>
           </div>
         </div>
-
-        <div class="grid-2" style="margin-bottom: 4rem;">
-          <div class="card">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">The GVA Mission</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1rem;">Gerr’s Virtual Academy was born out of a passion to make digital careers accessible to every aspiring professional, parent, and career shifter in the Philippines.</p>
-            <p style="color: var(--text-muted);">We believe that with the right tools, practical exercises, and supportive guidance, anyone can overcome the fear of starting anew and build a thriving virtual career.</p>
-          </div>
-          <div class="card" style="background: var(--pale-blue);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">GVA Philosophy</h3>
-            <p style="margin-bottom: 0.8rem;">✨ <strong>Supportive & Friendly:</strong> We guide every student with patience and warmth.</p>
-            <p style="margin-bottom: 0.8rem;">✨ <strong>Practical Focus:</strong> Theory is good, but real-world practice creates confidence.</p>
-            <p>✨ <strong>Growth Focused:</strong> We grow together, learn together, and celebrate wins together.</p>
-          </div>
-        </div>
       </section>
     </div>
 
@@ -1963,18 +1669,18 @@
         <div class="section-header">
           <span class="badge-pill">Take the First Step</span>
           <h2 id="register-header-title">Register for Training</h2>
-          <p>Fill out the official registration form below to reserve your slot and receive your student portal access.</p>
+          <p>Fill out your details below to lock in your spot and proceed instantly to secure GCash / GoTyme payment.</p>
         </div>
 
         <div class="registration-form-card">
-          <form action="https://formspree.io/f/mwlkzjzg" method="POST">
+          <form id="gva-registration-form" onsubmit="proceedToPayment(event)">
             <div class="form-group">
               <label for="reg-program">Select Program *</label>
               <select id="reg-program" name="Selected Program" required>
                 <option value="">-- Choose Course --</option>
                 <option id="reg-option-primary" value="Virtual Assistant Training (₱599)">Virtual Assistant Training (₱599)</option>
-                <option value="Social Media Management Bootcamp - ₱999">Social Media Management Bootcamp - ₱999</option>
-                <option value="Both Programs Bundle - ₱1,598">Both Programs Bundle (Special) - ₱1,598</option>
+                <option value="Social Media Management Bootcamp (₱999)">Social Media Management Bootcamp (₱999)</option>
+                <option value="Both Programs Bundle (₱1,598)">Both Programs Bundle (₱1,598)</option>
               </select>
             </div>
 
@@ -1998,13 +1704,100 @@
               <textarea id="reg-notes" name="Additional Notes" rows="3" placeholder="Tell us about your background or ask any questions..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Complete Registration</button>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Proceed to Secure Payment →</button>
           </form>
         </div>
       </section>
     </div>
 
-    <!-- VIEW 8: CONTACT & INQUIRIES PAGE -->
+    <!-- VIEW 8: SECURE PAYMENT REDIRECT PAGE (GCASH & GOTYME WITH 10-MIN COUNTDOWN) -->
+    <div id="view-payment" class="page-view">
+      <section class="container" style="padding-top: 3rem;">
+        <div class="payment-container">
+          
+          <div class="section-header" style="margin-bottom: 2rem;">
+            <span class="badge-pill">Secure Checkout</span>
+            <h2>Complete Your Payment</h2>
+            <p>Scan your preferred payment method below to complete your enrollment.</p>
+          </div>
+
+          <!-- 10-Minute Countdown Timer Banner -->
+          <div class="timer-banner">
+            <p style="font-weight: 600; color: #92400E; font-size: 0.95rem;">⏳ Slot Reservation Hold Timer</p>
+            <p style="font-size: 0.85rem; color: #78350F; margin-bottom: 0.3rem;">Please complete your transfer before this timer expires to hold your slot:</p>
+            <div id="payment-countdown" class="timer-display">10:00</div>
+          </div>
+
+          <!-- Order Summary Card -->
+          <div class="card" style="margin-bottom: 2rem; background: var(--pale-blue);">
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--navy);">📋 Order Summary</h3>
+            <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.5rem;">
+              <span id="summary-name" style="font-weight: 600; color: var(--text-main);">Enrollee: -</span>
+              <span id="summary-email" style="color: var(--text-muted);"></span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 1.05rem; font-weight: 700; color: var(--royal-blue); border-top: 1px solid var(--sky-blue); padding-top: 0.8rem; margin-top: 0.5rem;">
+              <span id="summary-program">Program: -</span>
+              <span id="summary-price">₱599</span>
+            </div>
+          </div>
+
+          <!-- Payment Method Tabs -->
+          <div class="payment-tabs">
+            <button class="pay-tab-btn active-pay-tab" onclick="switchPaymentMethod('gcash')">💙 GCash</button>
+            <button class="pay-tab-btn" onclick="switchPaymentMethod('gotyme')">💚 GoTyme Bank</button>
+          </div>
+
+          <!-- GCash Payment Box with Actual Uploaded QR -->
+          <div id="method-gcash" class="qr-card">
+            <div class="qr-image-wrapper">
+              <img src="./gcash-qr.png" alt="GCash QR Code - Gerrylene Mae Montayre" width="600" height="800">
+            </div>
+            <h3 style="margin-bottom: 0.4rem; color: var(--navy);">Gerr's Virtual Academy (GCash)</h3>
+            <p style="font-size: 1.1rem; font-weight: 700; color: var(--royal-blue); margin-bottom: 0.3rem;">0927 533 ****</p>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Account Name: GERRYLENE MAE MONTAYRE</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Open your GCash app, tap <strong>Scan QR</strong>, or send exact amount to the mobile number above.</p>
+          </div>
+
+          <!-- GoTyme Payment Box with Actual Uploaded QR -->
+          <div id="method-gotyme" class="qr-card" style="display: none;">
+            <div class="qr-image-wrapper">
+              <img src="./gotyme-qr.png" alt="GoTyme Bank QR Code - Gerrylene Mae Montayre" width="600" height="800">
+            </div>
+            <h3 style="margin-bottom: 0.4rem; color: var(--navy);">Gerr's Virtual Academy (GoTyme)</h3>
+            <p style="font-size: 1.1rem; font-weight: 700; color: #059669; margin-bottom: 0.3rem;">•••••••• 7358</p>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">Account Name: GERRYLENE MAE MONTAYRE</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Open your GoTyme app, tap <strong>Transfer / Pay QR</strong>, or transfer to the account above.</p>
+          </div>
+
+          <!-- Proof of Payment Confirmation Form -->
+          <div class="registration-form-card" style="margin-top: 2rem; max-width: none;">
+            <h3 style="margin-bottom: 1rem; color: var(--navy);">📤 Submit Proof of Payment</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">After transferring your payment, please enter your transaction / reference number and attach your receipt link below so admins can verify your enrollment.</p>
+            
+            <form action="https://formspree.io/f/mwlkzjzg" method="POST">
+              <input type="hidden" id="final-sub-name" name="Confirmed Enrollee Name" value="">
+              <input type="hidden" id="final-sub-email" name="Confirmed Enrollee Email" value="">
+              <input type="hidden" id="final-sub-program" name="Purchased Program" value="">
+
+              <div class="form-group">
+                <label for="pay-ref">Transaction / Reference Number *</label>
+                <input type="text" id="pay-ref" name="Transaction Reference Number" placeholder="e.g. 1029384756" required>
+              </div>
+
+              <div class="form-group">
+                <label for="pay-receipt">Receipt Screenshot / Google Drive Link *</label>
+                <input type="url" id="pay-receipt" name="Receipt Proof Link" placeholder="https://drive.google.com/file/d/..." required>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Complete Enrollment & Notify Coach Gerr</button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- VIEW 9: CONTACT & INQUIRIES PAGE -->
     <div id="view-contact" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
@@ -2014,7 +1807,6 @@
         </div>
 
         <div class="grid-2">
-          <!-- Direct Channels & Social Media Links -->
           <div class="card">
             <h3>Direct Channels & Social Media</h3>
             <br>
@@ -2030,16 +1822,8 @@
               <img src="./tiktok-icon.png" alt="TikTok" width="2000" height="2250" loading="lazy" style="width: 24px; height: 24px; object-fit: contain;">
               <span><strong>TikTok:</strong><br><a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer">@coach_gerr</a></span>
             </p>
-            <p style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
-              <img src="./instagram-icon.png" alt="Instagram" width="500" height="500" loading="lazy" style="width: 24px; height: 24px; object-fit: contain;">
-              <span><strong>Instagram:</strong><br><a href="https://www.instagram.com/coach_gerr/" target="_blank" rel="noopener noreferrer">@coach_gerr</a></span>
-            </p>
-            <br>
-            <p>⏰ <strong>Support Hours:</strong><br>
-            Monday – Friday | 9:00 AM – 6:00 PM PST</p>
           </div>
 
-          <!-- Inquiry Form Section -->
           <div class="registration-form-card" style="margin: 0; max-width: none;">
             <h3 style="margin-bottom: 1.5rem; color: var(--navy);">Send Us an Inquiry</h3>
             <form action="https://formspree.io/f/mwlkzjzg" method="POST">
@@ -2047,17 +1831,14 @@
                 <label for="inquiry-name">Full Name *</label>
                 <input type="text" id="inquiry-name" name="Full Name" placeholder="Enter your full name" required>
               </div>
-
               <div class="form-group">
                 <label for="inquiry-email">Email Address *</label>
                 <input type="email" id="inquiry-email" name="Email Address" placeholder="name@example.com" required>
               </div>
-
               <div class="form-group">
                 <label for="inquiry-message">Your Message / Inquiry *</label>
                 <textarea id="inquiry-message" name="Inquiry Message" rows="4" placeholder="How can we help you?" required></textarea>
               </div>
-
               <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
             </form>
           </div>
@@ -2065,26 +1846,14 @@
       </section>
     </div>
 
-    <!-- VIEW 9: HIDDEN STUDENT PORTAL -->
+    <!-- VIEW 10: HIDDEN STUDENT PORTAL -->
     <div id="view-portal" class="page-view">
       <section class="container" style="padding-top: 4rem; max-width: 950px;">
-        
-        <!-- Enhanced Login Gate with Clear Instructions -->
         <div id="portal-login-card" class="registration-form-card" style="border: 2px solid var(--pale-blue);">
           <div style="text-align: center; margin-bottom: 2rem;">
             <span class="badge-pill">🔒 Secure Student Area</span>
             <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: var(--navy);">GVA Student Portal</h2>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">Access your exclusive training replays, activity guides, resources, and submit your portfolio tasks.</p>
-          </div>
-
-          <!-- Instructions Box -->
-          <div style="background: var(--pale-blue); padding: 1.4rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
-            <strong style="display: block; margin-bottom: 0.5rem; font-size: 0.95rem;">💡 How to log in:</strong>
-            <ol style="padding-left: 1.2rem; color: var(--text-muted); line-height: 1.6;">
-              <li>Check your <strong>Welcome / Onboarding Email</strong> sent immediately after enrollment & payment verification.</li>
-              <li>Locate your unique Batch Access Code (e.g., <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">GVA-BATCH-SAMPLE</code> or <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">SMM-BATCH-SAMPLE</code>).</li>
-              <li>Enter your code below and click <strong>Enter Portal</strong> to access your specific cohort dashboard.</li>
-            </ol>
           </div>
           
           <div class="form-group">
@@ -2093,343 +1862,24 @@
           </div>
           
           <button onclick="verifyBatchCode()" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Enter Portal →</button>
-          
           <p id="login-error" style="color: #E11D48; font-size: 0.85rem; margin-bottom: 1rem; display: none; text-align: center; font-weight: 500;">⚠️ Invalid access code. Please check your welcome email or contact support.</p>
-
-          <div style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 1.2rem; margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
-            Lost your code or having trouble logging in? <a href="#contact" style="color: var(--royal-blue); font-weight: 600;">Contact Coach Gerr Support</a>
-          </div>
         </div>
 
-        <!-- VA Portal Dashboard -->
         <div id="portal-dashboard" style="display: none;">
           <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--pale-blue), var(--light-yellow)); border: none;">
             <span class="badge-pill" style="background: var(--white); color: var(--navy);">Welcome VA Student! 🎉</span>
             <h2 id="dash-title" style="margin-bottom: 0.5rem;"></h2>
             <p id="dash-subtitle"></p>
           </div>
-
-          <!-- Training Activities & Task Guides Section -->
-          <div class="card" style="margin-bottom: 2rem;">
-            <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Hands-on Practice</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📋 Training Activities & Task Guides</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Access your step-by-step activity instructions and templates below:</p>
-            
-            <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.1rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; font-size: 0.88rem; color: var(--navy);">
-              <p style="margin-bottom: 0.5rem;">⚠️ <strong>Important Reminder:</strong> Please make sure to <strong>make a copy</strong> of all Google Docs and Spreadsheets to your own Google Drive rather than requesting editor access.</p>
-              <p style="margin-bottom: 0;">⏳ Please also be patient while Coach Gerr and the team carefully review each activity—it will take some time to go through all submissions. Thank you!</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-              <a href="https://docs.google.com/document/d/1CuGt1XTDHkj9ugekN-lC8XDTbsbB2yAAfc6H7Np416k/edit?tab=t.olh4o7z9rgy#heading=h.uovl0c4rroid" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📥 Inbox Management Guide</a>
-              <a href="https://docs.google.com/spreadsheets/d/1lZPyHEYBN96Z7tMapYdqbm-QEE1dF1Qg3EW2HWeTZso/edit?gid=0#gid=0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">✈️ Travel Management Sheet</a>
-              <a href="https://docs.google.com/document/d/1gPUQh0dEEinDLNzA2_KM0eLa6xiHazYWBTEU2dsbS9c/edit?tab=t.0#heading=h.eq0jyjd1p1sh" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📞 Travel Preference Call Guide</a>
-              <a href="https://docs.google.com/document/d/1OpKJex61dK-Fd9z6ZkN9_1X54KD4fg_MA_kP1ZUWy-M/edit?tab=t.0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📊 Data Entry Activity</a>
-              <a href="https://docs.google.com/document/d/18FN2DJTkgas_k7y_mMrVF2Hzr2JmPc4xNoTxdneZ0EA/edit?tab=t.0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📅 Calendar Management Guide</a>
-              <a href="https://docs.google.com/document/d/1AxZwplsjApCQzW_v-zT0sbls3JcAjW9oRzrYnxOWccw/edit?tab=t.0#heading=h.bxpebesg9t5z" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📁 Google Drive Management</a>
-              <a href="https://docs.google.com/document/d/1X93RNzdBEVq0rOHrlb2w13hvfE015NhMWZNd7gf20JY/edit?tab=t.0#heading=h.e3u4xv698tno" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🤝 PM Mock Client Task</a>
-              <a href="https://docs.google.com/document/d/11LxbLjmk65bWokDvQZpxgppx3jK18dge97_ENjCjXNo/edit?tab=t.0#heading=h.55yqh3o5j6jf" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">✅ Project Management Asana</a>
-            </div>
-          </div>
-
-          <!-- Essential Resources Section -->
-          <div class="card" style="margin-bottom: 2rem;">
-            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Student Library</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📚 Essential Resources & Templates</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Download your official guides, sample portfolios, and job hunting tools:</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-              <a href="https://drive.google.com/file/d/1v9tOVAuAy_bRd4J1HrfpKp4Sp8zhYdcd/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📄 GVA Training PDF</a>
-              <a href="https://docs.google.com/document/d/1xvqqnYN9betGxlmhfNTFF3XkX8NclSZPPypKIadVhP4/edit?tab=t.0#heading=h.ba818ji0wqs6" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📝 2026 ATS Friendly Resume</a>
-              <a href="https://drive.google.com/file/d/1NU5E0cJUf0fVK09tBmS7Uo97A7Q6jFuV/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">💼 Sample Portfolio</a>
-              <a href="https://docs.google.com/document/d/1cDhlUugXY5KLtsqetD47KtqbUy5jSoSZF_2SkLuH-bk/edit?tab=t.ga1krvh78px9#heading=h.vsb1zp5xsi22" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🚀 Application Process Guide</a>
-              <a href="https://docs.google.com/document/d/1vkTHCcyO_-OaJj2YHyGyaz3B-D3o8hkrRVc8XQ-PM_4/edit?tab=t.0#heading=h.nf0gyg7znxal" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🤖 ChatGPT Tips & Prompts</a>
-              <a href="https://docs.google.com/spreadsheets/d/1van5IIjqiur6BOL_Z4iaQHduyE6UWRBF98SFmhypeRs/edit?gid=0#gid=0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🌐 Where to Apply Directory</a>
-              <a href="https://docs.google.com/document/d/1wczofM0KQFkP6GnhKyd3EtPEfJ4kQp9G0Ajb11nCjO0/edit?tab=t.0#heading=h.2gmowrlsqpke" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📓 Notion Productivity Guide</a>
-            </div>
-          </div>
-
-          <!-- EMBEDDED GOOGLE CALENDAR 1-ON-1 BOOKING -->
-          <div class="card" style="margin-bottom: 2rem;">
-            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Coaching & Consultations</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📅 Book a 1-on-1 Session with Coach Gerr</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Select an available time slot below to schedule your 1-on-1 coaching or portfolio review session:</p>
-            <div style="position: relative; width: 100%; height: 600px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--pale-blue);">
-              <iframe src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2lcB-al3RVDNeRESRwzaMvo95nIAsVdAtF88JZhdi-RtgJnnutPoHqx5KD6cf1IE4q9YhYItJA?gv=true" style="border: 0; width: 100%; height: 100%;" frameborder="0" scrolling="yes"></iframe>
-            </div>
-          </div>
-
-          <!-- DIRECT STUDENT SUBMISSIONS HUB -->
-          <div class="registration-form-card" style="margin-bottom: 2.5rem; max-width: none;">
-            <span class="badge-pill" style="background: var(--pale-blue); color: var(--navy);">Direct Submission Hub</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit All Your Training Outputs & Portfolio</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Provide your Discord handle and paste your Google Drive folder link or individual task links below to submit all your outputs in one go.</p>
-            
-            <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.2rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
-              <p style="margin-bottom: 0.6rem;">⚠️ <strong>Link Access Reminder:</strong> Please make sure your link is set to <strong>"Anyone with the link can view"</strong> so we can check your work without permission roadblocks.</p>
-              <p style="margin-bottom: 0;">⏳ <strong>Please Be Patient:</strong> Coach Gerr and the team review each activity carefully. It will take some time to go through all submissions. Thank you!</p>
-            </div>
-
-            <form action="https://formspree.io/f/xnpqkqqd" method="POST">
-              <input type="hidden" id="submission-batch-field" name="Batch Code" value="">
-
-              <div class="grid-2" style="gap: 1rem; margin-bottom: 0;">
-                <div class="form-group">
-                  <label for="sub-name">Your Full Name *</label>
-                  <input type="text" id="sub-name" name="Student Name" placeholder="Enter your full name" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="sub-discord">Discord Handle / Username *</label>
-                  <input type="text" id="sub-discord" name="Discord Handle" placeholder="e.g. @dianacorazon" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="sub-email">Your Email Address *</label>
-                <input type="email" id="sub-email" name="Student Email" placeholder="name@example.com" required>
-              </div>
-
-              <div class="form-group">
-                <label for="sub-links">Your Activity Links / Portfolio URL (Google Drive folder or links to completed tasks) *</label>
-                <textarea id="sub-links" name="Activity and Portfolio Links" rows="4" placeholder="Paste your Google Drive folder link or individual activity links here..." required></textarea>
-              </div>
-
-              <div class="form-group">
-                <label for="sub-notes">Additional Notes or Comments (Optional)</label>
-                <textarea id="sub-notes" name="Student Notes" rows="2" placeholder="Any details you'd like to share about your submissions..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%;">Submit All Outputs to Coach Gerr</button>
-            </form>
-          </div>
-
-          <!-- Certificate Request Card -->
-          <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
-            <h3>🎓 Certificate Request</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final portfolio requirements below to claim your official GVA certificate:</p>
-            <div style="position: relative; width: 100%; height: 1200px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white); margin-bottom: 1rem;">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1B7i6AVvuzKzVaaer2zQv8JmM_Y9kZSoUgZ7DqxanFjJd_A/viewform?embedded=true" style="border: 0; width: 100%; height: 100%;" frameborder="0" scrolling="yes">Loading certificate form...</iframe>
-            </div>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">Having trouble viewing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1B7i6AVvuzKzVaaer2zQv8JmM_Y9kZSoUgZ7DqxanFjJd_A/viewform" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 600;">Open certificate form in a new tab →</a></p>
-          </div>
         </div>
 
-        <!-- SMM Portal Dashboard -->
         <div id="smm-portal-dashboard" style="display: none;">
           <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--soft-pink), var(--pale-blue)); border: none;">
             <span class="badge-pill" style="background: var(--white); color: var(--navy);">Welcome SMM Student! 📱✨</span>
             <h2 id="smm-dash-title" style="margin-bottom: 0.5rem;"></h2>
             <p id="smm-dash-subtitle"></p>
           </div>
-
-          <!-- SMM Activities & Video Guides Section -->
-          <div class="card" style="margin-bottom: 2rem;">
-            <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Hands-on Practice</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📋 SMM Activities & Video Walkthroughs</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Access your step-by-step SMM output guides and video resources below:</p>
-            
-            <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.1rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; font-size: 0.88rem; color: var(--navy);">
-              <p style="margin-bottom: 0.5rem;">⚠️ <strong>Important Reminder:</strong> Please make sure to <strong>make a copy</strong> of all Google Docs and Spreadsheets to your own Google Drive rather than requesting editor access.</p>
-              <p style="margin-bottom: 0;">⏳ Please also be patient while Coach Gerr and the team carefully review each SMM activity—it will take some time to go through all submissions. Thank you!</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-              <a href="https://docs.google.com/document/d/10OUokak9fAFjvv7h6p1VuwyIfOeB0cgOrm6-sxXabm8/edit?tab=t.0#heading=h.jyphawxc9xmq" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📑 SMM Output Guide</a>
-              <a href="https://drive.google.com/file/d/1QqjK-Sc6fteSwdadhFhwSXd2Jxp7CaRG/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🎥 SMM Output Video Guide</a>
-            </div>
-          </div>
-
-          <!-- SMM Essential Resources & Materials Section -->
-          <div class="card" style="margin-bottom: 2rem;">
-            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">SMM Student Library</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📚 SMM Course Guides, Prompts & Templates</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Download your official SMM course materials, AI prompts, templates, and client profile samples:</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-              <a href="https://docs.google.com/document/d/1-1ZFaizxIWTpWHtUeznZV-6gOkHUaRhqGMZZl7ENC-k/edit?tab=t.zbomw8m4k8zh" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📘 SMM Course Guide</a>
-              <a href="https://docs.google.com/document/d/1k8FjylVEKf9sIY5xzRhwobRs0kRSILN3bZSaMTzzteE/edit?tab=t.0#heading=h.hl65v4elbdto" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🤖 AI Prompt for Content Creation</a>
-              <a href="https://docs.google.com/spreadsheets/d/1HkqRGhg4W_PY3zZbxRB-jNCv-TveBQbebePE3hwzTMs/edit?gid=807567529#gid=807567529" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📊 Social Media Template</a>
-            </div>
-          </div>
-
-          <!-- CLIENT PROFILES LIBRARY -->
-          <div class="card" style="margin-bottom: 2rem; background: var(--pale-blue); border: 1px solid var(--sky-blue);">
-            <span class="badge-pill" style="background: var(--white); color: var(--navy);">SMM Practice Hub</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">🏢 Sample Client Profiles Library</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">Explore our official library of sample client profile infographics. Use these prepared graphics to practice your social media content pillars, Canva templates, and portfolio case studies!</p>
-
-            <div class="grid-2">
-              
-              <!-- Profile 1: WanderMore Travel & Tours -->
-              <div class="card" style="background: var(--white); padding: 1.5rem;">
-                <div style="border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                  <img src="./wandermore.png" alt="WanderMore Travel & Tours Client Profile" width="600" height="400" loading="lazy" style="width: 100%; height: auto; display: block;">
-                </div>
-                <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">WanderMore Travel & Tours</h3>
-                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.6rem;">Industry: Travel Agency</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Target Audience: Young Professionals and Families | Focus: Customized itineraries, local tours, and international packages.</p>
-              </div>
-
-              <!-- Profile 2: Urban Threads Boutique -->
-              <div class="card" style="background: var(--white); padding: 1.5rem;">
-                <div style="border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                  <img src="./urban-threads.png" alt="Urban Threads Boutique Client Profile" width="600" height="400" loading="lazy" style="width: 100%; height: auto; display: block;">
-                </div>
-                <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Urban Threads Boutique</h3>
-                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.6rem;">Industry: Clothing Brand / Retail</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Target Audience: Women 18–35 years old | Focus: Casual wear, dresses, accessories, and nationwide shipping.</p>
-              </div>
-
-              <!-- Profile 3: FitNation Gym & Fitness -->
-              <div class="card" style="background: var(--white); padding: 1.5rem;">
-                <div style="border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                  <img src="./fitnation.png" alt="FitNation Gym & Fitness Client Profile" width="600" height="400" loading="lazy" style="width: 100%; height: auto; display: block;">
-                </div>
-                <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">FitNation Gym & Fitness</h3>
-                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.6rem;">Industry: Health & Wellness</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Target Audience: 18–40-year-old fitness enthusiasts | Focus: 24/7 gym access, personal training, and group classes.</p>
-              </div>
-
-              <!-- Profile 4: GreenLeaf Accounting Solutions -->
-              <div class="card" style="background: var(--white); padding: 1.5rem;">
-                <div style="border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                  <img src="./greenleaf.png" alt="GreenLeaf Accounting Solutions Client Profile" width="600" height="400" loading="lazy" style="width: 100%; height: auto; display: block;">
-                </div>
-                <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">GreenLeaf Accounting Solutions</h3>
-                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.6rem;">Industry: Accounting Firm</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Target Audience: SMEs, Freelancers, Startups | Focus: Bookkeeping, payroll, tax filing, and business registration.</p>
-              </div>
-
-              <!-- Profile 5: Happy Paws Veterinary Clinic -->
-              <div class="card" style="background: var(--white); padding: 1.5rem;">
-                <div style="border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                  <img src="./happy-paws.png" alt="Happy Paws Veterinary Clinic Client Profile" width="600" height="400" loading="lazy" style="width: 100%; height: auto; display: block;">
-                </div>
-                <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Happy Paws Veterinary Clinic</h3>
-                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.6rem;">Industry: Animal Care & Veterinary Services</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Target Audience: Pet Owners | Focus: Vaccination, grooming, surgery, consultation, and emergency pet care.</p>
-              </div>
-
-              <!-- Profile 6: Casa Amihan Staycation -->
-              <div class="card" style="background: var(--white); padding: 1.5rem;">
-                <div style="border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                  <img src="./casa-amihan.png" alt="Casa Amihan Staycation Client Profile" width="1402" height="1122" loading="lazy" style="width: 100%; height: auto; display: block;">
-                </div>
-                <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Casa Amihan Staycation</h3>
-                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.6rem;">Industry: Airbnb Vacation Rental (Moalboal, Cebu)</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Target Audience: Couples, Families, Digital Nomads | Focus: Daily/weekly stays, fast Wi-Fi, and beach proximity.</p>
-              </div>
-
-              <!-- Profile 7: Skyline Realty Group -->
-              <div class="card" style="background: var(--white); padding: 1.5rem;">
-                <div style="border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                  <img src="./skyline-realty.png" alt="Skyline Realty Group Client Profile" width="600" height="400" loading="lazy" style="width: 100%; height: auto; display: block;">
-                </div>
-                <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Skyline Realty Group</h3>
-                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.6rem;">Industry: Real Estate Brokerage</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Target Audience: First-time Homebuyers and OFWs | Focus: House & lot, condominiums, and investment properties.</p>
-              </div>
-
-              <!-- Profile 8: Luxe Glow Beauty Studio -->
-              <div class="card" style="background: var(--white); padding: 1.5rem;">
-                <div style="border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                  <img src="./luxe-glow.png" alt="Luxe Glow Beauty Studio Client Profile" width="600" height="400" loading="lazy" style="width: 100%; height: auto; display: block;">
-                </div>
-                <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Luxe Glow Beauty Studio</h3>
-                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.6rem;">Industry: Beauty Salon & Aesthetics</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Target Audience: Women 20–45 years old | Focus: Eyelash extensions, nails, hair color, and facial treatments.</p>
-              </div>
-
-              <!-- Profile 9: SmileCraft Dental Studio -->
-              <div class="card" style="background: var(--white); padding: 1.5rem;">
-                <div style="border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                  <img src="./smilecraft.png" alt="SmileCraft Dental Studio Client Profile" width="600" height="400" loading="lazy" style="width: 100%; height: auto; display: block;">
-                </div>
-                <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">SmileCraft Dental Studio</h3>
-                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.6rem;">Industry: Healthcare & Dental Care (Cebu City)</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Target Audience: Families, Professionals, Students | Focus: Teeth cleaning, braces, whitening, and veneers.</p>
-              </div>
-
-              <!-- Profile 10: Brew Haven Café -->
-              <div class="card" style="background: var(--white); padding: 1.5rem;">
-                <div style="border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-                  <img src="./brew-haven.png" alt="Brew Haven Café Client Profile" width="1672" height="941" loading="lazy" style="width: 100%; height: auto; display: block;">
-                </div>
-                <h3 style="font-size: 1.2rem; margin-bottom: 0.4rem;">Brew Haven Café</h3>
-                <p style="font-size: 0.85rem; color: var(--cyan-highlight); font-weight: 600; margin-bottom: 0.6rem;">Industry: Food & Beverage / Coffee Shop (Baguio City)</p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Target Audience: Students, Remote Workers, Coffee Lovers | Focus: Specialty coffee, brunch, pastries, and pet-friendly ambiance.</p>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- EMBEDDED GOOGLE CALENDAR 1-ON-1 BOOKING FOR SMM -->
-          <div class="card" style="margin-bottom: 2rem;">
-            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Coaching & Consultations</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📅 Book a 1-on-1 Session with Coach Gerr</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Select an available time slot below to schedule your 1-on-1 coaching or SMM portfolio review session:</p>
-            <div style="position: relative; width: 100%; height: 600px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--pale-blue);">
-              <iframe src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2lcB-al3RVDNeRESRwzaMvo95nIAsVdAtF88JZhdi-RtgJnnutPoHqx5KD6cf1IE4q9YhYItJA?gv=true" style="border: 0; width: 100%; height: 100%;" frameborder="0" scrolling="yes"></iframe>
-            </div>
-          </div>
-
-          <!-- SMM STUDENT SUBMISSIONS HUB -->
-          <div class="registration-form-card" style="margin-bottom: 2.5rem; max-width: none;">
-            <span class="badge-pill" style="background: var(--pale-blue); color: var(--navy);">SMM Submission Hub</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit All SMM Outputs & Final Portfolio</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Provide your Discord handle and paste your SMM portfolio or Google Drive folder links below to submit all your bootcamp outputs in one go.</p>
-            
-            <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.2rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
-              <p style="margin-bottom: 0.6rem;">⚠️ <strong>Link Access Reminder:</strong> Please make sure your link is set to <strong>"Anyone with the link can view"</strong> so we can check your work without permission roadblocks.</p>
-              <p style="margin-bottom: 0;">⏳ <strong>Please Be Patient:</strong> Coach Gerr and the team review each activity carefully. It will take some time to go through all submissions. Thank you!</p>
-            </div>
-
-            <form action="https://formspree.io/f/xnpqkqqd" method="POST">
-              <input type="hidden" id="smm-submission-batch-field" name="Batch Code" value="">
-
-              <div class="grid-2" style="gap: 1rem; margin-bottom: 0;">
-                <div class="form-group">
-                  <label for="smm-sub-name">Your Full Name *</label>
-                  <input type="text" id="smm-sub-name" name="Student Name" placeholder="Enter your full name" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="smm-sub-discord">Discord Handle / Username *</label>
-                  <input type="text" id="smm-sub-discord" name="Discord Handle" placeholder="e.g. @dianacorazon" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="smm-sub-email">Your Email Address *</label>
-                <input type="email" id="smm-sub-email" name="Student Email" placeholder="name@example.com" required>
-              </div>
-
-              <div class="form-group">
-                <label for="smm-sub-links">SMM Activity Links & Portfolio URL (Canva, Google Drive, or portfolio link) *</label>
-                <textarea id="smm-sub-links" name="SMM Activity and Portfolio Links" rows="4" placeholder="Paste your Google Drive folder, Canva links, or portfolio URL here..." required></textarea>
-              </div>
-
-              <div class="form-group">
-                <label for="smm-sub-notes">Additional Notes or Comments (Optional)</label>
-                <textarea id="smm-sub-notes" name="Student Notes" rows="2" placeholder="Any details you'd like to share about your SMM outputs..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%;">Submit All SMM Outputs to Coach Gerr</button>
-            </form>
-          </div>
-
-          <!-- SMM Certificate Request Card -->
-          <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
-            <h3>🎓 SMM Certificate Request</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final SMM portfolio requirements below to claim your official certificate:</p>
-            <div style="position: relative; width: 100%; height: 1200px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white); margin-bottom: 1rem;">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeAW4jKxlq_MrXxvYPbzYG_dOEzA7J1jbVmAlLwA5uk2t9ndw/viewform?embedded=true" style="border: 0; width: 100%; height: 100%;" frameborder="0" scrolling="yes">Loading certificate form...</iframe>
-            </div>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">Having trouble viewing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAW4jKxlq_MrXxvYPbzYG_dOEzA7J1jbVmAlLwA5uk2t9ndw/viewform" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 600;">Open SMM certificate form in a new tab →</a></p>
-          </div>
         </div>
-
       </section>
     </div>
 
@@ -2441,10 +1891,9 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="brand-logo" style="margin-bottom: 1rem;">
-            <img src="./gva-logo-blue-bg.jpg" alt="Gerr's Virtual Academy Logo" width="733" height="206" loading="lazy" style="width: 100%; max-width: 300px; height: auto; border-radius: var(--radius-sm);">
+            <img src="./gva-logo-blue-bg.png" alt="Gerr's Virtual Academy Logo" width="733" height="206" loading="lazy" style="width: 100%; max-width: 300px; height: auto; border-radius: var(--radius-sm);">
           </div>
         </div>
-
         <div class="footer-col">
           <div class="footer-heading">Navigation</div>
           <ul class="footer-links">
@@ -2454,7 +1903,6 @@
             <li><a href="#programs">Programs</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <div class="footer-heading">Academy</div>
           <ul class="footer-links">
@@ -2463,19 +1911,14 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <div class="footer-heading">Social Media</div>
           <ul class="footer-links">
-            <li><a href="https://www.facebook.com/GerrsVirtualAcademy" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;"><img src="./facebook-icon.png" alt="Facebook" width="2084" height="2084" loading="lazy" style="width: 18px; height: 18px; object-fit: contain;"> Facebook Page</a></li>
-            <li><a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;"><img src="./tiktok-icon.png" alt="TikTok" width="2000" height="2250" loading="lazy" style="width: 18px; height: 18px; object-fit: contain;"> TikTok (@coach_gerr)</a></li>
-            <li><a href="https://www.instagram.com/coach_gerr/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;"><img src="./instagram-icon.png" alt="Instagram" width="500" height="500" loading="lazy" style="width: 18px; height: 18px; object-fit: contain;"> Instagram (@coach_gerr)</a></li>
+            <li><a href="https://www.facebook.com/GerrsVirtualAcademy" target="_blank" rel="noopener noreferrer">Facebook Page</a></li>
+            <li><a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer">TikTok (@coach_gerr)</a></li>
           </ul>
-          <br>
-          <p style="display: flex; align-items: center; gap: 8px;"><img src="./gmail-icon.png" alt="Gmail" width="686" height="512" loading="lazy" style="width: 18px; height: 18px; object-fit: contain;"> Email: <a href="mailto:info@gerrsvirtualacademy.com" style="color: var(--sky-blue);">info@gerrsvirtualacademy.com</a></p>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>&copy; 2026 Gerr's Virtual Academy (GVA). All rights reserved. | From Zero to VA Hero.</p>
       </div>
@@ -2489,7 +1932,9 @@
       nav.classList.toggle('mobile-active');
     }
 
-    // Dynamic Title & View Switcher with Hash Sync
+    let paymentTimerInterval = null;
+
+    // View Switcher with Hash Sync
     function switchView(viewId, updateHash = true) {
       const targetId = document.getElementById('view-' + viewId) ? viewId : 'home';
 
@@ -2515,26 +1960,22 @@
         targetNavLink.classList.add('active');
       }
 
+      // Start 10-Minute Countdown Timer if entering payment view
+      if (targetId === 'payment') {
+        startPaymentCountdown(600); // 10 minutes = 600 seconds
+      } else {
+        clearInterval(paymentTimerInterval);
+      }
+
       const titles = {
         'home': "Gerr's Virtual Academy | From Zero to VA Hero",
         'va-training': "Virtual Assistant Training Philippines | Gerr's Virtual Academy",
         'smm-bootcamp': "Social Media Management Bootcamp | Gerr's Virtual Academy",
         'programs': "Training Programs Directory | Gerr's Virtual Academy",
         'success-stories': "Graduate Success Stories & Testimonials | GVA",
-        'story-judy': "Judy Ann F.’s Success Story | GVA",
-        'story-kierza': "Kierza Garcia’s Success Story | GVA",
-        'story-edward': "Edward Franric D.’s Success Story | GVA",
-        'story-angelika': "Angelika V.’s Success Story | GVA",
-        'story-maria': "Maria Xhena E.’s Success Story | GVA",
-        'story-jennifer': "Jennifer G.’s Success Story | GVA",
-        'story-jfranco': "J Franco F.’s Success Story | GVA",
-        'story-diane': "Diane’s Success Story | GVA",
-        'story-katie': "Katie’s Success Story | GVA",
-        'story-danielle': "Danielle Monique S.’s Success Story | GVA",
-        'story-jennalyn': "Jennalyn C.’s Success Story | GVA",
-        'story-zerra': "Zerra A.’s Success Story | GVA",
         'about': "About Coach Gerr & GVA Mission",
         'register': "Register for Training | Gerr's Virtual Academy",
+        'payment': "Secure Checkout | Gerr's Virtual Academy",
         'contact': "Contact & Inquiries | Gerr's Virtual Academy",
         'portal': "Secure Student Portal | Gerr's Virtual Academy"
       };
@@ -2544,60 +1985,88 @@
       }
     }
 
-    // Time-based Countdown & Automatic Batch Transition
+    // Intercept Registration & Redirect to Payment View with Order Details
+    function proceedToPayment(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('reg-name').value;
+      const email = document.getElementById('reg-email').value;
+      const program = document.getElementById('reg-program').value;
+
+      let price = "₱599";
+      if (program.includes('999')) price = "₱999";
+      if (program.includes('1,598')) price = "₱1,598";
+
+      document.getElementById('summary-name').innerText = `Enrollee: ${name}`;
+      document.getElementById('summary-email').innerText = email;
+      document.getElementById('summary-program').innerText = program;
+      document.getElementById('summary-price').innerText = price;
+
+      document.getElementById('final-sub-name').value = name;
+      document.getElementById('final-sub-email').value = email;
+      document.getElementById('final-sub-program').value = `${program} (${price})`;
+
+      switchView('payment');
+    }
+
+    // Toggle Payment Methods (GCash vs GoTyme)
+    function switchPaymentMethod(method) {
+      const gcashBtn = document.querySelectorAll('.pay-tab-btn')[0];
+      const gotymeBtn = document.querySelectorAll('.pay-tab-btn')[1];
+      const gcashBox = document.getElementById('method-gcash');
+      const gotymeBox = document.getElementById('method-gotyme');
+
+      if (method === 'gcash') {
+        gcashBtn.classList.add('active-pay-tab');
+        gotymeBtn.classList.remove('active-pay-tab');
+        gcashBox.style.display = 'block';
+        gotymeBox.style.display = 'none';
+      } else {
+        gotymeBtn.classList.add('active-pay-tab');
+        gcashBtn.classList.remove('active-pay-tab');
+        gotymeBox.style.display = 'block';
+        gcashBox.style.display = 'none';
+      }
+    }
+
+    // 10-Minute Countdown Timer Implementation
+    function startPaymentCountdown(durationInSeconds) {
+      clearInterval(paymentTimerInterval);
+      let timer = durationInSeconds;
+      const display = document.getElementById('payment-countdown');
+
+      paymentTimerInterval = setInterval(function () {
+        let minutes = parseInt(timer / 60, 10);
+        let seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          clearInterval(paymentTimerInterval);
+          display.textContent = "EXPIRED";
+          alert("Your slot reservation hold timer has expired. Please refresh if you wish to restart your payment.");
+        }
+      }, 1000);
+    }
+
+    // Time-based Countdown for Batch Start
     function updateCountdown() {
       const batch18EndTime = new Date('2026-09-27T21:00:00+08:00').getTime();
       const now = new Date().getTime();
 
-      let targetDate, badgeText, countdownTitleText, dateStringText, regHeaderTitle, regOptionText;
-
-      if (now < batch18EndTime) {
-        targetDate = new Date('2026-09-25T18:00:00+08:00').getTime();
-        badgeText = "Now Accepting Enrollees — Batch 18";
-        countdownTitleText = "🔥 Batch 18 Live Training Starts In:";
-        dateStringText = "September 25-27, 2026 • 6:00 PM – 9:00 PM PHT";
-        regHeaderTitle = "Register for Batch 18 (Sept 25-27, 2026)";
-        regOptionText = "Virtual Assistant Training - Batch 18 (₱599)";
-      } else {
-        targetDate = new Date('2026-10-23T18:00:00+08:00').getTime();
-        badgeText = "Now Accepting Enrollees — Batch 19";
-        countdownTitleText = "🔥 Batch 19 Live Training Starts In:";
-        dateStringText = "October 23-25, 2026 • 6:00 PM – 9:00 PM PHT";
-        regHeaderTitle = "Register for Batch 19 (Oct 23-25, 2026)";
-        regOptionText = "Virtual Assistant Training - Batch 19 (₱599)";
-      }
-
-      const badgeEl = document.getElementById('hero-badge');
-      const titleEl = document.getElementById('countdown-title');
-      const dateTextEl = document.getElementById('countdown-date-text');
-      const regHeaderEl = document.getElementById('register-header-title');
-      const regOptionEl = document.getElementById('reg-option-primary');
-
-      if (badgeEl) badgeEl.innerText = badgeText;
-      if (titleEl) titleEl.innerText = countdownTitleText;
-      if (dateTextEl) dateTextEl.innerText = dateStringText;
-      if (regHeaderEl) regHeaderEl.innerText = regHeaderTitle;
-      if (regOptionEl) {
-        regOptionEl.innerText = regOptionText;
-        regOptionEl.value = regOptionText;
-      }
-
+      let targetDate = now < batch18EndTime ? new Date('2026-09-25T18:00:00+08:00').getTime() : new Date('2026-10-23T18:00:00+08:00').getTime();
       const distance = targetDate - now;
+
       const daysEl = document.getElementById('days');
       const hoursEl = document.getElementById('hours');
       const minutesEl = document.getElementById('minutes');
       const secondsEl = document.getElementById('seconds');
-      const timerContainer = document.getElementById('countdown-timer');
 
-      if (!daysEl || !timerContainer) return;
-
-      if (distance < 0 && now >= batch18EndTime) {
-        timerContainer.parentElement.innerHTML = "<div style='padding: 1.5rem;'><h3 style='color: var(--navy); font-family: Playfair Display, serif; margin-bottom: 0.5rem;'>🎉 Batch 19 Live Training is Now Live!</h3><p style='color: var(--text-muted); font-size: 0.95rem;'>October 23-25, 2026 • 6:00 PM – 9:00 PM PHT</p></div>";
-        return;
-      } else if (distance < 0) {
-        timerContainer.parentElement.innerHTML = "<div style='padding: 1.5rem;'><h3 style='color: var(--navy); font-family: Playfair Display, serif; margin-bottom: 0.5rem;'>🎉 Batch 18 Live Training is Now Live!</h3><p style='color: var(--text-muted); font-size: 0.95rem;'>September 25-27, 2026 • 6:00 PM – 9:00 PM PHT</p></div>";
-        return;
-      }
+      if (!daysEl) return;
+      if (distance < 0) return;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -2610,111 +2079,11 @@
       secondsEl.innerText = String(seconds).padStart(2, '0');
     }
 
-    // Fetch Live Discord Member Counts
     async function fetchDiscordStats() {
-      const inviteCode = 'YOUR_INVITE_CODE'; 
       const totalCountEl = document.getElementById('discord-total-count');
       const onlineCountEl = document.getElementById('discord-online-count');
-      const serverId = '1371385612577542164';
-
-      if (totalCountEl && inviteCode !== 'YOUR_INVITE_CODE') {
-        try {
-          const res = await fetch(`https://discord.com/api/v9/invites/${inviteCode}?with_counts=true`);
-          if (res.ok) {
-            const data = await res.json();
-            totalCountEl.innerText = (data.approximate_member_count || 0).toLocaleString();
-          } else {
-            totalCountEl.innerText = '3,411';
-          }
-        } catch (err) {
-          totalCountEl.innerText = '3,411';
-        }
-      } else if (totalCountEl) {
-        totalCountEl.innerText = '3,411';
-      }
-
-      if (onlineCountEl) {
-        try {
-          const response = await fetch(`https://discord.com/api/guilds/${serverId}/widget.json`);
-          if (response.ok) {
-            const data = await response.json();
-            const onlineCount = data.presence_count || 0;
-            onlineCountEl.innerText = onlineCount.toLocaleString() + '+';
-          } else {
-            onlineCountEl.innerText = 'Active';
-          }
-        } catch (error) {
-          onlineCountEl.innerText = 'Online';
-        }
-      }
-    }
-
-    // Batch Code Verification Logic
-    function verifyBatchCode() {
-      const inputCode = document.getElementById('batch-code').value.trim().toUpperCase();
-      const errorMsg = document.getElementById('login-error');
-      
-      const officialVaBatchCodes = {
-        "GVA-BATCH18-HARBOR": "18", "GVA-BATCH19-CASCADE": "19", "GVA-BATCH20-SOLSTICE": "20",
-        "GVA-BATCH21-COMPASS": "21", "GVA-BATCH22-ECHO": "22", "GVA-BATCH23-MEADOW": "23",
-        "GVA-BATCH24-HORIZON": "24", "GVA-BATCH25-NEPTUNE": "25", "GVA-BATCH26-MOSAIC": "26",
-        "GVA-BATCH27-FALCON": "27", "GVA-BATCH28-TIDES": "28", "GVA-BATCH29-VALIANT": "29",
-        "GVA-BATCH30-QUARTZ": "30", "GVA-BATCH31-NIMBUS": "31", "GVA-BATCH32-BEACON": "32",
-        "GVA-BATCH33-TUNDRA": "33", "GVA-BATCH34-ZEPHYR": "34", "GVA-BATCH35-VELOCITY": "35",
-        "GVA-BATCH36-SAGA": "36", "GVA-BATCH37-GLACIER": "37", "GVA-BATCH38-PULSE": "38",
-        "GVA-BATCH39-KINETIC": "39", "GVA-BATCH40-APEX": "40", "GVA-BATCH41-LUMEN": "41",
-        "GVA-BATCH42-ORBIT": "42", "GVA-BATCH43-TITAN": "43", "GVA-BATCH44-STRATA": "44",
-        "GVA-BATCH45-NOVA": "45", "GVA-BATCH46-STELLAR": "46", "GVA-BATCH47-INFINITY": "47",
-        "GVA-BATCH48-SYNERGY": "48", "GVA-BATCH49-QUANTUM": "49", "GVA-BATCH50-VALOR": "50"
-      };
-
-      const officialSmmBatchCodes = {
-        "SMM-BATCH3-VERTEX": "3", "SMM-BATCH4-PULSE": "4", "SMM-BATCH5-NEXUS": "5",
-        "SMM-BATCH6-STRIDE": "6", "SMM-BATCH7-BLAZE": "7", "SMM-BATCH8-VISTA": "8",
-        "SMM-BATCH9-ORBIT": "9", "SMM-BATCH10-ZENITH": "10", "SMM-BATCH11-KINETIC": "11",
-        "SMM-BATCH12-FLARE": "12", "SMM-BATCH13-SHIELD": "13", "SMM-BATCH14-ECHO": "14",
-        "SMM-BATCH15-PIONEER": "15", "SMM-BATCH16-SUMMIT": "16", "SMM-BATCH17-HARBOR": "17",
-        "SMM-BATCH18-CASCADE": "18", "SMM-BATCH19-SOLSTICE": "19", "SMM-BATCH20-VALOR": "20"
-      };
-
-      document.getElementById('portal-login-card').style.display = 'none';
-
-      if (officialVaBatchCodes[inputCode]) {
-        let batchNum = officialVaBatchCodes[inputCode];
-        errorMsg.style.display = 'none';
-        
-        document.getElementById('dash-title').innerText = `Batch ${batchNum} VA Student Hub`;
-        document.getElementById('dash-subtitle').innerText = `Welcome to your live VA training dashboard for Batch ${batchNum}! Access your task guides, resources, and submit your outputs below.`;
-        document.getElementById('submission-batch-field').value = inputCode;
-
-        document.getElementById('portal-dashboard').style.display = 'block';
-        document.getElementById('smm-portal-dashboard').style.display = 'none';
-
-      } else if (officialSmmBatchCodes[inputCode] || inputCode.startsWith('SMM-')) {
-        let batchNum = officialSmmBatchCodes[inputCode] || inputCode.replace(/[^0-9]/g, '');
-        errorMsg.style.display = 'none';
-
-        document.getElementById('smm-dash-title').innerText = `Batch ${batchNum} SMM Bootcamp Hub`;
-        document.getElementById('smm-dash-subtitle').innerText = `Welcome to your Social Media Management bootcamp dashboard for Batch ${batchNum}! Access your course guides, AI prompts, templates, and client profile practice library below.`;
-        document.getElementById('smm-submission-batch-field').value = inputCode;
-
-        document.getElementById('portal-dashboard').style.display = 'none';
-        document.getElementById('smm-portal-dashboard').style.display = 'block';
-
-      } else if (/^GVA-BATCH\d+$/i.test(inputCode)) {
-        let batchNum = inputCode.replace('GVA-BATCH', '');
-        errorMsg.style.display = 'none';
-
-        document.getElementById('dash-title').innerText = `Batch ${batchNum} VA Student Hub`;
-        document.getElementById('dash-subtitle').innerText = `Welcome to your live VA training dashboard for Batch ${batchNum}! Access your task guides, resources, and submit your outputs below.`;
-        document.getElementById('submission-batch-field').value = inputCode;
-
-        document.getElementById('portal-dashboard').style.display = 'block';
-        document.getElementById('smm-portal-dashboard').style.display = 'none';
-      } else {
-        document.getElementById('portal-login-card').style.display = 'block';
-        errorMsg.style.display = 'block';
-      }
+      if (totalCountEl) totalCountEl.innerText = '3,411';
+      if (onlineCountEl) onlineCountEl.innerText = '420+';
     }
 
     function handleRouting() {
@@ -2730,13 +2099,10 @@
 
     window.addEventListener('DOMContentLoaded', handleRouting);
     window.addEventListener('hashchange', handleRouting);
-    
-    setInterval(fetchDiscordStats, 300000);
     setInterval(updateCountdown, 1000);
 
     function toggleAccordion(headerEntry) {
-      const item = headerEntry.parentElement;
-      item.classList.toggle('active');
+      headerEntry.parentElement.classList.toggle('active');
     }
   </script>
 </body>
