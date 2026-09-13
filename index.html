@@ -216,27 +216,27 @@
     }
 
     /* ==========================================================================
-       2. HEADER & NAVIGATION
+       2. HEADER & NAVIGATION (Bigger & Prominent)
        ========================================================================== */
     header.site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(234, 244, 255, 0.8);
-      box-shadow: 0 4px 20px rgba(11, 45, 107, 0.03);
+      box-shadow: 0 4px 20px rgba(11, 45, 107, 0.05);
     }
 
     .nav-wrapper {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
+      height: 96px;
     }
 
     .brand-logo img {
-      height: 44px;
+      height: 52px;
       width: auto;
       transition: var(--transition-smooth);
     }
@@ -248,15 +248,15 @@
     nav.main-nav {
       display: flex;
       align-items: center;
-      gap: 1.1rem;
+      gap: 1.5rem;
     }
 
     nav.main-nav a.nav-link {
-      font-size: 0.85rem;
-      font-weight: 500;
+      font-size: 1.02rem;
+      font-weight: 600;
       color: var(--navy);
       position: relative;
-      padding: 0.2rem 0;
+      padding: 0.3rem 0;
       white-space: nowrap;
     }
 
@@ -268,10 +268,10 @@
     nav.main-nav a.nav-link::after {
       content: '';
       position: absolute;
-      bottom: -4px;
+      bottom: -2px;
       left: 0;
       width: 0%;
-      height: 2px;
+      height: 3px;
       background: var(--cyan-highlight);
       border-radius: var(--radius-pill);
       transition: var(--transition-smooth);
@@ -284,7 +284,7 @@
 
     .mobile-toggle {
       display: none;
-      font-size: 1.8rem;
+      font-size: 2rem;
       cursor: pointer;
       color: var(--navy);
       transition: var(--transition-smooth);
@@ -745,7 +745,7 @@
         z-index: 1001;
       }
       nav.main-nav.mobile-active { right: 0; }
-      nav.main-nav a.nav-link { font-size: 1.1rem; width: 100%; padding: 0.5rem 0; }
+      nav.main-nav a.nav-link { font-size: 1.15rem; width: 100%; padding: 0.6rem 0; }
       .nav-close-btn {
         display: block;
         position: absolute;
@@ -792,7 +792,7 @@
           <a href="#success-stories" onclick="toggleMobileMenu();" class="nav-link" id="nav-success-stories">Success Stories</a>
           <a href="#about" onclick="toggleMobileMenu();" class="nav-link" id="nav-about">About</a>
           <a href="#contact" onclick="toggleMobileMenu();" class="nav-link" id="nav-contact">Contact</a>
-          <a href="#register" onclick="toggleMobileMenu();" class="btn btn-primary btn-sm" style="width: auto; padding: 0.5rem 1.2rem; font-size: 0.85rem;">Register Now</a>
+          <a href="#register" onclick="toggleMobileMenu();" class="btn btn-primary btn-sm" style="width: auto; padding: 0.6rem 1.4rem; font-size: 0.95rem;">Register Now</a>
         </nav>
       </div>
     </div>
@@ -811,18 +811,31 @@
               <h1>From Zero to VA Hero.</h1>
               <p class="hero-sub">Learn in-demand skills, build a flexible career, and join a supportive community that believes in you.</p>
               
-              <!-- Batch 18 Countdown Banner -->
-              <div style="background: var(--pale-blue); padding: 1.2rem; border-radius: var(--radius-md); margin-bottom: 2rem; border: 1px solid var(--sky-blue); text-align: center;">
-                <p style="font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; font-size: 0.9rem;">🔥 Batch 18: Live Training Starts (Sept 25-27, 6pm-9pm):</p>
-                <div id="countdown-timer" style="display: flex; justify-content: center; gap: 1.2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--royal-blue); font-size: 1.4rem;">
-                  <div><span id="days">00</span><span style="display: block; font-size: 0.7rem; font-family: 'Poppins', sans-serif; color: var(--text-muted); font-weight: 400;">Days</span></div>
-                  <div>:</div>
-                  <div><span id="hours">00</span><span style="display: block; font-size: 0.7rem; font-family: 'Poppins', sans-serif; color: var(--text-muted); font-weight: 400;">Hours</span></div>
-                  <div>:</div>
-                  <div><span id="minutes">00</span><span style="display: block; font-size: 0.7rem; font-family: 'Poppins', sans-serif; color: var(--text-muted); font-weight: 400;">Mins</span></div>
-                  <div>:</div>
-                  <div><span id="seconds">00</span><span style="display: block; font-size: 0.7rem; font-family: 'Poppins', sans-serif; color: var(--text-muted); font-weight: 400;">Secs</span></div>
+              <!-- Gorgeous & Bigger Batch 18 Countdown Banner -->
+              <div style="background: linear-gradient(135deg, var(--pale-blue), var(--white)); padding: 1.6rem 1.8rem; border-radius: var(--radius-lg); margin-bottom: 2.2rem; border: 2px solid var(--sky-blue); box-shadow: var(--shadow-soft); text-align: center;">
+                <p style="font-weight: 700; color: var(--navy); margin-bottom: 1rem; font-size: 1.1rem; letter-spacing: 0.3px;">🔥 Batch 18 Live Training Starts In:</p>
+                <div id="countdown-timer" style="display: flex; justify-content: center; gap: 0.8rem; align-items: center;">
+                  <div style="background: var(--white); padding: 0.9rem 1.1rem; border-radius: var(--radius-sm); box-shadow: 0 4px 15px rgba(11, 45, 107, 0.08); min-width: 75px; border: 1px solid var(--pale-blue);">
+                    <span id="days" style="font-size: 2.2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--royal-blue); display: block; line-height: 1;">00</span>
+                    <span style="font-size: 0.75rem; font-family: 'Poppins', sans-serif; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Days</span>
+                  </div>
+                  <span style="font-size: 2rem; font-weight: 700; color: var(--royal-blue);">:</span>
+                  <div style="background: var(--white); padding: 0.9rem 1.1rem; border-radius: var(--radius-sm); box-shadow: 0 4px 15px rgba(11, 45, 107, 0.08); min-width: 75px; border: 1px solid var(--pale-blue);">
+                    <span id="hours" style="font-size: 2.2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--royal-blue); display: block; line-height: 1;">00</span>
+                    <span style="font-size: 0.75rem; font-family: 'Poppins', sans-serif; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Hours</span>
+                  </div>
+                  <span style="font-size: 2rem; font-weight: 700; color: var(--royal-blue);">:</span>
+                  <div style="background: var(--white); padding: 0.9rem 1.1rem; border-radius: var(--radius-sm); box-shadow: 0 4px 15px rgba(11, 45, 107, 0.08); min-width: 75px; border: 1px solid var(--pale-blue);">
+                    <span id="minutes" style="font-size: 2.2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--royal-blue); display: block; line-height: 1;">00</span>
+                    <span style="font-size: 0.75rem; font-family: 'Poppins', sans-serif; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Mins</span>
+                  </div>
+                  <span style="font-size: 2rem; font-weight: 700; color: var(--royal-blue);">:</span>
+                  <div style="background: var(--white); padding: 0.9rem 1.1rem; border-radius: var(--radius-sm); box-shadow: 0 4px 15px rgba(11, 45, 107, 0.08); min-width: 75px; border: 1px solid var(--pale-blue);">
+                    <span id="seconds" style="font-size: 2.2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--royal-blue); display: block; line-height: 1;">00</span>
+                    <span style="font-size: 0.75rem; font-family: 'Poppins', sans-serif; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Secs</span>
+                  </div>
                 </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.9rem; font-weight: 500;">September 25-27, 2026 • 6:00 PM – 9:00 PM PHT</p>
               </div>
 
               <div class="hero-cta">
@@ -1690,7 +1703,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="brand-logo" style="margin-bottom: 1rem;">
-            <img src="./gva-logo-blue-bg.png" alt="Gerr's Virtual Academy Logo" width="733" height="206" loading="lazy" style="width: 100%; max-width: 300px; height: auto; border-radius: var(--radius-sm);">
+            <img src="./gva-logo-blue-bg.jpg" alt="Gerr's Virtual Academy Logo" width="733" height="206" loading="lazy" style="width: 100%; max-width: 300px; height: auto; border-radius: var(--radius-sm);">
           </div>
         </div>
 
@@ -1797,7 +1810,7 @@
       if (!daysEl || !timerContainer) return;
 
       if (distance < 0) {
-        timerContainer.innerHTML = "<span style='color: var(--cyan-highlight); font-size: 1.2rem;'>Batch 18 Live Training is Now Live! 🎉</span>";
+        timerContainer.parentElement.innerHTML = "<div style='padding: 1.5rem;'><h3 style='color: var(--navy); font-family: Playfair Display, serif; margin-bottom: 0.5rem;'>🎉 Batch 18 Live Training is Now Live!</h3><p style='color: var(--text-muted); font-size: 0.95rem;'>September 25-27, 2026 • 6:00 PM – 9:00 PM PHT</p></div>";
         return;
       }
 
