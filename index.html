@@ -514,7 +514,7 @@
        ========================================================================== */
     .program-hero {
       background: linear-gradient(135deg, var(--pale-blue), var(--light-yellow));
-      padding: 4rem 0;
+      padding: 4.5rem 0;
       border-radius: 0 0 var(--radius-lg) var(--radius-lg);
     }
 
@@ -928,7 +928,7 @@
               <h1>From Zero to VA Hero.</h1>
               <p class="hero-sub">Learn in-demand skills, build a flexible career, and join a supportive community that believes in you.</p>
               
-              <!-- Dynamic Batch Countdown Banner (Starts with Batch 18, transitions to Batch 19 once Batch 18 ends on Sept 27, 2026 at 9:00 PM PHT) -->
+              <!-- Dynamic Batch Countdown Banner -->
               <div style="background: linear-gradient(135deg, var(--pale-blue), var(--white)); padding: 1.6rem 1.8rem; border-radius: var(--radius-lg); margin-bottom: 2.2rem; border: 2px solid var(--sky-blue); box-shadow: var(--shadow-soft); text-align: center;">
                 <p id="countdown-title" style="font-weight: 700; color: var(--navy); margin-bottom: 1rem; font-size: 1.1rem; letter-spacing: 0.3px;">🔥 Batch 18 Live Training Starts In:</p>
                 <div id="countdown-timer" style="display: flex; justify-content: center; gap: 0.8rem; align-items: center;">
@@ -1026,21 +1026,27 @@
           </div>
 
           <div class="grid-2">
-            <div class="card">
-              <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Most Popular</span>
-              <h3>Virtual Assistant Training</h3>
-              <p style="font-size: 1.5rem; font-weight: 700; color: var(--royal-blue); margin: 0.5rem 0 1rem 0;">₱599</p>
-              <p>An intensive 3-day live training covering inbox, calendar, and travel management, data entry, client communication, and student portal access.</p>
-              <br>
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                  <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy); margin-bottom: 0;">Most Popular</span>
+                  <span style="background: var(--pale-blue); color: var(--royal-blue); padding: 0.3rem 0.9rem; border-radius: var(--radius-pill); font-weight: 700; font-size: 1.25rem;">₱599</span>
+                </div>
+                <h3 style="margin-top: 0.5rem;">Virtual Assistant Training</h3>
+                <p style="margin-bottom: 1.5rem;">An intensive 3-day live training covering inbox, calendar, and travel management, data entry, client communication, and student portal access.</p>
+              </div>
               <a href="#va-training" class="btn btn-secondary" style="width: 100%;">View VA Curriculum</a>
             </div>
 
-            <div class="card">
-              <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">High Demand</span>
-              <h3>Social Media Management Bootcamp</h3>
-              <p style="font-size: 1.5rem; font-weight: 700; color: var(--royal-blue); margin: 0.5rem 0 1rem 0;">₱999</p>
-              <p>Master visual content design, content pillars, AI prompts for content creation, templates, and portfolio building with potential client matching opportunities.</p>
-              <br>
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                  <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy); margin-bottom: 0;">High Demand</span>
+                  <span style="background: var(--pale-blue); color: var(--royal-blue); padding: 0.3rem 0.9rem; border-radius: var(--radius-pill); font-weight: 700; font-size: 1.25rem;">₱999</span>
+                </div>
+                <h3 style="margin-top: 0.5rem;">Social Media Management Bootcamp</h3>
+                <p style="margin-bottom: 1.5rem;">Master visual content design, content pillars, AI prompts for content creation, templates, and portfolio building with potential client matching opportunities.</p>
+              </div>
               <a href="#smm-bootcamp" class="btn btn-secondary" style="width: 100%;">View SMM Curriculum</a>
             </div>
           </div>
@@ -1065,7 +1071,7 @@
         </div>
       </section>
 
-      <!-- Registration Banner CTA (Fixed with high-contrast .btn-primary and white text) -->
+      <!-- Registration Banner CTA -->
       <section style="background: linear-gradient(135deg, var(--navy), var(--royal-blue)); color: var(--white); text-align: center; border-radius: var(--radius-lg); margin: 3rem auto; max-width: 1100px; box-shadow: var(--shadow-hover);">
         <div style="padding: 4rem 1.5rem;">
           <h2 style="color: var(--white); font-size: 2.5rem; margin-bottom: 1rem;">Ready to Take Your First Step?</h2>
@@ -1076,50 +1082,67 @@
 
     </div>
 
-    <!-- VIEW 2: VIRTUAL ASSISTANT TRAINING PAGE -->
+    <!-- VIEW 2: VIRTUAL ASSISTANT TRAINING PAGE (IMPROVED LOOK & TYPOGRAPHY) -->
     <div id="view-va-training" class="page-view">
       <div class="program-hero text-center">
-        <div class="container">
+        <div class="container" style="max-width: 850px;">
           <span class="badge-pill">Primary Flagship Program</span>
-          <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">Virtual Assistant Training Philippines</h1>
-          <p style="font-size: 1.8rem; font-weight: 700; color: var(--royal-blue); margin-bottom: 1rem;">₱599</p>
-          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">An intensive 3-day live training program where Coach Gerr tackles inbox, calendar, and travel management, data entry, Google Drive organization, and project management to take complete beginners from zero experience to confident, work-ready Virtual Assistants.</p>
-          <a href="#register" class="btn btn-primary">Enroll in VA Training (₱599)</a>
+          <h1 style="font-size: 3rem; margin-bottom: 0.8rem; letter-spacing: -0.02em;">Virtual Assistant Training Philippines</h1>
+          <div style="margin: 1.2rem 0 1.8rem 0;">
+            <span style="background: var(--white); color: var(--royal-blue); padding: 0.6rem 2rem; border-radius: var(--radius-pill); font-size: 1.7rem; font-weight: 700; box-shadow: var(--shadow-soft); display: inline-block; border: 1px solid var(--sky-blue);">₱599 <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">/ one-time</span></span>
+          </div>
+          <p style="font-size: 1.1rem; max-width: 720px; margin: 0 auto 2.2rem auto; color: var(--text-muted); line-height: 1.8;">An intensive 3-day live training program where Coach Gerr tackles inbox, calendar, and travel management, data entry, Google Drive organization, and project management to take complete beginners from zero experience to confident, work-ready Virtual Assistants.</p>
+          <a href="#register" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1rem;">Enroll in VA Training (₱599) →</a>
         </div>
       </div>
 
       <section>
         <div class="container">
-          <div class="grid-2">
-            <div>
-              <h2>Who This Training Is For</h2>
-              <br>
+          <div class="grid-2" style="align-items: stretch;">
+            <div class="card" style="background: linear-gradient(180deg, var(--white), var(--pale-blue)); border: 1px solid var(--sky-blue);">
+              <span class="badge-pill" style="background: var(--white); color: var(--navy);">Participant Profile</span>
+              <h3 style="font-size: 1.6rem; margin-bottom: 1.2rem;">Who This Training Is For</h3>
               <ul style="list-style: none;">
-                <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem; align-items: flex-start;">
-                  <span style="color: var(--cyan-highlight); font-weight: bold;">✓</span>
+                <li style="margin-bottom: 1.2rem; display: flex; gap: 1rem; align-items: flex-start;">
+                  <span style="background: var(--royal-blue); color: var(--white); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; margin-top: 3px;">✓</span>
                   <span><strong>Complete Beginners:</strong> Individuals with no prior online work experience seeking structured guidance.</span>
                 </li>
-                <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem; align-items: flex-start;">
-                  <span style="color: var(--cyan-highlight); font-weight: bold;">✓</span>
+                <li style="margin-bottom: 1.2rem; display: flex; gap: 1rem; align-items: flex-start;">
+                  <span style="background: var(--royal-blue); color: var(--white); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; margin-top: 3px;">✓</span>
                   <span><strong>Career Shifters:</strong> Corporate workers looking for flexible remote career paths.</span>
                 </li>
-                <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem; align-items: flex-start;">
-                  <span style="color: var(--cyan-highlight); font-weight: bold;">✓</span>
+                <li style="margin-bottom: 0; display: flex; gap: 1rem; align-items: flex-start;">
+                  <span style="background: var(--royal-blue); color: var(--white); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; margin-top: 3px;">✓</span>
                   <span><strong>Stay-at-Home Parents:</strong> Parents who want to earn remotely while staying close to family.</span>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <h2>Key Inclusions</h2>
-              <br>
-              <div class="card" style="background: var(--pale-blue);">
-                <p>🔹 <strong>3-Day Live Interactive Training</strong></p>
-                <p>🔹 <strong>Exclusive Student Portal Access (Hands-on Activities & Resource Library)</strong></p>
-                <p>🔹 <strong>Portfolio Building Modules & Task Guides (Inbox, Travel, Data Entry, Calendar, Drive, Asana)</strong></p>
-                <p>🔹 <strong>Official GVA Certificate of Completion</strong></p>
-                <p>🔹 <strong>Lifetime Access to GVA Alumni Community</strong></p>
-              </div>
+            <div class="card" style="background: var(--white); border: 1px solid var(--border-light);">
+              <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Package Value</span>
+              <h3 style="font-size: 1.6rem; margin-bottom: 1.2rem;">Key Inclusions</h3>
+              <ul style="list-style: none;">
+                <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span><strong>3-Day Live Interactive Training</strong></span>
+                </li>
+                <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span><strong>Exclusive Student Portal Access</strong> (Hands-on Activities & Resources)</span>
+                </li>
+                <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span><strong>Portfolio Building Modules & Task Guides</strong> (Inbox, Travel, Data Entry, Asana)</span>
+                </li>
+                <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span><strong>Official GVA Certificate of Completion</strong></span>
+                </li>
+                <li style="margin-bottom: 0; display: flex; gap: 0.8rem; align-items: center;">
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span><strong>Lifetime Access to GVA Alumni Community</strong></span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1177,57 +1200,74 @@
       </section>
     </div>
 
-    <!-- VIEW 3: SMM BOOTCAMP PAGE -->
+    <!-- VIEW 3: SMM BOOTCAMP PAGE (IMPROVED LOOK & TYPOGRAPHY) -->
     <div id="view-smm-bootcamp" class="page-view">
       <div class="program-hero text-center" style="background: linear-gradient(135deg, var(--soft-pink), var(--pale-blue));">
-        <div class="container">
+        <div class="container" style="max-width: 850px;">
           <span class="badge-pill" style="background: var(--white);">Specialized Skill Upgrade</span>
-          <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">Social Media Management Training Philippines</h1>
-          <p style="font-size: 1.8rem; font-weight: 700; color: var(--royal-blue); margin-bottom: 1rem;">₱999</p>
-          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">Master social media strategies, utilize AI prompts for content creation, apply social media templates, follow SMM output video guides, and work with client profile samples to secure remote opportunities!</p>
-          <a href="#register" class="btn btn-primary">Enroll in SMM Bootcamp (₱999)</a>
+          <h1 style="font-size: 3rem; margin-bottom: 0.8rem; letter-spacing: -0.02em;">Social Media Management Training Philippines</h1>
+          <div style="margin: 1.2rem 0 1.8rem 0;">
+            <span style="background: var(--white); color: var(--royal-blue); padding: 0.6rem 2rem; border-radius: var(--radius-pill); font-size: 1.7rem; font-weight: 700; box-shadow: var(--shadow-soft); display: inline-block; border: 1px solid var(--soft-pink);">₱999 <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">/ one-time</span></span>
+          </div>
+          <p style="font-size: 1.1rem; max-width: 720px; margin: 0 auto 2.2rem auto; color: var(--text-muted); line-height: 1.8;">Master social media strategies, utilize AI prompts for content creation, apply social media templates, follow SMM output video guides, and work with client profile samples to secure remote opportunities!</p>
+          <a href="#register" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1rem;">Enroll in SMM Bootcamp (₱999) →</a>
         </div>
       </div>
 
       <section>
         <div class="container">
-          <div class="grid-2">
-            <div>
-              <h2>What You Will Master</h2>
-              <br>
-              <div class="grid-3" style="grid-template-columns: 1fr; gap: 1.2rem;">
-                <div class="card" style="padding: 1.5rem;">
-                  <h3>SMM Course Guide & Strategy</h3>
-                  <p>Follow the comprehensive SMM course guide to build content pillars, calendars, and campaign plans.</p>
+          <div class="grid-2" style="align-items: stretch;">
+            <div class="card" style="background: linear-gradient(180deg, var(--white), var(--pale-blue)); border: 1px solid var(--soft-pink);">
+              <span class="badge-pill" style="background: var(--white); color: var(--navy);">Mastery Overview</span>
+              <h3 style="font-size: 1.6rem; margin-bottom: 1.2rem;">What You Will Master</h3>
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="background: var(--white); padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid rgba(255, 214, 231, 0.6);">
+                  <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--navy);">📑 SMM Course Guide & Strategy</h4>
+                  <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">Follow the comprehensive SMM course guide to build content pillars, calendars, and campaign plans.</p>
                 </div>
-                <div class="card" style="padding: 1.5rem;">
-                  <h3>AI Prompts & Templates</h3>
-                  <p>Leverage specialized AI content creation prompts and ready-to-use social media templates to fast-track your execution.</p>
+                <div style="background: var(--white); padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid rgba(255, 214, 231, 0.6);">
+                  <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--navy);">🤖 AI Prompts & Templates</h4>
+                  <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">Leverage specialized AI content creation prompts and ready-to-use social media templates to fast-track your execution.</p>
                 </div>
-                <div class="card" style="padding: 1.5rem;">
-                  <h3>Outputs & Client Profiles</h3>
-                  <p>Practice with output guides, video walkthroughs, and real client profile samples to build a standout portfolio.</p>
+                <div style="background: var(--white); padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid rgba(255, 214, 231, 0.6);">
+                  <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--navy);">🏢 Outputs & Client Profiles</h4>
+                  <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">Practice with output guides, video walkthroughs, and real client profile samples to build a standout portfolio.</p>
                 </div>
               </div>
             </div>
 
-            <div>
-              <h2>Key Inclusions & Portal Access</h2>
-              <br>
-              <div class="card" style="background: var(--pale-blue);">
-                <p>🔹 <strong>Dedicated SMM Bootcamp Student Portal</strong></p>
-                <p>🔹 <strong>SMM Course Guides & Social Media Templates</strong></p>
-                <p>🔹 <strong>AI Content Creation Prompts & Video Guides</strong></p>
-                <p>🔹 <strong>Real Client Profile Samples for Portfolio Building</strong></p>
-                <p>🔹 <strong>Official GVA Certificate of Completion & Community Access</strong></p>
-              </div>
+            <div class="card" style="background: var(--white); border: 1px solid var(--border-light);">
+              <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Package Value</span>
+              <h3 style="font-size: 1.6rem; margin-bottom: 1.2rem;">Key Inclusions & Portal Access</h3>
+              <ul style="list-style: none;">
+                <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span><strong>Dedicated SMM Bootcamp Student Portal</strong></span>
+                </li>
+                <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span><strong>SMM Course Guides & Social Media Templates</strong></span>
+                </li>
+                <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span><strong>AI Content Creation Prompts & Video Guides</strong></span>
+                </li>
+                <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span><strong>Real Client Profile Samples for Portfolio Building</strong></span>
+                </li>
+                <li style="margin-bottom: 0; display: flex; gap: 0.8rem; align-items: center;">
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span><strong>Official GVA Certificate & Community Access</strong></span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
     </div>
 
-    <!-- VIEW 4: ALL PROGRAMS -->
+    <!-- VIEW 4: ALL PROGRAMS (IMPROVED LOOK & PRICING PLACEMENT) -->
     <div id="view-programs" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
@@ -1237,26 +1277,34 @@
         </div>
 
         <div class="grid-2">
-          <div class="card">
-            <div class="card-icon">💼</div>
-            <h3>Virtual Assistant Training</h3>
-            <p style="font-size: 1.4rem; font-weight: 700; color: var(--royal-blue); margin: 0.3rem 0 1rem 0;">₱599</p>
-            <p style="margin-bottom: 1.5rem;">An intensive 3-day live training covering inbox, calendar, and travel management, student portal resources for portfolio building, and job application strategies.</p>
-            <a href="#va-training" class="btn btn-secondary">Learn More</a>
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.2rem;">
+                <div class="card-icon" style="margin-bottom: 0;">💼</div>
+                <span style="background: var(--pale-blue); color: var(--royal-blue); padding: 0.4rem 1.2rem; border-radius: var(--radius-pill); font-weight: 700; font-size: 1.3rem;">₱599</span>
+              </div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem;">Virtual Assistant Training</h3>
+              <p style="margin-bottom: 1.8rem; color: var(--text-muted); line-height: 1.7;">An intensive 3-day live training covering inbox, calendar, and travel management, student portal resources for portfolio building, and job application strategies.</p>
+            </div>
+            <a href="#va-training" class="btn btn-secondary" style="width: 100%;">View VA Curriculum →</a>
           </div>
 
-          <div class="card">
-            <div class="card-icon">📱</div>
-            <h3>Social Media Management Bootcamp</h3>
-            <p style="font-size: 1.4rem; font-weight: 700; color: var(--royal-blue); margin: 0.3rem 0 1rem 0;">₱999</p>
-            <p style="margin-bottom: 1.5rem;">A practical course focused on SMM course guides, AI content prompts, social media templates, output video guides, and client profile samples.</p>
-            <a href="#smm-bootcamp" class="btn btn-secondary">Learn More</a>
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.2rem;">
+                <div class="card-icon" style="margin-bottom: 0;">📱</div>
+                <span style="background: var(--soft-pink); color: var(--navy); padding: 0.4rem 1.2rem; border-radius: var(--radius-pill); font-weight: 700; font-size: 1.3rem;">₱999</span>
+              </div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem;">Social Media Management Bootcamp</h3>
+              <p style="margin-bottom: 1.8rem; color: var(--text-muted); line-height: 1.7;">A practical course focused on SMM course guides, AI content prompts, social media templates, output video guides, and client profile samples.</p>
+            </div>
+            <a href="#smm-bootcamp" class="btn btn-secondary" style="width: 100%;">View SMM Curriculum →</a>
           </div>
         </div>
       </section>
     </div>
 
-    <!-- VIEW 5: SUCCESS STORIES (CARDS LINKING TO MAGAZINE ARTICLE PAGES) -->
+    <!-- VIEW 5: SUCCESS STORIES -->
     <div id="view-success-stories" class="page-view">
       <section class="container" style="padding-top: 4rem;">
         <div class="section-header">
