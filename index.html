@@ -924,13 +924,13 @@
         <div class="container">
           <div class="hero-grid">
             <div class="hero-content">
-              <span class="badge-pill">Now Accepting Enrollees — Batch 18</span>
+              <span class="badge-pill" id="hero-badge">Now Accepting Enrollees — Batch 18</span>
               <h1>From Zero to VA Hero.</h1>
               <p class="hero-sub">Learn in-demand skills, build a flexible career, and join a supportive community that believes in you.</p>
               
-              <!-- Batch 18 Countdown Banner -->
+              <!-- Dynamic Batch Countdown Banner (Starts with Batch 18, transitions to Batch 19 once Batch 18 ends on Sept 27, 2026 at 9:00 PM PHT) -->
               <div style="background: linear-gradient(135deg, var(--pale-blue), var(--white)); padding: 1.6rem 1.8rem; border-radius: var(--radius-lg); margin-bottom: 2.2rem; border: 2px solid var(--sky-blue); box-shadow: var(--shadow-soft); text-align: center;">
-                <p style="font-weight: 700; color: var(--navy); margin-bottom: 1rem; font-size: 1.1rem; letter-spacing: 0.3px;">🔥 Batch 18 Live Training Starts In:</p>
+                <p id="countdown-title" style="font-weight: 700; color: var(--navy); margin-bottom: 1rem; font-size: 1.1rem; letter-spacing: 0.3px;">🔥 Batch 18 Live Training Starts In:</p>
                 <div id="countdown-timer" style="display: flex; justify-content: center; gap: 0.8rem; align-items: center;">
                   <div style="background: var(--white); padding: 0.9rem 1.1rem; border-radius: var(--radius-sm); box-shadow: 0 4px 15px rgba(11, 45, 107, 0.08); min-width: 75px; border: 1px solid var(--pale-blue);">
                     <span id="days" style="font-size: 2.2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--royal-blue); display: block; line-height: 1;">00</span>
@@ -952,7 +952,7 @@
                     <span style="font-size: 0.75rem; font-family: 'Poppins', sans-serif; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Secs</span>
                   </div>
                 </div>
-                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.9rem; font-weight: 500;">September 25-27, 2026 • 6:00 PM – 9:00 PM PHT</p>
+                <p id="countdown-date-text" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.9rem; font-weight: 500;">September 25-27, 2026 • 6:00 PM – 9:00 PM PHT</p>
               </div>
 
               <div class="hero-cta">
@@ -1069,8 +1069,8 @@
       <section style="background: linear-gradient(135deg, var(--navy), var(--royal-blue)); color: var(--white); text-align: center; border-radius: var(--radius-lg); margin: 3rem auto; max-width: 1100px; box-shadow: var(--shadow-hover);">
         <div style="padding: 4rem 1.5rem;">
           <h2 style="color: var(--white); font-size: 2.5rem; margin-bottom: 1rem;">Ready to Take Your First Step?</h2>
-          <p style="max-width: 600px; margin: 0 auto 2rem auto; color: rgba(255,255,255,0.85);">Slots for upcoming cohorts are filled on a first-come, first-served basis. Secure your spot in Batch 18 today.</p>
-          <a href="#register" class="btn btn-primary" style="background: var(--white); color: var(--royal-blue);">Register for Batch 18</a>
+          <p style="max-width: 600px; margin: 0 auto 2rem auto; color: rgba(255,255,255,0.85);">Slots for upcoming cohorts are filled on a first-come, first-served basis. Secure your spot today.</p>
+          <a href="#register" class="btn btn-primary" style="background: var(--white); color: var(--royal-blue);">Register Now</a>
         </div>
       </section>
 
@@ -1083,7 +1083,7 @@
           <span class="badge-pill">Primary Flagship Program</span>
           <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">Virtual Assistant Training Philippines</h1>
           <p style="font-size: 1.8rem; font-weight: 700; color: var(--royal-blue); margin-bottom: 1rem;">₱599</p>
-          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">An intensive 3-day live training program (Batch 18: Sept 25-27, 6pm-9pm) where Coach Gerr tackles inbox, calendar, and travel management, data entry, Google Drive organization, and project management to take complete beginners from zero experience to confident, work-ready Virtual Assistants.</p>
+          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted);">An intensive 3-day live training program where Coach Gerr tackles inbox, calendar, and travel management, data entry, Google Drive organization, and project management to take complete beginners from zero experience to confident, work-ready Virtual Assistants.</p>
           <a href="#register" class="btn btn-primary">Enroll in VA Training (₱599)</a>
         </div>
       </div>
@@ -1114,7 +1114,7 @@
               <h2>Key Inclusions</h2>
               <br>
               <div class="card" style="background: var(--pale-blue);">
-                <p>🔹 <strong>3-Day Live Interactive Training (Batch 18: Sept 25-27)</strong></p>
+                <p>🔹 <strong>3-Day Live Interactive Training</strong></p>
                 <p>🔹 <strong>Exclusive Student Portal Access (Hands-on Activities & Resource Library)</strong></p>
                 <p>🔹 <strong>Portfolio Building Modules & Task Guides (Inbox, Travel, Data Entry, Calendar, Drive, Asana)</strong></p>
                 <p>🔹 <strong>Official GVA Certificate of Completion</strong></p>
@@ -1474,7 +1474,7 @@
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
             <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Inspired by Judy Ann's Growth?</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+            <a href="#register" class="btn btn-primary">Register Now</a>
           </div>
         </div>
       </section>
@@ -1553,7 +1553,7 @@
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 3rem;">
             <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Inspired by Kierza's Journey?</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+            <a href="#register" class="btn btn-primary">Register Now</a>
           </div>
         </div>
       </section>
@@ -1578,7 +1578,7 @@
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
             <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Take Your First Step?</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+            <a href="#register" class="btn btn-primary">Register Now</a>
           </div>
         </div>
       </section>
@@ -1613,7 +1613,7 @@
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
             <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+            <a href="#register" class="btn btn-primary">Register Now</a>
           </div>
         </div>
       </section>
@@ -1643,7 +1643,7 @@
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
             <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+            <a href="#register" class="btn btn-primary">Register Now</a>
           </div>
         </div>
       </section>
@@ -1671,7 +1671,7 @@
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
             <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+            <a href="#register" class="btn btn-primary">Register Now</a>
           </div>
         </div>
       </section>
@@ -1698,7 +1698,7 @@
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
             <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+            <a href="#register" class="btn btn-primary">Register Now</a>
           </div>
         </div>
       </section>
@@ -1723,7 +1723,7 @@
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
             <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+            <a href="#register" class="btn btn-primary">Register Now</a>
           </div>
         </div>
       </section>
@@ -1748,7 +1748,7 @@
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
             <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+            <a href="#register" class="btn btn-primary">Register Now</a>
           </div>
         </div>
       </section>
@@ -1773,7 +1773,7 @@
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
             <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+            <a href="#register" class="btn btn-primary">Register Now</a>
           </div>
         </div>
       </section>
@@ -1798,7 +1798,7 @@
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
             <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+            <a href="#register" class="btn btn-primary">Register Now</a>
           </div>
         </div>
       </section>
@@ -1823,7 +1823,7 @@
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
             <h3 style="margin-bottom: 0.8rem; font-size: 1.4rem;">Ready to Start Your Remote Career?</h3>
             <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Join our upcoming cohort and get the practical training and portfolio guidance you need.</p>
-            <a href="#register" class="btn btn-primary">Register for Batch 18</a>
+            <a href="#register" class="btn btn-primary">Register Now</a>
           </div>
         </div>
       </section>
@@ -1872,7 +1872,7 @@
       <section class="container" style="padding-top: 3rem;">
         <div class="section-header">
           <span class="badge-pill">Take the First Step</span>
-          <h2>Register for Batch 18 (Sept 25-27, 2026)</h2>
+          <h2 id="register-header-title">Register for Training</h2>
           <p>Fill out the official registration form below to reserve your slot and receive your student portal access.</p>
         </div>
 
@@ -1882,7 +1882,7 @@
               <label for="reg-program">Select Program *</label>
               <select id="reg-program" name="Selected Program" required>
                 <option value="">-- Choose Course --</option>
-                <option value="Virtual Assistant Training - Batch 18 (₱599)">Virtual Assistant Training - Batch 18 (₱599)</option>
+                <option id="reg-option-primary" value="Virtual Assistant Training (₱599)">Virtual Assistant Training (₱599)</option>
                 <option value="Social Media Management Bootcamp - ₱999">Social Media Management Bootcamp - ₱999</option>
                 <option value="Both Programs Bundle - ₱1,598">Both Programs Bundle (Special) - ₱1,598</option>
               </select>
@@ -1992,14 +1992,14 @@
             <strong style="display: block; margin-bottom: 0.5rem; font-size: 0.95rem;">💡 How to log in:</strong>
             <ol style="padding-left: 1.2rem; color: var(--text-muted); line-height: 1.6;">
               <li>Check your <strong>Welcome / Onboarding Email</strong> sent immediately after enrollment & payment verification.</li>
-              <li>Locate your unique Batch Access Code (e.g., <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">GVA-BATCH18-HARBOR</code> or <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">SMM-BATCH3-VERTEX</code>).</li>
+              <li>Locate your unique Batch Access Code (e.g., <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">GVA-BATCH-SAMPLE</code> or <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">SMM-BATCH-SAMPLE</code>).</li>
               <li>Enter your code below and click <strong>Enter Portal</strong> to access your specific cohort dashboard.</li>
             </ol>
           </div>
           
           <div class="form-group">
             <label for="batch-code">Batch Access Code *</label>
-            <input type="text" id="batch-code" placeholder="e.g. GVA-BATCH18-HARBOR or SMM-BATCH3-VERTEX" required style="text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">
+            <input type="text" id="batch-code" placeholder="e.g. GVA-BATCH-SAMPLE" required style="text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">
           </div>
           
           <button onclick="verifyBatchCode()" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Enter Portal →</button>
@@ -2114,11 +2114,11 @@
             </form>
           </div>
 
-          <!-- Certificate Request Card (Embedded) - Batch 18 Form -->
+          <!-- Certificate Request Card (Embedded with Expanded 1200px Height) -->
           <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
             <h3>🎓 Certificate Request</h3>
             <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final portfolio requirements below to claim your official GVA certificate:</p>
-            <div style="position: relative; width: 100%; height: 850px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white); margin-bottom: 1rem;">
+            <div style="position: relative; width: 100%; height: 1200px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white); margin-bottom: 1rem;">
               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1B7i6AVvuzKzVaaer2zQv8JmM_Y9kZSoUgZ7DqxanFjJd_A/viewform?embedded=true" style="border: 0; width: 100%; height: 100%;" frameborder="0" scrolling="yes">Loading certificate form...</iframe>
             </div>
             <p style="font-size: 0.85rem; color: var(--text-muted);">Having trouble viewing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1B7i6AVvuzKzVaaer2zQv8JmM_Y9kZSoUgZ7DqxanFjJd_A/viewform" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 600;">Open certificate form in a new tab →</a></p>
@@ -2329,11 +2329,11 @@
             </form>
           </div>
 
-          <!-- SMM Certificate Request Card (Embedded) - SMM Bootcamp 3 Form -->
+          <!-- SMM Certificate Request Card (Embedded with Expanded 1200px Height) -->
           <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
             <h3>🎓 SMM Certificate Request</h3>
             <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final SMM portfolio requirements below to claim your official certificate:</p>
-            <div style="position: relative; width: 100%; height: 850px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white); margin-bottom: 1rem;">
+            <div style="position: relative; width: 100%; height: 1200px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white); margin-bottom: 1rem;">
               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeAW4jKxlq_MrXxvYPbzYG_dOEzA7J1jbVmAlLwA5uk2t9ndw/viewform?embedded=true" style="border: 0; width: 100%; height: 100%;" frameborder="0" scrolling="yes">Loading certificate form...</iframe>
             </div>
             <p style="font-size: 0.85rem; color: var(--text-muted);">Having trouble viewing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAW4jKxlq_MrXxvYPbzYG_dOEzA7J1jbVmAlLwA5uk2t9ndw/viewform" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 600;">Open SMM certificate form in a new tab →</a></p>
@@ -2454,12 +2454,50 @@
       }
     }
 
-    // Live Batch 18 Countdown Timer (September 25, 2026 at 6:00 PM PHT)
+    // Time-based Countdown & Automatic Batch Transition (Batch 18 -> Batch 19 after Sept 27, 2026, 9:00 PM PHT)
     function updateCountdown() {
-      const targetDate = new Date('2026-09-25T18:00:00+08:00').getTime();
+      // Batch 18 end time: September 27, 2026 at 21:00 (9:00 PM) PHT (+08:00)
+      const batch18EndTime = new Date('2026-09-27T21:00:00+08:00').getTime();
       const now = new Date().getTime();
-      const distance = targetDate - now;
 
+      let targetDate, badgeText, countdownTitleText, dateStringText, regHeaderTitle, regOptionText;
+
+      if (now < batch18EndTime) {
+        // --- BATCH 18 ACTIVE (Countdown to Batch 18 start: Sept 25, 2026 at 6:00 PM PHT) ---
+        targetDate = new Date('2026-09-25T18:00:00+08:00').getTime();
+        badgeText = "Now Accepting Enrollees — Batch 18";
+        countdownTitleText = "🔥 Batch 18 Live Training Starts In:";
+        dateStringText = "September 25-27, 2026 • 6:00 PM – 9:00 PM PHT";
+        regHeaderTitle = "Register for Batch 18 (Sept 25-27, 2026)";
+        regOptionText = "Virtual Assistant Training - Batch 18 (₱599)";
+      } else {
+        // --- BATCH 19 ACTIVE (Once Batch 18 ends, automatically switches to Batch 19: Oct 23-25, 2026) ---
+        targetDate = new Date('2026-10-23T18:00:00+08:00').getTime();
+        badgeText = "Now Accepting Enrollees — Batch 19";
+        countdownTitleText = "🔥 Batch 19 Live Training Starts In:";
+        dateStringText = "October 23-25, 2026 • 6:00 PM – 9:00 PM PHT";
+        regHeaderTitle = "Register for Batch 19 (Oct 23-25, 2026)";
+        regOptionText = "Virtual Assistant Training - Batch 19 (₱599)";
+      }
+
+      // Update UI elements dynamically
+      const badgeEl = document.getElementById('hero-badge');
+      const titleEl = document.getElementById('countdown-title');
+      const dateTextEl = document.getElementById('countdown-date-text');
+      const regHeaderEl = document.getElementById('register-header-title');
+      const regOptionEl = document.getElementById('reg-option-primary');
+
+      if (badgeEl) badgeEl.innerText = badgeText;
+      if (titleEl) titleEl.innerText = countdownTitleText;
+      if (dateTextEl) dateTextEl.innerText = dateStringText;
+      if (regHeaderEl) regHeaderEl.innerText = regHeaderTitle;
+      if (regOptionEl) {
+        regOptionEl.innerText = regOptionText;
+        regOptionEl.value = regOptionText;
+      }
+
+      // Calculate time difference
+      const distance = targetDate - now;
       const daysEl = document.getElementById('days');
       const hoursEl = document.getElementById('hours');
       const minutesEl = document.getElementById('minutes');
@@ -2468,7 +2506,10 @@
 
       if (!daysEl || !timerContainer) return;
 
-      if (distance < 0) {
+      if (distance < 0 && now >= batch18EndTime) {
+        timerContainer.parentElement.innerHTML = "<div style='padding: 1.5rem;'><h3 style='color: var(--navy); font-family: Playfair Display, serif; margin-bottom: 0.5rem;'>🎉 Batch 19 Live Training is Now Live!</h3><p style='color: var(--text-muted); font-size: 0.95rem;'>October 23-25, 2026 • 6:00 PM – 9:00 PM PHT</p></div>";
+        return;
+      } else if (distance < 0) {
         timerContainer.parentElement.innerHTML = "<div style='padding: 1.5rem;'><h3 style='color: var(--navy); font-family: Playfair Display, serif; margin-bottom: 0.5rem;'>🎉 Batch 18 Live Training is Now Live!</h3><p style='color: var(--text-muted); font-size: 0.95rem;'>September 25-27, 2026 • 6:00 PM – 9:00 PM PHT</p></div>";
         return;
       }
