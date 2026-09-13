@@ -1214,7 +1214,7 @@
       </section>
     </div>
 
-    <!-- VIEW 3: SMM BOOTCAMP PAGE (CLEAN SMM WORKSPACE COVER IMAGE) -->
+    <!-- VIEW 3: SMM BOOTCAMP PAGE -->
     <div id="view-smm-bootcamp" class="page-view">
       <div class="program-hero" style="background: linear-gradient(135deg, var(--soft-pink), var(--pale-blue));">
         <div class="container">
@@ -1962,24 +1962,12 @@
       <section class="container" style="padding-top: 3rem;">
         <div class="section-header">
           <span class="badge-pill">Take the First Step</span>
-          <h2 id="register-header-title">Register & Submit Payment</h2>
-          <p>Complete your payment via GCash or Bank Transfer, then fill out the official registration form below to secure your slot and receive your student portal access.</p>
+          <h2 id="register-header-title">Register for Training</h2>
+          <p>Fill out the official registration form below to reserve your slot and receive your student portal access.</p>
         </div>
 
         <div class="registration-form-card">
-          <!-- PAYMENT INSTRUCTIONS BOX -->
-          <div style="background: linear-gradient(135deg, var(--pale-blue), var(--white)); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; border: 2px solid var(--sky-blue); box-shadow: var(--shadow-soft);">
-            <h3 style="font-size: 1.25rem; color: var(--navy); margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;">💳 Official Payment Details</h3>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Please send the exact amount corresponding to your selected course before submitting:</p>
-            <ul style="list-style: none; font-size: 0.9rem; color: var(--text-main); line-height: 1.7; margin-bottom: 1rem;">
-              <li>📱 <strong>GCash / Maya:</strong> <code>0917-123-4567</code> (Diana C. / Gerr's VA)</li>
-              <li>🏛️ <strong>BPI Savings:</strong> <code>1234-5678-90</code> (Gerr's Virtual Academy)</li>
-              <li>💰 <strong>Amounts:</strong> VA Training (₱599) | SMM Bootcamp (₱999) | Bundle (₱1,598)</li>
-            </ul>
-            <p style="font-size: 0.82rem; color: var(--cyan-highlight); font-weight: 600;">⚠️ Kindly copy your Transaction / Reference Number after payment and paste it into the field below.</p>
-          </div>
-
-          <form action="https://formspree.io/f/mwlkzjzg" method="POST">
+          <form id="registration-form" onsubmit="handleRegistrationSubmit(event)">
             <div class="form-group">
               <label for="reg-program">Select Program *</label>
               <select id="reg-program" name="Selected Program" required>
@@ -2006,16 +1994,145 @@
             </div>
 
             <div class="form-group">
-              <label for="reg-payment-ref">Payment Reference Number / Transaction ID *</label>
-              <input type="text" id="reg-payment-ref" name="Payment Reference Number" placeholder="e.g. GCash Ref No. 123456789" required style="border-color: var(--royal-blue);">
-            </div>
-
-            <div class="form-group">
               <label for="reg-notes">Questions or Additional Notes (Optional)</label>
               <textarea id="reg-notes" name="Additional Notes" rows="3" placeholder="Tell us about your background or ask any questions..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Complete Registration & Payment Verification</button>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Proceed to Secure Payment →</button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!-- VIEW 7.5: SECURE PAYMENT GATEWAY (Integrated Payment Process) -->
+    <div id="view-payment" class="page-view">
+      <section class="container" style="padding-top: 3rem; max-width: 900px;">
+        <div class="section-header">
+          <span class="badge-pill">🔒 Secure Payment Gateway</span>
+          <h2>Complete Your Enrollment</h2>
+          <p>Your slot is temporarily reserved. Please complete your payment within the time limit below to secure your enrollment.</p>
+        </div>
+
+        <!-- 10-Minute Slot Reservation Countdown Timer -->
+        <div style="background: linear-gradient(135deg, var(--pale-blue), var(--light-yellow)); padding: 1.8rem; border-radius: var(--radius-lg); margin-bottom: 2rem; border: 2px solid var(--sky-blue); text-align: center; box-shadow: var(--shadow-soft);">
+          <p style="font-weight: 700; color: var(--navy); margin-bottom: 0.8rem; font-size: 1.1rem;">⏳ Slot Reservation Expires In:</p>
+          <div id="payment-countdown-timer" style="display: flex; justify-content: center; gap: 1rem; align-items: center;">
+            <div style="background: var(--white); padding: 0.8rem 1.2rem; border-radius: var(--radius-sm); box-shadow: 0 4px 15px rgba(11, 45, 107, 0.08); min-width: 80px; border: 1px solid var(--pale-blue);">
+              <span id="pay-minutes" style="font-size: 2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--royal-blue); display: block; line-height: 1;">10</span>
+              <span style="font-size: 0.75rem; font-family: 'Poppins', sans-serif; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Mins</span>
+            </div>
+            <span style="font-size: 2rem; font-weight: 700; color: var(--royal-blue);">:</span>
+            <div style="background: var(--white); padding: 0.8rem 1.2rem; border-radius: var(--radius-sm); box-shadow: 0 4px 15px rgba(11, 45, 107, 0.08); min-width: 80px; border: 1px solid var(--pale-blue);">
+              <span id="pay-seconds" style="font-size: 2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--royal-blue); display: block; line-height: 1;">00</span>
+              <span style="font-size: 0.75rem; font-family: 'Poppins', sans-serif; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Secs</span>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.8rem;">After payment, submit your reference number and receipt below to receive your Student Portal Access Code.</p>
+        </div>
+
+        <!-- Official Payment Details with User QR Codes (Maya & GoTyme Only) -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 1.2rem; color: var(--navy); text-align: center;">💳 Official Payment Channels & QR Codes</h3>
+          <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; text-align: center;">Please scan the QR code or send the exact amount corresponding to your selected course using our official Maya or GoTyme channels below:</p>
+          
+          <div class="grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem;">
+            <!-- Maya / GCash with QR Code -->
+            <div style="background: var(--pale-blue); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--sky-blue); text-align: center;">
+              <div style="background: var(--white); padding: 12px; border-radius: var(--radius-sm); margin-bottom: 1.2rem; display: inline-block; box-shadow: var(--shadow-soft);">
+                <img src="./gcash-qr.png" alt="Maya / GCash QR Code" width="220" height="220" loading="lazy" style="width: 180px; height: auto; display: block; margin: 0 auto; border-radius: 4px;">
+              </div>
+              <h4 style="color: var(--navy); margin-bottom: 0.6rem; font-size: 1.1rem;">📱 Maya / GCash</h4>
+              <p style="font-size: 0.9rem; margin-bottom: 0.3rem;"><strong>Account Name:</strong> Gerr Montayre</p>
+              <p style="font-size: 0.9rem; margin-bottom: 0.3rem;"><strong>Account Number:</strong> 0927 533 ****</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem;">Scan QR code or transfer via mobile app.</p>
+            </div>
+
+            <!-- GoTyme Bank with QR Code -->
+            <div style="background: var(--pale-blue); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--sky-blue); text-align: center;">
+              <div style="background: var(--white); padding: 12px; border-radius: var(--radius-sm); margin-bottom: 1.2rem; display: inline-block; box-shadow: var(--shadow-soft);">
+                <img src="./gotyme-qr.png" alt="GoTyme Bank QR Code" width="220" height="220" loading="lazy" style="width: 180px; height: auto; display: block; margin: 0 auto; border-radius: 4px;">
+              </div>
+              <h4 style="color: var(--navy); margin-bottom: 0.6rem; font-size: 1.1rem;">💚 GoTyme Bank</h4>
+              <p style="font-size: 0.9rem; margin-bottom: 0.3rem;"><strong>Account Name:</strong> Gerr Montayre</p>
+              <p style="font-size: 0.9rem; margin-bottom: 0.3rem;"><strong>Account Number:</strong> •••••••• 7358</p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.6rem;">Scan QR code or transfer via digital banking app.</p>
+            </div>
+          </div>
+
+          <div style="background: var(--light-yellow); padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid rgba(255, 244, 214, 0.8); font-size: 0.9rem; color: var(--navy); text-align: center;">
+            <strong>💰 Training Fees:</strong> VA Training (₱599) | SMM Bootcamp (₱999) | Bundle (₱1,598)
+          </div>
+        </div>
+
+        <!-- Payment Step-by-Step Guide Card -->
+        <div class="card" style="margin-bottom: 2rem; background: var(--pale-blue); border: 1px solid var(--sky-blue);">
+          <h3 style="margin-bottom: 1.2rem; color: var(--navy);">📋 How the Enrollment Process Works</h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+            <div style="background: var(--white); padding: 1.2rem; border-radius: var(--radius-sm); border-left: 4px solid var(--royal-blue);">
+              <h4 style="font-size: 1rem; color: var(--navy); margin-bottom: 0.3rem;">Step 1: The Student Registers</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">The student goes to your registration section (<code>#view-register</code>), fills in their Full Name, Email Address, Phone Number, and selects their desired course (e.g., Virtual Assistant Training for ₱599 or SMM Bootcamp for ₱999). When they click “Proceed to Secure Payment”, JavaScript instantly captures their details and smoothly redirects them to this secure checkout page (<code>#view-payment</code>) without refreshing the page.</p>
+            </div>
+
+            <div style="background: var(--white); padding: 1.2rem; border-radius: var(--radius-sm); border-left: 4px solid var(--royal-blue);">
+              <h4 style="font-size: 1rem; color: var(--navy); margin-bottom: 0.3rem;">Step 2: The 10-Minute Countdown Starts</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">As soon as they land on the checkout page, a live 10-minute countdown timer (10:00) starts ticking down at the top of the page. This creates healthy urgency, letting them know their slot is temporarily held while they complete their transfer. If the timer hits zero, an alert lets them know the hold time has expired.</p>
+            </div>
+
+            <div style="background: var(--white); padding: 1.2rem; border-radius: var(--radius-sm); border-left: 4px solid var(--royal-blue);">
+              <h4 style="font-size: 1rem; color: var(--navy); margin-bottom: 0.3rem;">Step 3: Order Summary & Payment Method Selection</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">The student can click the Maya / GCash tab to view your exact GCash QR code image and mobile number (0927 533 ****). Or, they can click the GoTyme Bank tab to view your GoTyme QR code image and account details (•••••••• 7358). Transferring: The student opens their banking or e-wallet app, scans the QR code, and sends the exact amount to your account.</p>
+            </div>
+
+            <div style="background: var(--white); padding: 1.2rem; border-radius: var(--radius-sm); border-left: 4px solid var(--royal-blue);">
+              <h4 style="font-size: 1rem; color: var(--navy); margin-bottom: 0.3rem;">Step 4: Submitting Proof of Payment</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">Once the transfer is successful, the student stays on the same page and scrolls down to the Submit Proof of Payment form. They enter their Transaction / Reference Number and paste a link to their receipt screenshot (such as a Google Drive link). When they click “Complete Enrollment & Notify Coach Gerr”, the website automatically bundles their Name, Email, Program, Reference Number, and Receipt Link together into one submission.</p>
+            </div>
+
+            <div style="background: var(--white); padding: 1.2rem; border-radius: var(--radius-sm); border-left: 4px solid var(--royal-blue);">
+              <h4 style="font-size: 1rem; color: var(--navy); margin-bottom: 0.3rem;">Step 5: Admin Notification (What You Receive)</h4>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">The form securely sends all of those details directly to your Formspree email inbox. You receive one clean, complete email per student containing everything you need to verify the transfer in your Maya or GoTyme app. Once verified, you can email them back with their student portal access code or welcome details!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Proof Submission Form -->
+        <div class="registration-form-card" style="max-width: none; margin: 0;">
+          <h3 style="margin-bottom: 1rem; color: var(--navy);">📤 Submit Proof of Payment</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Once paid, enter your transaction reference number and upload/link your receipt to instantly notify Coach Gerr's admin team.</p>
+
+          <form action="https://formspree.io/f/mwlkzjzg" method="POST">
+            <div class="form-group">
+              <label for="pay-fullname">Full Name *</label>
+              <input type="text" id="pay-fullname" name="Full Name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="pay-email">Email Address *</label>
+              <input type="email" id="pay-email" name="Email Address" placeholder="name@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="pay-channel">Payment Channel Used *</label>
+              <select id="pay-channel" name="Payment Channel" required>
+                <option value="">-- Select Channel --</option>
+                <option value="Maya / GCash">Maya / GCash</option>
+                <option value="GoTyme Bank">GoTyme Bank</option>
+                <option value="Bank Transfer / Other">Bank Transfer / Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="pay-ref">Transaction Reference / Ref Number *</label>
+              <input type="text" id="pay-ref" name="Transaction Reference Number" placeholder="e.g. 1092837465" required>
+            </div>
+
+            <div class="form-group">
+              <label for="pay-proof">Receipt Link / Google Drive Screenshot URL *</label>
+              <input type="url" id="pay-proof" name="Receipt Proof URL" placeholder="https://drive.google.com/..." required>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Complete Enrollment & Notify Coach Gerr</button>
           </form>
         </div>
       </section>
@@ -2525,6 +2642,9 @@
       if (targetView) {
         targetView.classList.add('active-view');
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (targetId === 'payment') {
+          startPaymentCountdown();
+        }
       }
 
       const targetNavLink = document.getElementById('nav-' + targetId);
@@ -2552,6 +2672,7 @@
         'story-zerra': "Zerra A.’s Success Story | GVA",
         'about': "About Coach Gerr & GVA Mission",
         'register': "Register for Training | Gerr's Virtual Academy",
+        'payment': "Secure Payment Gateway | Gerr's Virtual Academy",
         'contact': "Contact & Inquiries | Gerr's Virtual Academy",
         'portal': "Secure Student Portal | Gerr's Virtual Academy"
       };
@@ -2559,6 +2680,46 @@
       if (titles[targetId]) {
         document.title = titles[targetId];
       }
+    }
+
+    // Handle Registration Form Submission & Redirect to Secure Payment Gateway
+    function handleRegistrationSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('reg-name').value;
+      const email = document.getElementById('reg-email').value;
+
+      // Pre-fill payment form fields
+      document.getElementById('pay-fullname').value = name;
+      document.getElementById('pay-email').value = email;
+
+      // Switch to Payment View
+      switchView('payment');
+    }
+
+    // 10-Minute Payment Slot Reservation Countdown Timer
+    let paymentTimerInterval = null;
+    function startPaymentCountdown() {
+      if (paymentTimerInterval) clearInterval(paymentTimerInterval);
+      let totalSeconds = 10 * 60; // 10 minutes
+
+      const minsEl = document.getElementById('pay-minutes');
+      const secsEl = document.getElementById('pay-seconds');
+
+      paymentTimerInterval = setInterval(() => {
+        if (totalSeconds <= 0) {
+          clearInterval(paymentTimerInterval);
+          if (minsEl) minsEl.innerText = "00";
+          if (secsEl) secsEl.innerText = "00";
+          return;
+        }
+
+        totalSeconds--;
+        const m = Math.floor(totalSeconds / 60);
+        const s = totalSeconds % 60;
+
+        if (minsEl) minsEl.innerText = String(m).padStart(2, '0');
+        if (secsEl) secsEl.innerText = String(s).padStart(2, '0');
+      }, 1000);
     }
 
     // Time-based Countdown & Automatic Batch Transition
