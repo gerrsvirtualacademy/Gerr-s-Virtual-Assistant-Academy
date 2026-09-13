@@ -1437,11 +1437,13 @@
             </form>
           </div>
 
-          <!-- Certificate Request Card -->
+          <!-- Certificate Request Card (Embedded) -->
           <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
             <h3>🎓 Certificate Request</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Ready to claim your certificate? Submit your final portfolio requirements for your batch.</p>
-            <a id="dash-cert-btn" href="https://forms.gle/q7mHTKXTZ3XfaLNXA" target="_blank" class="btn btn-primary">Request Certificate →</a>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final portfolio requirements below to claim your official GVA certificate:</p>
+            <div style="position: relative; width: 100%; height: 650px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white);">
+              <iframe src="https://forms.gle/q7mHTKXTZ3XfaLNXA?embedded=true" style="border: 0; width: 100%; height: 100%;" frameborder="0" scrolling="yes">Loading certificate form...</iframe>
+            </div>
           </div>
         </div>
 
@@ -1651,11 +1653,13 @@
             </form>
           </div>
 
-          <!-- SMM Certificate Request Card -->
+          <!-- SMM Certificate Request Card (Embedded) -->
           <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
             <h3>🎓 SMM Certificate Request</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Ready to claim your certificate? Submit your final SMM portfolio requirements for your batch.</p>
-            <a id="smm-dash-cert-btn" href="https://forms.gle/KdSerJVrBp1ZL1v29" target="_blank" class="btn btn-primary">Request Certificate →</a>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final SMM portfolio requirements below to claim your official certificate:</p>
+            <div style="position: relative; width: 100%; height: 650px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white);">
+              <iframe src="https://forms.gle/KdSerJVrBp1ZL1v29?embedded=true" style="border: 0; width: 100%; height: 100%;" frameborder="0" scrolling="yes">Loading certificate form...</iframe>
+            </div>
           </div>
         </div>
 
@@ -1803,13 +1807,6 @@
         document.getElementById('smm-dash-title').innerText = `Batch ${batchNum} SMM Bootcamp Hub`;
         document.getElementById('smm-dash-subtitle').innerText = `Welcome to your Social Media Management bootcamp dashboard for Batch ${batchNum}! Access your course guides, AI prompts, templates, and client profile practice library below.`;
         document.getElementById('smm-submission-batch-field').value = inputCode;
-
-        // Specific certificate link assignment ONLY for SMM Bootcamp Batch 3
-        if (batchNum === "3" || inputCode === "SMM-BATCH3-VERTEX") {
-          document.getElementById('smm-dash-cert-btn').href = "https://forms.gle/KdSerJVrBp1ZL1v29";
-        } else {
-          document.getElementById('smm-dash-cert-btn').href = "https://forms.gle/q7mHTKXTZ3XfaLNXA";
-        }
 
         document.getElementById('portal-dashboard').style.display = 'none';
         document.getElementById('smm-portal-dashboard').style.display = 'block';
