@@ -1388,11 +1388,11 @@
             </div>
           </div>
 
-          <!-- DIRECT STUDENT SUBMISSIONS HUB -->
+          <!-- DIRECT STUDENT SUBMISSIONS HUB (UNIFIED) -->
           <div class="registration-form-card" style="margin-bottom: 2.5rem; max-width: none;">
             <span class="badge-pill" style="background: var(--pale-blue); color: var(--navy);">Direct Submission Hub</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit Your Output / Portfolio Task</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Select your task, link your Discord handle, and submit your Google Drive, Canva, or portfolio link directly to Coach Gerr.</p>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit All Your Training Outputs & Portfolio</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Provide your Discord handle and paste your Google Drive folder link or individual task links below to submit all your outputs in one go.</p>
             
             <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.2rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
               <p style="margin-bottom: 0.6rem;">⚠️ <strong>Link Access Reminder:</strong> Please make sure your link is set to <strong>"Anyone with the link can view"</strong> so we can check your work without permission roadblocks.</p>
@@ -1420,33 +1420,16 @@
               </div>
 
               <div class="form-group">
-                <label for="sub-task">Task / Output Selection *</label>
-                <select id="sub-task" name="Task Selection" required>
-                  <option value="">-- Choose Task / Output --</option>
-                  <option value="Inbox Management">Inbox Management</option>
-                  <option value="Travel Management">Travel Management</option>
-                  <option value="Travel Preference Call Guide">Travel Preference Call Guide</option>
-                  <option value="Data Entry">Data Entry</option>
-                  <option value="Calendar Management">Calendar Management</option>
-                  <option value="Google Drive Management">Google Drive Management</option>
-                  <option value="Project Management Mock Client Task">Project Management Mock Client Task</option>
-                  <option value="Project Management Asana">Project Management Asana</option>
-                  <option value="Resume">Resume</option>
-                  <option value="Portfolio">Portfolio</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="sub-link">Output Link (Google Drive / Canva / Portfolio URL) *</label>
-                <input type="url" id="sub-link" name="Output Link" placeholder="https://..." required>
+                <label for="sub-links">Your Activity Links / Portfolio URL (Google Drive folder or links to completed tasks) *</label>
+                <textarea id="sub-links" name="Activity and Portfolio Links" rows="4" placeholder="Paste your Google Drive folder link or individual activity links here..." required></textarea>
               </div>
 
               <div class="form-group">
                 <label for="sub-notes">Additional Notes or Comments (Optional)</label>
-                <textarea id="sub-notes" name="Student Notes" rows="3" placeholder="Any details you'd like to share about your output..."></textarea>
+                <textarea id="sub-notes" name="Student Notes" rows="2" placeholder="Any details you'd like to share about your submissions..."></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Output to Coach Gerr</button>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Submit All Outputs to Coach Gerr</button>
             </form>
           </div>
 
@@ -1619,11 +1602,11 @@
             </div>
           </div>
 
-          <!-- SMM STUDENT SUBMISSIONS HUB -->
+          <!-- SMM STUDENT SUBMISSIONS HUB (UNIFIED) -->
           <div class="registration-form-card" style="margin-bottom: 2.5rem; max-width: none;">
             <span class="badge-pill" style="background: var(--pale-blue); color: var(--navy);">SMM Submission Hub</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit Your SMM Portfolio & Final Output</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Link your Discord handle and submit your SMM Portfolio or Final Output link directly to Coach Gerr.</p>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit All SMM Outputs & Final Portfolio</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Provide your Discord handle and paste your SMM portfolio or Google Drive folder links below to submit all your bootcamp outputs in one go.</p>
             
             <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.2rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
               <p style="margin-bottom: 0.6rem;">⚠️ <strong>Link Access Reminder:</strong> Please make sure your link is set to <strong>"Anyone with the link can view"</strong> so we can check your work without permission roadblocks.</p>
@@ -1651,24 +1634,16 @@
               </div>
 
               <div class="form-group">
-                <label for="smm-sub-task">SMM Task / Output Selection *</label>
-                <select id="smm-sub-task" name="Task Selection" required>
-                  <option value="">-- Choose SMM Task / Output --</option>
-                  <option value="SMM Portfolio & Final Output">SMM Portfolio & Final Output</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="smm-sub-link">Output Link (Canva / Google Drive / Portfolio URL) *</label>
-                <input type="url" id="smm-sub-link" name="Output Link" placeholder="https://..." required>
+                <label for="smm-sub-links">SMM Activity Links & Portfolio URL (Canva, Google Drive, or portfolio link) *</label>
+                <textarea id="smm-sub-links" name="SMM Activity and Portfolio Links" rows="4" placeholder="Paste your Google Drive folder, Canva links, or portfolio URL here..." required></textarea>
               </div>
 
               <div class="form-group">
                 <label for="smm-sub-notes">Additional Notes or Comments (Optional)</label>
-                <textarea id="smm-sub-notes" name="Student Notes" rows="3" placeholder="Any details you'd like to share about your output..."></textarea>
+                <textarea id="smm-sub-notes" name="Student Notes" rows="2" placeholder="Any details you'd like to share about your SMM outputs..."></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%;">Submit SMM Output to Coach Gerr</button>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Submit All SMM Outputs to Coach Gerr</button>
             </form>
           </div>
 
@@ -1691,9 +1666,8 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="brand-logo" style="margin-bottom: 1rem;">
-            <img src="./logo.png" alt="GVA Logo" style="height: 48px; width: auto; filter: brightness(0) invert(1);">
+            <img src="./gva-logo-blue-bg.jpg" alt="Gerr's Virtual Academy Logo and Mission" style="width: 100%; max-width: 300px; height: auto; border-radius: var(--radius-sm);">
           </div>
-          <p>Gerr's Virtual Academy is dedicated to providing high-quality, practical online training for aspiring Virtual Assistants and digital professionals.</p>
         </div>
 
         <div class="footer-col">
