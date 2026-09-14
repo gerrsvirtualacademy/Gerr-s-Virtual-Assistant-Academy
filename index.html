@@ -1987,7 +1987,7 @@
       <section class="container" style="padding-top: 3rem;">
         <div class="section-header">
           <span class="badge-pill">Take the First Step</span>
-          <h2 id="register-header-title">Register for Training</h2>
+          <h2 id="register-header-title">Register for Batch 18</h2>
           <p>Fill out the official registration form below to proceed to secure PayMongo checkout.</p>
         </div>
 
@@ -2588,7 +2588,7 @@
       }
     }
 
-    // PayMongo Secure Checkout Integration with Live GCash & Bundle Links
+    // PayMongo Secure Checkout Integration with New Payment Pages Links
     function handleRegistrationSubmit(event) {
       event.preventDefault();
       const name = document.getElementById('reg-name').value;
@@ -2596,12 +2596,12 @@
       const phone = document.getElementById('reg-phone').value;
       const programSelect = document.getElementById('reg-program').value;
 
-      // Official Live PayMongo Checkout Links
-      let paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/1vGC3k8"; // Virtual Assistant Live Training (₱599)
+      // Official Live PayMongo Payment Page URLs
+      let paymongoUrl = "https://paymongo.page/l/gva-va-training"; // Virtual Assistant Live Training (₱599)
       if (programSelect.includes('999') || programSelect.includes('Social Media')) {
-        paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/v6ix3KU"; // SMM Bootcamp (₱999)
+        paymongoUrl = "https://paymongo.page/l/smm-bootcamp"; // SMM Bootcamp (₱999)
       } else if (programSelect.includes('1,598') || programSelect.includes('Bundle')) {
-        paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/fOtZBpX"; // Both Programs Bundle (₱1,598)
+        paymongoUrl = "https://paymongo.page/l/both-programs-bundle"; // Both Programs Bundle (₱1,598)
       }
 
       localStorage.setItem('gva_reg_name', name);
@@ -2624,14 +2624,14 @@
         badgeText = "Now Accepting Enrollees — Batch 18";
         countdownTitleText = "🔥 Batch 18 Live Training Starts In:";
         dateStringText = "September 25-27, 2026 • 6:00 PM – 9:00 PM PHT";
-        regHeaderTitle = "Register for Batch 18 (Sept 25-27, 2026)";
+        regHeaderTitle = "Register for Batch 18";
         regOptionText = "Virtual Assistant Training - Batch 18 (₱599)";
       } else {
         targetDate = new Date('2026-10-23T18:00:00+08:00').getTime();
         badgeText = "Now Accepting Enrollees — Batch 19";
         countdownTitleText = "🔥 Batch 19 Live Training Starts In:";
         dateStringText = "October 23-25, 2026 • 6:00 PM – 9:00 PM PHT";
-        regHeaderTitle = "Register for Batch 19 (Oct 23-25, 2026)";
+        regHeaderTitle = "Register for Batch 19";
         regOptionText = "Virtual Assistant Training - Batch 19 (₱599)";
       }
 
