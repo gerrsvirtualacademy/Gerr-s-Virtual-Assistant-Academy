@@ -2588,7 +2588,7 @@
       }
     }
 
-    // PayMongo Secure Checkout Integration with Live GCash Links
+    // PayMongo Secure Checkout Integration with Live GCash & Bundle Links
     function handleRegistrationSubmit(event) {
       event.preventDefault();
       const name = document.getElementById('reg-name').value;
@@ -2601,7 +2601,7 @@
       if (programSelect.includes('999') || programSelect.includes('Social Media')) {
         paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/v6ix3KU"; // SMM Bootcamp (₱999)
       } else if (programSelect.includes('1,598') || programSelect.includes('Bundle')) {
-        paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/1vGC3k8"; // Bundle option fallback to VA training link
+        paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/fOtZBpX"; // Both Programs Bundle (₱1,598)
       }
 
       localStorage.setItem('gva_reg_name', name);
