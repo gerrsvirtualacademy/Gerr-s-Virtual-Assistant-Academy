@@ -925,7 +925,7 @@
     <div class="container">
       <div class="nav-wrapper">
         <a href="#home" class="brand-logo">
-          <img src="./logo.png" alt="Gerr's Virtual Academy Logo" width="1849" height="723" fetchpriority="high">
+          <img src="./logo.webp" alt="Gerr's Virtual Academy Logo" width="1849" height="723">
         </a>
 
         <div class="mobile-toggle" onclick="toggleMobileMenu()">☰</div>
@@ -1007,7 +1007,7 @@
             </div>
 
             <div class="hero-image-card">
-              <img src="./virtual-assistant-hero.jpg" alt="Virtual Assistant working comfortably from home with dual monitors and headset" width="1920" height="1080" fetchpriority="high">
+              <img src="./virtual-assistant-hero.webp" alt="Virtual Assistant working comfortably from home with dual monitors and headset" width="1920" height="1080" fetchpriority="high">
               <div class="floating-card">
                 <strong>Learn. Build. Belong.</strong>
                 <span class="font-handwritten" style="font-size: 1.2rem;">A Brighter You.</span>
@@ -2778,7 +2778,12 @@
       } else {
         switchView('home', false);
       }
-      fetchDiscordStats();
+      // Defer non-critical Discord network activity until after the initial render.
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => fetchDiscordStats(), { timeout: 2000 });
+      } else {
+        setTimeout(fetchDiscordStats, 1000);
+      }
       updateCountdown();
     }
 
