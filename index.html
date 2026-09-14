@@ -83,15 +83,27 @@
       --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Reset & General Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    /* --- Mobile View Overflow & Responsiveness Fix --- */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    /* Ensure containers scale nicely on smaller viewports */
+    .container, section, header, footer, div {
+        max-width: 100%;
+    }
+
+    /* Make media and embeds responsive */
+    img, video, iframe {
+        max-width: 100%;
+        height: auto;
     }
 
     body {
@@ -99,13 +111,14 @@
       background-color: var(--white);
       color: var(--text-main);
       line-height: 1.7;
-      overflow-x: hidden;
+      position: relative;
     }
 
     h1, h2, h3, h4, .font-serif {
       font-family: 'Playfair Display', serif;
       color: var(--navy);
       line-height: 1.3;
+      word-break: break-word;
     }
 
     .font-handwritten {
@@ -118,6 +131,7 @@
       text-decoration: none;
       color: inherit;
       transition: var(--transition-smooth);
+      word-break: break-word;
     }
 
     p a, li a, .card a {
@@ -127,12 +141,6 @@
 
     p a:hover, li a:hover {
       color: var(--cyan-highlight);
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
     }
 
     .container {
@@ -169,11 +177,12 @@
       transition: var(--transition-smooth);
       box-shadow: 0 4px 15px rgba(11, 45, 107, 0.1);
       text-align: center;
+      word-break: break-word;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--navy), var(--royal-blue));
-      color: var(--white); /* High contrast white text */
+      color: var(--white);
     }
 
     .btn-primary:hover {
@@ -198,12 +207,14 @@
 
     section {
       padding: 5rem 0;
+      width: 100%;
     }
 
     .section-header {
       text-align: center;
       max-width: 700px;
       margin: 0 auto 3.5rem auto;
+      padding: 0 1rem;
     }
 
     .section-header h2 {
@@ -227,6 +238,7 @@
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(234, 244, 255, 0.8);
       box-shadow: 0 4px 20px rgba(11, 45, 107, 0.05);
+      width: 100%;
     }
 
     .nav-wrapper {
@@ -303,6 +315,7 @@
       opacity: 0;
       transform: translateY(12px);
       transition: opacity 0.5s ease, transform 0.5s ease;
+      width: 100%;
     }
 
     .page-view.active-view {
@@ -733,7 +746,7 @@
     }
 
     /* ==========================================================================
-       8. REGISTRATION & INQUIRY FORMS
+       8. REGISTRATION & FORMS
        ========================================================================== */
     .registration-form-card {
       background: var(--white);
@@ -744,6 +757,7 @@
       max-width: 700px;
       margin: 0 auto;
       transition: var(--transition-smooth);
+      width: 100%;
     }
 
     .form-group {
@@ -789,6 +803,7 @@
       padding: 4rem 0 2rem 0;
       margin-top: 5rem;
       border-top: 4px solid var(--cyan-highlight);
+      width: 100%;
     }
 
     .footer-grid {
@@ -860,6 +875,7 @@
         box-shadow: -10px 0 30px rgba(0,0,0,0.15);
         transition: right 0.3s ease-in-out;
         z-index: 1001;
+        overflow-y: auto;
       }
       nav.main-nav.mobile-active { right: 0; }
       nav.main-nav a.nav-link { font-size: 1.15rem; width: 100%; padding: 0.6rem 0; }
@@ -885,6 +901,15 @@
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .registration-form-card { padding: 1.8rem 1.2rem; }
       .btn { width: 100%; }
+      .container { padding: 0 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 { font-size: 2rem; }
+      .section-header h2 { font-size: 1.8rem; }
+      .card { padding: 1.5rem 1rem; }
+      .nav-wrapper { height: 80px; }
+      .brand-logo img { height: 42px; }
     }
   </style>
 </head>
@@ -931,7 +956,7 @@
               <!-- Dynamic Batch Countdown Banner -->
               <div style="background: linear-gradient(135deg, var(--pale-blue), var(--white)); padding: 1.6rem 1.8rem; border-radius: var(--radius-lg); margin-bottom: 2.2rem; border: 2px solid var(--sky-blue); box-shadow: var(--shadow-soft); text-align: center;">
                 <p id="countdown-title" style="font-weight: 700; color: var(--navy); margin-bottom: 1rem; font-size: 1.1rem; letter-spacing: 0.3px;">🔥 Batch 18 Live Training Starts In:</p>
-                <div id="countdown-timer" style="display: flex; justify-content: center; gap: 0.8rem; align-items: center;">
+                <div id="countdown-timer" style="display: flex; justify-content: center; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
                   <div style="background: var(--white); padding: 0.9rem 1.1rem; border-radius: var(--radius-sm); box-shadow: 0 4px 15px rgba(11, 45, 107, 0.08); min-width: 75px; border: 1px solid var(--pale-blue);">
                     <span id="days" style="font-size: 2.2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--royal-blue); display: block; line-height: 1;">00</span>
                     <span style="font-size: 0.75rem; font-family: 'Poppins', sans-serif; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Days</span>
@@ -1807,7 +1832,7 @@
 
         <div class="card" style="padding: 2.5rem;">
           <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
-            "I am so grateful to have joined GVA. I honestly started with little to no knowledge about becoming a Virtual Assistant, specifically a General Virtual Assistant. The training was very informative, and the guidance and support from the team were truly exceptional. Now, I've finally landed my first client! A part of me will always owe this achievement to GVA because this is where I started, and where I learned to believe that I could really do it. Thank you so much, Coach Gerr and the whole GVA fam, for believing in us and for giving us the knowledge, confidence, and encouragement to take that first step. I'm truly grateful to be part of this community! ❤️"
+            "I am so grateful to have joined GVA. I honestly started with little to no knowledge about becoming a Virtual Assistant, specifically a General Virtual Assistant. The training was very informative, and the guidance and support from the team were truly exceptional. Now, I've finally landed my first client! A part of me will always owe this achievement to GVA because this is where I started, and where I learned to believe that I really did it. Thank you so much, Coach Gerr and the whole GVA fam, for believing in us and for giving us the knowledge, confidence, and encouragement to take that first step. I'm truly grateful to be part of this community! ❤️"
           </div>
 
           <div style="background: var(--pale-blue); padding: 2rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--sky-blue); margin-top: 2rem;">
@@ -2030,7 +2055,7 @@
         <div class="section-header">
           <span class="badge-pill">Get in Touch</span>
           <h2>Contact & Inquiries</h2>
-          <p>Have questions about our courses or schedules? Send us a message or reach out through our official channels below!</p>
+          <p>Have questions about our courses or schedules? Reach out through our official channels below!</p>
         </div>
 
         <div class="grid-2">
@@ -2059,27 +2084,15 @@
             Monday – Friday | 9:00 AM – 6:00 PM PST</p>
           </div>
 
-          <!-- Inquiry Form Section -->
-          <div class="registration-form-card" style="margin: 0; max-width: none;">
-            <h3 style="margin-bottom: 1.5rem; color: var(--navy);">Send Us an Inquiry</h3>
-            <form action="https://formspree.io/f/mwlkzjzg" method="POST">
-              <div class="form-group">
-                <label for="inquiry-name">Full Name *</label>
-                <input type="text" id="inquiry-name" name="Full Name" placeholder="Enter your full name" required>
-              </div>
-
-              <div class="form-group">
-                <label for="inquiry-email">Email Address *</label>
-                <input type="email" id="inquiry-email" name="Email Address" placeholder="name@example.com" required>
-              </div>
-
-              <div class="form-group">
-                <label for="inquiry-message">Your Message / Inquiry *</label>
-                <textarea id="inquiry-message" name="Inquiry Message" rows="4" placeholder="How can we help you?" required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
-            </form>
+          <!-- Inquiry Section - Redirected to GVA Facebook Page -->
+          <div class="inquiry-redirect-container" style="text-align: center; padding: 40px 20px; background: #f8f9fa; border-radius: 12px; margin: 0; max-width: none; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <h3 style="color: #1a365d; margin-bottom: 15px; font-size: 1.5rem;">Have Questions or Inquiries?</h3>
+              <p style="color: #4a5568; margin-bottom: 25px; font-size: 1rem; line-height: 1.5;">
+                  If you have any inquiries, please message us on our official Facebook account. We're ready to assist you there!
+              </p>
+              <a href="https://www.facebook.com/GerrsVirtualAcademy" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #1877f2; color: #ffffff; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 1rem; transition: background 0.3s;">
+                  Message Us on Facebook
+              </a>
           </div>
         </div>
       </section>
@@ -2224,14 +2237,24 @@
             </form>
           </div>
 
-          <!-- Certificate Request Card -->
+          <!-- Batch 18 Certificate Request Form Embed (Fixed Height & Responsive) -->
           <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
-            <h3>🎓 Certificate Request</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final portfolio requirements below to claim your official GVA certificate:</p>
-            <div style="position: relative; width: 100%; height: 1200px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white); margin-bottom: 1rem;">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1B7i6AVvuzKzVaaer2zQv8JmM_Y9kZSoUgZ7DqxanFjJd_A/viewform?embedded=true" style="border: 0; width: 100%; height: 100%;" frameborder="0" scrolling="yes">Loading certificate form...</iframe>
+            <h3>🎓 Batch 18 Certificate Request Form</h3>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final portfolio requirements below to claim your official Batch 18 GVA certificate:</p>
+            
+            <div class="certificate-embed-wrapper" style="width: 100%; overflow: hidden; margin: 20px 0;">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1B7i6AVvuzKzVaaer2zQv8JmM_Y9kZSoUgZ7DqxanFjJd_A/viewform?embedded=true" 
+                        width="100%" 
+                        height="1200px" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        style="width: 100%; border: none; min-height: 1000px;">
+                    Loading…
+                </iframe>
             </div>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">Having trouble viewing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1B7i6AVvuzKzVaaer2zQv8JmM_Y9kZSoUgZ7DqxanFjJd_A/viewform" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 600;">Open certificate form in a new tab →</a></p>
+            
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Having trouble viewing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1B7i6AVvuzKzVaaer2zQv8JmM_Y9kZSoUgZ7DqxanFjJd_A/viewform" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 600;">Open Batch 18 certificate form in a new tab →</a></p>
           </div>
         </div>
 
@@ -2565,7 +2588,7 @@
       }
     }
 
-    // PayMongo Secure Checkout Integration with updated links
+    // PayMongo Secure Checkout Integration with Live GCash Links
     function handleRegistrationSubmit(event) {
       event.preventDefault();
       const name = document.getElementById('reg-name').value;
@@ -2573,21 +2596,19 @@
       const phone = document.getElementById('reg-phone').value;
       const programSelect = document.getElementById('reg-program').value;
 
-      // Updated PayMongo Links
-      let paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/test/ELFdQXr"; // Virtual Assistant Training (₱599)
+      // Official Live PayMongo Checkout Links
+      let paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/1vGC3k8"; // Virtual Assistant Live Training (₱599)
       if (programSelect.includes('999') || programSelect.includes('Social Media')) {
-        paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/test/MfB0eEZ"; // SMM Bootcamp (₱999)
+        paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/v6ix3KU"; // SMM Bootcamp (₱999)
       } else if (programSelect.includes('1,598') || programSelect.includes('Bundle')) {
-        paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/test/ELFdQXr"; // Bundle option
+        paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/1vGC3k8"; // Bundle option fallback to VA training link
       }
 
-      // Store registrant details locally for welcome confirmation upon return
       localStorage.setItem('gva_reg_name', name);
       localStorage.setItem('gva_reg_email', email);
       localStorage.setItem('gva_reg_phone', phone);
       localStorage.setItem('gva_reg_program', programSelect);
 
-      // Redirect user to PayMongo hosted checkout page (supports GCash, Maya, GoTyme, Cards)
       window.location.href = paymongoUrl;
     }
 
