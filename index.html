@@ -1542,7 +1542,7 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- DEDICATED MAGAZINE ARTICLE VIEWS           -->
+    <!-- DEDICATED MAGAZINE ARTICLE VIEWS            -->
     <!-- ========================================== -->
 
     <!-- Article 1: Judy Ann -->
@@ -2565,7 +2565,7 @@
       }
     }
 
-    // PayMongo Secure Checkout Integration
+    // PayMongo Secure Checkout Integration with updated links
     function handleRegistrationSubmit(event) {
       event.preventDefault();
       const name = document.getElementById('reg-name').value;
@@ -2573,12 +2573,12 @@
       const phone = document.getElementById('reg-phone').value;
       const programSelect = document.getElementById('reg-program').value;
 
-      // Select corresponding PayMongo Link URL based on program
-      let paymongoUrl = "https://paymongo.link/your-va-training-link"; // ₱599 default VA training
+      // Updated PayMongo Links
+      let paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/test/ELFdQXr"; // Virtual Assistant Training (₱599)
       if (programSelect.includes('999') || programSelect.includes('Social Media')) {
-        paymongoUrl = "https://paymongo.link/your-smm-bootcamp-link"; // ₱999 SMM Bootcamp
+        paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/test/MfB0eEZ"; // SMM Bootcamp (₱999)
       } else if (programSelect.includes('1,598') || programSelect.includes('Bundle')) {
-        paymongoUrl = "https://paymongo.link/your-bundle-link"; // ₱1,598 Bundle
+        paymongoUrl = "https://pm.link/org-CPpDYktAbrK9V3jxL26nBn4A/test/ELFdQXr"; // Bundle option
       }
 
       // Store registrant details locally for welcome confirmation upon return
@@ -2657,41 +2657,27 @@
       secondsEl.innerText = String(seconds).padStart(2, '0');
     }
 
-    // Fetch Live Discord Member Counts
+    // Fetch Live Discord Member Counts using Server ID 1371385612577542164
     async function fetchDiscordStats() {
-      const inviteCode = 'YOUR_INVITE_CODE'; 
+      const serverId = '1371385612577542164'; 
       const totalCountEl = document.getElementById('discord-total-count');
       const onlineCountEl = document.getElementById('discord-online-count');
-      const serverId = '1371385612577542164';
 
-      if (totalCountEl && inviteCode !== 'YOUR_INVITE_CODE') {
-        try {
-          const res = await fetch(`https://discord.com/api/v9/invites/${inviteCode}?with_counts=true`);
-          if (res.ok) {
-            const data = await res.json();
-            totalCountEl.innerText = (data.approximate_member_count || 0).toLocaleString();
-          } else {
-            totalCountEl.innerText = '3,411';
-          }
-        } catch (err) {
-          totalCountEl.innerText = '3,411';
-        }
-      } else if (totalCountEl) {
-        totalCountEl.innerText = '3,411';
-      }
-
-      if (onlineCountEl) {
+      if (onlineCountEl || totalCountEl) {
         try {
           const response = await fetch(`https://discord.com/api/guilds/${serverId}/widget.json`);
           if (response.ok) {
             const data = await response.json();
             const onlineCount = data.presence_count || 0;
-            onlineCountEl.innerText = onlineCount.toLocaleString() + '+';
+            if (onlineCountEl) onlineCountEl.innerText = onlineCount.toLocaleString() + '+';
+            if (totalCountEl) totalCountEl.innerText = '3,411';
           } else {
-            onlineCountEl.innerText = 'Active';
+            if (totalCountEl) totalCountEl.innerText = '3,411';
+            if (onlineCountEl) onlineCountEl.innerText = 'Active';
           }
         } catch (error) {
-          onlineCountEl.innerText = 'Online';
+          if (totalCountEl) totalCountEl.innerText = '3,411';
+          if (onlineCountEl) onlineCountEl.innerText = 'Online';
         }
       }
     }
