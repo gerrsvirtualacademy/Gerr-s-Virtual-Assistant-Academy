@@ -1044,6 +1044,49 @@
 }
 </style>
 
+
+<style id="gva-smm-certificate-fix">
+.smm-certificate-request {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 16px;
+  background: rgba(255,255,255,.75);
+}
+.smm-certificate-request h3 { margin: .35rem 0 .65rem; }
+.smm-certificate-request p { line-height: 1.65; margin: 0 0 1rem; }
+.smm-certificate-request .certificate-request-label {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  opacity: .7;
+}
+</style>
+
+
+<style id="gva-smm-certificate-visibility-fix">
+/* Keep the SMM certificate request visible inside the SMM student dashboard. */
+#smm-portal-dashboard #smm-certificate-request,
+#smm-portal-dashboard .smm-certificate-request,
+#smm-portal-dashboard .smm-certificate-card {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+#smm-portal-dashboard #smm-certificate-request iframe,
+#smm-portal-dashboard .smm-certificate-request iframe {
+  display: block !important;
+  visibility: visible !important;
+  min-height: 900px;
+  width: 100%;
+}
+</style>
+
 </head>
 <body>
 
@@ -1134,7 +1177,7 @@
             </div>
 
             <div class="hero-image-card">
-              <img src="./virtual-assistant-hero.jpg" alt="Virtual Assistant working comfortably from home with dual monitors and headset" width="1920" height="1080" fetchpriority="high">
+              <img src="./virtual-assistant-hero.webp" alt="Virtual Assistant working comfortably from home with dual monitors and headset" width="1920" height="1080" fetchpriority="high">
               <div class="floating-card">
                 <strong>Learn. Build. Belong.</strong>
                 <span class="font-handwritten" style="font-size: 1.2rem;">A Brighter You.</span>
@@ -2599,7 +2642,7 @@
           </div>
 
           <!-- SMM Certificate Request Card -->
-          <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
+          <div id="smm-certificate-request" class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
             <h3>🎓 SMM Certificate Request</h3>
             <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final SMM portfolio requirements below to claim your official certificate:</p>
             <div style="position: relative; width: 100%; height: 1200px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white); margin-bottom: 1rem;">
