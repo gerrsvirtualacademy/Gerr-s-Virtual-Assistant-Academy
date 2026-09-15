@@ -1165,6 +1165,60 @@
 }
 </style>
 
+
+<style id="gva-footer-email-final-fix">
+.site-footer .footer-grid {
+  align-items: start !important;
+}
+
+.site-footer .footer-col:last-child {
+  min-width: 0 !important;
+  align-self: start !important;
+}
+
+.site-footer .footer-col:last-child > .footer-heading {
+  margin-top: 0 !important;
+}
+
+.site-footer .footer-col:last-child > p {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-wrap: nowrap !important;
+  gap: 8px !important;
+  width: 100% !important;
+  margin: 1rem 0 0 !important;
+  line-height: 1.35 !important;
+  white-space: nowrap !important;
+}
+
+.site-footer .footer-col:last-child > p img {
+  flex: 0 0 18px !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.site-footer .footer-col:last-child > p > a {
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+@media (max-width: 600px) {
+  .site-footer .footer-col:last-child > p {
+    white-space: normal !important;
+    align-items: flex-start !important;
+  }
+
+  .site-footer .footer-col:last-child > p > a {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -2378,10 +2432,6 @@
       <p>Access your SMM resources and batch hub.</p>
     </a>
   </div>
-
-  <button type="button" class="btn btn-secondary" style="margin-top:1.5rem;" onclick="portalSignOut();">
-    Sign Out
-  </button>
 </div>
 
 <div id="portal-login-card" class="registration-form-card" style="border: 2px solid var(--pale-blue);">
@@ -2772,16 +2822,6 @@
   </main>
 
   <!-- FOOTER -->
-  
-<section class="section" id="gva-stats">
-  <div class="container">
-    <div class="stat-item">
-      <strong>3,400+</strong>
-      <span>Students Trained</span>
-    </div>
-  </div>
-</section>
-
 <!-- GVA INFORMATION, FAQ & STUDENT ONBOARDING -->
 <section class="section" id="faq">
   <div class="container">
