@@ -8,7 +8,7 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" id="robots-meta">
+  <meta name="robots" content="index, follow" id="robots-meta">
 
   <!-- Primary SEO Meta Tags -->
   <title>Gerr's Virtual Academy | From Zero to VA Hero</title>
@@ -16,30 +16,24 @@
   <meta name="description" content="Empowering aspiring Virtual Assistants with practical training, real support, and real opportunities in the Philippines. Learn in-demand skills and launch your remote career.">
   <meta name="keywords" content="Virtual Assistant Training Philippines, Social Media Management Training Philippines, Become a VA Philippines, Work From Home VA, GVA, Coach Gerr, Freelance VA Course">
   <meta name="author" content="Gerr's Virtual Academy">
-  <meta name="theme-color" content="#0B2D6B">
   <link rel="canonical" href="https://gerrsvirtualacademy.com/">
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/webp" href="./logo.webp">
+  <link rel="icon" type="image/png" href="./logo.png">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gerrsvirtualacademy.com/">
   <meta property="og:title" content="Gerr's Virtual Academy | From Zero to VA Hero">
   <meta property="og:description" content="Learn in-demand skills, build a flexible career, and join a supportive community that believes in you.">
-  <meta property="og:image" content="https://gerrsvirtualacademy.com/logo.webp">
-  <meta property="og:image:alt" content="Gerr's Virtual Academy logo">
-  <meta property="og:site_name" content="Gerr's Virtual Academy">
-  <meta property="og:locale" content="en_PH">
+  <meta property="og:image" content="https://gerrsvirtualacademy.com/logo.png">
 
   <!-- Twitter / X -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://gerrsvirtualacademy.com/">
   <meta property="twitter:title" content="Gerr's Virtual Academy | From Zero to VA Hero">
   <meta property="twitter:description" content="Empowering aspiring Virtual Assistants with practical training, real support, and real opportunities.">
-  <meta property="twitter:image" content="https://gerrsvirtualacademy.com/logo.webp">
-  <meta property="twitter:image:alt" content="Gerr's Virtual Academy logo">
+  <meta property="twitter:image" content="https://gerrsvirtualacademy.com/logo.png">
 
   <!-- JSON-LD Structured Data for Google Search -->
   <script type="application/ld+json">
@@ -48,23 +42,13 @@
     "@type": "EducationalOrganization",
     "name": "Gerr's Virtual Academy",
     "url": "https://gerrsvirtualacademy.com/",
-    "logo": "https://gerrsvirtualacademy.com/logo.webp",
+    "logo": "https://gerrsvirtualacademy.com/logo.png",
     "description": "Empowering aspiring Virtual Assistants with practical training, real support, and real opportunities.",
     "sameAs": [
       "https://www.facebook.com/GerrsVirtualAcademy",
       "https://www.tiktok.com/@coach_gerr",
       "https://www.instagram.com/coach_gerr/"
     ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Gerr's Virtual Academy",
-    "url": "https://gerrsvirtualacademy.com/",
-    "description": "Virtual Assistant and Social Media Management training in the Philippines."
   }
   </script>
 
@@ -829,7 +813,7 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.8fr 1fr 1fr 1.8fr;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
       gap: 3rem;
       margin-bottom: 3.5rem;
     }
@@ -842,10 +826,6 @@
       margin-bottom: 1.2rem;
     }
 
-    .footer-col {
-      min-width: 0;
-    }
-
     .footer-col p {
       font-size: 0.9rem;
       color: rgba(255, 255, 255, 0.85);
@@ -853,8 +833,6 @@
 
     .footer-links {
       list-style: none;
-      padding-left: 0;
-      margin: 0;
     }
 
     .footer-links li {
@@ -869,24 +847,6 @@
     .footer-links a:hover {
       color: var(--sky-blue);
       padding-left: 4px;
-    }
-
-    .footer-email {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 1.5rem 0 0;
-      white-space: nowrap;
-    }
-
-    .footer-email img {
-      flex: 0 0 18px;
-    }
-
-    .footer-email a {
-      color: var(--sky-blue);
-      overflow-wrap: anywhere;
-      word-break: break-word;
     }
 
     .footer-bottom {
@@ -944,7 +904,6 @@
       .stats-bar { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
       .grid-2 { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .footer-email { white-space: normal; }
       .registration-form-card { padding: 1.8rem 1.2rem; }
       .btn { width: 100%; }
       .container { padding: 0 1rem; }
@@ -958,6 +917,133 @@
       .brand-logo img { height: 42px; }
     }
   </style>
+
+<style id="gva-info-additions">
+/* GVA FAQ / ONBOARDING ADDITIONS */
+.faq-list {
+  display: grid;
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.faq-list details {
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 14px;
+  padding: 0 20px;
+  background: rgba(255,255,255,.75);
+}
+.faq-list summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 36px 20px 0;
+  font-weight: 700;
+  position: relative;
+}
+.faq-list summary::-webkit-details-marker { display:none; }
+.faq-list summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: 16px;
+  font-size: 24px;
+  font-weight: 400;
+}
+.faq-list details[open] summary::after { content: "−"; }
+.faq-list details p {
+  margin: 0 0 20px;
+  line-height: 1.7;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.process-step {
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+  padding: 24px;
+  background: rgba(255,255,255,.75);
+}
+.process-number {
+  display: inline-block;
+  font-weight: 800;
+  font-size: .85rem;
+  margin-bottom: 12px;
+  opacity: .7;
+}
+.process-step h3 { margin: 0 0 8px; }
+.process-step p { margin: 0; line-height: 1.65; }
+.guidelines-card {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 18px;
+  padding: 30px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.75);
+}
+.guidelines-card h3 { margin: 0 0 8px; }
+.guidelines-card p { margin: 0 0 22px; line-height: 1.7; }
+.guidelines-card p:last-child { margin-bottom: 0; }
+
+@media (max-width: 900px) {
+  .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .process-grid { grid-template-columns: 1fr; }
+  .faq-list details { padding: 0 16px; }
+  .guidelines-card { padding: 22px; }
+}
+</style>
+
+<style id="gva-footer-final-alignment">
+/* Final GVA footer layout: logo + Navigation + Academy + Social Media */
+.site-footer > .container > .footer-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.35fr) !important;
+  column-gap: 2.5rem !important;
+  row-gap: 2rem !important;
+  align-items: start !important;
+  margin-bottom: 3.5rem !important;
+}
+
+.site-footer > .container > .footer-grid > .footer-col {
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-self: start !important;
+}
+
+.site-footer .footer-heading {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.site-footer .footer-links {
+  margin-top: 0 !important;
+  padding-left: 0 !important;
+}
+
+.site-footer .footer-col p {
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .site-footer > .container > .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 2rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer > .container > .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -966,7 +1052,7 @@
     <div class="container">
       <div class="nav-wrapper">
         <a href="#home" class="brand-logo">
-          <img src="./logo.webp" alt="Gerr's Virtual Academy Logo" width="1849" height="723">
+          <img src="./logo.png" alt="Gerr's Virtual Academy Logo" width="1849" height="723" fetchpriority="high">
         </a>
 
         <div class="mobile-toggle" onclick="toggleMobileMenu()">☰</div>
@@ -1048,7 +1134,7 @@
             </div>
 
             <div class="hero-image-card">
-              <img src="./virtual-assistant-hero.webp" alt="Virtual Assistant working comfortably from home with dual monitors and headset" width="1920" height="1080" fetchpriority="high">
+              <img src="./virtual-assistant-hero.jpg" alt="Virtual Assistant working comfortably from home with dual monitors and headset" width="1920" height="1080" fetchpriority="high">
               <div class="floating-card">
                 <strong>Learn. Build. Belong.</strong>
                 <span class="font-handwritten" style="font-size: 1.2rem;">A Brighter You.</span>
@@ -2529,7 +2615,189 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
+  
+<section class="section" id="gva-stats">
+  <div class="container">
+    <div class="stat-item">
+      <strong>3,400+</strong>
+      <span>Students Trained</span>
+    </div>
+  </div>
+</section>
+
+<!-- GVA INFORMATION, FAQ & STUDENT ONBOARDING -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-kicker">Need to Know</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know before joining GVA.</p>
+    </div>
+
+    <div class="faq-list">
+      <details>
+        <summary>Do I need previous VA experience to join?</summary>
+        <p>No. GVA's training is designed for aspiring virtual assistants, including beginners who are starting from zero.</p>
+      </details>
+
+      <details>
+        <summary>Do I need a laptop to join?</summary>
+        <p>No. A laptop or computer is not required to join the training, but it is highly preferred for completing activities and hands-on exercises.</p>
+      </details>
+
+      <details>
+        <summary>How long is the training?</summary>
+        <p>GVA Virtual Assistant Training is a 3-day live training. The SMM Bootcamp is a 2-day live training.</p>
+      </details>
+
+      <details>
+        <summary>How long are the training sessions each day?</summary>
+        <p>Training is usually 3 hours per day, typically from 6:00 PM to 9:00 PM. The schedule is subject to change based on the coach's schedule.</p>
+      </details>
+
+      <details>
+        <summary>When does GVA Virtual Assistant Training usually happen?</summary>
+        <p>GVA Virtual Assistant Training usually happens near the end of the month. Exact dates and times depend on the scheduled batch and the coach's availability.</p>
+      </details>
+
+      <details>
+        <summary>When does the SMM Bootcamp usually happen?</summary>
+        <p>The SMM Bootcamp usually happens around the middle of the month. Exact dates and times depend on the scheduled batch and the coach's availability.</p>
+      </details>
+
+      <details>
+        <summary>How will I receive the Google Meet link?</summary>
+        <p>A Google Meet invitation/link will be sent on the day of the training.</p>
+      </details>
+
+      <details>
+        <summary>What device do I need?</summary>
+        <p>There are no specific phone requirements. Your device simply needs to be new enough and capable of handling Google Meet. A laptop or computer is preferred for activities, but it is not required to join.</p>
+      </details>
+
+      <details>
+        <summary>How do I get my batch access code?</summary>
+        <p>After you complete your payment, your batch access code will be sent to the email address you provided during registration. Confirmation emails are generally sent within the day. Because batch access codes are manually sent, there may occasionally be a delay.</p>
+      </details>
+
+      <details>
+        <summary>What happens after I make my payment?</summary>
+        <p>Complete your registration and payment, check your confirmation email, use the batch access information provided, join the official GVA Discord server, and follow the instructions there. Your Google Meet invitation/link will be sent on the day of training.</p>
+      </details>
+
+      <details>
+        <summary>Do I need to join the official GVA Discord server?</summary>
+        <p>Yes. All enrolled students must join the official GVA Discord server to receive important training and batch updates. The private Discord server link will be included in your confirmation email.</p>
+      </details>
+
+      <details>
+        <summary>How do I access the GVA Discord server?</summary>
+        <p>Create or log in to your Discord account, then check the email address associated with your Discord account. Open the verification email sent by Discord and click “Verify.” Once your account is verified, use the private GVA Discord invitation from your confirmation email to join the server.</p>
+      </details>
+
+      <details>
+        <summary>What should I do after joining the GVA Discord server?</summary>
+        <p>Go to the <strong>#lobby</strong> channel and state your batch and full name. An administrator will then add you to your appropriate batch channel, where you will receive your updates.</p>
+      </details>
+
+      <details>
+        <summary>Do I receive a certificate?</summary>
+        <p>Yes. You can request your certificate after completing the required live training: 3 days for GVA Virtual Assistant Training and 2 days for SMM Bootcamp. Certificates are automated and sent to your email through Certify'em.</p>
+      </details>
+
+      <details>
+        <summary>What information is included on my certificate?</summary>
+        <p>Your certificate includes your name, the date you completed your training, and the date you received your certificate.</p>
+      </details>
+
+      <details>
+        <summary>Can I take both programs?</summary>
+        <p>Yes. Students can enroll in the VA Training, SMM Bootcamp, or both through the available bundle option.</p>
+      </details>
+
+      <details>
+        <summary>How many students has GVA trained?</summary>
+        <p>GVA has trained <strong>3,400+ students</strong>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="enrollment-process">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-kicker">Your GVA Journey</span>
+      <h2>What Happens After You Enroll?</h2>
+      <p>Follow these simple steps to get ready for your training.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <span class="process-number">01</span>
+        <h3>Register &amp; Pay</h3>
+        <p>Choose your program and complete your registration and payment.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-number">02</span>
+        <h3>Receive Confirmation</h3>
+        <p>Your confirmation email is generally sent within the day.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-number">03</span>
+        <h3>Get Your Access Information</h3>
+        <p>Your batch access code and private Discord invitation are provided through your confirmation email. Batch codes are manually sent, so there may be a delay.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-number">04</span>
+        <h3>Join &amp; Verify Discord</h3>
+        <p>Verify your Discord account through the email Discord sends you, then join the private GVA server using the invitation in your confirmation email.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-number">05</span>
+        <h3>Identify Your Batch</h3>
+        <p>In <strong>#lobby</strong>, state your batch and full name. An admin will add you to your appropriate batch channel for updates.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-number">06</span>
+        <h3>Attend Your Training</h3>
+        <p>Your Google Meet invitation/link will be sent on the day of training. Sessions are usually 6:00–9:00 PM, subject to the coach's schedule.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-number">07</span>
+        <h3>Complete Your Program</h3>
+        <p>Complete 3 live training days for VA Training or 2 live training days for SMM Bootcamp.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-number">08</span>
+        <h3>Receive Your Certificate</h3>
+        <p>After completing the required live training, request your certificate. It is automatically processed through Certify'em and sent to your email.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="discord-guidelines">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-kicker">Student Community</span>
+      <h2>GVA Discord Community Guidelines</h2>
+      <p>Let's keep our learning community respectful and professional.</p>
+    </div>
+
+    <div class="guidelines-card">
+      <h3>Respect &amp; Professionalism</h3>
+      <p>GVA does not welcome rude, disrespectful, disruptive, or unprofessional behavior within the community.</p>
+
+      <h3>Have a Concern?</h3>
+      <p>If you have a complaint, concern, or issue, please DM our Discord administrators or message us through our official Facebook page rather than disrupting the community.</p>
+
+      <h3>Disruptive Behavior</h3>
+      <p>Disruptive behavior may result in a timeout or removal from the Discord server. Removal from the server due to disruptive behavior does not qualify for a refund, in accordance with GVA policy.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
@@ -2564,7 +2832,8 @@
             <li><a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;"><img src="./tiktok-icon.png" alt="TikTok" width="2000" height="2250" loading="lazy" style="width: 18px; height: 18px; object-fit: contain;"> TikTok (@coach_gerr)</a></li>
             <li><a href="https://www.instagram.com/coach_gerr/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;"><img src="./instagram-icon.png" alt="Instagram" width="500" height="500" loading="lazy" style="width: 18px; height: 18px; object-fit: contain;"> Instagram (@coach_gerr)</a></li>
           </ul>
-          <p class="footer-email"><img src="./gmail-icon.png" alt="Gmail" width="686" height="512" loading="lazy" style="width: 18px; height: 18px; object-fit: contain;"> <span>Email:</span> <a href="mailto:info@gerrsvirtualacademy.com">info@gerrsvirtualacademy.com</a></p>
+          <br>
+          <p style="display: flex; align-items: center; gap: 8px;"><img src="./gmail-icon.png" alt="Gmail" width="686" height="512" loading="lazy" style="width: 18px; height: 18px; object-fit: contain;"> Email: <a href="mailto:info@gerrsvirtualacademy.com" style="color: var(--sky-blue);">info@gerrsvirtualacademy.com</a></p>
         </div>
       </div>
 
@@ -2574,14 +2843,14 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT FOR CLIENT-SIDE ROUTING AND PORTAL INTERACTIONS -->
+  <!-- JAVASCRIPT WITH CRYPTOGRAPHIC HASH VERIFICATION & NOINDEX -->
   <script>
     function toggleMobileMenu() {
       const nav = document.getElementById('mainNav');
       nav.classList.toggle('mobile-active');
     }
 
-    // Dynamic title and client-side view switcher
+    // Secure Dynamic Title, Robots noindex, & View Switcher
     function switchView(viewId, updateHash = true) {
       const targetId = document.getElementById('view-' + viewId) ? viewId : 'home';
 
@@ -2607,9 +2876,15 @@
         targetNavLink.classList.add('active');
       }
 
-      // Hash views (e.g. #portal) are client-side states of this same document.
-      // Keep the canonical public homepage indexable; robots directives do not
-      // provide access control for content embedded in the same HTML document.
+      // Security AI Audit compliance: dynamically set noindex, nofollow on private portal view
+      const robotsMeta = document.getElementById('robots-meta');
+      if (robotsMeta) {
+        if (targetId === 'portal') {
+          robotsMeta.setAttribute('content', 'noindex, nofollow');
+        } else {
+          robotsMeta.setAttribute('content', 'index, follow');
+        }
+      }
 
       const titles = {
         'home': "Gerr's Virtual Academy | From Zero to VA Hero",
@@ -2812,12 +3087,7 @@
       } else {
         switchView('home', false);
       }
-      // Defer non-critical Discord network activity until after the initial render.
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => fetchDiscordStats(), { timeout: 2000 });
-      } else {
-        setTimeout(fetchDiscordStats, 1000);
-      }
+      fetchDiscordStats();
       updateCountdown();
     }
 
