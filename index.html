@@ -1087,6 +1087,84 @@
 }
 </style>
 
+
+<style id="smm-google-form-embed-fix">
+#smm-portal-dashboard #smm-certificate-request {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+#smm-portal-dashboard #smm-certificate-request .smm-form-frame {
+  position: relative;
+  width: 100%;
+  height: 1100px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  background: var(--white);
+  margin-bottom: 1rem;
+}
+#smm-portal-dashboard #smm-certificate-request .smm-form-frame iframe {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  border: 0 !important;
+}
+@media (max-width: 600px) {
+  #smm-portal-dashboard #smm-certificate-request .smm-form-frame {
+    height: 1000px;
+  }
+}
+</style>
+
+
+<style id="gva-portal-navigation">
+.portal-nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin: 0 0 1.5rem;
+}
+.portal-nav-actions .btn {
+  min-width: 120px;
+}
+.portal-home-card {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.portal-course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.portal-course-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.portal-course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+.portal-course-card h3 { margin: 0 0 .4rem; }
+.portal-course-card p { margin: 0; color: var(--text-muted); }
+@media (max-width: 650px) {
+  .portal-course-grid { grid-template-columns: 1fr; }
+  .portal-nav-actions { justify-content: stretch; }
+  .portal-nav-actions .btn { flex: 1 1 140px; }
+}
+</style>
+
 </head>
 <body>
 
@@ -2282,7 +2360,31 @@
       <section class="container" style="padding-top: 4rem; max-width: 950px;">
         
         <!-- Enhanced Login Gate with Clear Instructions -->
-        <div id="portal-login-card" class="registration-form-card" style="border: 2px solid var(--pale-blue);">
+        
+<div id="portal-course-home" class="portal-home-card" style="display:none;">
+  <div class="section-header">
+    <span class="section-kicker">Student Portal</span>
+    <h2>Choose Your Course Portal</h2>
+    <p>Select the program you want to access and enter its batch access code.</p>
+  </div>
+
+  <div class="portal-course-grid">
+    <a href="#portal" class="portal-course-card" onclick="showPortalLogin('gva'); return false;">
+      <h3>🎓 GVA Virtual Assistant Training</h3>
+      <p>Access your VA training resources and batch hub.</p>
+    </a>
+    <a href="#portal" class="portal-course-card" onclick="showPortalLogin('smm'); return false;">
+      <h3>📱 SMM Bootcamp</h3>
+      <p>Access your SMM resources and batch hub.</p>
+    </a>
+  </div>
+
+  <button type="button" class="btn btn-secondary" style="margin-top:1.5rem;" onclick="portalSignOut();">
+    Sign Out
+  </button>
+</div>
+
+<div id="portal-login-card" class="registration-form-card" style="border: 2px solid var(--pale-blue);">
           <div style="text-align: center; margin-bottom: 2rem;">
             <span class="badge-pill">🔒 Secure Student Area</span>
             <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: var(--navy);">GVA Student Portal</h2>
@@ -2315,6 +2417,12 @@
 
         <!-- VA Portal Dashboard -->
         <div id="portal-dashboard" style="display: none;">
+<div class="portal-nav-actions">
+  <button type="button" class="btn btn-secondary" onclick="showPortalHome();">← Portal Home</button>
+  <button type="button" class="btn btn-secondary" onclick="switchPortalCourse('smm');">Switch to SMM</button>
+  <button type="button" class="btn btn-primary" onclick="portalSignOut();">Sign Out</button>
+</div>
+
           <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--pale-blue), var(--light-yellow)); border: none;">
             <span class="badge-pill" style="background: var(--white); color: var(--navy);">Welcome VA Student! 🎉</span>
             <h2 id="dash-title" style="margin-bottom: 0.5rem;"></h2>
@@ -2439,6 +2547,12 @@
 
         <!-- SMM Portal Dashboard -->
         <div id="smm-portal-dashboard" style="display: none;">
+<div class="portal-nav-actions">
+  <button type="button" class="btn btn-secondary" onclick="showPortalHome();">← Portal Home</button>
+  <button type="button" class="btn btn-secondary" onclick="switchPortalCourse('gva');">Switch to GVA</button>
+  <button type="button" class="btn btn-primary" onclick="portalSignOut();">Sign Out</button>
+</div>
+
           <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--soft-pink), var(--pale-blue)); border: none;">
             <span class="badge-pill" style="background: var(--white); color: var(--navy);">Welcome SMM Student! 📱✨</span>
             <h2 id="smm-dash-title" style="margin-bottom: 0.5rem;"></h2>
@@ -2645,7 +2759,7 @@
           <div id="smm-certificate-request" class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
             <h3>🎓 SMM Certificate Request</h3>
             <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final SMM portfolio requirements below to claim your official certificate:</p>
-            <div style="position: relative; width: 100%; height: 1200px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white); margin-bottom: 1rem;">
+            <div style=" border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white); margin-bottom: 1rem;">
               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeAW4jKxlq_MrXxvYPbzYG_dOEzA7J1jbVmAlLwA5uk2t9ndw/viewform?embedded=true" style="border: 0; width: 100%; height: 100%;" frameborder="0" scrolling="yes">Loading certificate form...</iframe>
             </div>
             <p style="font-size: 0.85rem; color: var(--text-muted);">Having trouble viewing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAW4jKxlq_MrXxvYPbzYG_dOEzA7J1jbVmAlLwA5uk2t9ndw/viewform" target="_blank" rel="noopener noreferrer" style="color: var(--royal-blue); font-weight: 600;">Open SMM certificate form in a new tab →</a></p>
@@ -3144,6 +3258,104 @@
       const item = headerEntry.parentElement;
       item.classList.toggle('active');
     }
-  </script>
+  
+// ===== Portal course navigation =====
+function showPortalHome() {
+  const home = document.getElementById('portal-course-home');
+  const login = document.getElementById('portal-login-card');
+  const gva = document.getElementById('portal-dashboard');
+  const smm = document.getElementById('smm-portal-dashboard');
+
+  if (home) home.style.display = 'block';
+  if (login) login.style.display = 'none';
+  if (gva) gva.style.display = 'none';
+  if (smm) smm.style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showPortalLogin(course) {
+  const home = document.getElementById('portal-course-home');
+  const login = document.getElementById('portal-login-card');
+  const gva = document.getElementById('portal-dashboard');
+  const smm = document.getElementById('smm-portal-dashboard');
+
+  if (home) home.style.display = 'none';
+  if (login) login.style.display = 'block';
+  if (gva) gva.style.display = 'none';
+  if (smm) smm.style.display = 'none';
+
+  // Set the selected course if the existing login UI exposes a course selector.
+  const selector = document.getElementById('portal-course');
+  if (selector && course) selector.value = course;
+
+  const codeInput = document.getElementById('portal-code');
+  if (codeInput) {
+    codeInput.value = '';
+    setTimeout(() => codeInput.focus(), 50);
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function switchPortalCourse(course) {
+  // Switching course deliberately returns to the login screen so the student
+  // must enter the access code for the other course.
+  showPortalLogin(course);
+}
+
+function portalSignOut() {
+  // Clear any client-side portal state used by this page.
+  try {
+    sessionStorage.removeItem('gvaPortalSession');
+    sessionStorage.removeItem('smmPortalSession');
+    sessionStorage.removeItem('portalSession');
+    localStorage.removeItem('gvaPortalSession');
+    localStorage.removeItem('smmPortalSession');
+    localStorage.removeItem('portalSession');
+  } catch (e) {}
+
+  const home = document.getElementById('portal-course-home');
+  const login = document.getElementById('portal-login-card');
+  const gva = document.getElementById('portal-dashboard');
+  const smm = document.getElementById('smm-portal-dashboard');
+
+  if (home) home.style.display = 'block';
+  if (login) login.style.display = 'none';
+  if (gva) gva.style.display = 'none';
+  if (smm) smm.style.display = 'none';
+
+  // Clear visible batch/access fields where present.
+  ['portal-code','batch-code','access-code'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+
+  window.location.hash = 'portal';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+</script>
 </body>
 </html>
+
+<script id="gva-portal-route-fix">
+(function () {
+  function portalRouteFix() {
+    if (window.location.hash.replace('#','') !== 'portal') return;
+    const login = document.getElementById('portal-login-card');
+    const gva = document.getElementById('portal-dashboard');
+    const smm = document.getElementById('smm-portal-dashboard');
+    const home = document.getElementById('portal-course-home');
+    if (!home) return;
+
+    // If a dashboard is currently visible, leave it alone.
+    const gvaVisible = gva && getComputedStyle(gva).display !== 'none';
+    const smmVisible = smm && getComputedStyle(smm).display !== 'none';
+    if (!gvaVisible && !smmVisible && login) {
+      login.style.display = 'none';
+      home.style.display = 'block';
+    }
+  }
+  window.addEventListener('DOMContentLoaded', portalRouteFix);
+  window.addEventListener('hashchange', portalRouteFix);
+})();
+</script>
