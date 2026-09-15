@@ -829,7 +829,7 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      grid-template-columns: 1.8fr 1fr 1fr 1.8fr;
       gap: 3rem;
       margin-bottom: 3.5rem;
     }
@@ -840,6 +840,10 @@
       font-size: 1.1rem;
       font-weight: 600;
       margin-bottom: 1.2rem;
+    }
+
+    .footer-col {
+      min-width: 0;
     }
 
     .footer-col p {
@@ -863,6 +867,23 @@
     .footer-links a:hover {
       color: var(--sky-blue);
       padding-left: 4px;
+    }
+
+    .footer-email {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 1.5rem 0 0;
+      white-space: nowrap;
+    }
+
+    .footer-email img {
+      flex: 0 0 18px;
+    }
+
+    .footer-email a {
+      color: var(--sky-blue);
+      overflow-wrap: normal;
     }
 
     .footer-bottom {
@@ -920,6 +941,7 @@
       .stats-bar { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
       .grid-2 { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-email { white-space: normal; }
       .registration-form-card { padding: 1.8rem 1.2rem; }
       .btn { width: 100%; }
       .container { padding: 0 1rem; }
@@ -2539,8 +2561,7 @@
             <li><a href="https://www.tiktok.com/@coach_gerr" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;"><img src="./tiktok-icon.png" alt="TikTok" width="2000" height="2250" loading="lazy" style="width: 18px; height: 18px; object-fit: contain;"> TikTok (@coach_gerr)</a></li>
             <li><a href="https://www.instagram.com/coach_gerr/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 8px;"><img src="./instagram-icon.png" alt="Instagram" width="500" height="500" loading="lazy" style="width: 18px; height: 18px; object-fit: contain;"> Instagram (@coach_gerr)</a></li>
           </ul>
-          <br>
-          <p style="display: flex; align-items: center; gap: 8px;"><img src="./gmail-icon.png" alt="Gmail" width="686" height="512" loading="lazy" style="width: 18px; height: 18px; object-fit: contain;"> Email: <a href="mailto:info@gerrsvirtualacademy.com" style="color: var(--sky-blue);">info@gerrsvirtualacademy.com</a></p>
+          <p class="footer-email"><img src="./gmail-icon.png" alt="Gmail" width="686" height="512" loading="lazy" style="width: 18px; height: 18px; object-fit: contain;"> <span>Email:</span> <a href="mailto:info@gerrsvirtualacademy.com">info@gerrsvirtualacademy.com</a></p>
         </div>
       </div>
 
