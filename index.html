@@ -88,6 +88,24 @@
       --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    /* Accessibility Skip Link Styling */
+    .skip-link {
+      position: absolute;
+      top: -50px;
+      left: 1rem;
+      background: var(--navy);
+      color: var(--white);
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      z-index: 2000;
+      transition: top 0.3s ease;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
     /* --- Mobile View Overflow & Responsiveness Fix --- */
     html, body {
         overflow-x: hidden;
@@ -100,12 +118,10 @@
         box-sizing: inherit;
     }
 
-    /* Ensure containers scale nicely on smaller viewports */
     .container, section, header, footer, div {
         max-width: 100%;
     }
 
-    /* Make media and embeds responsive */
     img, video, iframe {
         max-width: 100%;
         height: auto;
@@ -131,7 +147,6 @@
       color: var(--royal-blue);
     }
 
-    /* Link Hover Styles */
     a {
       text-decoration: none;
       color: inherit;
@@ -233,7 +248,7 @@
     }
 
     /* ==========================================================================
-       2. HEADER & NAVIGATION
+       2. HEADER & NAVIGATION (ALIGNED)
        ========================================================================== */
     header.site-header {
       position: sticky;
@@ -266,15 +281,17 @@
     nav.main-nav {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.8rem;
     }
 
     nav.main-nav a.nav-link {
-      font-size: 1.02rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--navy);
       position: relative;
-      padding: 0.3rem 0;
+      padding: 0.5rem 0;
+      display: inline-flex;
+      align-items: center;
       white-space: nowrap;
     }
 
@@ -286,7 +303,7 @@
     nav.main-nav a.nav-link::after {
       content: '';
       position: absolute;
-      bottom: -2px;
+      bottom: 0;
       left: 0;
       width: 0%;
       height: 3px;
@@ -875,7 +892,7 @@
         height: 100vh;
         background: var(--white);
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
         padding: 5rem 2rem 2rem 2rem;
         box-shadow: -10px 0 30px rgba(0,0,0,0.15);
         transition: right 0.3s ease-in-out;
@@ -883,7 +900,12 @@
         overflow-y: auto;
       }
       nav.main-nav.mobile-active { right: 0; }
-      nav.main-nav a.nav-link { font-size: 1.15rem; width: 100%; padding: 0.6rem 0; }
+      nav.main-nav a.nav-link { 
+        font-size: 1.1rem; 
+        width: 100%; 
+        padding: 0.8rem 0; 
+        border-bottom: 1px solid var(--pale-blue);
+      }
       .nav-close-btn {
         display: block;
         position: absolute;
@@ -920,12 +942,15 @@
 </head>
 <body>
 
+  <!-- Accessible Skip Link for Lighthouse Audit Compliance -->
+  <a href="#app-content" class="skip-link">Skip to main content</a>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="container">
       <div class="nav-wrapper">
         <a href="#home" class="brand-logo">
-          <img src="./logo.webp" alt="Gerr's Virtual Academy Logo" width="1849" height="723">
+          <img src="./logo.png" alt="Gerr's Virtual Academy Logo" width="1849" height="723" fetchpriority="high">
         </a>
 
         <div class="mobile-toggle" onclick="toggleMobileMenu()">☰</div>
@@ -939,7 +964,7 @@
           <a href="#success-stories" onclick="toggleMobileMenu();" class="nav-link" id="nav-success-stories">Success Stories</a>
           <a href="#about" onclick="toggleMobileMenu();" class="nav-link" id="nav-about">About</a>
           <a href="#contact" onclick="toggleMobileMenu();" class="nav-link" id="nav-contact">Contact</a>
-          <a href="#register" onclick="toggleMobileMenu();" class="btn btn-primary btn-sm" style="width: auto; padding: 0.6rem 1.4rem; font-size: 0.95rem;">Register Now</a>
+          <a href="#register" onclick="toggleMobileMenu();" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.9rem; text-align: center;">Register Now</a>
         </nav>
       </div>
     </div>
@@ -1007,7 +1032,7 @@
             </div>
 
             <div class="hero-image-card">
-              <img src="./virtual-assistant-hero.webp" alt="Virtual Assistant working comfortably from home with dual monitors and headset" width="1920" height="1080" fetchpriority="high">
+              <img src="./virtual-assistant-hero.jpg" alt="Virtual Assistant working comfortably from home with dual monitors and headset" width="1920" height="1080" fetchpriority="high">
               <div class="floating-card">
                 <strong>Learn. Build. Belong.</strong>
                 <span class="font-handwritten" style="font-size: 1.2rem;">A Brighter You.</span>
@@ -1783,7 +1808,7 @@
         <div class="card" style="padding: 2.5rem;">
           <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-main); white-space: pre-line; margin-bottom: 2rem;">
             "Meron pala neto dito sa discord hehe now ko lang nakita. Btw, thankyou ulit @Coach Gerr. 
-            Share ko lang po na-hired po ako as assistant direct client pa po ito hehe. Lahat ng tinuro ni coach ay nagagamit ko and tuwang tuwa yung client ko sa sample ko sa folder sa gdrive ginaya ko lang yung ginawa ni coach. Mababa lang offer at part time lang siya pero ginrab ko na for experience and mag tataas naman daw and lucky me kasi super bait ng client ko kahit barok english ko naiintindihan nya ko kahit Copy,Noted,Yes lang sagot ko sakanya masaya na siya basta nasesend ko mga kailangan nya gawin daily haha. Yun lang share ko lang and Client Dust Everyone! 
+            Share ko lang po na-hired po ako as assistant direct client pa po ito hehe. Lahat ng tinuro ni coach ay nagagamit ko and tuwang tuwa yung client ko sa sample ko sa folder sa gdrive ginaya ko lang yung ginawa ni coach. Mababa lang offer at part time lang siya pero ginrab ko na for experience and mag tataas naman daw and lucky me kasi super bait ng client ko kahit barok english ko naiintindihan nya ko kahit Copy,Noted,Yes lang sagot ko sakanya masaya na siya basta nasesend ko mga kailangan nya gawend daily haha. Yun lang share ko lang and Client Dust Everyone! 
 
             From batch 12"
           </div>
@@ -2246,7 +2271,7 @@
             </form>
           </div>
 
-          <!-- Batch 18 Certificate Request Form Embed (Fixed Height & Responsive) -->
+          <!-- Batch 18 Certificate Request Form Embed -->
           <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
             <h3>🎓 Batch 18 Certificate Request Form</h3>
             <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final portfolio requirements below to claim your official Batch 18 GVA certificate:</p>
@@ -2541,7 +2566,6 @@
       nav.classList.toggle('mobile-active');
     }
 
-    // Secure Dynamic Title, Robots noindex, & View Switcher
     function switchView(viewId, updateHash = true) {
       const targetId = document.getElementById('view-' + viewId) ? viewId : 'home';
 
@@ -2567,7 +2591,6 @@
         targetNavLink.classList.add('active');
       }
 
-      // Security AI Audit compliance: dynamically set noindex, nofollow on private portal view
       const robotsMeta = document.getElementById('robots-meta');
       if (robotsMeta) {
         if (targetId === 'portal') {
@@ -2607,7 +2630,6 @@
       }
     }
 
-    // PayMongo Secure Checkout Integration with New Payment Pages Links
     function handleRegistrationSubmit(event) {
       event.preventDefault();
       const name = document.getElementById('reg-name').value;
@@ -2615,12 +2637,11 @@
       const phone = document.getElementById('reg-phone').value;
       const programSelect = document.getElementById('reg-program').value;
 
-      // Official Live PayMongo Payment Page URLs
-      let paymongoUrl = "https://paymongo.page/l/gva-va-training"; // Virtual Assistant Live Training (₱599)
+      let paymongoUrl = "https://paymongo.page/l/gva-va-training";
       if (programSelect.includes('999') || programSelect.includes('Social Media')) {
-        paymongoUrl = "https://paymongo.page/l/smm-bootcamp"; // SMM Bootcamp (₱999)
+        paymongoUrl = "https://paymongo.page/l/smm-bootcamp";
       } else if (programSelect.includes('1,598') || programSelect.includes('Bundle')) {
-        paymongoUrl = "https://paymongo.page/l/both-programs-bundle"; // Both Programs Bundle (₱1,598)
+        paymongoUrl = "https://paymongo.page/l/both-programs-bundle";
       }
 
       localStorage.setItem('gva_reg_name', name);
@@ -2631,7 +2652,6 @@
       window.location.href = paymongoUrl;
     }
 
-    // Time-based Countdown & Automatic Batch Transition
     function updateCountdown() {
       const batch18EndTime = new Date('2026-09-27T21:00:00+08:00').getTime();
       const now = new Date().getTime();
@@ -2697,7 +2717,6 @@
       secondsEl.innerText = String(seconds).padStart(2, '0');
     }
 
-    // Fetch Live Discord Member Counts using Server ID 1371385612577542164
     async function fetchDiscordStats() {
       const serverId = '1371385612577542164'; 
       const totalCountEl = document.getElementById('discord-total-count');
@@ -2722,7 +2741,6 @@
       }
     }
 
-    // Secure Cryptographic Hashing Verification (Resolves AI Audit "Plaintext Secrets" Vulnerability)
     async function verifyBatchCode() {
       const inputCode = document.getElementById('batch-code').value.trim().toUpperCase();
       const errorMsg = document.getElementById('login-error');
@@ -2733,15 +2751,12 @@
         return;
       }
 
-      // Compute SHA-256 hash of user input to avoid storing/exposing plaintext batch codes in source code
       const encoder = new TextEncoder();
       const data = encoder.encode(inputCode);
       const hashBuffer = await crypto.subtle.digest('SHA-256', data);
       const hashArray = Array.from(new Uint8Array(hashBuffer));
       const inputHash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 
-      // Pre-calculated SHA-256 secure hash whitelist (No plaintext secrets exposed to code scanners)
-      // Supports standard GVA and SMM batch naming conventions securely
       const isValidFormat = /^GVA-BATCH\d+$/i.test(inputCode) || /^SMM-BATCH\d+$/i.test(inputCode) || inputCode.includes('BATCH');
 
       document.getElementById('portal-login-card').style.display = 'none';
@@ -2778,12 +2793,7 @@
       } else {
         switchView('home', false);
       }
-      // Defer non-critical Discord network activity until after the initial render.
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => fetchDiscordStats(), { timeout: 2000 });
-      } else {
-        setTimeout(fetchDiscordStats, 1000);
-      }
+      fetchDiscordStats();
       updateCountdown();
     }
 
