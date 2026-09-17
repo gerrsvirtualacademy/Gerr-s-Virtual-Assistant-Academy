@@ -2291,21 +2291,6 @@
             </div>
 
             <div class="form-group">
-              <label for="reg-name">Full Name *</label>
-              <input type="text" id="reg-name" name="Full Name" placeholder="Enter your full name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="reg-email">Email Address *</label>
-              <input type="email" id="reg-email" name="Email Address" placeholder="name@example.com" required>
-            </div>
-
-            <div class="form-group">
-              <label for="reg-phone">Contact / Phone Number *</label>
-              <input type="tel" id="reg-phone" name="Phone Number" placeholder="e.g. 09171234567" required>
-            </div>
-
-            <div class="form-group">
               <label for="reg-notes">Questions or Additional Notes (Optional)</label>
               <textarea id="reg-notes" name="Additional Notes" rows="3" placeholder="Tell us about your background or ask any questions..."></textarea>
             </div>
@@ -3218,11 +3203,7 @@
     // PayMongo Secure Checkout Integration with Voucher Support
     function handleRegistrationSubmit(event) {
       event.preventDefault();
-
-      const name = document.getElementById('reg-name').value.trim();
-      const email = document.getElementById('reg-email').value.trim();
-      const phone = document.getElementById('reg-phone').value.trim();
-      const programSelect = document.getElementById('reg-program').value;
+const programSelect = document.getElementById('reg-program').value;
       const voucherInput = document.getElementById('reg-voucher');
       const voucherMessage = document.getElementById('voucher-message');
       const voucher = voucherInput.value.trim().toUpperCase();
@@ -3237,11 +3218,6 @@
           price: 199,
           program: "Virtual Assistant Training",
           url: "https://paymongo.page/l/gva-xmas199"
-        },
-        "TIKTOKLMTD379": {
-          price: 379,
-          program: "Virtual Assistant Training",
-          url: "https://paymongo.page/l/gva-tiktoklmtd379"
         }
       };
 
@@ -3255,7 +3231,7 @@
       }
 
       if (voucher && !vouchers[voucher]) {
-        voucherMessage.textContent = "✕ Invalid voucher code. Please check the code and try again.";
+        voucherMessage.textContent = "Invalid voucher code. Please check the code and try again.";
         voucherMessage.style.color = "#B91C1C";
         voucherMessage.style.display = "block";
         voucherInput.focus();
@@ -3274,11 +3250,7 @@
       } else if (programSelect.includes('1,598') || programSelect.includes('Bundle')) {
         paymongoUrl = "https://paymongo.page/l/both-programs-bundle";
       }
-
-      localStorage.setItem('gva_reg_name', name);
-      localStorage.setItem('gva_reg_email', email);
-      localStorage.setItem('gva_reg_phone', phone);
-      localStorage.setItem('gva_reg_program', programSelect);
+localStorage.setItem('gva_reg_program', programSelect);
       localStorage.setItem('gva_reg_voucher', voucher || 'None');
 
       window.location.href = paymongoUrl;
