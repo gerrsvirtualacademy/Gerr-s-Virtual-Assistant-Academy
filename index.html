@@ -2310,6 +2310,10 @@
               <textarea id="reg-notes" name="Additional Notes" rows="3" placeholder="Tell us about your background or ask any questions..."></textarea>
             </div>
 
+            <p style="margin: 0.8rem 0 1rem; font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+              Please note: Additional payment processing or service fees may apply.
+            </p>
+
             <button type="submit" class="btn btn-primary" style="width: 100%;">Proceed to PayMongo Secure Checkout →</button>
           </form>
         </div>
@@ -3251,7 +3255,7 @@
       }
 
       if (voucher && !vouchers[voucher]) {
-        vouchermessage.textContent = "✕ Invalid voucher code. Please check the code and try again.";
+        voucherMessage.textContent = "✕ Invalid voucher code. Please check the code and try again.";
         voucherMessage.style.color = "#B91C1C";
         voucherMessage.style.display = "block";
         voucherInput.focus();
