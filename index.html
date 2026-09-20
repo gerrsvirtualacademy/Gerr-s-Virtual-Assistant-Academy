@@ -2284,6 +2284,12 @@
               </select>
             </div>
 
+            <div class="form-group" id="voucher-group">
+              <label for="reg-voucher">Voucher Code (Optional)</label>
+              <input type="text" id="reg-voucher" name="Voucher Code" placeholder="Enter voucher code, if applicable" autocomplete="off" style="text-transform: uppercase;">
+              <p id="voucher-message" style="display:none; margin-top:0.6rem; font-size:0.9rem; font-weight:600;"></p>
+            </div>
+
             <div class="form-group">
               <label for="reg-name">Full Name *</label>
               <input type="text" id="reg-name" name="Full Name" placeholder="Enter your full name" required>
@@ -2303,6 +2309,10 @@
               <label for="reg-notes">Questions or Additional Notes (Optional)</label>
               <textarea id="reg-notes" name="Additional Notes" rows="3" placeholder="Tell us about your background or ask any questions..."></textarea>
             </div>
+
+            <p style="margin: 0.8rem 0 1rem; font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+              Please note: Additional payment processing or service fees may apply.
+            </p>
 
             <button type="submit" class="btn btn-primary" style="width: 100%;">Proceed to PayMongo Secure Checkout →</button>
           </form>
@@ -3206,29 +3216,92 @@
       }
     }
 
-    // PayMongo Secure Checkout Integration with New Payment Pages Links
+    // PayMongo Secure Checkout Integration with Voucher Support
     function handleRegistrationSubmit(event) {
       event.preventDefault();
-      const name = document.getElementById('reg-name').value;
-      const email = document.getElementById('reg-email').value;
-      const phone = document.getElementById('reg-phone').value;
+
+      const name = document.getElementById('reg-name').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const phone = document.getElementById('reg-phone').value.trim();
       const programSelect = document.getElementById('reg-program').value;
+      const voucherInput = document.getElementById('reg-voucher');
+      const voucherMessage = document.getElementById('voucher-message');
+      const voucher = voucherInput.value.trim().toUpperCase();
+
+      const vouchers = {
+        "TIKTOK399": {
+          price: 399,
+          program: "Virtual Assistant Training",
+          url: "https://paymongo.page/l/gva-tiktok399"
+        },
+        "XMAS199": {
+          price: 199,
+          program: "Virtual Assistant Training",
+          url: "https://paymongo.page/l/gva-xmas199"
+        },
+        "TIKTOKLMTD379": {
+          price: 379,
+          program: "Virtual Assistant Training",
+          url: "https://paymongo.page/l/gva-tiktoklmtd379"
+        }
+      };
+
+      // Vouchers are valid only for GVA Training.
+      if (voucher && !programSelect.includes("Virtual Assistant")) {
+        voucherMessage.textContent = "This voucher is valid only for GVA Training.";
+        voucherMessage.style.color = "#B45309";
+        voucherMessage.style.display = "block";
+        voucherInput.focus();
+        return;
+      }
+
+      if (voucher && !vouchers[voucher]) {
+        voucherMessage.textContent = "✕ Invalid voucher code. Please check the code and try again.";
+        voucherMessage.style.color = "#B91C1C";
+        voucherMessage.style.display = "block";
+        voucherInput.focus();
+        return;
+      }
 
       // Official Live PayMongo Payment Page URLs
-      let paymongoUrl = "https://paymongo.page/l/gva-va-training"; // Virtual Assistant Live Training (₱599)
-      if (programSelect.includes('999') || programSelect.includes('Social Media')) {
-        paymongoUrl = "https://paymongo.page/l/smm-bootcamp"; // SMM Bootcamp (₱999)
+      let paymongoUrl = "https://paymongo.page/l/gva-va-training";
+      if (vouchers[voucher]) {
+        paymongoUrl = vouchers[voucher].url;
+        voucherMessage.textContent = "Voucher applied: ₱" + vouchers[voucher].price + " GVA Training.";
+        voucherMessage.style.color = "#15803D";
+        voucherMessage.style.display = "block";
+      } else if (programSelect.includes('999') || programSelect.includes('Social Media')) {
+        paymongoUrl = "https://paymongo.page/l/smm-bootcamp";
       } else if (programSelect.includes('1,598') || programSelect.includes('Bundle')) {
-        paymongoUrl = "https://paymongo.page/l/both-programs-bundle"; // Both Programs Bundle (₱1,598)
+        paymongoUrl = "https://paymongo.page/l/both-programs-bundle";
       }
 
       localStorage.setItem('gva_reg_name', name);
       localStorage.setItem('gva_reg_email', email);
       localStorage.setItem('gva_reg_phone', phone);
       localStorage.setItem('gva_reg_program', programSelect);
+      localStorage.setItem('gva_reg_voucher', voucher || 'None');
 
       window.location.href = paymongoUrl;
     }
+
+    // Show voucher guidance only when GVA Training is selected.
+    document.addEventListener('DOMContentLoaded', function () {
+      const programSelect = document.getElementById('reg-program');
+      const voucherGroup = document.getElementById('voucher-group');
+
+      function updateVoucherVisibility() {
+        const isGva = programSelect.value.includes("Virtual Assistant");
+        voucherGroup.style.display = isGva ? "block" : "none";
+        if (!isGva) {
+          document.getElementById('reg-voucher').value = "";
+          document.getElementById('voucher-message').style.display = "none";
+        }
+      }
+
+      programSelect.addEventListener('change', updateVoucherVisibility);
+      updateVoucherVisibility();
+    });
 
     // Time-based Countdown & Automatic Batch Transition
     function updateCountdown() {
