@@ -2290,26 +2290,6 @@
               <p id="voucher-message" style="display:none; margin-top:0.6rem; font-size:0.9rem; font-weight:600;"></p>
             </div>
 
-            <div class="form-group">
-              <label for="reg-name">Full Name *</label>
-              <input type="text" id="reg-name" name="Full Name" placeholder="Enter your full name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="reg-email">Email Address *</label>
-              <input type="email" id="reg-email" name="Email Address" placeholder="name@example.com" required>
-            </div>
-
-            <div class="form-group">
-              <label for="reg-phone">Contact / Phone Number *</label>
-              <input type="tel" id="reg-phone" name="Phone Number" placeholder="e.g. 09171234567" required>
-            </div>
-
-            <div class="form-group">
-              <label for="reg-notes">Questions or Additional Notes (Optional)</label>
-              <textarea id="reg-notes" name="Additional Notes" rows="3" placeholder="Tell us about your background or ask any questions..."></textarea>
-            </div>
-
             <p style="margin: 0.8rem 0 1rem; font-size: 0.85rem; color: var(--text-muted); text-align: center;">
               Please note: Additional payment processing or service fees may apply.
             </p>
@@ -3220,9 +3200,6 @@
     function handleRegistrationSubmit(event) {
       event.preventDefault();
 
-      const name = document.getElementById('reg-name').value.trim();
-      const email = document.getElementById('reg-email').value.trim();
-      const phone = document.getElementById('reg-phone').value.trim();
       const programSelect = document.getElementById('reg-program').value;
       const voucherInput = document.getElementById('reg-voucher');
       const voucherMessage = document.getElementById('voucher-message');
@@ -3276,9 +3253,6 @@
         paymongoUrl = "https://paymongo.page/l/both-programs-bundle";
       }
 
-      localStorage.setItem('gva_reg_name', name);
-      localStorage.setItem('gva_reg_email', email);
-      localStorage.setItem('gva_reg_phone', phone);
       localStorage.setItem('gva_reg_program', programSelect);
       localStorage.setItem('gva_reg_voucher', voucher || 'None');
 
