@@ -1,14 +1,5 @@
 <!DOCTYPE html>
-<
-
-            <div class="form-group">
-              <label for="reg-voucher">Voucher Code (Optional)</label>
-              <div style="display: flex; gap: 0.5rem; align-items: stretch;">
-                <input type="text" id="reg-voucher" placeholder="Enter voucher code" autocomplete="off" style="flex: 1;">
-                <button type="button" class="btn btn-secondary" onclick="applyVoucher()" style="white-space: nowrap;">Apply</button>
-              </div>
-              <div id="voucher-message" style="margin-top: 0.6rem; font-size: 0.85rem; display: none;"></div>
-            </div>html lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2285,14 +2276,23 @@
           <form id="registration-form" onsubmit="handleRegistrationSubmit(event)">
             <div class="form-group">
               <label for="reg-program">Select Program *</label>
-              <select id="reg-program" name="Selected Program" required>
+              <select id="reg-program" name="Selected Program" required onchange="toggleVoucherField()">
                 <option value="">-- Choose Course --</option>
                 <option id="reg-option-primary" value="Virtual Assistant Training (₱599)">Virtual Assistant Training (₱599)</option>
                 <option value="Social Media Management Bootcamp - ₱999">Social Media Management Bootcamp - ₱999</option>
                 <option value="Both Programs Bundle - ₱1,598">Both Programs Bundle (Special) - ₱1,598</option>
               </select>
             </div>
-<button type="submit" class="btn btn-primary" style="width: 100%;">Proceed to PayMongo Secure Checkout →</button>
+            <div id="voucher-group" class="form-group" style="display: none;">
+              <label for="reg-voucher">Voucher Code (Optional)</label>
+              <div style="display: flex; gap: 0.5rem; align-items: stretch;">
+                <input type="text" id="reg-voucher" placeholder="Enter voucher code" autocomplete="off" style="flex: 1;">
+                <button type="button" class="btn btn-secondary" onclick="applyVoucher()" style="white-space: nowrap;">Apply</button>
+              </div>
+              <div id="voucher-message" style="margin-top: 0.6rem; font-size: 0.85rem; display: none;"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Proceed to PayMongo Secure Checkout →</button>
           </form>
         </div>
       </section>
@@ -2428,21 +2428,7 @@
               <p style="margin-bottom: 0;">⏳ Please also be patient while Coach Gerr and the team carefully review each activity—it will take some time to go through all submissions. Thank you!</p>
             </div>
 
-
-
-          <!-- Essential Resources Section -->
-          <div class="card" style="margin-bottom: 2rem;">
-            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Student Library</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📚 Essential Resources & Templates</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Download your official guides, sample portfolios, and job hunting tools:</p>
-            
-          <div class="card" style="margin-bottom: 2rem;">
-            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">GVA Batch 18 Replay</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">🎥 Day 1 — Training Replay</h3>
-            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 1rem; border-radius: 10px;">
-              <iframe src="https://www.youtube.com/embed/3dkgHM8Uvtc" title="GVA Batch 18 Day 1 Training Replay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-          </div>
+          
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
               <a href="https://docs.google.com/document/d/1CuGt1XTDHkj9ugekN-lC8XDTbsbB2yAAfc6H7Np416k/edit?tab=t.olh4o7z9rgy#heading=h.uovl0c4rroid" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📥 Inbox Management Guide</a>
@@ -2456,7 +2442,21 @@
             </div>
           </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+          <!-- Essential Resources Section -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Student Library</span>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📚 Essential Resources & Templates</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Download your official guides, sample portfolios, and job hunting tools:</p>
+            
+            <div class="card" style="margin-bottom: 2rem;">
+            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">GVA Batch 18 Replay</span>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">🎥 Day 1 — Training Replay</h3>
+            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 1rem; border-radius: 10px;">
+              <iframe src="https://www.youtube.com/embed/3dkgHM8Uvtc" title="GVA Batch 18 Day 1 Training Replay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
               <a href="https://drive.google.com/file/d/1v9tOVAuAy_bRd4J1HrfpKp4Sp8zhYdcd/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📄 GVA Training PDF</a>
 
 
@@ -3208,11 +3208,33 @@
     }
 
     // PayMongo Secure Checkout Integration with New Payment Pages Links
-    function applyVoucher() {
+    function toggleVoucherField() {
+      const programSelect = document.getElementById('reg-program');
+      const voucherGroup = document.getElementById('voucher-group');
       const voucherInput = document.getElementById('reg-voucher');
       const message = document.getElementById('voucher-message');
-      const programSelect = document.getElementById('reg-program').value;
+
+      const isGVA = programSelect.value.includes('Virtual Assistant Training');
+
+      if (isGVA) {
+        voucherGroup.style.display = 'block';
+      } else {
+        voucherGroup.style.display = 'none';
+        voucherInput.value = '';
+        voucherInput.dataset.voucherUrl = '';
+        voucherInput.dataset.voucherCode = '';
+        message.textContent = '';
+        message.style.display = 'none';
+      }
+    }
+
+    function applyVoucher() {
+      const programSelect = document.getElementById('reg-program');
+      const voucherInput = document.getElementById('reg-voucher');
+      const message = document.getElementById('voucher-message');
+
       const code = voucherInput.value.trim().toUpperCase();
+      const isGVA = programSelect.value.includes('Virtual Assistant Training');
 
       const vouchers = {
         "TIKTOK399": {
@@ -3229,26 +3251,28 @@
         }
       };
 
-      message.style.display = "block";
+      message.style.display = 'block';
 
-      if (!code || !vouchers[code]) {
-        message.textContent = "Invalid voucher code.";
-        message.style.color = "#b42318";
-        voucherInput.dataset.voucherUrl = "";
+      if (!isGVA) {
+        message.textContent = 'Voucher codes are only valid for the GVA Virtual Assistant Training.';
+        message.style.color = '#dc2626';
+        voucherInput.dataset.voucherUrl = '';
+        voucherInput.dataset.voucherCode = '';
         return;
       }
 
-      if (!programSelect.includes("Virtual Assistant Training")) {
-        message.textContent = "This voucher is valid for the Virtual Assistant Training only.";
-        message.style.color = "#b42318";
-        voucherInput.dataset.voucherUrl = "";
+      if (!code || !vouchers[code]) {
+        message.textContent = 'Invalid voucher code.';
+        message.style.color = '#dc2626';
+        voucherInput.dataset.voucherUrl = '';
+        voucherInput.dataset.voucherCode = '';
         return;
       }
 
       voucherInput.dataset.voucherUrl = vouchers[code].url;
       voucherInput.dataset.voucherCode = code;
-      message.textContent = `Voucher applied — ${vouchers[code].price} VA training.`;
-      message.style.color = "#087443";
+      message.textContent = `Voucher applied successfully — ${vouchers[code].price}.`;
+      message.style.color = '#16a34a';
     }
 
     function handleRegistrationSubmit(event) {
@@ -3257,24 +3281,20 @@
       const programSelect = document.getElementById('reg-program').value;
       const voucherInput = document.getElementById('reg-voucher');
       const voucherCode = voucherInput.value.trim().toUpperCase();
-      const voucherUrl = voucherInput.dataset.voucherUrl || "";
+      const voucherUrl = voucherInput.dataset.voucherUrl || '';
 
-      if (voucherCode) {
+      // Voucher checkout for GVA.
+      if (programSelect.includes('Virtual Assistant Training') && voucherCode) {
         if (!voucherUrl) {
           applyVoucher();
           if (!voucherInput.dataset.voucherUrl) return;
-        }
-
-        if (!programSelect.includes("Virtual Assistant Training")) {
-          applyVoucher();
-          return;
         }
 
         window.location.href = voucherInput.dataset.voucherUrl;
         return;
       }
 
-      // Official Live PayMongo Payment Page URLs
+      // Official Live PayMongo Payment Page URLs.
       let paymongoUrl = "https://paymongo.page/l/gva-va-training"; // Virtual Assistant Live Training (₱599)
       if (programSelect.includes('999') || programSelect.includes('Social Media')) {
         paymongoUrl = "https://paymongo.page/l/smm-bootcamp"; // SMM Bootcamp (₱999)
