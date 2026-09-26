@@ -1226,7 +1226,7 @@
         <div class="container">
           <div class="hero-grid">
             <div class="hero-content">
-              <span class="badge-pill" id="hero-badge">Now Accepting Enrollees — Batch 19</span>
+              <span class="badge-pill" id="hero-badge">Now Accepting Enrollees — Batch 18</span>
               <h1>From Zero to VA Hero.</h1>
               <p class="hero-sub">Learn in-demand skills, build a flexible career, and join a supportive community that believes in you.</p>
               
@@ -2264,7 +2264,7 @@
       <section class="container" style="padding-top: 3rem;">
         <div class="section-header">
           <span class="badge-pill">Take the First Step</span>
-          <h2 id="register-header-title">Register for Batch 19</h2>
+          <h2 id="register-header-title">Register for Batch 18</h2>
           <p>Fill out the official registration form below to proceed to secure PayMongo checkout.</p>
         </div>
 
@@ -2282,26 +2282,6 @@
                 <option value="Social Media Management Bootcamp - ₱999">Social Media Management Bootcamp - ₱999</option>
                 <option value="Both Programs Bundle - ₱1,598">Both Programs Bundle (Special) - ₱1,598</option>
               </select>
-            </div>
-
-            <div class="form-group">
-              <label for="reg-name">Full Name *</label>
-              <input type="text" id="reg-name" name="Full Name" placeholder="Enter your full name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="reg-email">Email Address *</label>
-              <input type="email" id="reg-email" name="Email Address" placeholder="name@example.com" required>
-            </div>
-
-            <div class="form-group">
-              <label for="reg-phone">Contact / Phone Number *</label>
-              <input type="tel" id="reg-phone" name="Phone Number" placeholder="e.g. 09171234567" required>
-            </div>
-
-            <div class="form-group">
-              <label for="reg-notes">Questions or Additional Notes (Optional)</label>
-              <textarea id="reg-notes" name="Additional Notes" rows="3" placeholder="Tell us about your background or ask any questions..."></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary" style="width: 100%;">Proceed to PayMongo Secure Checkout →</button>
@@ -2440,14 +2420,6 @@
               <p style="margin-bottom: 0;">⏳ Please also be patient while Coach Gerr and the team carefully review each activity—it will take some time to go through all submissions. Thank you!</p>
             </div>
 
-          <div class="card" style="margin-bottom: 2rem;">
-            <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">GVA Batch 18 Replay</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">🎥 Day 1 — Training Replay</h3>
-            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 1rem; border-radius: 10px;">
-              <iframe src="https://www.youtube.com/embed/3dkgHM8Uvtc" title="GVA Batch 18 Day 1 Training Replay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-          </div>
-
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
               <a href="https://docs.google.com/document/d/1CuGt1XTDHkj9ugekN-lC8XDTbsbB2yAAfc6H7Np416k/edit?tab=t.olh4o7z9rgy#heading=h.uovl0c4rroid" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📥 Inbox Management Guide</a>
               <a href="https://docs.google.com/spreadsheets/d/1lZPyHEYBN96Z7tMapYdqbm-QEE1dF1Qg3EW2HWeTZso/edit?gid=0#gid=0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">✈️ Travel Management Sheet</a>
@@ -2465,7 +2437,11 @@
             <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Student Library</span>
             <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📚 Essential Resources & Templates</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Download your official guides, sample portfolios, and job hunting tools:</p>
-            
+
+            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1.5rem; border-radius: 10px;">
+              <iframe src="https://www.youtube.com/embed/3dkgHM8Uvtc" title="GVA Batch 18 Day 1 Training Replay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
               <a href="https://drive.google.com/file/d/1v9tOVAuAy_bRd4J1HrfpKp4Sp8zhYdcd/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📄 GVA Training PDF</a>
 
@@ -3220,9 +3196,6 @@
     // PayMongo Secure Checkout Integration with New Payment Pages Links
     function handleRegistrationSubmit(event) {
       event.preventDefault();
-      const name = document.getElementById('reg-name').value;
-      const email = document.getElementById('reg-email').value;
-      const phone = document.getElementById('reg-phone').value;
       const programSelect = document.getElementById('reg-program').value;
 
       // Official Live PayMongo Payment Page URLs
@@ -3233,9 +3206,6 @@
         paymongoUrl = "https://paymongo.page/l/both-programs-bundle"; // Both Programs Bundle (₱1,598)
       }
 
-      localStorage.setItem('gva_reg_name', name);
-      localStorage.setItem('gva_reg_email', email);
-      localStorage.setItem('gva_reg_phone', phone);
       localStorage.setItem('gva_reg_program', programSelect);
 
       window.location.href = paymongoUrl;
@@ -3250,7 +3220,7 @@
 
       if (now < batch18EndTime) {
         targetDate = new Date('2026-09-25T18:00:00+08:00').getTime();
-        badgeText = "Now Accepting Enrollees — Batch 19";
+        badgeText = "Now Accepting Enrollees — Batch 18";
         countdownTitleText = "🔥 Batch 18 Live Training Starts In:";
         dateStringText = "September 25-27, 2026 • 6:00 PM – 9:00 PM PHT";
         regHeaderTitle = "Register for Batch 18";
@@ -3263,10 +3233,6 @@
         regHeaderTitle = "Register for Batch 19";
         regOptionText = "Virtual Assistant Training - Batch 19 (₱599)";
       }
-
-      // Keep the registration section on Batch 19.
-      regHeaderTitle = "Register for Batch 19";
-      regOptionText = "Virtual Assistant Training - Batch 19 (₱599)";
 
       const badgeEl = document.getElementById('hero-badge');
       const titleEl = document.getElementById('countdown-title');
