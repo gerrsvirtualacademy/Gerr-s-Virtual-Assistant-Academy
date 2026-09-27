@@ -55,7 +55,7 @@
   <!-- Google Fonts: Playfair Display + Poppins + Caveat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     /* ==========================================================================
@@ -1189,6 +1189,292 @@
 }
 </style>
 
+<style id="gva-sleek-theme">
+/* ==========================================================================
+   GVA SLEEK THEME OVERRIDE (same brand colors, cleaner look)
+   To revert: delete this whole <style id="gva-sleek-theme"> block
+   and restore the original Google Fonts link.
+   ========================================================================== */
+:root {
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --text-main: #0F172A;
+  --text-muted: #56657A;
+  --border-light: #DCE3EC;
+  --hairline: #E6ECF4;
+
+  --shadow-soft: 0 1px 2px rgba(11,45,107,.04), 0 6px 20px rgba(11,45,107,.04);
+  --shadow-hover: 0 10px 30px rgba(11,45,107,.08);
+  --shadow-card: 0 1px 2px rgba(11,45,107,.04);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+
+  --transition-smooth: all .2s ease;
+}
+
+/* ---------- Typography ---------- */
+html { scroll-behavior: smooth; }
+body, [style*="font-family"] {
+  font-family: var(--font) !important;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.65;
+  color: var(--text-main);
+}
+h1, h2, h3, h4, .font-serif, .stat-number, .story-avatar,
+.article-stat-box strong, .article-pull-quote, .footer-heading {
+  font-family: var(--font) !important;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--navy);
+}
+.font-handwritten, [style*="Caveat"] {
+  font-family: var(--font) !important;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--royal-blue);
+  letter-spacing: 0;
+}
+.hero-content h1 { font-size: 3.1rem; letter-spacing: -0.03em; }
+.section-header h2 { font-size: 2.1rem; }
+.section-header p, .hero-content p.hero-sub { font-size: 1.05rem; }
+.card h3 { font-size: 1.15rem; letter-spacing: -0.01em; }
+.card p { font-size: .93rem; line-height: 1.65; }
+
+/* ---------- Layout rhythm ---------- */
+section { padding: 5.5rem 0; }
+.section-header { margin-bottom: 3rem; }
+.container { max-width: 1140px; }
+
+/* ---------- Eyebrow badges ---------- */
+.badge-pill {
+  background: var(--pale-blue) !important;
+  color: var(--royal-blue) !important;
+  box-shadow: none !important;
+  font-size: .7rem;
+  font-weight: 650;
+  letter-spacing: .09em;
+  padding: .35rem .75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  border-radius: 10px;
+  padding: .8rem 1.5rem;
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  box-shadow: none;
+  border-width: 1px;
+}
+.btn-primary { background: var(--navy); color: var(--white); }
+.btn-primary:hover {
+  background: var(--royal-blue);
+  box-shadow: 0 6px 18px rgba(37,99,235,.22);
+  transform: translateY(-1px);
+}
+.btn-secondary { background: var(--white); color: var(--navy); border-color: var(--border-light); }
+.btn-secondary:hover {
+  background: var(--pale-blue);
+  color: var(--royal-blue);
+  border-color: var(--sky-blue);
+  transform: none;
+}
+
+/* ---------- Header ---------- */
+header.site-header {
+  background: rgba(255,255,255,.88);
+  backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid var(--hairline);
+  box-shadow: none;
+}
+.nav-wrapper { height: 72px; }
+.brand-logo img { height: 46px; }
+.brand-logo img:hover { transform: none; }
+nav.main-nav { gap: 1.6rem; }
+nav.main-nav a.nav-link { font-size: .9rem; font-weight: 550; color: var(--text-muted); }
+nav.main-nav a.nav-link:hover,
+nav.main-nav a.nav-link.active { color: var(--navy); }
+nav.main-nav a.nav-link::after { height: 2px; bottom: -6px; background: var(--royal-blue); }
+nav.main-nav .btn { padding: .55rem 1.1rem !important; font-size: .85rem !important; }
+
+/* ---------- Hero ---------- */
+.hero { background: linear-gradient(180deg, var(--pale-blue) 0%, var(--white) 85%); padding: 4.5rem 0 4rem; }
+.hero-image-card,
+.program-hero .hero-image-card {
+  background: var(--white) !important;
+  padding: 0 !important;
+  border-radius: 16px;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-hover);
+}
+.hero-image-card:hover { transform: none; }
+.hero-image-card img { border-radius: 0; height: 420px; }
+.hero-image-card:hover img { transform: none; }
+.floating-card {
+  animation: none;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  padding: .85rem 1.2rem;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-soft);
+  border-radius: 12px;
+}
+.floating-card strong { font-size: .9rem; }
+.stats-bar { box-shadow: none; border: 1px solid var(--hairline); border-radius: 12px; padding: 1.4rem 1.6rem; }
+.stats-bar:hover { box-shadow: none; }
+.stat-number { font-size: 1.6rem; font-weight: 650; color: var(--navy); }
+.stat-item p { font-size: .8rem; }
+
+/* Countdown block (inline-styled in the markup) */
+div:has(> #countdown-title) {
+  background: var(--white) !important;
+  border: 1px solid var(--hairline) !important;
+  border-radius: 14px !important;
+  box-shadow: none !important;
+}
+#countdown-title { font-size: .85rem !important; font-weight: 600 !important; letter-spacing: 0 !important; color: var(--text-muted) !important; }
+#countdown-timer > div {
+  background: var(--pale-blue) !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  min-width: 68px !important;
+}
+#countdown-timer > span { font-size: 1.4rem !important; color: var(--sky-blue) !important; font-weight: 500 !important; }
+#countdown-timer span[id] { font-size: 1.9rem !important; font-weight: 650 !important; color: var(--navy) !important; letter-spacing: -0.02em; }
+
+/* ---------- Cards ---------- */
+.card, .story-card {
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  box-shadow: none;
+  padding: 2rem;
+}
+.card::before { display: none; }
+.card:hover, .story-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--sky-blue);
+}
+.card-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  background: var(--pale-blue);
+  margin-bottom: 1.1rem;
+}
+.card:hover .card-icon { background: var(--pale-blue); color: var(--navy); transform: none; }
+
+/* Inline-gradient cards become flat, clean surfaces */
+.card[style*="gradient"] { background: var(--pale-blue) !important; border: 1px solid var(--hairline) !important; }
+.card[style*="var(--pale-blue)"][style*="border: 1px solid var(--sky-blue)"] { background: var(--pale-blue) !important; }
+
+/* Sections with inline gradient backgrounds */
+.program-hero { background: var(--pale-blue) !important; border-radius: 0; padding: 4.5rem 0; }
+section[style*="linear-gradient(135deg, var(--navy)"] {
+  background: var(--navy) !important;
+  border-radius: 20px !important;
+  box-shadow: none !important;
+}
+section[style*="background: var(--pale-blue)"] { background: #F5F9FF !important; }
+
+/* ---------- Story cards ---------- */
+.story-card::after { display: none; }
+.story-avatar { width: 44px; height: 44px; font-size: .9rem; box-shadow: none; background: var(--navy); }
+.story-role { font-size: .68rem; letter-spacing: .07em; }
+.story-text-preview { font-style: normal; font-size: .9rem; }
+.article-hero-header {
+  background: var(--pale-blue);
+  border: none;
+  box-shadow: none;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+}
+.article-pull-quote { font-style: normal; font-size: 1.1rem; font-weight: 550; box-shadow: none; border-left-width: 3px; border-radius: 0 10px 10px 0; }
+.article-stat-box { box-shadow: none; border: 1px solid var(--hairline); border-radius: 12px; }
+
+/* ---------- Accordion ---------- */
+.accordion-item { box-shadow: none; border: 1px solid var(--hairline); border-radius: 12px; }
+.accordion-header { font-size: .98rem; padding: 1.2rem 1.5rem; }
+.accordion-body { padding: 0 1.5rem 1.3rem; }
+
+/* ---------- Forms ---------- */
+.registration-form-card { box-shadow: var(--shadow-soft); border: 1px solid var(--hairline); border-radius: 16px; }
+.form-group label { font-size: .82rem; font-weight: 600; }
+.form-group input, .form-group select, .form-group textarea {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: .75rem 1rem;
+  font-size: .92rem;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: var(--royal-blue);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+}
+
+/* ---------- Portal polish ---------- */
+#view-portal .card { padding: 1.75rem; }
+#view-portal .card:hover { transform: none; box-shadow: none; border-color: var(--hairline); }
+#view-portal .registration-form-card:hover { transform: none; }
+#view-portal a.btn-secondary { font-weight: 550; }
+.portal-nav-actions { display: flex; justify-content: flex-end; margin-bottom: 1.25rem; }
+.portal-nav-actions .btn { padding: .55rem 1.1rem; font-size: .82rem; }
+
+/* ---------- FAQ / process / guidelines ---------- */
+.faq-list details, .process-step, .guidelines-card {
+  background: var(--white);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+}
+.faq-list summary { font-weight: 600; font-size: .96rem; }
+.process-number { color: var(--royal-blue); opacity: 1; letter-spacing: .06em; }
+.process-step h3 { font-size: 1.02rem; }
+.section-kicker {
+  display: inline-block;
+  font-size: .7rem; font-weight: 650; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--royal-blue); background: var(--pale-blue);
+  padding: .35rem .75rem; border-radius: 6px; margin-bottom: 1rem;
+}
+
+/* ---------- Footer ---------- */
+footer.site-footer { border-top: 1px solid rgba(255,255,255,.08); margin-top: 4rem; }
+.footer-heading { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 650; color: var(--sky-blue); }
+.footer-links a:hover { padding-left: 0; color: var(--white); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .hero-grid { text-align: left; }
+  .hero-cta { justify-content: flex-start; }
+  nav.main-nav a.nav-link { font-size: 1rem; color: var(--navy); }
+}
+@media (max-width: 768px) {
+  section { padding: 3.5rem 0; }
+  .hero-content h1 { font-size: 2.2rem; }
+  .section-header h2 { font-size: 1.7rem; }
+  .hero-image-card img { height: 300px; }
+}
+@media (max-width: 480px) {
+  .nav-wrapper { height: 64px; }
+  .brand-logo img { height: 38px; }
+  .card { padding: 1.4rem 1.1rem; }
+}
+
+
+/* ---------- Line icons (replace emoji) ---------- */
+.ic { width: 1.1em; height: 1.1em; display: inline-block; vertical-align: -0.18em; margin-right: .5em; flex-shrink: 0;
+  fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.ic:only-child { margin-right: 0; }
+.ic-accent { color: var(--royal-blue); }
+.card-icon .ic { width: 22px; height: 22px; color: var(--navy); }
+.card:hover .card-icon .ic { color: var(--royal-blue); }
+.badge-pill .ic { width: 1em; height: 1em; }
+</style>
 </head>
 <body>
 
@@ -1232,7 +1518,7 @@
               
               <!-- Dynamic Batch Countdown Banner -->
               <div style="background: linear-gradient(135deg, var(--pale-blue), var(--white)); padding: 1.6rem 1.8rem; border-radius: var(--radius-lg); margin-bottom: 2.2rem; border: 2px solid var(--sky-blue); box-shadow: var(--shadow-soft); text-align: center;">
-                <p id="countdown-title" style="font-weight: 700; color: var(--navy); margin-bottom: 1rem; font-size: 1.1rem; letter-spacing: 0.3px;">🔥 Batch 18 Live Training Starts In:</p>
+                <p id="countdown-title" style="font-weight: 700; color: var(--navy); margin-bottom: 1rem; font-size: 1.1rem; letter-spacing: 0.3px;">Batch 18 Live Training Starts In:</p>
                 <div id="countdown-timer" style="display: flex; justify-content: center; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
                   <div style="background: var(--white); padding: 0.9rem 1.1rem; border-radius: var(--radius-sm); box-shadow: 0 4px 15px rgba(11, 45, 107, 0.08); min-width: 75px; border: 1px solid var(--pale-blue);">
                     <span id="days" style="font-size: 2.2rem; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--royal-blue); display: block; line-height: 1;">00</span>
@@ -1300,17 +1586,17 @@
 
           <div class="grid-3">
             <div class="card">
-              <div class="card-icon">🎓</div>
+              <div class="card-icon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
               <h3>100% Beginner Friendly</h3>
               <p>No prior technical background or corporate VA experience needed. We teach every tool and workflow step by step.</p>
             </div>
             <div class="card">
-              <div class="card-icon">💼</div>
+              <div class="card-icon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></div>
               <h3>Student Portal & Portfolio</h3>
               <p>Get exclusive access to your very own student portal packed with interactive activities and resources to build your professional portfolio.</p>
             </div>
             <div class="card">
-              <div class="card-icon">💙</div>
+              <div class="card-icon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
               <h3>Supportive Community</h3>
               <p>Train directly with Coach Gerr and join a warm community of fellow students who uplift and encourage each other.</p>
             </div>
@@ -1439,23 +1725,23 @@
               <h3 style="font-size: 1.6rem; margin-bottom: 1.2rem;">Key Inclusions</h3>
               <ul style="list-style: none;">
                 <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
-                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;"><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                   <span><strong>3-Day Live Interactive Training</strong></span>
                 </li>
                 <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
-                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;"><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                   <span><strong>Exclusive Student Portal Access</strong> (Hands-on Activities & Resources)</span>
                 </li>
                 <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
-                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;"><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                   <span><strong>Portfolio Building Modules & Task Guides</strong> (Inbox, Travel, Data Entry, Asana)</span>
                 </li>
                 <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
-                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;"><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                   <span><strong>Official GVA Certificate of Completion</strong></span>
                 </li>
                 <li style="margin-bottom: 0; display: flex; gap: 0.8rem; align-items: center;">
-                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;"><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                   <span><strong>Lifetime Access to GVA Alumni Community</strong></span>
                 </li>
               </ul>
@@ -1552,15 +1838,15 @@
               <h3 style="font-size: 1.6rem; margin-bottom: 1.2rem;">What You Will Master</h3>
               <div style="display: flex; flex-direction: column; gap: 1rem;">
                 <div style="background: var(--white); padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid rgba(255, 214, 231, 0.6);">
-                  <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--navy);">📑 SMM Course Guide & Strategy</h4>
+                  <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> SMM Course Guide & Strategy</h4>
                   <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">Follow the comprehensive SMM course guide to build content pillars, calendars, and campaign plans.</p>
                 </div>
                 <div style="background: var(--white); padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid rgba(255, 214, 231, 0.6);">
-                  <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--navy);">🤖 AI Prompts & Templates</h4>
+                  <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg> AI Prompts & Templates</h4>
                   <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">Leverage specialized AI content creation prompts and ready-to-use social media templates to fast-track your execution.</p>
                 </div>
                 <div style="background: var(--white); padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid rgba(255, 214, 231, 0.6);">
-                  <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--navy);">🏢 Outputs & Client Profiles</h4>
+                  <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg> Outputs & Client Profiles</h4>
                   <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">Practice with output guides, video walkthroughs, and real client profile samples to build a standout portfolio.</p>
                 </div>
               </div>
@@ -1571,23 +1857,23 @@
               <h3 style="font-size: 1.6rem; margin-bottom: 1.2rem;">Key Inclusions & Portal Access</h3>
               <ul style="list-style: none;">
                 <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
-                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;"><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                   <span><strong>Dedicated SMM Bootcamp Student Portal</strong></span>
                 </li>
                 <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
-                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;"><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                   <span><strong>SMM Course Guides & Social Media Templates</strong></span>
                 </li>
                 <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
-                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;"><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                   <span><strong>AI Content Creation Prompts & Video Guides</strong></span>
                 </li>
                 <li style="margin-bottom: 0.9rem; display: flex; gap: 0.8rem; align-items: center;">
-                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;"><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                   <span><strong>Real Client Profile Samples for Portfolio Building</strong></span>
                 </li>
                 <li style="margin-bottom: 0; display: flex; gap: 0.8rem; align-items: center;">
-                  <span style="color: var(--royal-blue); font-size: 1.2rem;">🔹</span>
+                  <span style="color: var(--royal-blue); font-size: 1.2rem;"><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                   <span><strong>Official GVA Certificate & Community Access</strong></span>
                 </li>
               </ul>
@@ -1624,7 +1910,7 @@
           <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.2rem;">
-                <div class="card-icon" style="margin-bottom: 0;">💼</div>
+                <div class="card-icon" style="margin-bottom: 0;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></div>
                 <span style="background: var(--pale-blue); color: var(--royal-blue); padding: 0.4rem 1.2rem; border-radius: var(--radius-pill); font-weight: 700; font-size: 1.3rem;">₱599</span>
               </div>
               <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem;">Virtual Assistant Training</h3>
@@ -1636,7 +1922,7 @@
           <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.2rem;">
-                <div class="card-icon" style="margin-bottom: 0;">📱</div>
+                <div class="card-icon" style="margin-bottom: 0;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></div>
                 <span style="background: var(--soft-pink); color: var(--navy); padding: 0.4rem 1.2rem; border-radius: var(--radius-pill); font-weight: 700; font-size: 1.3rem;">₱999</span>
               </div>
               <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem;">Social Media Management Bootcamp</h3>
@@ -1937,7 +2223,7 @@
 
           <div style="text-align: center; margin: 2.5rem 0;">
             <a href="https://www.linkedin.com/in/kierza-garcia-9369b8240/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 8px;">
-              🔗 Connect with Kierza on LinkedIn →
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Connect with Kierza on LinkedIn →
             </a>
             <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);">Thank you!</p>
           </div>
@@ -2251,9 +2537,9 @@
           </div>
           <div class="card" style="background: var(--pale-blue);">
             <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">GVA Philosophy</h3>
-            <p style="margin-bottom: 0.8rem;">✨ <strong>Supportive & Friendly:</strong> We guide every student with patience and warmth.</p>
-            <p style="margin-bottom: 0.8rem;">✨ <strong>Practical Focus:</strong> Theory is good, but real-world practice creates confidence.</p>
-            <p>✨ <strong>Growth Focused:</strong> We grow together, learn together, and celebrate wins together.</p>
+            <p style="margin-bottom: 0.8rem;"><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg> <strong>Supportive & Friendly:</strong> We guide every student with patience and warmth.</p>
+            <p style="margin-bottom: 0.8rem;"><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg> <strong>Practical Focus:</strong> Theory is good, but real-world practice creates confidence.</p>
+            <p><svg class="ic ic-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg> <strong>Growth Focused:</strong> We grow together, learn together, and celebrate wins together.</p>
           </div>
         </div>
       </section>
@@ -2270,7 +2556,7 @@
 
         <div class="registration-form-card">
           <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; font-size: 0.88rem; color: var(--navy); text-align: center;">
-            <p style="margin-bottom: 0;">⚠️ Please note that all registration and enrollment payments are <strong>strictly non-refundable</strong>.</p>
+            <p style="margin-bottom: 0;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Please note that all registration and enrollment payments are <strong>strictly non-refundable</strong>.</p>
           </div>
 
           <form id="registration-form" onsubmit="handleRegistrationSubmit(event)">
@@ -2302,7 +2588,7 @@
     <div id="view-registered" class="page-view">
       <section class="container" style="padding-top: 5rem; max-width: 700px; text-align: center;">
         <div class="card" style="padding: 3rem 2rem; background: linear-gradient(135deg, var(--pale-blue), var(--white)); border: 2px solid var(--sky-blue);">
-          <div style="font-size: 3.5rem; margin-bottom: 1rem;">🎉</div>
+          <div style="font-size: 3.5rem; margin-bottom: 1rem; color: var(--royal-blue); line-height: 1;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
           <span class="badge-pill" style="background: var(--white); color: var(--navy);">Payment Verified Successfully</span>
           <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--navy);">You Are Officially Registered!</h1>
           <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.7;">
@@ -2349,7 +2635,7 @@
               <span><strong>Instagram:</strong><br><a href="https://www.instagram.com/coach_gerr/" target="_blank" rel="noopener noreferrer">@coach_gerr</a></span>
             </p>
             <br>
-            <p>⏰ <strong>Support Hours:</strong><br>
+            <p><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <strong>Support Hours:</strong><br>
             Monday – Friday | 9:00 AM – 6:00 PM PST</p>
           </div>
 
@@ -2374,14 +2660,14 @@
         <!-- Enhanced Login Gate with Clear Instructions -->
 <div id="portal-login-card" class="registration-form-card" style="border: 2px solid var(--pale-blue);">
           <div style="text-align: center; margin-bottom: 2rem;">
-            <span class="badge-pill">🔒 Secure Student Area</span>
+            <span class="badge-pill"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Secure Student Area</span>
             <h2 style="font-size: 2.2rem; margin-top: 0.5rem; color: var(--navy);">GVA Student Portal</h2>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">Access your exclusive training replays, activity guides, resources, and submit your portfolio tasks.</p>
           </div>
 
           <!-- Instructions Box -->
           <div style="background: var(--pale-blue); padding: 1.4rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
-            <strong style="display: block; margin-bottom: 0.5rem; font-size: 0.95rem;">💡 How to log in:</strong>
+            <strong style="display: block; margin-bottom: 0.5rem; font-size: 0.95rem;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg> How to log in:</strong>
             <ol style="padding-left: 1.2rem; color: var(--text-muted); line-height: 1.6;">
               <li>Check your <strong>Welcome / Onboarding Email</strong> sent immediately after automated PayMongo payment verification.</li>
               <li>Locate your unique Batch Access Code (e.g., <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">GVA-BATCH-SAMPLE</code> or <code style="background: var(--white); padding: 2px 6px; border-radius: 4px; color: var(--royal-blue); font-weight: 600;">SMM-BATCH-SAMPLE</code>).</li>
@@ -2396,7 +2682,7 @@
           
           <button onclick="verifyBatchCode()" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Enter Portal →</button>
           
-          <p id="login-error" style="color: #E11D48; font-size: 0.85rem; margin-bottom: 1rem; display: none; text-align: center; font-weight: 500;">⚠️ Invalid access code. Please check your welcome email or contact support.</p>
+          <p id="login-error" style="color: #E11D48; font-size: 0.85rem; margin-bottom: 1rem; display: none; text-align: center; font-weight: 500;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Invalid access code. Please check your welcome email or contact support.</p>
 
           <div style="text-align: center; border-top: 1px solid var(--border-light); padding-top: 1.2rem; margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
             Lost your code or having trouble logging in? <a href="#contact" style="color: var(--royal-blue); font-weight: 600;">Contact Coach Gerr Support</a>
@@ -2412,7 +2698,7 @@
 </div>
 
           <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--pale-blue), var(--light-yellow)); border: none;">
-            <span class="badge-pill" style="background: var(--white); color: var(--navy);">Welcome VA Student! 🎉</span>
+            <span class="badge-pill" style="background: var(--white); color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>Welcome VA Student!</span>
             <h2 id="dash-title" style="margin-bottom: 0.5rem;"></h2>
             <p id="dash-subtitle"></p>
           </div>
@@ -2420,25 +2706,25 @@
           <!-- Training Activities & Task Guides Section -->
           <div class="card" style="margin-bottom: 2rem;">
             <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Hands-on Practice</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📋 Training Activities & Task Guides</h3>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg> Training Activities & Task Guides</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Access your step-by-step activity instructions and templates below:</p>
             
             <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.1rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; font-size: 0.88rem; color: var(--navy);">
-              <p style="margin-bottom: 0.5rem;">⚠️ <strong>Important Reminder:</strong> Please make sure to <strong>make a copy</strong> of all Google Docs and Spreadsheets to your own Google Drive rather than requesting editor access.</p>
-              <p style="margin-bottom: 0;">⏳ Please also be patient while Coach Gerr and the team carefully review each activity—it will take some time to go through all submissions. Thank you!</p>
+              <p style="margin-bottom: 0.5rem;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> <strong>Important Reminder:</strong> Please make sure to <strong>make a copy</strong> of all Google Docs and Spreadsheets to your own Google Drive rather than requesting editor access.</p>
+              <p style="margin-bottom: 0;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> Please also be patient while Coach Gerr and the team carefully review each activity—it will take some time to go through all submissions. Thank you!</p>
             </div>
 
           
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-              <a href="https://docs.google.com/document/d/1CuGt1XTDHkj9ugekN-lC8XDTbsbB2yAAfc6H7Np416k/edit?tab=t.olh4o7z9rgy#heading=h.uovl0c4rroid" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📥 Inbox Management Guide</a>
-              <a href="https://docs.google.com/spreadsheets/d/1lZPyHEYBN96Z7tMapYdqbm-QEE1dF1Qg3EW2HWeTZso/edit?gid=0#gid=0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">✈️ Travel Management Sheet</a>
-              <a href="https://docs.google.com/document/d/1gPUQh0dEEinDLNzA2_KM0eLa6xiHazYWBTEU2dsbS9c/edit?tab=t.0#heading=h.eq0jyjd1p1sh" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📞 Travel Preference Call Guide</a>
-              <a href="https://docs.google.com/document/d/1OpKJex61dK-Fd9z6ZkN9_1X54KD4fg_MA_kP1ZUWy-M/edit?tab=t.0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📊 Data Entry Activity</a>
-              <a href="https://docs.google.com/document/d/18FN2DJTkgas_k7y_mMrVF2Hzr2JmPc4xNoTxdneZ0EA/edit?tab=t.0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📅 Calendar Management Guide</a>
-              <a href="https://docs.google.com/document/d/1AxZwplsjApCQzW_v-zT0sbls3JcAjW9oRzrYnxOWccw/edit?tab=t.0#heading=h.bxpebesg9t5z" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📁 Google Drive Management</a>
-              <a href="https://docs.google.com/document/d/1X93RNzdBEVq0rOHrlb2w13hvfE015NhMWZNd7gf20JY/edit?tab=t.0#heading=h.e3u4xv698tno" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🤝 PM Mock Client Task</a>
-              <a href="https://docs.google.com/document/d/11LxbLjmk65bWokDvQZpxgppx3jK18dge97_ENjCjXNo/edit?tab=t.0#heading=h.55yqh3o5j6jf" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">✅ Project Management Asana</a>
+              <a href="https://docs.google.com/document/d/1CuGt1XTDHkj9ugekN-lC8XDTbsbB2yAAfc6H7Np416k/edit?tab=t.olh4o7z9rgy#heading=h.uovl0c4rroid" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg> Inbox Management Guide</a>
+              <a href="https://docs.google.com/spreadsheets/d/1lZPyHEYBN96Z7tMapYdqbm-QEE1dF1Qg3EW2HWeTZso/edit?gid=0#gid=0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg> Travel Management Sheet</a>
+              <a href="https://docs.google.com/document/d/1gPUQh0dEEinDLNzA2_KM0eLa6xiHazYWBTEU2dsbS9c/edit?tab=t.0#heading=h.eq0jyjd1p1sh" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Travel Preference Call Guide</a>
+              <a href="https://docs.google.com/document/d/1OpKJex61dK-Fd9z6ZkN9_1X54KD4fg_MA_kP1ZUWy-M/edit?tab=t.0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> Data Entry Activity</a>
+              <a href="https://docs.google.com/document/d/18FN2DJTkgas_k7y_mMrVF2Hzr2JmPc4xNoTxdneZ0EA/edit?tab=t.0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg> Calendar Management Guide</a>
+              <a href="https://docs.google.com/document/d/1AxZwplsjApCQzW_v-zT0sbls3JcAjW9oRzrYnxOWccw/edit?tab=t.0#heading=h.bxpebesg9t5z" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg> Google Drive Management</a>
+              <a href="https://docs.google.com/document/d/1X93RNzdBEVq0rOHrlb2w13hvfE015NhMWZNd7gf20JY/edit?tab=t.0#heading=h.e3u4xv698tno" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> PM Mock Client Task</a>
+              <a href="https://docs.google.com/document/d/11LxbLjmk65bWokDvQZpxgppx3jK18dge97_ENjCjXNo/edit?tab=t.0#heading=h.55yqh3o5j6jf" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Project Management Asana</a>
             </div>
           </div>
 
@@ -2452,7 +2738,7 @@
   <!-- Day 1 -->
   <div style="margin-top: 1.5rem;">
     <h3 style="margin-bottom: 0.5rem; color: var(--navy);">
-      🎥 Day 1 — Training Replay
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg> Day 1 — Training Replay
     </h3>
 
     <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 1rem; border-radius: 10px;">
@@ -2469,7 +2755,7 @@
   <!-- Day 2 -->
   <div style="margin-top: 2.5rem;">
     <h3 style="margin-bottom: 0.5rem; color: var(--navy);">
-      🎥 Day 2 — Training Replay
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg> Day 2 — Training Replay
     </h3>
 
     <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 1rem; border-radius: 10px;">
@@ -2486,7 +2772,7 @@
   <!-- Day 3 -->
   <div style="margin-top: 2.5rem;">
     <h3 style="margin-bottom: 0.5rem; color: var(--navy);">
-      🎥 Day 3 — Training Replay
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg> Day 3 — Training Replay
     </h3>
 
     <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 1rem; border-radius: 10px;">
@@ -2501,20 +2787,20 @@
   </div>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
-    <a href="https://drive.google.com/file/d/1UbRtvOlNNkqpRLUw-GdOuDZklubJ73AG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🎥 Day 1 — GVA Batch 18 Training Replay</a>
-    <a href="https://docs.google.com/document/d/1xvqqnYN9betGxlmhfNTFF3XkX8NclSZPPypKIadVhP4/edit?tab=t.0#heading=h.ba818ji0wqs6" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📝 2026 ATS Friendly Resume</a>
-    <a href="https://drive.google.com/file/d/1NU5E0cJUf0fVK09tBmS7Uo97A7Q6jFuV/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">💼 Sample Portfolio</a>
-    <a href="https://docs.google.com/document/d/1cDhlUugXY5KLtsqetD47KtqbUy5jSoSZF_2SkLuH-bk/edit?tab=t.ga1krvh78px9#heading=h.vsb1zp5xsi22" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🚀 Application Process Guide</a>
-    <a href="https://docs.google.com/document/d/1vkTHCcyO_-OaJj2YHyGyaz3B-D3o8hkrRVc8XQ-PM_4/edit?tab=t.0#heading=h.nf0gyg7znxal" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🤖 ChatGPT Tips & Prompts</a>
-    <a href="https://docs.google.com/spreadsheets/d/1van5IIjqiur6BOL_Z4iaQHduyE6UWRBF98SFmhypeRs/edit?gid=0#gid=0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🌐 Where to Apply Directory</a>
-    <a href="https://docs.google.com/document/d/1wczofM0KQFkP6GnhKyd3EtPEfJ4kQp9G0Ajb11nCjO0/edit?tab=t.0#heading=h.2gmowrlsqpke" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📓 Notion Productivity Guide</a>
+    <a href="https://drive.google.com/file/d/1UbRtvOlNNkqpRLUw-GdOuDZklubJ73AG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg> Day 1 — GVA Batch 18 Training Replay</a>
+    <a href="https://docs.google.com/document/d/1xvqqnYN9betGxlmhfNTFF3XkX8NclSZPPypKIadVhP4/edit?tab=t.0#heading=h.ba818ji0wqs6" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> 2026 ATS Friendly Resume</a>
+    <a href="https://drive.google.com/file/d/1NU5E0cJUf0fVK09tBmS7Uo97A7Q6jFuV/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg> Sample Portfolio</a>
+    <a href="https://docs.google.com/document/d/1cDhlUugXY5KLtsqetD47KtqbUy5jSoSZF_2SkLuH-bk/edit?tab=t.ga1krvh78px9#heading=h.vsb1zp5xsi22" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> Application Process Guide</a>
+    <a href="https://docs.google.com/document/d/1vkTHCcyO_-OaJj2YHyGyaz3B-D3o8hkrRVc8XQ-PM_4/edit?tab=t.0#heading=h.nf0gyg7znxal" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg> ChatGPT Tips & Prompts</a>
+    <a href="https://docs.google.com/spreadsheets/d/1van5IIjqiur6BOL_Z4iaQHduyE6UWRBF98SFmhypeRs/edit?gid=0#gid=0" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> Where to Apply Directory</a>
+    <a href="https://docs.google.com/document/d/1wczofM0KQFkP6GnhKyd3EtPEfJ4kQp9G0Ajb11nCjO0/edit?tab=t.0#heading=h.2gmowrlsqpke" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M16 2v20"/></svg> Notion Productivity Guide</a>
   </div>
 </div>
 
           <!-- EMBEDDED GOOGLE CALENDAR 1-ON-1 BOOKING -->
           <div class="card" style="margin-bottom: 2rem;">
             <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Coaching & Consultations</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📅 Book a 1-on-1 Session with Coach Gerr</h3>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg> Book a 1-on-1 Session with Coach Gerr</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Select an available time slot below to schedule your 1-on-1 coaching or portfolio review session:</p>
             <div style="position: relative; width: 100%; height: 550px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--pale-blue);">
               <iframe src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2lcB-al3RVDNeRESRwzaMvo95nIAsVdAtF88JZhdi-RtgJnnutPoHqx5KD6cf1IE4q9YhYItJA?gv=true" style="border: 0; width: 100%; height: 100%;" frameborder="0" scrolling="yes"></iframe>
@@ -2524,12 +2810,12 @@
           <!-- DIRECT STUDENT SUBMISSIONS HUB -->
           <div class="registration-form-card" style="margin-bottom: 2.5rem; max-width: none;">
             <span class="badge-pill" style="background: var(--pale-blue); color: var(--navy);">Direct Submission Hub</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit All Your Training Outputs & Portfolio</h3>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> Submit All Your Training Outputs & Portfolio</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Provide your Discord handle and paste your Google Drive folder link or individual task links below to submit all your outputs in one go.</p>
             
             <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.2rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
-              <p style="margin-bottom: 0.6rem;">⚠️ <strong>Link Access Reminder:</strong> Please make sure your link is set to <strong>"Anyone with the link can view"</strong> so we can check your work without permission roadblocks.</p>
-              <p style="margin-bottom: 0;">⏳ <strong>Please Be Patient:</strong> Coach Gerr and the team review each activity carefully. It will take some time to go through all submissions. Thank you!</p>
+              <p style="margin-bottom: 0.6rem;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> <strong>Link Access Reminder:</strong> Please make sure your link is set to <strong>"Anyone with the link can view"</strong> so we can check your work without permission roadblocks.</p>
+              <p style="margin-bottom: 0;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> <strong>Please Be Patient:</strong> Coach Gerr and the team review each activity carefully. It will take some time to go through all submissions. Thank you!</p>
             </div>
 
             <form action="https://api.snapitforms.com/submit" method="POST">
@@ -2569,7 +2855,7 @@
 
           <!-- Batch 18 Certificate Request Form Embed (Fixed Height & Responsive) -->
           <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
-            <h3>🎓 Batch 18 Certificate Request Form</h3>
+            <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg> Batch 18 Certificate Request Form</h3>
             <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final portfolio requirements below to claim your official Batch 18 GVA certificate:</p>
             
             <div style="position: relative; width: 100%; height: 800px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--white); margin: 20px 0;">
@@ -2594,7 +2880,7 @@
 </div>
 
           <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--soft-pink), var(--pale-blue)); border: none;">
-            <span class="badge-pill" style="background: var(--white); color: var(--navy);">Welcome SMM Student! 📱✨</span>
+            <span class="badge-pill" style="background: var(--white); color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>Welcome SMM Student!</span>
             <h2 id="smm-dash-title" style="margin-bottom: 0.5rem;"></h2>
             <p id="smm-dash-subtitle"></p>
           </div>
@@ -2602,37 +2888,37 @@
           <!-- SMM Activities & Video Guides Section -->
           <div class="card" style="margin-bottom: 2rem;">
             <span class="badge-pill" style="background: var(--soft-pink); color: var(--navy);">Hands-on Practice</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📋 SMM Activities & Video Walkthroughs</h3>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg> SMM Activities & Video Walkthroughs</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Access your step-by-step SMM output guides and video resources below:</p>
             
             <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.1rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; font-size: 0.88rem; color: var(--navy);">
-              <p style="margin-bottom: 0.5rem;">⚠️ <strong>Important Reminder:</strong> Please make sure to <strong>make a copy</strong> of all Google Docs and Spreadsheets to your own Google Drive rather than requesting editor access.</p>
-              <p style="margin-bottom: 0;">⏳ Please also be patient while Coach Gerr and the team carefully review each SMM activity—it will take some time to go through all submissions. Thank you!</p>
+              <p style="margin-bottom: 0.5rem;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> <strong>Important Reminder:</strong> Please make sure to <strong>make a copy</strong> of all Google Docs and Spreadsheets to your own Google Drive rather than requesting editor access.</p>
+              <p style="margin-bottom: 0;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> Please also be patient while Coach Gerr and the team carefully review each SMM activity—it will take some time to go through all submissions. Thank you!</p>
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-              <a href="https://docs.google.com/document/d/10OUokak9fAFjvv7h6p1VuwyIfOeB0cgOrm6-sxXabm8/edit?tab=t.0#heading=h.jyphawxc9xmq" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📑 SMM Output Guide</a>
-              <a href="https://drive.google.com/file/d/1QqjK-Sc6fteSwdadhFhwSXd2Jxp7CaRG/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🎥 SMM Output Video Guide</a>
+              <a href="https://docs.google.com/document/d/10OUokak9fAFjvv7h6p1VuwyIfOeB0cgOrm6-sxXabm8/edit?tab=t.0#heading=h.jyphawxc9xmq" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> SMM Output Guide</a>
+              <a href="https://drive.google.com/file/d/1QqjK-Sc6fteSwdadhFhwSXd2Jxp7CaRG/view" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg> SMM Output Video Guide</a>
             </div>
           </div>
 
           <!-- SMM Essential Resources & Materials Section -->
           <div class="card" style="margin-bottom: 2rem;">
             <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">SMM Student Library</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📚 SMM Course Guides, Prompts & Templates</h3>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg> SMM Course Guides, Prompts & Templates</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Download your official SMM course materials, AI prompts, templates, and client profile samples:</p>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
-              <a href="https://docs.google.com/document/d/1-1ZFaizxIWTpWHtUeznZV-6gOkHUaRhqGMZZl7ENC-k/edit?tab=t.zbomw8m4k8zh" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📘 SMM Course Guide</a>
-              <a href="https://docs.google.com/document/d/1k8FjylVEKf9sIY5xzRhwobRs0kRSILN3bZSaMTzzteE/edit?tab=t.0#heading=h.hl65v4elbdto" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">🤖 AI Prompt for Content Creation</a>
-              <a href="https://docs.google.com/spreadsheets/d/1HkqRGhg4W_PY3zZbxRB-jNCv-TveBQbebePE3hwzTMs/edit?gid=807567529#gid=807567529" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;">📊 Social Media Template</a>
+              <a href="https://docs.google.com/document/d/1-1ZFaizxIWTpWHtUeznZV-6gOkHUaRhqGMZZl7ENC-k/edit?tab=t.zbomw8m4k8zh" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg> SMM Course Guide</a>
+              <a href="https://docs.google.com/document/d/1k8FjylVEKf9sIY5xzRhwobRs0kRSILN3bZSaMTzzteE/edit?tab=t.0#heading=h.hl65v4elbdto" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg> AI Prompt for Content Creation</a>
+              <a href="https://docs.google.com/spreadsheets/d/1HkqRGhg4W_PY3zZbxRB-jNCv-TveBQbebePE3hwzTMs/edit?gid=807567529#gid=807567529" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> Social Media Template</a>
             </div>
           </div>
 
           <!-- CLIENT PROFILES LIBRARY -->
           <div class="card" style="margin-bottom: 2rem; background: var(--pale-blue); border: 1px solid var(--sky-blue);">
             <span class="badge-pill" style="background: var(--white); color: var(--navy);">SMM Practice Hub</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">🏢 Sample Client Profiles Library</h3>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg> Sample Client Profiles Library</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">Explore our official library of sample client profile infographics. Use these prepared graphics to practice your social media content pillars, Canva templates, and portfolio case studies!</p>
 
             <div class="grid-2">
@@ -2743,7 +3029,7 @@
           <!-- EMBEDDED GOOGLE CALENDAR 1-ON-1 BOOKING FOR SMM -->
           <div class="card" style="margin-bottom: 2rem;">
             <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">Coaching & Consultations</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📅 Book a 1-on-1 Session with Coach Gerr</h3>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg> Book a 1-on-1 Session with Coach Gerr</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Select an available time slot below to schedule your 1-on-1 coaching or SMM portfolio review session:</p>
             <div style="position: relative; width: 100%; height: 550px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-light); background: var(--pale-blue);">
               <iframe src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2lcB-al3RVDNeRESRwzaMvo95nIAsVdAtF88JZhdi-RtgJnnutPoHqx5KD6cf1IE4q9YhYItJA?gv=true" style="border: 0; width: 100%; height: 100%;" frameborder="0" scrolling="yes"></iframe>
@@ -2753,12 +3039,12 @@
           <!-- SMM STUDENT SUBMISSIONS HUB -->
           <div class="registration-form-card" style="margin-bottom: 2.5rem; max-width: none;">
             <span class="badge-pill" style="background: var(--pale-blue); color: var(--navy);">SMM Submission Hub</span>
-            <h3 style="margin-bottom: 0.5rem; color: var(--navy);">📝 Submit All SMM Outputs & Final Portfolio</h3>
+            <h3 style="margin-bottom: 0.5rem; color: var(--navy);"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> Submit All SMM Outputs & Final Portfolio</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Provide your Discord handle and paste your SMM portfolio or Google Drive folder links below to submit all your bootcamp outputs in one go.</p>
             
             <div style="background: rgba(255, 214, 231, 0.35); border: 1px solid var(--soft-pink); padding: 1.2rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem; font-size: 0.9rem; color: var(--navy);">
-              <p style="margin-bottom: 0.6rem;">⚠️ <strong>Link Access Reminder:</strong> Please make sure your link is set to <strong>"Anyone with the link can view"</strong> so we can check your work without permission roadblocks.</p>
-              <p style="margin-bottom: 0;">⏳ <strong>Please Be Patient:</strong> Coach Gerr and the team review each activity carefully. It will take some time to go through all submissions. Thank you!</p>
+              <p style="margin-bottom: 0.6rem;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> <strong>Link Access Reminder:</strong> Please make sure your link is set to <strong>"Anyone with the link can view"</strong> so we can check your work without permission roadblocks.</p>
+              <p style="margin-bottom: 0;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg> <strong>Please Be Patient:</strong> Coach Gerr and the team review each activity carefully. It will take some time to go through all submissions. Thank you!</p>
             </div>
 
             <form action="https://api.snapitforms.com/submit" method="POST">
@@ -2798,7 +3084,7 @@
 
           <!-- SMM Certificate Request Card -->
           <div id="smm-certificate-request" class="card" style="text-align: center; background: linear-gradient(135deg, var(--white), var(--pale-blue));">
-            <h3>🎓 SMM Certificate Request</h3>
+            <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg> SMM Certificate Request</h3>
             <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Fill out your final SMM portfolio requirements below to claim your official certificate:</p>
             <div class="smm-form-frame">
               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeAW4jKxlq_MrXxvYPbzYG_dOEzA7J1jbVmAlLwA5uk2t9ndw/viewform?embedded=true" frameborder="0" scrolling="yes">Loading certificate form...</iframe>
@@ -3356,14 +3642,14 @@
       if (now < batch18EndTime) {
         targetDate = new Date('2026-09-25T18:00:00+08:00').getTime();
         badgeText = "Now Accepting Enrollees — Batch 19";
-        countdownTitleText = "🔥 Batch 18 Live Training Starts In:";
+        countdownTitleText = "Batch 18 Live Training Starts In:";
         dateStringText = "September 25-27, 2026 • 6:00 PM – 9:00 PM PHT";
         regHeaderTitle = "Register for Batch 18";
         regOptionText = "Virtual Assistant Training - Batch 18 (₱599)";
       } else {
         targetDate = new Date('2026-10-23T18:00:00+08:00').getTime();
         badgeText = "Now Accepting Enrollees — Batch 19";
-        countdownTitleText = "🔥 Batch 19 Live Training Starts In:";
+        countdownTitleText = "Batch 19 Live Training Starts In:";
         dateStringText = "October 23-25, 2026 • 6:00 PM – 9:00 PM PHT";
         regHeaderTitle = "Register for Batch 19";
         regOptionText = "Virtual Assistant Training - Batch 19 (₱599)";
@@ -3398,10 +3684,10 @@
       if (!daysEl || !timerContainer) return;
 
       if (distance < 0 && now >= batch18EndTime) {
-        timerContainer.parentElement.innerHTML = "<div style='padding: 1.5rem;'><h3 style='color: var(--navy); font-family: Playfair Display, serif; margin-bottom: 0.5rem;'>🎉 Batch 19 Live Training is Now Live!</h3><p style='color: var(--text-muted); font-size: 0.95rem;'>October 23-25, 2026 • 6:00 PM – 9:00 PM PHT</p></div>";
+        timerContainer.parentElement.innerHTML = "<div style='padding: 1.5rem;'><h3 style='color: var(--navy); font-family: Playfair Display, serif; margin-bottom: 0.5rem;'>Batch 19 Live Training is Now Live!</h3><p style='color: var(--text-muted); font-size: 0.95rem;'>October 23-25, 2026 • 6:00 PM – 9:00 PM PHT</p></div>";
         return;
       } else if (distance < 0) {
-        timerContainer.parentElement.innerHTML = "<div style='padding: 1.5rem;'><h3 style='color: var(--navy); font-family: Playfair Display, serif; margin-bottom: 0.5rem;'>🎉 Batch 18 Live Training is Now Live!</h3><p style='color: var(--text-muted); font-size: 0.95rem;'>September 25-27, 2026 • 6:00 PM – 9:00 PM PHT</p></div>";
+        timerContainer.parentElement.innerHTML = "<div style='padding: 1.5rem;'><h3 style='color: var(--navy); font-family: Playfair Display, serif; margin-bottom: 0.5rem;'>Batch 18 Live Training is Now Live!</h3><p style='color: var(--text-muted); font-size: 0.95rem;'>September 25-27, 2026 • 6:00 PM – 9:00 PM PHT</p></div>";
         return;
       }
 
