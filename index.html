@@ -2536,9 +2536,9 @@ nav.main-nav a.nav-portal { color: var(--navy); }
             </div>
             <div id="voucher-group" class="form-group" style="display: none;">
               <label for="reg-voucher">Voucher Code (Optional)</label>
-              <div style="display: flex; gap: 0.5rem; align-items: stretch;">
-                <input type="text" id="reg-voucher" placeholder="Enter voucher code" autocomplete="off" style="flex: 1;">
-                <button type="button" class="btn btn-secondary" onclick="applyVoucher()" style="white-space: nowrap;">Apply</button>
+              <div style="display: flex; gap: 0.5rem; align-items: stretch; width: 100%;">
+                <input type="text" id="reg-voucher" placeholder="Enter voucher code" autocomplete="off" style="flex: 1 1 0%; min-width: 0; width: auto; box-sizing: border-box;">
+                <button type="button" class="btn btn-secondary" onclick="applyVoucher()" style="flex: 0 0 auto; width: auto; white-space: nowrap;">Apply</button>
               </div>
               <div id="voucher-message" style="margin-top: 0.6rem; font-size: 0.85rem; display: none;"></div>
             </div>
