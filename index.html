@@ -2751,6 +2751,24 @@ nav.main-nav a.nav-portal { color: var(--navy); }
     </div>
   </div>
 
+  <!-- Batch 19 Only: Day 1 Replay -->
+  <div class="gva-b19-replay" style="display: none; margin-top: 1.5rem;">
+    <span class="badge-pill" style="background: var(--light-yellow); color: var(--navy);">GVA Batch 19 Replay</span>
+    <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--navy);">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg> Day 1 — Training Replay
+    </h3>
+
+    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 1rem; border-radius: 10px;">
+      <iframe
+        src="https://www.youtube.com/embed/eLUGvuo_vOY"
+        title="GVA Batch 19 Day 1 Training Replay"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
     <a href="https://drive.google.com/file/d/1UbRtvOlNNkqpRLUw-GdOuDZklubJ73AG/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-secondary gva-b18-replay" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg> Day 1 — GVA Batch 18 Training Replay</a>
     <a href="https://docs.google.com/document/d/1xvqqnYN9betGxlmhfNTFF3XkX8NclSZPPypKIadVhP4/edit?tab=t.0#heading=h.ba818ji0wqs6" target="_blank" class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 0.8rem 1rem; font-size: 0.85rem; height: auto;"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> 2026 ATS Friendly Resume</a>
@@ -3795,7 +3813,8 @@ nav.main-nav a.nav-portal { color: var(--navy); }
           const gvaIsB19 = parseInt(batchNum, 10) >= 19;
           document.querySelectorAll('.gva-b18-replay').forEach(el => { el.style.display = gvaIsB19 ? 'none' : ''; });
           const replayBadge = document.getElementById('gva-replay-badge');
-          if (replayBadge) replayBadge.innerText = gvaIsB19 ? 'GVA Student Resources' : 'GVA Batch 18 Replay';
+          if (replayBadge) replayBadge.innerText = parseInt(batchNum, 10) === 19 ? 'GVA Batch 19 Replay' : (gvaIsB19 ? 'GVA Student Resources' : 'GVA Batch 18 Replay');
+           document.querySelectorAll('.gva-b19-replay').forEach(el => { el.style.display = parseInt(batchNum, 10) === 19 ? '' : 'none'; });
           const certB18 = document.getElementById('gva-cert-b18');
           const certB19 = document.getElementById('gva-cert-b19');
           if (certB18) certB18.style.display = gvaIsB19 ? 'none' : '';
